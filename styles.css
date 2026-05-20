@@ -169,7 +169,7 @@ p {
   min-height: calc(100vh - 76px);
   max-width: var(--max);
   margin: 0 auto;
-  padding: 74px 24px 72px;
+  padding: 58px 24px 64px;
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
   gap: 48px;
@@ -187,7 +187,7 @@ p {
 
 .hero h1,
 .page-hero h1 {
-  font-size: clamp(3.1rem, 7vw, 6.4rem);
+  font-size: clamp(3rem, 6vw, 5.2rem);
   line-height: 0.95;
   letter-spacing: 0;
   margin-bottom: 24px;
@@ -246,6 +246,73 @@ p {
   min-height: 670px;
   display: grid;
   place-items: center;
+}
+
+.product-gallery {
+  min-height: 700px;
+}
+
+.product-gallery::before {
+  inset: 7% 0 4% 10%;
+  border-radius: 34px;
+  transform: rotate(3deg);
+}
+
+.phone-shot {
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #101418;
+  box-shadow:
+    0 26px 70px rgba(16, 20, 24, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.55) inset;
+}
+
+.phone-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.phone-shot-primary {
+  top: 112px;
+  left: 3%;
+  z-index: 4;
+  width: min(390px, 64vw);
+  aspect-ratio: 1206 / 2470;
+  transform: rotate(-4deg);
+  padding: 7px;
+  background: linear-gradient(135deg, rgba(255, 22, 154, 0.95), rgba(40, 185, 255, 0.95));
+}
+
+.phone-shot-primary img,
+.phone-shot-secondary img {
+  border-radius: 20px;
+}
+
+.phone-shot-secondary {
+  width: min(390px, 64vw);
+  aspect-ratio: 1206 / 2470;
+  padding: 7px;
+}
+
+.phone-shot-program {
+  top: 0;
+  left: 49%;
+  z-index: 2;
+  width: min(390px, 64vw);
+  transform: translateX(-50%) rotate(-1.25deg);
+  opacity: 0.96;
+}
+
+.phone-shot-light {
+  right: -10%;
+  bottom: 4px;
+  z-index: 5;
+  transform: rotate(3.5deg);
+  background: #ffffff;
 }
 
 .screenshot-brand {
@@ -672,6 +739,103 @@ details {
   gap: 22px;
 }
 
+.workflow-band {
+  align-items: start;
+  scroll-margin-top: 110px;
+}
+
+.workflow-list {
+  counter-reset: workflow;
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workflow-list li {
+  counter-increment: workflow;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) minmax(190px, 240px);
+  align-items: center;
+  gap: 18px;
+  min-height: 168px;
+  padding: 18px;
+  color: #343d48;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(40, 185, 255, 0.06);
+  overflow: hidden;
+}
+
+.workflow-list li:nth-child(even) .workflow-shot {
+  transform: rotate(0.45deg);
+}
+
+.workflow-list li:nth-child(odd) .workflow-shot {
+  transform: rotate(-0.35deg);
+}
+
+.workflow-list li::before {
+  content: counter(workflow);
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: var(--white);
+  font-weight: 900;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--hot-pink), var(--brand-blue));
+}
+
+.workflow-list li > span {
+  font-weight: 760;
+  line-height: 1.45;
+}
+
+.workflow-shot {
+  position: relative;
+  margin: 0;
+  justify-self: end;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 8px;
+  padding: 3px;
+  background: linear-gradient(135deg, rgba(255, 22, 154, 0.9), rgba(40, 185, 255, 0.9));
+  box-shadow: 0 16px 34px rgba(16, 20, 24, 0.12);
+}
+
+.workflow-shot::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
+
+.workflow-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #111317;
+  border-radius: 6px;
+}
+
+.workflow-list li:nth-child(3) .workflow-shot,
+.workflow-list li:nth-child(4) .workflow-shot,
+.workflow-list li:nth-child(5) .workflow-shot {
+  aspect-ratio: 1 / 1;
+  max-width: 210px;
+}
+
+.workflow-list li:nth-child(1) .workflow-shot img {
+  background: #fdeaf2;
+}
+
 .pricing-section {
   border-radius: 28px;
 }
@@ -881,6 +1045,38 @@ details p {
     gap: 12px;
   }
 
+  .product-gallery {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.72fr);
+    gap: 12px;
+    align-items: end;
+    min-height: 0;
+  }
+
+  .product-gallery::before {
+    inset: 8% 3% 0;
+  }
+
+  .phone-shot {
+    position: relative;
+    inset: auto;
+    transform: none;
+  }
+
+  .phone-shot-primary {
+    left: auto;
+    width: min(100%, 330px);
+    justify-self: end;
+  }
+
+  .phone-shot-secondary {
+    width: min(100%, 210px);
+  }
+
+  .phone-shot-light {
+    display: none;
+  }
+
   .phone-frame {
     width: min(420px, 100%);
   }
@@ -904,6 +1100,10 @@ details p {
   .about-layout {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .workflow-list li {
+    grid-template-columns: 40px minmax(0, 1fr) minmax(180px, 220px);
+  }
 }
 
 @media (max-width: 640px) {
@@ -926,6 +1126,41 @@ details p {
 
   .hero {
     min-height: auto;
+  }
+
+  .product-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .phone-shot-primary {
+    justify-self: center;
+    width: min(100%, 310px);
+  }
+
+  .phone-shot-program {
+    display: none;
+  }
+
+  .workflow-list li {
+    grid-template-columns: 38px minmax(0, 1fr);
+    align-items: start;
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .workflow-shot {
+    grid-column: 2;
+    width: min(100%, 280px);
+    justify-self: start;
+    margin-top: 10px;
+    transform: none !important;
+  }
+
+  .workflow-list li:nth-child(3) .workflow-shot,
+  .workflow-list li:nth-child(4) .workflow-shot,
+  .workflow-list li:nth-child(5) .workflow-shot {
+    width: min(100%, 260px);
+    max-width: none;
   }
 
   .hero-visual {
