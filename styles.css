@@ -1218,35 +1218,41 @@ details p {
   }
 
   .product-gallery {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.72fr);
-    gap: 12px;
-    align-items: end;
-    min-height: 0;
+    display: block;
+    width: min(100%, 620px);
+    min-height: 560px;
+    margin: 0 auto;
   }
 
   .product-gallery::before {
-    inset: 8% 3% 0;
+    inset: 7% 2% 4% 9%;
   }
 
   .phone-shot {
-    position: relative;
-    inset: auto;
-    transform: none;
+    position: absolute;
   }
 
   .phone-shot-primary {
-    left: auto;
-    width: min(100%, 330px);
-    justify-self: end;
+    top: 96px;
+    left: 4%;
+    width: min(330px, 58vw);
+    transform: rotate(-4deg);
   }
 
   .phone-shot-secondary {
-    width: min(100%, 210px);
+    width: min(300px, 52vw);
+  }
+
+  .phone-shot-program {
+    top: 0;
+    left: 52%;
+    transform: translateX(-50%) rotate(-1.25deg);
   }
 
   .phone-shot-light {
-    display: none;
+    right: 0;
+    bottom: 8px;
+    transform: rotate(3.5deg);
   }
 
   .phone-frame {
@@ -1306,12 +1312,14 @@ details p {
   }
 
   .product-gallery {
-    grid-template-columns: 1fr;
+    min-height: 650px;
   }
 
   .phone-shot-primary {
-    justify-self: center;
-    width: min(100%, 310px);
+    top: 18px;
+    left: 50%;
+    width: min(310px, 82vw);
+    transform: translateX(-50%) rotate(-4deg);
   }
 
   .phone-shot-program {
