@@ -56,7 +56,8 @@ jobs:
             --title "Review blog draft: $title" \
             --body "This PR contains an AI-generated RackMath blog draft. Review the Markdown in \`content/blog/\`, edit as needed, then merge to approve it for scheduled publishing." \
             --base main \
-            --head "$branch"
+            --head "$branch" \
+            --assignee "JOBRIENEIRBOJ"
 
       - name: No ready topics
         if: steps.changes.outputs.has_changes == 'false'
