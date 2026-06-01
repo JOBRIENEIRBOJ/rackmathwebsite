@@ -1,134 +1,2602 @@
 [
   {
     "title": "Your First Week of Weight Lifting: Exactly What to Do",
-    "status": "drafted",
-    "publish_date": "2026-06-02",
-    "slug": "your-first-week-of-weight-lifting",
+    "status": "ready",
+    "publish_date": "2026-06-03",
+    "slug": "your-first-week-of-weight-lifting-exactly-what-to-do",
     "primary_keyword": "first week of weight lifting",
     "secondary_keywords": [
-      "weight lifting for beginners",
       "beginner weight lifting",
-      "how to start lifting weights"
+      "how to start lifting weights",
+      "beginner gym workout"
     ],
-    "angle": "Give beginners a calm, specific first-week plan focused on learning the gym, practicing simple movements, and building the habit without overdoing it.",
-    "drafted_at": "2026-06-01T16:27:57.824Z",
-    "file": "content/blog/2026-06-02-your-first-week-of-weight-lifting.md"
+    "angle": "Give beginners a simple first-week plan with manageable workouts, light starting weights, and a way to track what they did."
   },
   {
     "title": "What Weight Should I Start With? A Simple Beginner Guide",
     "status": "ready",
-    "publish_date": "2026-06-03",
-    "slug": "what-weight-should-i-start-with",
+    "publish_date": "2026-06-04",
+    "slug": "what-weight-should-i-start-with-a-simple-beginner-guide",
     "primary_keyword": "what weight should I start lifting",
     "secondary_keywords": [
-      "beginner lifting weight",
-      "weight lifting for beginners",
-      "strength training for beginners"
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
     ],
-    "angle": "Explain how to choose a starting weight that feels controlled, repeatable, and easy to track without making beginners feel judged."
-  },
-  {
-    "title": "How to Stop Feeling Awkward in the Gym",
-    "status": "ready",
-    "publish_date": "2026-06-04",
-    "slug": "how-to-stop-feeling-awkward-in-the-gym",
-    "primary_keyword": "how to stop feeling awkward in the gym",
-    "secondary_keywords": [
-      "first day at the gym",
-      "beginner gym workout",
-      "how to get comfortable in the gym"
-    ],
-    "angle": "Normalize feeling awkward, then give practical ways to reduce uncertainty: have a small plan, learn one area at a time, ask simple questions, and keep the first sessions short."
-  },
-  {
-    "title": "Why Strength Training Matters More as You Get Older",
-    "status": "ready",
-    "publish_date": "2026-06-05",
-    "slug": "why-strength-training-matters-more-as-you-get-older",
-    "primary_keyword": "strength training as you get older",
-    "secondary_keywords": [
-      "strength training for health",
-      "resistance training for beginners",
-      "weight lifting for adults"
-    ],
-    "angle": "Explain the practical value of strength training for daily life and long-term health in plain language, using citations for health and guideline claims."
-  },
-  {
-    "title": "How to Know When to Add More Weight",
-    "status": "ready",
-    "publish_date": "2026-06-06",
-    "slug": "how-to-know-when-to-add-more-weight",
-    "primary_keyword": "when to add more weight lifting",
-    "secondary_keywords": [
-      "progressive overload for beginners",
-      "how to get stronger",
-      "weight lifting tracker"
-    ],
-    "angle": "Teach beginners a simple decision rule for adding weight: good form, completed reps, controlled effort, and notes from previous sessions."
-  },
-  {
-    "title": "The Beginner's Guide to Loading a Barbell",
-    "status": "ready",
-    "publish_date": "2026-06-07",
-    "slug": "beginners-guide-to-loading-a-barbell",
-    "primary_keyword": "how to load a barbell",
-    "secondary_keywords": [
-      "barbell plate calculator",
-      "weight lifting calculator",
-      "barbell plate math"
-    ],
-    "angle": "Walk through bar weight, plates per side, common loading examples, collars, and why a barbell plate calculator helps when you are tired or rushed."
-  },
-  {
-    "title": "What Proper Lifting Form Really Means",
-    "status": "ready",
-    "publish_date": "2026-06-08",
-    "slug": "what-proper-lifting-form-really-means",
-    "primary_keyword": "proper lifting form",
-    "secondary_keywords": [
-      "weight lifting form for beginners",
-      "strength training for beginners",
-      "how to lift weights safely"
-    ],
-    "angle": "Define form in beginner-friendly terms: control, range of motion, stable setup, repeatable reps, and using a weight you can manage."
+    "angle": "Help beginners choose a starting weight they can control, using form, reps, and confidence instead of ego."
   },
   {
     "title": "How Many Days a Week Should Beginners Lift?",
     "status": "ready",
-    "publish_date": "2026-06-09",
+    "publish_date": "2026-06-05",
     "slug": "how-many-days-a-week-should-beginners-lift",
     "primary_keyword": "how many days a week should beginners lift",
     "secondary_keywords": [
-      "beginner lifting routine",
-      "strength training for beginners",
-      "resistance training for beginners"
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
     ],
-    "angle": "Give a realistic beginner answer and cite reputable activity guidelines when mentioning weekly muscle-strengthening recommendations."
+    "angle": "Give beginners a realistic weekly lifting frequency, explain why repeatability matters, and show how to track the plan."
+  },
+  {
+    "title": "Your First Day in the Weight Room: A No-Stress Walkthrough",
+    "status": "ready",
+    "publish_date": "2026-06-06",
+    "slug": "your-first-day-in-the-weight-room-a-no-stress-walkthrough",
+    "primary_keyword": "first day in the weight room",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Walk beginners through the first gym visit with a short plan, simple equipment choices, and a calmer way to start."
+  },
+  {
+    "title": "What to Bring to the Gym on Your First Day",
+    "status": "ready",
+    "publish_date": "2026-06-07",
+    "slug": "what-to-bring-to-the-gym-on-your-first-day",
+    "primary_keyword": "what to bring to the gym first day",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Give beginners a simple gym bag checklist and explain what actually matters versus what can wait."
+  },
+  {
+    "title": "How to Walk Into the Gym With a Plan",
+    "status": "ready",
+    "publish_date": "2026-06-08",
+    "slug": "how-to-walk-into-the-gym-with-a-plan",
+    "primary_keyword": "what to do at the gym first day",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Teach beginners how to enter the gym with a short workout, a backup option, and less decision stress."
+  },
+  {
+    "title": "The First 5 Lifts Beginners Should Learn",
+    "status": "ready",
+    "publish_date": "2026-06-09",
+    "slug": "the-first-5-lifts-beginners-should-learn",
+    "primary_keyword": "beginner weight lifting exercises",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Introduce five beginner-friendly lifts, explain what each teaches, and keep the focus on practice instead of showing off."
+  },
+  {
+    "title": "How to Start Lifting When You Are Out of Shape",
+    "status": "ready",
+    "publish_date": "2026-06-10",
+    "slug": "how-to-start-lifting-when-you-are-out-of-shape",
+    "primary_keyword": "how to start lifting weights out of shape",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Teach beginners how to start lifting when they are out of shape with a small plan, manageable choices, and one way to avoid doing too much too soon."
+  },
+  {
+    "title": "How to Restart Lifting After a Long Break",
+    "status": "ready",
+    "publish_date": "2026-06-11",
+    "slug": "how-to-restart-lifting-after-a-long-break",
+    "primary_keyword": "restart weight lifting after a break",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Teach beginners how to restart lifting after a long break with a small plan, manageable choices, and one way to avoid doing too much too soon."
+  },
+  {
+    "title": "A Simple 3-Day Beginner Lifting Plan",
+    "status": "ready",
+    "publish_date": "2026-06-12",
+    "slug": "a-simple-3-day-beginner-lifting-plan",
+    "primary_keyword": "3 day beginner lifting plan",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Give beginners a basic weekly lifting plan with enough structure to follow and enough flexibility to repeat."
+  },
+  {
+    "title": "How to Pick Exercises Without Overthinking It",
+    "status": "ready",
+    "publish_date": "2026-06-13",
+    "slug": "how-to-pick-exercises-without-overthinking-it",
+    "primary_keyword": "how to pick exercises without overthinking it",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Teach beginners how to pick exercises without overthinking it with a small plan, manageable choices, and one way to avoid doing too much too soon."
+  },
+  {
+    "title": "Free Weights vs Machines for Beginners",
+    "status": "ready",
+    "publish_date": "2026-06-14",
+    "slug": "free-weights-vs-machines-for-beginners",
+    "primary_keyword": "free weights vs machines for beginners",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Compare free weights and machines without taking sides, helping beginners choose the option that feels safe, clear, and repeatable."
+  },
+  {
+    "title": "How to Use Machines Without Feeling Lost",
+    "status": "ready",
+    "publish_date": "2026-06-15",
+    "slug": "how-to-use-machines-without-feeling-lost",
+    "primary_keyword": "how to use machines without feeling lost",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Teach beginners how to use machines without feeling lost with a small plan, manageable choices, and one way to avoid doing too much too soon."
+  },
+  {
+    "title": "How to Read a Workout Plan for the First Time",
+    "status": "ready",
+    "publish_date": "2026-06-16",
+    "slug": "how-to-read-a-workout-plan-for-the-first-time",
+    "primary_keyword": "how to read a workout plan for the first time",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Teach beginners how to read a workout plan for the first time with a small plan, manageable choices, and one way to avoid doing too much too soon."
+  },
+  {
+    "title": "What Sets and Reps Mean",
+    "status": "ready",
+    "publish_date": "2026-06-17",
+    "slug": "what-sets-and-reps-mean",
+    "primary_keyword": "sets and reps for beginners",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Answer the beginner question about what sets and reps mean in plain language, then give one practical step they can use before the next workout."
+  },
+  {
+    "title": "How Many Reps Should Beginners Do?",
+    "status": "ready",
+    "publish_date": "2026-06-18",
+    "slug": "how-many-reps-should-beginners-do",
+    "primary_keyword": "how many reps should beginners do",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Give beginners a realistic weekly lifting frequency, explain why repeatability matters, and show how to track the plan."
+  },
+  {
+    "title": "How Many Sets Should Beginners Do?",
+    "status": "ready",
+    "publish_date": "2026-06-19",
+    "slug": "how-many-sets-should-beginners-do",
+    "primary_keyword": "how many sets should beginners do",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Give beginners a realistic weekly lifting frequency, explain why repeatability matters, and show how to track the plan."
+  },
+  {
+    "title": "How Long Should a Beginner Workout Be?",
+    "status": "ready",
+    "publish_date": "2026-06-20",
+    "slug": "how-long-should-a-beginner-workout-be",
+    "primary_keyword": "how long should a beginner workout be",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Teach beginners how to how long should a beginner workout be with a small plan, manageable choices, and one way to avoid doing too much too soon."
+  },
+  {
+    "title": "Full-Body Workouts vs Split Routines for Beginners",
+    "status": "ready",
+    "publish_date": "2026-06-21",
+    "slug": "full-body-workouts-vs-split-routines-for-beginners",
+    "primary_keyword": "full body workout vs split routine beginners",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Explain full-body workouts and split routines, then recommend the simpler path for most new lifters."
+  },
+  {
+    "title": "How to Choose Your First Gym Workout",
+    "status": "ready",
+    "publish_date": "2026-06-22",
+    "slug": "how-to-choose-your-first-gym-workout",
+    "primary_keyword": "how to choose your first gym workout",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Teach beginners how to choose their first gym workout with a small plan, manageable choices, and one way to avoid doing too much too soon."
+  },
+  {
+    "title": "What Does Light Weight Actually Mean?",
+    "status": "ready",
+    "publish_date": "2026-06-23",
+    "slug": "what-does-light-weight-actually-mean",
+    "primary_keyword": "what weight should I start lifting",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Answer the beginner question about light weight actually mean in plain language, then give one practical step they can use before the next workout."
+  },
+  {
+    "title": "How to Know If You Are Ready for Barbells",
+    "status": "ready",
+    "publish_date": "2026-06-24",
+    "slug": "how-to-know-if-you-are-ready-for-barbells",
+    "primary_keyword": "how to know if you are ready for barbells",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Teach beginners how to know if they are ready for barbells with a small plan, manageable choices, and one way to avoid doing too much too soon."
+  },
+  {
+    "title": "How to Start With Dumbbells Before Barbells",
+    "status": "ready",
+    "publish_date": "2026-06-25",
+    "slug": "how-to-start-with-dumbbells-before-barbells",
+    "primary_keyword": "how to start with dumbbells before barbells",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Teach beginners how to start with dumbbells before barbells with a small plan, manageable choices, and one way to avoid doing too much too soon."
+  },
+  {
+    "title": "How to Make Your First Workout Repeatable",
+    "status": "ready",
+    "publish_date": "2026-06-26",
+    "slug": "how-to-make-your-first-workout-repeatable",
+    "primary_keyword": "how to make your first workout repeatable",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Teach beginners how to make their first workout repeatable with a small plan, manageable choices, and one way to avoid doing too much too soon."
+  },
+  {
+    "title": "How to Finish a Workout Without Doing Too Much",
+    "status": "ready",
+    "publish_date": "2026-06-27",
+    "slug": "how-to-finish-a-workout-without-doing-too-much",
+    "primary_keyword": "how to finish a workout without doing too much",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Teach beginners how to finish a workout without doing too much with a small plan, manageable choices, and one way to avoid doing too much too soon."
+  },
+  {
+    "title": "How to Start Lifting at Home With Basic Equipment",
+    "status": "ready",
+    "publish_date": "2026-06-28",
+    "slug": "how-to-start-lifting-at-home-with-basic-equipment",
+    "primary_keyword": "how to start lifting at home with basic equipment",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Teach beginners how to start lifting at home with basic equipment with a small plan, manageable choices, and one way to avoid doing too much too soon."
+  },
+  {
+    "title": "The Beginner's Guide to Gym Etiquette",
+    "status": "ready",
+    "publish_date": "2026-06-29",
+    "slug": "the-beginners-guide-to-gym-etiquette",
+    "primary_keyword": "gym etiquette for beginners",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Teach beginners how to gym etiquette with a small plan, manageable choices, and one way to avoid doing too much too soon."
+  },
+  {
+    "title": "What to Do Before You Touch a Weight",
+    "status": "ready",
+    "publish_date": "2026-06-30",
+    "slug": "what-to-do-before-you-touch-a-weight",
+    "primary_keyword": "what to do before you touch a weight",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Answer the beginner question about do before they touch a weight in plain language, then give one practical step they can use before the next workout."
+  },
+  {
+    "title": "How to Warm Up Before Lifting Weights",
+    "status": "ready",
+    "publish_date": "2026-07-01",
+    "slug": "how-to-warm-up-before-lifting-weights",
+    "primary_keyword": "warm up before lifting weights",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Teach beginners how to warm up before lifting weights with a small plan, manageable choices, and one way to avoid doing too much too soon."
+  },
+  {
+    "title": "How to Cool Down Without Making It Complicated",
+    "status": "ready",
+    "publish_date": "2026-07-02",
+    "slug": "how-to-cool-down-without-making-it-complicated",
+    "primary_keyword": "cool down after lifting weights",
+    "secondary_keywords": [
+      "beginner weight lifting",
+      "how to start lifting weights",
+      "beginner gym workout"
+    ],
+    "angle": "Teach beginners how to cool down without making it complicated with a small plan, manageable choices, and one way to avoid doing too much too soon."
+  },
+  {
+    "title": "How to Stop Feeling Awkward in the Gym",
+    "status": "ready",
+    "publish_date": "2026-07-03",
+    "slug": "how-to-stop-feeling-awkward-in-the-gym",
+    "primary_keyword": "how to stop feeling awkward at the gym",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners stop feeling awkward in the gym by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "What to Do When You Feel Lost in the Weight Room",
+    "status": "ready",
+    "publish_date": "2026-07-04",
+    "slug": "what-to-do-when-you-feel-lost-in-the-weight-room",
+    "primary_keyword": "first time in weight room",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Normalize the awkward moment when beginners face they feel lost in the weight room, then give a calm script or simple action they can use."
+  },
+  {
+    "title": "How to Use the Squat Rack Without Panicking",
+    "status": "ready",
+    "publish_date": "2026-07-05",
+    "slug": "how-to-use-the-squat-rack-without-panicking",
+    "primary_keyword": "how to use the squat rack without panicking",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners use the squat rack without panicking by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Ask for Help at the Gym",
+    "status": "ready",
+    "publish_date": "2026-07-06",
+    "slug": "how-to-ask-for-help-at-the-gym",
+    "primary_keyword": "how to ask for help at the gym",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners ask for help at the gym by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "What to Do When Equipment Is Taken",
+    "status": "ready",
+    "publish_date": "2026-07-07",
+    "slug": "what-to-do-when-equipment-is-taken",
+    "primary_keyword": "what to do when equipment is taken",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Normalize the awkward moment when beginners face equipment is taken, then give a calm script or simple action they can use."
+  },
+  {
+    "title": "How to Stop Comparing Yourself to Stronger Lifters",
+    "status": "ready",
+    "publish_date": "2026-07-08",
+    "slug": "how-to-stop-comparing-yourself-to-stronger-lifters",
+    "primary_keyword": "how to stop comparing yourself to stronger lifters",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners stop comparing yourself to stronger lifters by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Lift When the Gym Is Crowded",
+    "status": "ready",
+    "publish_date": "2026-07-09",
+    "slug": "how-to-lift-when-the-gym-is-crowded",
+    "primary_keyword": "how to lift when the gym is crowded",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners lift when the gym is crowded by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Build Confidence Under the Bar",
+    "status": "ready",
+    "publish_date": "2026-07-10",
+    "slug": "how-to-build-confidence-under-the-bar",
+    "primary_keyword": "how to build confidence under the bar",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners build confidence under the bar by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Handle a Bad Gym Day",
+    "status": "ready",
+    "publish_date": "2026-07-11",
+    "slug": "how-to-handle-a-bad-gym-day",
+    "primary_keyword": "how to handle a bad gym day",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners handle a bad gym day by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Go Back After an Embarrassing Workout",
+    "status": "ready",
+    "publish_date": "2026-07-12",
+    "slug": "how-to-go-back-after-an-embarrassing-workout",
+    "primary_keyword": "how to go back after an embarrassing workout",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners go back after an embarrassing workout by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Train When You Feel Like Everyone Is Watching",
+    "status": "ready",
+    "publish_date": "2026-07-13",
+    "slug": "how-to-train-when-you-feel-like-everyone-is-watching",
+    "primary_keyword": "how to train when you feel like everyone is watching",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners train when they feel like everyone is watching by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "Your First Time Bench Pressing in Public",
+    "status": "ready",
+    "publish_date": "2026-07-14",
+    "slug": "your-first-time-bench-pressing-in-public",
+    "primary_keyword": "your first time bench pressing in public",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Walk beginners through benching in public with a simple setup, a safety check, and permission to start lighter than expected."
+  },
+  {
+    "title": "How to Find Your Spot in the Weight Room",
+    "status": "ready",
+    "publish_date": "2026-07-15",
+    "slug": "how-to-find-your-spot-in-the-weight-room",
+    "primary_keyword": "how to find your spot in the weight room",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners find their spot in the weight room by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Deal With Gym Anxiety Before You Leave the House",
+    "status": "ready",
+    "publish_date": "2026-07-16",
+    "slug": "how-to-deal-with-gym-anxiety-before-you-leave-the-house",
+    "primary_keyword": "gym anxiety",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners deal with gym anxiety before they leave the house by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Make the Weight Room Feel Familiar",
+    "status": "ready",
+    "publish_date": "2026-07-17",
+    "slug": "how-to-make-the-weight-room-feel-familiar",
+    "primary_keyword": "how to make the weight room feel familiar",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners make the weight room feel familiar by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "What Beginners Should Know About Spotters",
+    "status": "ready",
+    "publish_date": "2026-07-18",
+    "slug": "what-beginners-should-know-about-spotters",
+    "primary_keyword": "bench press spotter beginners",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Normalize the awkward moment when beginners face spotters, then give a calm script or simple action they can use."
+  },
+  {
+    "title": "How to Share Equipment Without Making It Weird",
+    "status": "ready",
+    "publish_date": "2026-07-19",
+    "slug": "how-to-share-equipment-without-making-it-weird",
+    "primary_keyword": "how to share equipment without making it weird",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners share equipment without making it weird by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Wait for a Rack Without Feeling Awkward",
+    "status": "ready",
+    "publish_date": "2026-07-20",
+    "slug": "how-to-wait-for-a-rack-without-feeling-awkward",
+    "primary_keyword": "how to wait for a rack without feeling awkward",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners wait for a rack without feeling awkward by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "What to Say When Someone Gives Unwanted Gym Advice",
+    "status": "ready",
+    "publish_date": "2026-07-21",
+    "slug": "what-to-say-when-someone-gives-unwanted-gym-advice",
+    "primary_keyword": "what to say when someone gives unwanted gym advice",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Normalize the awkward moment when beginners face what to say when someone gives unwanted gym advice, then give a calm script or simple action they can use."
+  },
+  {
+    "title": "How to Be a Beginner Without Apologizing",
+    "status": "ready",
+    "publish_date": "2026-07-22",
+    "slug": "how-to-be-a-beginner-without-apologizing",
+    "primary_keyword": "how to be a beginner without apologizing",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners be a beginner without apologizing by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Try a New Exercise Without Feeling Silly",
+    "status": "ready",
+    "publish_date": "2026-07-23",
+    "slug": "how-to-try-a-new-exercise-without-feeling-silly",
+    "primary_keyword": "how to try a new exercise without feeling silly",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners try a new exercise without feeling silly by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Use Headphones and Still Stay Aware",
+    "status": "ready",
+    "publish_date": "2026-07-24",
+    "slug": "how-to-use-headphones-and-still-stay-aware",
+    "primary_keyword": "how to use headphones and still stay aware",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners use headphones and still stay aware by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Walk Away From an Exercise That Feels Wrong",
+    "status": "ready",
+    "publish_date": "2026-07-25",
+    "slug": "how-to-walk-away-from-an-exercise-that-feels-wrong",
+    "primary_keyword": "how to walk away from an exercise that feels wrong",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners walk away from an exercise that feels wrong by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Keep Lifting When Confidence Dips",
+    "status": "ready",
+    "publish_date": "2026-07-26",
+    "slug": "how-to-keep-lifting-when-confidence-dips",
+    "primary_keyword": "how to keep lifting when confidence dips",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners keep lifting when confidence dips by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Train Alone When You Are New",
+    "status": "ready",
+    "publish_date": "2026-07-27",
+    "slug": "how-to-train-alone-when-you-are-new",
+    "primary_keyword": "how to train alone when you are new",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners train alone when they are new by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Lift With a Friend Without Turning It Into a Contest",
+    "status": "ready",
+    "publish_date": "2026-07-28",
+    "slug": "how-to-lift-with-a-friend-without-turning-it-into-a-contest",
+    "primary_keyword": "how to lift with a friend without turning it into a contest",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners lift with a friend without turning it into a contest by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Handle Mirrors in the Weight Room",
+    "status": "ready",
+    "publish_date": "2026-07-29",
+    "slug": "how-to-handle-mirrors-in-the-weight-room",
+    "primary_keyword": "how to handle mirrors in the weight room",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners handle mirrors in the weight room by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Stop Rushing Through Sets Because You Feel Awkward",
+    "status": "ready",
+    "publish_date": "2026-07-30",
+    "slug": "how-to-stop-rushing-through-sets-because-you-feel-awkward",
+    "primary_keyword": "how to stop rushing through sets because you feel awkward",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners stop rushing through sets because they feel awkward by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Build a Simple Gym Routine You Trust",
+    "status": "ready",
+    "publish_date": "2026-07-31",
+    "slug": "how-to-build-a-simple-gym-routine-you-trust",
+    "primary_keyword": "how to build a simple gym routine you trust",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners build a simple gym routine they trust by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "How to Make Your Second Gym Visit Easier Than the First",
+    "status": "ready",
+    "publish_date": "2026-08-01",
+    "slug": "how-to-make-your-second-gym-visit-easier-than-the-first",
+    "primary_keyword": "how to make your second gym visit easier than the first",
+    "secondary_keywords": [
+      "gym anxiety",
+      "how to feel comfortable in the gym",
+      "beginner gym confidence"
+    ],
+    "angle": "Help beginners make their second gym visit easier than the first by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+  },
+  {
+    "title": "The Beginner's Guide to Loading a Barbell",
+    "status": "ready",
+    "publish_date": "2026-08-02",
+    "slug": "the-beginners-guide-to-loading-a-barbell",
+    "primary_keyword": "how to load a barbell",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to load a barbell from empty bar to working weight, with simple plate math and a quick safety check."
+  },
+  {
+    "title": "How to Calculate Plates on a Barbell",
+    "status": "ready",
+    "publish_date": "2026-08-03",
+    "slug": "how-to-calculate-plates-on-a-barbell",
+    "primary_keyword": "how to calculate plates on a barbell",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to calculate plates on a barbell with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "What Does the Bar Weigh?",
+    "status": "ready",
+    "publish_date": "2026-08-04",
+    "slug": "what-does-the-bar-weigh",
+    "primary_keyword": "how much does a barbell weigh",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Explain the bar weigh clearly, show the beginner mistake to avoid, and connect the answer to loading the bar correctly."
+  },
+  {
+    "title": "How Much Weight Is on the Bar?",
+    "status": "ready",
+    "publish_date": "2026-08-05",
+    "slug": "how-much-weight-is-on-the-bar",
+    "primary_keyword": "how much weight is on the bar",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to how much weight is on the bar with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "Barbell Plate Math: The Simple Version",
+    "status": "ready",
+    "publish_date": "2026-08-06",
+    "slug": "barbell-plate-math-the-simple-version",
+    "primary_keyword": "barbell plate math",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Explain barbell plate math in simple terms, then show beginners how to check both sides of the bar before lifting."
+  },
+  {
+    "title": "How to Use a Barbell Plate Calculator",
+    "status": "ready",
+    "publish_date": "2026-08-07",
+    "slug": "how-to-use-a-barbell-plate-calculator",
+    "primary_keyword": "barbell plate calculator",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to use a barbell plate calculator with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "How to Load a 45-Pound Barbell",
+    "status": "ready",
+    "publish_date": "2026-08-08",
+    "slug": "how-to-load-a-45-pound-barbell",
+    "primary_keyword": "45 pound barbell calculator",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to load a 45-pound barbell with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "How to Load a 35-Pound Barbell",
+    "status": "ready",
+    "publish_date": "2026-08-09",
+    "slug": "how-to-load-a-35-pound-barbell",
+    "primary_keyword": "35 pound barbell plate calculator",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to load a 35-pound barbell with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "How to Load a 15-Pound Training Bar",
+    "status": "ready",
+    "publish_date": "2026-08-10",
+    "slug": "how-to-load-a-15-pound-training-bar",
+    "primary_keyword": "training bar plate calculator",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to load a 15-pound training bar with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "Pounds vs Kilograms in the Gym",
+    "status": "ready",
+    "publish_date": "2026-08-11",
+    "slug": "pounds-vs-kilograms-in-the-gym",
+    "primary_keyword": "pounds vs kilograms gym",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Compare the plate types in simple terms so beginners know what to use, what not to worry about, and how to load the bar."
+  },
+  {
+    "title": "How to Convert Pounds to Plates",
+    "status": "ready",
+    "publish_date": "2026-08-12",
+    "slug": "how-to-convert-pounds-to-plates",
+    "primary_keyword": "pounds to plates calculator",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to convert pounds to plates with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "How to Convert Kilograms to Plates",
+    "status": "ready",
+    "publish_date": "2026-08-13",
+    "slug": "how-to-convert-kilograms-to-plates",
+    "primary_keyword": "kg plate calculator",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to convert kilograms to plates with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "What Are Change Plates?",
+    "status": "ready",
+    "publish_date": "2026-08-14",
+    "slug": "what-are-change-plates",
+    "primary_keyword": "what are change plates",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Explain change plates clearly, show the beginner mistake to avoid, and connect the answer to loading the bar correctly."
+  },
+  {
+    "title": "Why Small Plates Matter More Than Beginners Think",
+    "status": "ready",
+    "publish_date": "2026-08-15",
+    "slug": "why-small-plates-matter-more-than-beginners-think",
+    "primary_keyword": "why small plates matter more than beginners think",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Explain small plates matter more than beginners think during a real workout and show how less plate confusion leads to smoother sets."
+  },
+  {
+    "title": "How to Make Small Weight Jumps",
+    "status": "ready",
+    "publish_date": "2026-08-16",
+    "slug": "how-to-make-small-weight-jumps",
+    "primary_keyword": "how to make small weight jumps",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to make small weight jumps with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "How to Choose the Right Plates for Each Side",
+    "status": "ready",
+    "publish_date": "2026-08-17",
+    "slug": "how-to-choose-the-right-plates-for-each-side",
+    "primary_keyword": "how to choose the right plates for each side",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to choose the right plates for each side with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "How to Avoid Loading One Side Wrong",
+    "status": "ready",
+    "publish_date": "2026-08-18",
+    "slug": "how-to-avoid-loading-one-side-wrong",
+    "primary_keyword": "how to avoid loading one side wrong",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to avoid loading one side wrong with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "How to Check Barbell Weight Before You Lift",
+    "status": "ready",
+    "publish_date": "2026-08-19",
+    "slug": "how-to-check-barbell-weight-before-you-lift",
+    "primary_keyword": "how to check barbell weight before you lift",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to check barbell weight before they lift with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "The Plate Math Mistake That Slows Down New Lifters",
+    "status": "ready",
+    "publish_date": "2026-08-20",
+    "slug": "the-plate-math-mistake-that-slows-down-new-lifters",
+    "primary_keyword": "the plate math mistake that slows down new lifters",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to the plate math mistake that slows down new lifters with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "Why Plate Math Feels Hard When You Are New",
+    "status": "ready",
+    "publish_date": "2026-08-21",
+    "slug": "why-plate-math-feels-hard-when-you-are-new",
+    "primary_keyword": "why plate math feels hard when you are new",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Explain plate math feels hard when they are new during a real workout and show how less plate confusion leads to smoother sets."
+  },
+  {
+    "title": "How to Load Warm-Up Sets Without Guessing",
+    "status": "ready",
+    "publish_date": "2026-08-22",
+    "slug": "how-to-load-warm-up-sets-without-guessing",
+    "primary_keyword": "warm up set calculator",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to load warm-up sets without guessing with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "How to Plan Plate Changes Before Your Set",
+    "status": "ready",
+    "publish_date": "2026-08-23",
+    "slug": "how-to-plan-plate-changes-before-your-set",
+    "primary_keyword": "how to plan plate changes before your set",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to plan plate changes before their set with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "How to Load the Bar Faster During Busy Gym Hours",
+    "status": "ready",
+    "publish_date": "2026-08-24",
+    "slug": "how-to-load-the-bar-faster-during-busy-gym-hours",
+    "primary_keyword": "how to load the bar faster during busy gym hours",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to load the bar faster during busy gym hours with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "What to Do When Your Gym Has Weird Plates",
+    "status": "ready",
+    "publish_date": "2026-08-25",
+    "slug": "what-to-do-when-your-gym-has-weird-plates",
+    "primary_keyword": "what to do when your gym has weird plates",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Explain their gym has weird plates clearly, show the beginner mistake to avoid, and connect the answer to loading the bar correctly."
+  },
+  {
+    "title": "How to Count Plates Without Losing Track",
+    "status": "ready",
+    "publish_date": "2026-08-26",
+    "slug": "how-to-count-plates-without-losing-track",
+    "primary_keyword": "how to count plates without losing track",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to count plates without losing track with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "How to Use Collars on a Barbell",
+    "status": "ready",
+    "publish_date": "2026-08-27",
+    "slug": "how-to-use-collars-on-a-barbell",
+    "primary_keyword": "how to use collars on a barbell",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to use collars on a barbell with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "When to Use Bumper Plates",
+    "status": "ready",
+    "publish_date": "2026-08-28",
+    "slug": "when-to-use-bumper-plates",
+    "primary_keyword": "when to use bumper plates",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to use bumper plates with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "Steel Plates vs Bumper Plates for Beginners",
+    "status": "ready",
+    "publish_date": "2026-08-29",
+    "slug": "steel-plates-vs-bumper-plates-for-beginners",
+    "primary_keyword": "steel plates vs bumper plates for beginners",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Compare the plate types in simple terms so beginners know what to use, what not to worry about, and how to load the bar."
+  },
+  {
+    "title": "How to Tell If a Barbell Is Olympic Size",
+    "status": "ready",
+    "publish_date": "2026-08-30",
+    "slug": "how-to-tell-if-a-barbell-is-olympic-size",
+    "primary_keyword": "how to tell if a barbell is olympic size",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to tell if a barbell is olympic size with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "What Is the Empty Bar Weight?",
+    "status": "ready",
+    "publish_date": "2026-08-31",
+    "slug": "what-is-the-empty-bar-weight",
+    "primary_keyword": "empty bar weight",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Explain the empty bar weight clearly, show the beginner mistake to avoid, and connect the answer to loading the bar correctly."
+  },
+  {
+    "title": "Why the Bar Counts as Weight",
+    "status": "ready",
+    "publish_date": "2026-09-01",
+    "slug": "why-the-bar-counts-as-weight",
+    "primary_keyword": "why the bar counts as weight",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Explain the bar counts as weight during a real workout and show how less plate confusion leads to smoother sets."
+  },
+  {
+    "title": "How to Load Uneven Plate Sizes Correctly",
+    "status": "ready",
+    "publish_date": "2026-09-02",
+    "slug": "how-to-load-uneven-plate-sizes-correctly",
+    "primary_keyword": "how to load uneven plate sizes correctly",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to load uneven plate sizes correctly with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "How to Avoid Re-Math Between Sets",
+    "status": "ready",
+    "publish_date": "2026-09-03",
+    "slug": "how-to-avoid-re-math-between-sets",
+    "primary_keyword": "how to avoid re-math between sets",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to avoid re-math between sets with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "How to Teach Yourself Barbell Math",
+    "status": "ready",
+    "publish_date": "2026-09-04",
+    "slug": "how-to-teach-yourself-barbell-math",
+    "primary_keyword": "how to teach yourself barbell math",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to teach yourself barbell math with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "How to Stop Plate Math From Breaking Your Focus",
+    "status": "ready",
+    "publish_date": "2026-09-05",
+    "slug": "how-to-stop-plate-math-from-breaking-your-focus",
+    "primary_keyword": "how to stop plate math from breaking your focus",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Teach beginners how to stop plate math from breaking their focus with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+  },
+  {
+    "title": "How to Know When to Add More Weight",
+    "status": "ready",
+    "publish_date": "2026-09-06",
+    "slug": "how-to-know-when-to-add-more-weight",
+    "primary_keyword": "when to add more weight lifting",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners a simple decision rule for adding weight: good form, completed reps, controlled effort, and notes from previous sessions."
+  },
+  {
+    "title": "What Is Progressive Overload?",
+    "status": "ready",
+    "publish_date": "2026-09-07",
+    "slug": "what-is-progressive-overload",
+    "primary_keyword": "progressive overload for beginners",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Answer what progressive overload means for beginners, then turn the idea into a simple tracking rule they can actually use."
+  },
+  {
+    "title": "How to Track Your Workouts Without Making It Complicated",
+    "status": "ready",
+    "publish_date": "2026-09-08",
+    "slug": "how-to-track-your-workouts-without-making-it-complicated",
+    "primary_keyword": "how to track workouts",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to track their workouts without making it complicated with simple workout notes, repeatable decisions, and a clear next-session plan."
   },
   {
     "title": "Why Tracking Your Sets Helps You Get Stronger",
     "status": "ready",
-    "publish_date": "2026-06-10",
+    "publish_date": "2026-09-09",
     "slug": "why-tracking-your-sets-helps-you-get-stronger",
-    "primary_keyword": "why track your sets",
+    "primary_keyword": "weight lifting tracker",
     "secondary_keywords": [
       "workout tracker",
       "weight lifting tracker",
-      "strength training tracker"
+      "strength training progress"
     ],
-    "angle": "Explain how tracking sets, reps, and weight helps lifters remember what they did, repeat useful work, and make small progress decisions."
+    "angle": "Explain tracking their sets helps they get stronger for progress, then show how a workout log turns vague effort into useful information."
   },
   {
-    "title": "The Simple Way to Make Lifting a Habit",
+    "title": "How to Track Strength Progress",
     "status": "ready",
-    "publish_date": "2026-06-11",
-    "slug": "simple-way-to-make-lifting-a-habit",
-    "primary_keyword": "make lifting a habit",
+    "publish_date": "2026-09-10",
+    "slug": "how-to-track-strength-progress",
+    "primary_keyword": "how to track weight lifting progress",
     "secondary_keywords": [
-      "weight lifting habit",
-      "beginner weight lifting",
-      "how to stay consistent with workouts"
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
     ],
-    "angle": "Focus on making lifting easy to repeat: smaller workouts, fewer decisions, simple tracking, and a plan that does not require motivation to be perfect."
+    "angle": "Teach beginners how to track strength progress with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Know If Your Workout Is Working",
+    "status": "ready",
+    "publish_date": "2026-09-11",
+    "slug": "how-to-know-if-your-workout-is-working",
+    "primary_keyword": "strength training progress",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to know if their workout is working with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "Why Random Workouts Make Progress Harder",
+    "status": "ready",
+    "publish_date": "2026-09-12",
+    "slug": "why-random-workouts-make-progress-harder",
+    "primary_keyword": "why random workouts make progress harder",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Explain random workouts make progress harder for progress, then show how a workout log turns vague effort into useful information."
+  },
+  {
+    "title": "How to Use Last Week's Numbers Today",
+    "status": "ready",
+    "publish_date": "2026-09-13",
+    "slug": "how-to-use-last-weeks-numbers-today",
+    "primary_keyword": "how to use last weeks numbers today",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to use last week's numbers today with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Pick Your Next Workout Weight",
+    "status": "ready",
+    "publish_date": "2026-09-14",
+    "slug": "how-to-pick-your-next-workout-weight",
+    "primary_keyword": "how to pick your next workout weight",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to pick their next workout weight with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Add Weight Without Rushing",
+    "status": "ready",
+    "publish_date": "2026-09-15",
+    "slug": "how-to-add-weight-without-rushing",
+    "primary_keyword": "how to add weight without rushing",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to add weight without rushing with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "What to Do When You Cannot Add Weight Yet",
+    "status": "ready",
+    "publish_date": "2026-09-16",
+    "slug": "what-to-do-when-you-cannot-add-weight-yet",
+    "primary_keyword": "what to do when you cannot add weight yet",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Answer what they cannot add weight yet means for beginners, then turn the idea into a simple tracking rule they can actually use."
+  },
+  {
+    "title": "How to Track Reps When Sets Feel Different",
+    "status": "ready",
+    "publish_date": "2026-09-17",
+    "slug": "how-to-track-reps-when-sets-feel-different",
+    "primary_keyword": "how to track reps when sets feel different",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to track reps when sets feel different with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Track RPE Without Overthinking It",
+    "status": "ready",
+    "publish_date": "2026-09-18",
+    "slug": "how-to-track-rpe-without-overthinking-it",
+    "primary_keyword": "how to track rpe without overthinking it",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to track rpe without overthinking it with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "What Does Leaving Reps in the Tank Mean?",
+    "status": "ready",
+    "publish_date": "2026-09-19",
+    "slug": "what-does-leaving-reps-in-the-tank-mean",
+    "primary_keyword": "what does leaving reps in the tank mean",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Answer what leaving reps in the tank mean means for beginners, then turn the idea into a simple tracking rule they can actually use."
+  },
+  {
+    "title": "How to Use a Workout Tracker at the Gym",
+    "status": "ready",
+    "publish_date": "2026-09-20",
+    "slug": "how-to-use-a-workout-tracker-at-the-gym",
+    "primary_keyword": "workout tracker",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to use a workout tracker at the gym with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Review Your Workout History",
+    "status": "ready",
+    "publish_date": "2026-09-21",
+    "slug": "how-to-review-your-workout-history",
+    "primary_keyword": "how to review your workout history",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to review their workout history with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Spot Progress That Is Not on the Scale",
+    "status": "ready",
+    "publish_date": "2026-09-22",
+    "slug": "how-to-spot-progress-that-is-not-on-the-scale",
+    "primary_keyword": "how to spot progress that is not on the scale",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to spot progress that is not on the scale with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "Why Small Progress Still Counts",
+    "status": "ready",
+    "publish_date": "2026-09-23",
+    "slug": "why-small-progress-still-counts",
+    "primary_keyword": "why small progress still counts",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Explain small progress still counts for progress, then show how a workout log turns vague effort into useful information."
+  },
+  {
+    "title": "How to Track Dumbbell Workouts",
+    "status": "ready",
+    "publish_date": "2026-09-24",
+    "slug": "how-to-track-dumbbell-workouts",
+    "primary_keyword": "how to track dumbbell workouts",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to track dumbbell workouts with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Track Barbell Workouts",
+    "status": "ready",
+    "publish_date": "2026-09-25",
+    "slug": "how-to-track-barbell-workouts",
+    "primary_keyword": "how to track barbell workouts",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to track barbell workouts with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Track Machine Exercises",
+    "status": "ready",
+    "publish_date": "2026-09-26",
+    "slug": "how-to-track-machine-exercises",
+    "primary_keyword": "how to track machine exercises",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to track machine exercises with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Track Warm-Up Sets",
+    "status": "ready",
+    "publish_date": "2026-09-27",
+    "slug": "how-to-track-warm-up-sets",
+    "primary_keyword": "how to track warm-up sets",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to track warm-up sets with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "Should You Track Failed Reps?",
+    "status": "ready",
+    "publish_date": "2026-09-28",
+    "slug": "should-you-track-failed-reps",
+    "primary_keyword": "should you track failed reps",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Explain when failed reps are useful to record, when they are just noise, and how beginners can log them without overthinking."
+  },
+  {
+    "title": "How to Handle Missed Reps in Your Log",
+    "status": "ready",
+    "publish_date": "2026-09-29",
+    "slug": "how-to-handle-missed-reps-in-your-log",
+    "primary_keyword": "how to handle missed reps in your log",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to handle missed reps in their log with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Track Rest Times Without Getting Weird About It",
+    "status": "ready",
+    "publish_date": "2026-09-30",
+    "slug": "how-to-track-rest-times-without-getting-weird-about-it",
+    "primary_keyword": "how to track rest times without getting weird about it",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to track rest times without getting weird about it with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Use Notes in Your Workout Log",
+    "status": "ready",
+    "publish_date": "2026-10-01",
+    "slug": "how-to-use-notes-in-your-workout-log",
+    "primary_keyword": "how to use notes in your workout log",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to use notes in their workout log with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Track Form Notes Alongside Weight",
+    "status": "ready",
+    "publish_date": "2026-10-02",
+    "slug": "how-to-track-form-notes-alongside-weight",
+    "primary_keyword": "how to track form notes alongside weight",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to track form notes alongside weight with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Know When to Repeat the Same Weight",
+    "status": "ready",
+    "publish_date": "2026-10-03",
+    "slug": "how-to-know-when-to-repeat-the-same-weight",
+    "primary_keyword": "how to know when to repeat the same weight",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to know when to repeat the same weight with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Break a Beginner Strength Plateau",
+    "status": "ready",
+    "publish_date": "2026-10-04",
+    "slug": "how-to-break-a-beginner-strength-plateau",
+    "primary_keyword": "how to break a beginner strength plateau",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to break a beginner strength plateau with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Progress When Life Gets Busy",
+    "status": "ready",
+    "publish_date": "2026-10-05",
+    "slug": "how-to-progress-when-life-gets-busy",
+    "primary_keyword": "how to progress when life gets busy",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to progress when life gets busy with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Track Workouts After a Week Off",
+    "status": "ready",
+    "publish_date": "2026-10-06",
+    "slug": "how-to-track-workouts-after-a-week-off",
+    "primary_keyword": "how to track workouts after a week off",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to track workouts after a week off with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Reset Your Working Weight",
+    "status": "ready",
+    "publish_date": "2026-10-07",
+    "slug": "how-to-reset-your-working-weight",
+    "primary_keyword": "how to reset your working weight",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to reset their working weight with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Plan a Deload Without Feeling Like You Failed",
+    "status": "ready",
+    "publish_date": "2026-10-08",
+    "slug": "how-to-plan-a-deload-without-feeling-like-you-failed",
+    "primary_keyword": "how to plan a deload without feeling like you failed",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to plan a deload without feeling like they failed with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "When to Increase Reps Instead of Weight",
+    "status": "ready",
+    "publish_date": "2026-10-09",
+    "slug": "when-to-increase-reps-instead-of-weight",
+    "primary_keyword": "when to increase reps instead of weight",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Give beginners a clear rule for increase reps instead of weight, using reps, form, effort, and workout notes instead of guesswork."
+  },
+  {
+    "title": "How to Build a Simple Progression Rule",
+    "status": "ready",
+    "publish_date": "2026-10-10",
+    "slug": "how-to-build-a-simple-progression-rule",
+    "primary_keyword": "how to build a simple progression rule",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to build a simple progression rule with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "What to Do When One Lift Stops Improving",
+    "status": "ready",
+    "publish_date": "2026-10-11",
+    "slug": "what-to-do-when-one-lift-stops-improving",
+    "primary_keyword": "what to do when one lift stops improving",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Answer what one lift stops improving means for beginners, then turn the idea into a simple tracking rule they can actually use."
+  },
+  {
+    "title": "How to Compare Workouts Fairly",
+    "status": "ready",
+    "publish_date": "2026-10-12",
+    "slug": "how-to-compare-workouts-fairly",
+    "primary_keyword": "how to compare workouts fairly",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to compare workouts fairly with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Stop Guessing Your Workout Weight",
+    "status": "ready",
+    "publish_date": "2026-10-13",
+    "slug": "how-to-stop-guessing-your-workout-weight",
+    "primary_keyword": "weight lifting calculator",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to stop guessing their workout weight with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Track Consistency Without Obsessing",
+    "status": "ready",
+    "publish_date": "2026-10-14",
+    "slug": "how-to-track-consistency-without-obsessing",
+    "primary_keyword": "how to track consistency without obsessing",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to track consistency without obsessing with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "How to Use Progress Photos Without Making Them the Whole Point",
+    "status": "ready",
+    "publish_date": "2026-10-15",
+    "slug": "how-to-use-progress-photos-without-making-them-the-whole-point",
+    "primary_keyword": "how to use progress photos without making them the whole point",
+    "secondary_keywords": [
+      "workout tracker",
+      "weight lifting tracker",
+      "strength training progress"
+    ],
+    "angle": "Teach beginners how to use progress photos without making them the whole point with simple workout notes, repeatable decisions, and a clear next-session plan."
+  },
+  {
+    "title": "What Proper Lifting Form Really Means",
+    "status": "ready",
+    "publish_date": "2026-10-16",
+    "slug": "what-proper-lifting-form-really-means",
+    "primary_keyword": "proper lifting form",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Explain what proper lifting form really means without scary language, then give beginners a clear rule for when to adjust or stop."
+  },
+  {
+    "title": "Beginner Squat Form: The Simple Version",
+    "status": "ready",
+    "publish_date": "2026-10-17",
+    "slug": "beginner-squat-form-the-simple-version",
+    "primary_keyword": "beginner squat form",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Break squat form into a few beginner cues, common mistakes, and a simple check before adding more weight."
+  },
+  {
+    "title": "Beginner Bench Press Form: The Simple Version",
+    "status": "ready",
+    "publish_date": "2026-10-18",
+    "slug": "beginner-bench-press-form-the-simple-version",
+    "primary_keyword": "beginner bench press form",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Break bench press form into a few beginner cues, common mistakes, and a simple check before adding more weight."
+  },
+  {
+    "title": "Beginner Deadlift Form: The Simple Version",
+    "status": "ready",
+    "publish_date": "2026-10-19",
+    "slug": "beginner-deadlift-form-the-simple-version",
+    "primary_keyword": "beginner deadlift form",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Break deadlift form into a few beginner cues, common mistakes, and a simple check before adding more weight."
+  },
+  {
+    "title": "Beginner Overhead Press Form: The Simple Version",
+    "status": "ready",
+    "publish_date": "2026-10-20",
+    "slug": "beginner-overhead-press-form-the-simple-version",
+    "primary_keyword": "beginner overhead press form",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Break overhead press form into a few beginner cues, common mistakes, and a simple check before adding more weight."
+  },
+  {
+    "title": "Beginner Row Form: The Simple Version",
+    "status": "ready",
+    "publish_date": "2026-10-21",
+    "slug": "beginner-row-form-the-simple-version",
+    "primary_keyword": "beginner row form",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Break row form into a few beginner cues, common mistakes, and a simple check before adding more weight."
+  },
+  {
+    "title": "Common Beginner Lifting Mistakes",
+    "status": "ready",
+    "publish_date": "2026-10-22",
+    "slug": "common-beginner-lifting-mistakes",
+    "primary_keyword": "common weight lifting mistakes",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to common beginner lifting mistakes using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Know If a Weight Is Too Heavy",
+    "status": "ready",
+    "publish_date": "2026-10-23",
+    "slug": "how-to-know-if-a-weight-is-too-heavy",
+    "primary_keyword": "how to know if weight is too heavy",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to know if a weight is too heavy using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "Why Control Matters More Than Ego",
+    "status": "ready",
+    "publish_date": "2026-10-24",
+    "slug": "why-control-matters-more-than-ego",
+    "primary_keyword": "why control matters more than ego",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Show why control matters more than ego matters more than lifting heavy early, with practical cues beginners can use right away."
+  },
+  {
+    "title": "How to Lift Weights Safely as a Beginner",
+    "status": "ready",
+    "publish_date": "2026-10-25",
+    "slug": "how-to-lift-weights-safely-as-a-beginner",
+    "primary_keyword": "how to lift weights safely",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to lift weights safely as a beginner using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Know If Your Form Is Good",
+    "status": "ready",
+    "publish_date": "2026-10-26",
+    "slug": "how-to-know-if-your-form-is-good",
+    "primary_keyword": "how to know if your form is good",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to know if their form is good using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Use Video for a Form Check",
+    "status": "ready",
+    "publish_date": "2026-10-27",
+    "slug": "how-to-use-video-for-a-form-check",
+    "primary_keyword": "lifting form check video",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to use video for a form check using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Brace Before a Lift",
+    "status": "ready",
+    "publish_date": "2026-10-28",
+    "slug": "how-to-brace-before-a-lift",
+    "primary_keyword": "how to brace before a lift",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to brace before a lift using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "What Tempo Means in Lifting",
+    "status": "ready",
+    "publish_date": "2026-10-29",
+    "slug": "what-tempo-means-in-lifting",
+    "primary_keyword": "what tempo means in lifting",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Explain what tempo means in lifting without scary language, then give beginners a clear rule for when to adjust or stop."
+  },
+  {
+    "title": "How Low Should You Squat?",
+    "status": "ready",
+    "publish_date": "2026-10-30",
+    "slug": "how-low-should-you-squat",
+    "primary_keyword": "how low should you squat",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to how low should they squat using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Keep Your Bench Press Steady",
+    "status": "ready",
+    "publish_date": "2026-10-31",
+    "slug": "how-to-keep-your-bench-press-steady",
+    "primary_keyword": "how to keep your bench press steady",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to keep their bench press steady using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Hinge Without Turning It Into a Squat",
+    "status": "ready",
+    "publish_date": "2026-11-01",
+    "slug": "how-to-hinge-without-turning-it-into-a-squat",
+    "primary_keyword": "how to hinge without turning it into a squat",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to hinge without turning it into a squat using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Set Up for a Deadlift",
+    "status": "ready",
+    "publish_date": "2026-11-02",
+    "slug": "how-to-set-up-for-a-deadlift",
+    "primary_keyword": "how to set up for a deadlift",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to set up for a deadlift using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Set Up for a Bench Press",
+    "status": "ready",
+    "publish_date": "2026-11-03",
+    "slug": "how-to-set-up-for-a-bench-press",
+    "primary_keyword": "how to set up for a bench press",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to set up for a bench press using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Set Up for a Squat",
+    "status": "ready",
+    "publish_date": "2026-11-04",
+    "slug": "how-to-set-up-for-a-squat",
+    "primary_keyword": "how to set up for a squat",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to set up for a squat using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Set Up for an Overhead Press",
+    "status": "ready",
+    "publish_date": "2026-11-05",
+    "slug": "how-to-set-up-for-an-overhead-press",
+    "primary_keyword": "how to set up for an overhead press",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to set up for an overhead press using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Use Safety Pins in a Rack",
+    "status": "ready",
+    "publish_date": "2026-11-06",
+    "slug": "how-to-use-safety-pins-in-a-rack",
+    "primary_keyword": "how to use safety pins in a rack",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to use safety pins in a rack using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Fail a Squat Safely",
+    "status": "ready",
+    "publish_date": "2026-11-07",
+    "slug": "how-to-fail-a-squat-safely",
+    "primary_keyword": "how to fail a squat safely",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to fail a squat safely using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Fail a Bench Press Safely",
+    "status": "ready",
+    "publish_date": "2026-11-08",
+    "slug": "how-to-fail-a-bench-press-safely",
+    "primary_keyword": "how to fail a bench press safely",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to fail a bench press safely using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "When to Stop a Set Early",
+    "status": "ready",
+    "publish_date": "2026-11-09",
+    "slug": "when-to-stop-a-set-early",
+    "primary_keyword": "when to stop a set early",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners when to stop a set early by watching form, speed, and confidence instead of trying to win every set."
+  },
+  {
+    "title": "What Sharp Pain Means During Lifting",
+    "status": "ready",
+    "publish_date": "2026-11-10",
+    "slug": "what-sharp-pain-means-during-lifting",
+    "primary_keyword": "what sharp pain means during lifting",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Explain what sharp pain means during lifting without scary language, then give beginners a clear rule for when to adjust or stop."
+  },
+  {
+    "title": "Soreness vs Pain After Lifting",
+    "status": "ready",
+    "publish_date": "2026-11-11",
+    "slug": "soreness-vs-pain-after-lifting",
+    "primary_keyword": "soreness vs pain after lifting",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to soreness vs pain after lifting using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Recover Between Workouts",
+    "status": "ready",
+    "publish_date": "2026-11-12",
+    "slug": "how-to-recover-between-workouts",
+    "primary_keyword": "how to recover between workouts",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to recover between workouts using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Keep Your Joints Happy While Lifting",
+    "status": "ready",
+    "publish_date": "2026-11-13",
+    "slug": "how-to-keep-your-joints-happy-while-lifting",
+    "primary_keyword": "how to keep your joints happy while lifting",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to keep their joints happy while lifting using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "Why Range of Motion Matters",
+    "status": "ready",
+    "publish_date": "2026-11-14",
+    "slug": "why-range-of-motion-matters",
+    "primary_keyword": "why range of motion matters",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Show why range of motion matters matters more than lifting heavy early, with practical cues beginners can use right away."
+  },
+  {
+    "title": "How to Use Machines With Good Form",
+    "status": "ready",
+    "publish_date": "2026-11-15",
+    "slug": "how-to-use-machines-with-good-form",
+    "primary_keyword": "how to use machines with good form",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to use machines with good form using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Adjust a Bench Before You Lift",
+    "status": "ready",
+    "publish_date": "2026-11-16",
+    "slug": "how-to-adjust-a-bench-before-you-lift",
+    "primary_keyword": "how to adjust a bench before you lift",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to adjust a bench before they lift using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Grip the Bar Without Overthinking It",
+    "status": "ready",
+    "publish_date": "2026-11-17",
+    "slug": "how-to-grip-the-bar-without-overthinking-it",
+    "primary_keyword": "how to grip the bar without overthinking it",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to grip the bar without overthinking it using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Keep Your Back From Rounding Too Much",
+    "status": "ready",
+    "publish_date": "2026-11-18",
+    "slug": "how-to-keep-your-back-from-rounding-too-much",
+    "primary_keyword": "how to keep your back from rounding too much",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to keep their back from rounding too much using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "How to Slow Down Your Reps and Learn Control",
+    "status": "ready",
+    "publish_date": "2026-11-19",
+    "slug": "how-to-slow-down-your-reps-and-learn-control",
+    "primary_keyword": "how to slow down your reps and learn control",
+    "secondary_keywords": [
+      "proper lifting form",
+      "how to lift weights safely",
+      "beginner lifting form"
+    ],
+    "angle": "Teach beginners how to slow down their reps and learn control using simple setup cues, lighter practice reps, and notes they can review next time."
+  },
+  {
+    "title": "Strength Training for Long-Term Health",
+    "status": "ready",
+    "publish_date": "2026-11-20",
+    "slug": "strength-training-for-long-term-health",
+    "primary_keyword": "strength training for long term health",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Explain strength training as a long-term health habit, using safe claims and practical steps for adults who just want to feel stronger."
+  },
+  {
+    "title": "Resistance Training for Adults Over 40",
+    "status": "ready",
+    "publish_date": "2026-11-21",
+    "slug": "resistance-training-for-adults-over-40",
+    "primary_keyword": "strength training over 40",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Explain resistance training for adults over 40 in beginner-friendly terms, with practical steps and a natural link to simple workout tracking."
+  },
+  {
+    "title": "Why Strength Training Matters More as You Get Older",
+    "status": "ready",
+    "publish_date": "2026-11-22",
+    "slug": "why-strength-training-matters-more-as-you-get-older",
+    "primary_keyword": "strength training as you age",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Explain strength training and aging without hype, then give beginners a simple way to start building a repeatable habit."
+  },
+  {
+    "title": "Why Muscle Matters as You Age",
+    "status": "ready",
+    "publish_date": "2026-11-23",
+    "slug": "why-muscle-matters-as-you-age",
+    "primary_keyword": "why muscle matters as you age",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Explain muscle matters as they age without hype, using safe health claims and a simple strength habit beginners can keep."
+  },
+  {
+    "title": "How Strength Helps Everyday Life",
+    "status": "ready",
+    "publish_date": "2026-11-24",
+    "slug": "how-strength-helps-everyday-life",
+    "primary_keyword": "strength training for daily life",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults how strength helps everyday life with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "Lifting Weights Without Feeling Like an Athlete",
+    "status": "ready",
+    "publish_date": "2026-11-25",
+    "slug": "lifting-weights-without-feeling-like-an-athlete",
+    "primary_keyword": "lifting weights without feeling like an athlete",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Explain lifting weights without feeling like an athlete in beginner-friendly terms, with practical steps and a natural link to simple workout tracking."
+  },
+  {
+    "title": "How to Make Lifting a Habit",
+    "status": "ready",
+    "publish_date": "2026-11-26",
+    "slug": "how-to-make-lifting-a-habit",
+    "primary_keyword": "how to make lifting a habit",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults make lifting a habit with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "How to Keep Lifting Simple When Life Gets Busy",
+    "status": "ready",
+    "publish_date": "2026-11-27",
+    "slug": "how-to-keep-lifting-simple-when-life-gets-busy",
+    "primary_keyword": "how to keep lifting simple when life gets busy",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults keep lifting simple when life gets busy with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "What to Do When You Miss a Workout",
+    "status": "ready",
+    "publish_date": "2026-11-28",
+    "slug": "what-to-do-when-you-miss-a-workout",
+    "primary_keyword": "what to do when you miss a workout",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Explain they miss a workout in plain language, separate normal discomfort from warning signs, and give a calm plan for next time."
+  },
+  {
+    "title": "How to Come Back After Two Weeks Off",
+    "status": "ready",
+    "publish_date": "2026-11-29",
+    "slug": "how-to-come-back-after-two-weeks-off",
+    "primary_keyword": "how to come back after two weeks off",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults come back after two weeks off with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "How to Start Lifting With Low Energy",
+    "status": "ready",
+    "publish_date": "2026-11-30",
+    "slug": "how-to-start-lifting-with-low-energy",
+    "primary_keyword": "how to start lifting with low energy",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults start lifting with low energy with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "How to Build a Workout Routine Around Work",
+    "status": "ready",
+    "publish_date": "2026-12-01",
+    "slug": "how-to-build-a-workout-routine-around-work",
+    "primary_keyword": "how to build a workout routine around work",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults build a workout routine around work with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "How Parents Can Start Strength Training",
+    "status": "ready",
+    "publish_date": "2026-12-02",
+    "slug": "how-parents-can-start-strength-training",
+    "primary_keyword": "how parents can start strength training",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults how parents can start strength training with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "How to Lift When You Only Have 30 Minutes",
+    "status": "ready",
+    "publish_date": "2026-12-03",
+    "slug": "how-to-lift-when-you-only-have-30-minutes",
+    "primary_keyword": "how to lift when you only have 30 minutes",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults lift when they only have 30 minutes with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "How to Make Two Days a Week Work",
+    "status": "ready",
+    "publish_date": "2026-12-04",
+    "slug": "how-to-make-two-days-a-week-work",
+    "primary_keyword": "strength training two days a week",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults make two days a week work with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "Why Consistency Beats Perfect Programming",
+    "status": "ready",
+    "publish_date": "2026-12-05",
+    "slug": "why-consistency-beats-perfect-programming",
+    "primary_keyword": "why consistency beats perfect programming",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Explain consistency beats perfect programming without hype, using safe health claims and a simple strength habit beginners can keep."
+  },
+  {
+    "title": "How to Stay Patient With Strength Training",
+    "status": "ready",
+    "publish_date": "2026-12-06",
+    "slug": "how-to-stay-patient-with-strength-training",
+    "primary_keyword": "how to stay patient with strength training",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults stay patient with strength training with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "How to Build Strength Without Chasing Soreness",
+    "status": "ready",
+    "publish_date": "2026-12-07",
+    "slug": "how-to-build-strength-without-chasing-soreness",
+    "primary_keyword": "how to build strength without chasing soreness",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults build strength without chasing soreness with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "What Soreness Means After Lifting",
+    "status": "ready",
+    "publish_date": "2026-12-08",
+    "slug": "what-soreness-means-after-lifting",
+    "primary_keyword": "what soreness means after lifting",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Explain what soreness means after lifting in plain language, separate normal discomfort from warning signs, and give a calm plan for next time."
+  },
+  {
+    "title": "How Sleep Affects Your Workouts",
+    "status": "ready",
+    "publish_date": "2026-12-09",
+    "slug": "how-sleep-affects-your-workouts",
+    "primary_keyword": "how sleep affects your workouts",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults how sleep affects their workouts with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "How Eating Enough Supports Lifting",
+    "status": "ready",
+    "publish_date": "2026-12-10",
+    "slug": "how-eating-enough-supports-lifting",
+    "primary_keyword": "how eating enough supports lifting",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults how eating enough supports lifting with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "How Hydration Fits Into Strength Training",
+    "status": "ready",
+    "publish_date": "2026-12-11",
+    "slug": "how-hydration-fits-into-strength-training",
+    "primary_keyword": "how hydration fits into strength training",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults how hydration fits into strength training with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "How Walking and Lifting Can Work Together",
+    "status": "ready",
+    "publish_date": "2026-12-12",
+    "slug": "how-walking-and-lifting-can-work-together",
+    "primary_keyword": "how walking and lifting can work together",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults how walking and lifting can work together with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "How to Balance Cardio and Lifting",
+    "status": "ready",
+    "publish_date": "2026-12-13",
+    "slug": "how-to-balance-cardio-and-lifting",
+    "primary_keyword": "how to balance cardio and lifting",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults balance cardio and lifting with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "How to Start Strength Training for Better Daily Movement",
+    "status": "ready",
+    "publish_date": "2026-12-14",
+    "slug": "how-to-start-strength-training-for-better-daily-movement",
+    "primary_keyword": "how to start strength training for better daily movement",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults start strength training for better daily movement with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "How to Build Confidence Carrying Groceries, Kids, and Life",
+    "status": "ready",
+    "publish_date": "2026-12-15",
+    "slug": "how-to-build-confidence-carrying-groceries-kids-and-life",
+    "primary_keyword": "how to build confidence carrying groceries, kids, and life",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults build confidence carrying groceries, kids, and life with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "How to Think About Strength After 50",
+    "status": "ready",
+    "publish_date": "2026-12-16",
+    "slug": "how-to-think-about-strength-after-50",
+    "primary_keyword": "how to think about strength after 50",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults think about strength after 50 with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "How to Keep Training When Motivation Drops",
+    "status": "ready",
+    "publish_date": "2026-12-17",
+    "slug": "how-to-keep-training-when-motivation-drops",
+    "primary_keyword": "how to keep training when motivation drops",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults keep training when motivation drops with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "How to Build a Simple Sunday Workout Plan",
+    "status": "ready",
+    "publish_date": "2026-12-18",
+    "slug": "how-to-build-a-simple-sunday-workout-plan",
+    "primary_keyword": "how to build a simple sunday workout plan",
+    "secondary_keywords": [
+      "benefits of strength training",
+      "resistance training for adults",
+      "weight lifting for health"
+    ],
+    "angle": "Help adults build a simple sunday workout plan with a realistic routine, simple expectations, and a focus on strength for normal life."
+  },
+  {
+    "title": "Why Plate Math Should Not Slow Down Your Training",
+    "status": "ready",
+    "publish_date": "2026-12-19",
+    "slug": "why-plate-math-should-not-slow-down-your-training",
+    "primary_keyword": "why plate math should not slow down your training",
+    "secondary_keywords": [
+      "barbell plate calculator",
+      "barbell math",
+      "how to calculate plates on a barbell"
+    ],
+    "angle": "Show how plate math creates friction for beginners and how removing that friction can make workouts smoother and easier to repeat."
   }
 ]
