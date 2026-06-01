@@ -1,0 +1,63 @@
+name: Generate blog draft for review
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 9 * * *"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install blog generator dependencies
+        run: npm ci
+
+      - name: Generate next blog draft
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+        run: node scripts/generate-rackmath-blog.js
+
+      - name: Check for draft changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open draft pull request
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title=$(node -e "const q=require('./content/blog-topic-queue.json'); const item=q.filter(t=>t.status==='drafted' && t.file).sort((a,b)=>String(b.drafted_at||'').localeCompare(String(a.drafted_at||'')))[0]; console.log(item ? item.title : 'Generated RackMath blog draft')")
+          branch="blog-draft-$(date -u +%Y%m%d%H%M%S)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add content/blog-topic-queue.json content/blog
+          git commit -m "Draft blog post: $title"
+          git push --set-upstream origin "$branch"
+          gh pr create \
+            --title "Review blog draft: $title" \
+            --body "This PR contains an AI-generated RackMath blog draft. Review the Markdown in \`content/blog/\`, edit as needed, then merge to approve it for scheduled publishing." \
+            --base main \
+            --head "$branch"
+
+      - name: No ready topics
+        if: steps.changes.outputs.has_changes == 'false'
+        run: echo "No ready topics generated a draft."

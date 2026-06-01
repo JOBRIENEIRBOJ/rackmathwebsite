@@ -33,7 +33,12 @@ Future-dated posts stay hidden until their front matter `date` arrives. To previ
 python3 tools/build_blog.py --include-future
 ```
 
-GitHub Actions runs `.github/workflows/publish-blog.yml` every day at 10:15 UTC. If a post's date is now publishable, the workflow rebuilds the blog pages, updates the archive and sitemap, commits the generated changes, and pushes them to `main`.
+GitHub Actions uses two blog workflows:
+
+- `.github/workflows/generate-blog-draft.yml` creates the next AI-generated Markdown draft and opens a pull request for review.
+- `.github/workflows/publish-blog.yml` runs every day at 10:15 UTC and publishes only approved drafts that have already been merged into `main`.
+
+Review generated drafts in the pull request, edit the Markdown in `content/blog/` if needed, then merge the PR. The post will publish when its front matter `date` is today or earlier.
 
 ## CTA links
 
