@@ -1,0 +1,52 @@
+{
+  "assets": [
+    {
+      "file": "assets/rackmathblue.png",
+      "type": "logo",
+      "dimensions": "1024x1024",
+      "recommendedUse": "Primary app icon, favicon source, small brand marks",
+      "alt": "Rack Math blue logo"
+    },
+    {
+      "file": "assets/rackmathblue-gradient.png",
+      "type": "logo",
+      "dimensions": "1024x1024",
+      "recommendedUse": "Hero brand mark, Open Graph image, premium or polished brand surfaces",
+      "alt": "Rack Math blue gradient logo"
+    },
+    {
+      "file": "assets/rackmathwhite.png",
+      "type": "logo",
+      "dimensions": "1024x1024",
+      "recommendedUse": "Dark backgrounds",
+      "alt": "Rack Math white logo"
+    },
+    {
+      "file": "assets/rackmathblack.png",
+      "type": "logo",
+      "dimensions": "1024x1024",
+      "recommendedUse": "Light backgrounds when a monochrome mark is needed",
+      "alt": "Rack Math black logo"
+    },
+    {
+      "file": "assets/icon-512.png",
+      "type": "app-icon",
+      "dimensions": "512x512",
+      "recommendedUse": "PWA manifest, app icon fallback",
+      "alt": "Rack Math app icon"
+    },
+    {
+      "file": "assets/app-calculator-screenshot.png",
+      "type": "product-screenshot",
+      "dimensions": "433x815",
+      "recommendedUse": "Hero phone mockup or product preview",
+      "alt": "Rack Math calculator screen"
+    }
+  ],
+  "notes": [
+    "Keep product imagery visible in the first viewport on desktop.",
+    "On mobile, prioritize headline, CTA, and a cropped product preview without hiding the primary action.",
+    "Use the blue gradient logo for social previews unless a custom Open Graph image is created."
+  ]
+}
+

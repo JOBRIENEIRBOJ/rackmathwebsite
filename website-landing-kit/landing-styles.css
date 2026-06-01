@@ -1,0 +1,277 @@
+:root {
+  --rm-bg: #f7faff;
+  --rm-surface: #ffffff;
+  --rm-text: #101828;
+  --rm-muted: #526071;
+  --rm-border: #d9e4f2;
+  --rm-blue: #0a6dff;
+  --rm-blue-deep: #084db8;
+  --rm-cyan: #21b7ff;
+  --rm-shadow: 0 18px 60px rgba(20, 54, 100, 0.14);
+}
+
+.rackmath-landing {
+  background: var(--rm-bg);
+  color: var(--rm-text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.rm-hero,
+.rm-feature-band,
+.rm-workflow,
+.rm-premium,
+.rm-faq,
+.rm-final-cta {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 72px 20px;
+}
+
+.rm-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  gap: 48px;
+  align-items: center;
+  min-height: 88vh;
+}
+
+.rm-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--rm-text);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.rm-brand img {
+  border-radius: 12px;
+}
+
+.rm-eyebrow {
+  margin: 28px 0 12px;
+  color: var(--rm-blue-deep);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.rm-hero h1,
+.rm-section-heading h2,
+.rm-premium h2,
+.rm-final-cta h2 {
+  margin: 0;
+  color: var(--rm-text);
+  letter-spacing: 0;
+}
+
+.rm-hero h1 {
+  max-width: 680px;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.96;
+  font-weight: 900;
+}
+
+.rm-hero-body {
+  max-width: 620px;
+  margin: 22px 0 0;
+  color: var(--rm-muted);
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
+
+.rm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.rm-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.rm-button-primary {
+  background: linear-gradient(135deg, var(--rm-blue), var(--rm-cyan));
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(10, 109, 255, 0.28);
+}
+
+.rm-button-secondary {
+  border: 1px solid var(--rm-border);
+  background: var(--rm-surface);
+  color: var(--rm-text);
+}
+
+.rm-proof-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rm-proof-list li {
+  border: 1px solid var(--rm-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 8px 12px;
+  color: var(--rm-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.rm-product-shot {
+  justify-self: center;
+  width: min(100%, 360px);
+  border-radius: 28px;
+  background: #101828;
+  padding: 12px;
+  box-shadow: var(--rm-shadow);
+}
+
+.rm-product-shot img {
+  display: block;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.rm-section-heading {
+  max-width: 720px;
+}
+
+.rm-section-heading h2,
+.rm-premium h2,
+.rm-final-cta h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.04;
+  font-weight: 900;
+}
+
+.rm-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.rm-feature-card,
+.rm-premium,
+.rm-faq details {
+  border: 1px solid var(--rm-border);
+  border-radius: 8px;
+  background: var(--rm-surface);
+}
+
+.rm-feature-card {
+  padding: 22px;
+}
+
+.rm-feature-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.08rem;
+}
+
+.rm-feature-card p,
+.rm-premium p,
+.rm-final-cta p,
+.rm-faq p {
+  color: var(--rm-muted);
+  line-height: 1.6;
+}
+
+.rm-workflow-list {
+  display: grid;
+  gap: 12px;
+  margin: 32px 0 0;
+  padding-left: 22px;
+  color: var(--rm-muted);
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+
+.rm-premium {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 360px);
+  gap: 28px;
+  padding: 36px;
+}
+
+.rm-premium ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--rm-muted);
+  line-height: 1.8;
+}
+
+.rm-faq {
+  display: grid;
+  gap: 12px;
+}
+
+.rm-faq details {
+  padding: 18px 20px;
+}
+
+.rm-faq summary {
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.rm-final-cta {
+  text-align: center;
+}
+
+.rm-final-cta p {
+  margin: 16px auto 24px;
+}
+
+@media (max-width: 820px) {
+  .rm-hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    min-height: auto;
+    padding-top: 36px;
+  }
+
+  .rm-feature-grid,
+  .rm-premium {
+    grid-template-columns: 1fr;
+  }
+
+  .rm-product-shot {
+    width: min(100%, 310px);
+  }
+}
+
+@media (max-width: 520px) {
+  .rm-hero,
+  .rm-feature-band,
+  .rm-workflow,
+  .rm-premium,
+  .rm-faq,
+  .rm-final-cta {
+    padding: 44px 16px;
+  }
+
+  .rm-actions {
+    flex-direction: column;
+  }
+
+  .rm-button {
+    width: 100%;
+  }
+
+  .rm-premium {
+    padding: 24px;
+  }
+}
+

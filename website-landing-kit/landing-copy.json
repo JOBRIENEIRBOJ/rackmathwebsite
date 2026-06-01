@@ -1,0 +1,72 @@
+{
+  "brand": "Rack Math",
+  "seo": {
+    "title": "Rack Math | Barbell Plate Calculator & Workout Tracker",
+    "description": "Rack Math helps lifters calculate barbell plates, follow workouts, import programs, log sets, and track PRs from a fast mobile-first app."
+  },
+  "hero": {
+    "eyebrow": "Barbell plate calculator and workout tracker",
+    "headline": "Load the right plates. Track every set.",
+    "body": "Rack Math turns planned lifts into clear plate math, workout sessions, PRs, and progress insights, so you can stay focused under the bar.",
+    "primaryCta": "Open Rack Math",
+    "secondaryCta": "See how it works",
+    "proofPoints": [
+      "Exact plates per side",
+      "Workout sessions and history",
+      "PRs, muscles, and insights"
+    ]
+  },
+  "features": [
+    {
+      "title": "Plate math without the pause",
+      "body": "Enter the target weight and Rack Math shows the plates to load on each side, with support for custom plates and units."
+    },
+    {
+      "title": "Workouts that move with you",
+      "body": "Run sessions, complete sets, adjust loads, and keep your training day organized from your phone."
+    },
+    {
+      "title": "Progress you can actually review",
+      "body": "Track history, PRs, muscle volume, and workout consistency so your training data stays useful after the lift."
+    }
+  ],
+  "workflow": [
+    "Enter a lift, weight, reps, and sets.",
+    "See the exact plates to load for each set.",
+    "Complete the workout and save your history.",
+    "Review progress, PRs, and training patterns."
+  ],
+  "premium": {
+    "headline": "Built for serious training weeks",
+    "body": "Upgrade when you want imported programs, cloud sync, deeper tracking, and a smoother path from plan to completed workout.",
+    "items": [
+      "Import and run structured workouts",
+      "Sync training across devices",
+      "Unlock deeper progress insights"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Is Rack Math free?",
+      "answer": "Yes. The core plate calculator is designed to be fast and useful before you ever upgrade."
+    },
+    {
+      "question": "Does it work on mobile?",
+      "answer": "Yes. Rack Math is mobile-first and can be installed from supported browsers for quick gym access."
+    },
+    {
+      "question": "Can I use pounds and kilograms?",
+      "answer": "Yes. Rack Math supports common barbell and plate setups for lb and kg training."
+    },
+    {
+      "question": "Can I track full workouts?",
+      "answer": "Yes. Rack Math can log sets, preserve workout history, and help you review progress over time."
+    }
+  ],
+  "finalCta": {
+    "headline": "Spend less time doing plate math.",
+    "body": "Open Rack Math and get your next set loaded.",
+    "button": "Open Rack Math"
+  }
+}
+
