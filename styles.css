@@ -936,6 +936,19 @@ details p {
   justify-content: center;
 }
 
+.legal-links {
+  margin: 22px auto 0;
+  max-width: 620px;
+  font-size: 0.95rem;
+}
+
+.legal-links a {
+  color: var(--white);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .site-footer {
   max-width: var(--max);
   margin: 0 auto;
