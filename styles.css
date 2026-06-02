@@ -973,6 +973,15 @@ details p {
   color: #343d48;
 }
 
+.termly-policy {
+  min-height: 520px;
+}
+
+.termly-policy iframe {
+  width: 100%;
+  border: 0;
+}
+
 .site-footer {
   max-width: var(--max);
   margin: 0 auto;
