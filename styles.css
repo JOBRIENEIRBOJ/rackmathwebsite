@@ -949,6 +949,30 @@ details p {
   text-underline-offset: 3px;
 }
 
+.legal-hero {
+  padding-bottom: 28px;
+}
+
+.legal-page {
+  max-width: 880px;
+  margin-top: 0;
+  line-height: 1.75;
+}
+
+.legal-page h2 {
+  margin-top: 34px;
+  margin-bottom: 10px;
+  font-size: 1.45rem;
+}
+
+.legal-page h2:first-child {
+  margin-top: 0;
+}
+
+.legal-page p {
+  color: #343d48;
+}
+
 .site-footer {
   max-width: var(--max);
   margin: 0 auto;
