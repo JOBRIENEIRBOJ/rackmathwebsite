@@ -1,7 +1,7 @@
 [
   {
     "title": "Your First Week of Weight Lifting: Exactly What to Do",
-    "status": "drafted",
+    "status": "removed",
     "publish_date": "2026-06-03",
     "slug": "your-first-week-of-weight-lifting-exactly-what-to-do",
     "primary_keyword": "first week of weight lifting",
@@ -11,8 +11,8 @@
       "beginner gym workout"
     ],
     "angle": "Give beginners a simple first-week plan with manageable workouts, light starting weights, and a way to track what they did.",
-    "drafted_at": "2026-06-03T17:19:36.053Z",
-    "file": "content/blog/2026-06-03-your-first-week-of-weight-lifting-exactly-what-to-do.md"
+    "removed_at": "2026-06-03T17:39:34.000Z",
+    "removal_reason": "Duplicate of existing published post content/blog/2026-06-02-your-first-week-of-weight-lifting.md"
   },
   {
     "title": "What Weight Should I Start With? A Simple Beginner Guide",
