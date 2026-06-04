@@ -22,7 +22,10 @@
     <meta name="theme-color" content="#0a6dff">
     <link rel="icon" href="assets/rackmathblue.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/rackmathblue.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" as="image" href="assets/blackcalc.png" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/pinkcalc.png">
+    <link rel="preload" as="image" href="assets/whitecalc.png">
+    <link rel="stylesheet" href="styles.css?v=20260604">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -111,13 +114,13 @@
 
         <div class="hero-visual product-gallery" aria-label="Rack Math app screenshots">
           <div class="phone-shot phone-shot-primary">
-            <img src="assets/blackcalc.png" width="310" height="635" alt="Rack Math dark mode calculator showing a deadlift set, rest timer, reps, total weight, and plates per side.">
+            <img src="assets/blackcalc.png" width="310" height="635" alt="Rack Math dark mode calculator showing a deadlift set, rest timer, reps, total weight, and plates per side." fetchpriority="high">
           </div>
           <div class="phone-shot phone-shot-secondary phone-shot-program">
-            <img src="assets/pinkcalc.png" width="285" height="585" alt="Rack Math pink calculator screen showing a deadlift workout and exact plate loading.">
+            <img src="assets/pinkcalc.png" width="285" height="585" alt="Rack Math pink calculator screen showing a deadlift workout and exact plate loading." loading="eager">
           </div>
           <div class="phone-shot phone-shot-secondary phone-shot-light">
-            <img src="assets/whitecalc.png" width="285" height="586" alt="Rack Math light mode calculator screen with exact plate loading for a deadlift set.">
+            <img src="assets/whitecalc.png" width="285" height="586" alt="Rack Math light mode calculator screen with exact plate loading for a deadlift set." loading="eager">
           </div>
         </div>
       </section>

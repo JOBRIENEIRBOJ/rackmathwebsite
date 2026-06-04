@@ -255,7 +255,7 @@ def page_shell(
     <meta name="theme-color" content="#0a6dff">
     <link rel="icon" href="{prefix}assets/rackmathblue.png" type="image/png">
     <link rel="apple-touch-icon" href="{prefix}assets/rackmathblue.png">
-    <link rel="stylesheet" href="{prefix}styles.css">
+    <link rel="stylesheet" href="{prefix}styles.css?v=20260604">
   </head>
   <body>
 {header(current, prefix)}
