@@ -16,7 +16,7 @@
   },
   {
     "title": "What Weight Should I Start With? A Simple Beginner Guide",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-04",
     "slug": "what-weight-should-i-start-with-a-simple-beginner-guide",
     "primary_keyword": "what weight should I start lifting",
@@ -25,7 +25,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Help beginners choose a starting weight they can control, using form, reps, and confidence instead of ego."
+    "angle": "Help beginners choose a starting weight they can control, using form, reps, and confidence instead of ego.",
+    "drafted_at": "2026-06-04T10:29:04.855Z",
+    "file": "content/blog/2026-06-04-what-weight-should-i-start-with-a-simple-beginner-guide.md"
   },
   {
     "title": "How Many Days a Week Should Beginners Lift?",
