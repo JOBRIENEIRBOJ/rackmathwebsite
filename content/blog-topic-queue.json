@@ -31,7 +31,7 @@
   },
   {
     "title": "How Many Days a Week Should Beginners Lift?",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-05",
     "slug": "how-many-days-a-week-should-beginners-lift",
     "primary_keyword": "how many days a week should beginners lift",
@@ -40,7 +40,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Give beginners a realistic weekly lifting frequency, explain why repeatability matters, and show how to track the plan."
+    "angle": "Give beginners a realistic weekly lifting frequency, explain why repeatability matters, and show how to track the plan.",
+    "drafted_at": "2026-06-05T10:34:50.381Z",
+    "file": "content/blog/2026-06-05-how-many-days-a-week-should-beginners-lift.md"
   },
   {
     "title": "Your First Day in the Weight Room: A No-Stress Walkthrough",
