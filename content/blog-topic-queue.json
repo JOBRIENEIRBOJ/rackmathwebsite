@@ -46,7 +46,7 @@
   },
   {
     "title": "Your First Day in the Weight Room: A No-Stress Walkthrough",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-06",
     "slug": "your-first-day-in-the-weight-room-a-no-stress-walkthrough",
     "primary_keyword": "first day in the weight room",
@@ -55,7 +55,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Walk beginners through the first gym visit with a short plan, simple equipment choices, and a calmer way to start."
+    "angle": "Walk beginners through the first gym visit with a short plan, simple equipment choices, and a calmer way to start.",
+    "drafted_at": "2026-06-06T09:53:40.219Z",
+    "file": "content/blog/2026-06-06-your-first-day-in-the-weight-room-a-no-stress-walkthrough.md"
   },
   {
     "title": "What to Bring to the Gym on Your First Day",
