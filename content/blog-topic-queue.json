@@ -61,7 +61,7 @@
   },
   {
     "title": "What to Bring to the Gym on Your First Day",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-07",
     "slug": "what-to-bring-to-the-gym-on-your-first-day",
     "primary_keyword": "what to bring to the gym first day",
@@ -70,7 +70,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Give beginners a simple gym bag checklist and explain what actually matters versus what can wait."
+    "angle": "Give beginners a simple gym bag checklist and explain what actually matters versus what can wait.",
+    "drafted_at": "2026-06-07T21:01:42.462Z",
+    "file": "content/blog/2026-06-07-what-to-bring-to-the-gym-on-your-first-day.md"
   },
   {
     "title": "How to Walk Into the Gym With a Plan",
