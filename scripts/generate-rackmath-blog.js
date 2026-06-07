@@ -28,25 +28,120 @@ function getArgValue(name) {
   return process.argv[index + 1] || null;
 }
 
-function getNextTopic(queuePath) {
+function normalizeKey(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function readExistingPostMeta(blogDir) {
+  const fullDir = path.join(root, blogDir);
+  if (!fs.existsSync(fullDir)) {
+    return [];
+  }
+
+  return fs
+    .readdirSync(fullDir)
+    .filter((fileName) => fileName.endsWith(".md"))
+    .map((fileName) => {
+      const relativePath = path.join(blogDir, fileName);
+      const markdown = readFile(relativePath);
+      return {
+        path: relativePath,
+        title: extractFrontmatterValue(markdown, "title"),
+        slug: extractFrontmatterValue(markdown, "slug")
+      };
+    });
+}
+
+function findDuplicateTopic(topic, existingPosts) {
+  const topicTitle = normalizeKey(topic.title);
+  const topicSlug = normalizeKey(topic.slug);
+
+  return existingPosts.find((post) => {
+    const postTitle = normalizeKey(post.title);
+    const postSlug = normalizeKey(post.slug);
+    return (topicTitle && topicTitle === postTitle) || (topicSlug && topicSlug === postSlug);
+  });
+}
+
+async function readOpenReviewPrTitles() {
+  const repository = process.env.GITHUB_REPOSITORY;
+  const token = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
+
+  if (!repository || !token) {
+    return new Set();
+  }
+
+  const response = await fetch(`https://api.github.com/repos/${repository}/pulls?state=open&per_page=100`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "X-GitHub-Api-Version": "2022-11-28",
+      "User-Agent": "rackmath-blog-generator"
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error(`Could not read open pull requests from GitHub: ${response.status} ${response.statusText}`);
+  }
+
+  const pulls = await response.json();
+  return new Set(
+    pulls
+      .map((pull) => String(pull.title || "").match(/^Review blog draft:\s*(.+)$/i)?.[1])
+      .filter(Boolean)
+      .map(normalizeKey)
+  );
+}
+
+function getNextTopic(queuePath, existingPosts, openReviewPrTitles) {
   const queue = JSON.parse(readFile(queuePath));
   const requestedTitle = getArgValue("--title");
   const requestedId = getArgValue("--id");
 
+  let queueChanged = false;
   const index = queue.findIndex((item) => {
     if (requestedTitle) return item.title === requestedTitle;
     if (requestedId) return item.id === requestedId || item.slug === requestedId;
-    return item.status === "ready";
+    if (item.status !== "ready") return false;
+
+    if (openReviewPrTitles.has(normalizeKey(item.title))) {
+      console.log(`Skipped blog topic "${item.title}" because it already has an open review PR.`);
+      return false;
+    }
+
+    const duplicatePost = findDuplicateTopic(item, existingPosts);
+    if (!duplicatePost) return true;
+
+    item.status = "removed";
+    item.removed_at = new Date().toISOString();
+    item.removal_reason = `Duplicate of existing published post ${duplicatePost.path}`;
+    queueChanged = true;
+    console.log(`Skipped duplicate blog topic "${item.title}" because it matches ${duplicatePost.path}.`);
+    return false;
   });
 
   if (index === -1) {
-    return null;
+    return queueChanged ? { queue, index: -1, topic: null } : null;
+  }
+
+  const duplicatePost = findDuplicateTopic(queue[index], existingPosts);
+  if (duplicatePost) {
+    throw new Error(`Requested blog topic "${queue[index].title}" duplicates existing post ${duplicatePost.path}.`);
+  }
+
+  if (openReviewPrTitles.has(normalizeKey(queue[index].title))) {
+    throw new Error(`Requested blog topic "${queue[index].title}" already has an open review PR.`);
   }
 
   return {
     queue,
     index,
-    topic: queue[index]
+    topic: queue[index],
+    queueChanged
   };
 }
 
@@ -107,10 +202,18 @@ const articleTemplate = readFile(`${promptDir}/rackmath-article-template.md`);
 const editingPrompt = readFile(`${promptDir}/rackmath-editing-proofreading-prompt.md`);
 const citationPrompt = readFile(`${promptDir}/rackmath-citation-checker-prompt.md`);
 
-const nextTopic = getNextTopic(topicQueuePath);
+const existingPosts = readExistingPostMeta(blogOutputDir);
+const openReviewPrTitles = await readOpenReviewPrTitles();
+const nextTopic = getNextTopic(topicQueuePath, existingPosts, openReviewPrTitles);
 
 if (!nextTopic) {
   console.log("No matching ready blog topics found.");
+  process.exit(0);
+}
+
+if (!nextTopic.topic) {
+  writeFile(topicQueuePath, `${JSON.stringify(nextTopic.queue, null, 2)}\n`);
+  console.log("No non-duplicate ready blog topics found.");
   process.exit(0);
 }
 

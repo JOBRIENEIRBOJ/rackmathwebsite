@@ -91,6 +91,38 @@ def load_posts(*, include_future: bool = False, today: date | None = None) -> li
     )
 
 
+def normalize_key(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", value.lower()).strip()
+
+
+def validate_unique_posts(posts: list[Post]) -> None:
+    seen_titles: dict[str, Post] = {}
+    seen_slugs: dict[str, Post] = {}
+
+    for post in posts:
+        title_key = normalize_key(post.title)
+        slug_key = normalize_key(post.slug)
+
+        if title_key in seen_titles:
+            first = seen_titles[title_key]
+            raise ValueError(
+                "Duplicate blog title found: "
+                f"{post.title!r} in {post.source_path.relative_to(ROOT)} "
+                f"matches {first.source_path.relative_to(ROOT)}"
+            )
+
+        if slug_key in seen_slugs:
+            first = seen_slugs[slug_key]
+            raise ValueError(
+                "Duplicate blog slug found: "
+                f"{post.slug!r} in {post.source_path.relative_to(ROOT)} "
+                f"matches {first.source_path.relative_to(ROOT)}"
+            )
+
+        seen_titles[title_key] = post
+        seen_slugs[slug_key] = post
+
+
 def render_inline(text: str) -> str:
     escaped = html.escape(text)
     escaped = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", escaped)
@@ -441,6 +473,7 @@ def main() -> None:
 
     today = datetime.strptime(args.today, "%Y-%m-%d").date() if args.today else None
     posts = load_posts(include_future=args.include_future, today=today)
+    validate_unique_posts(posts)
 
     BLOG_DIR.mkdir(exist_ok=True)
     for generated_page in BLOG_DIR.glob("*.html"):
