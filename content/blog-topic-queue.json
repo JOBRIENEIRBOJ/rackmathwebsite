@@ -76,7 +76,7 @@
   },
   {
     "title": "How to Walk Into the Gym With a Plan",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-08",
     "slug": "how-to-walk-into-the-gym-with-a-plan",
     "primary_keyword": "what to do at the gym first day",
@@ -85,7 +85,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Teach beginners how to enter the gym with a short workout, a backup option, and less decision stress."
+    "angle": "Teach beginners how to enter the gym with a short workout, a backup option, and less decision stress.",
+    "drafted_at": "2026-06-08T10:52:30.154Z",
+    "file": "content/blog/2026-06-08-how-to-walk-into-the-gym-with-a-plan.md"
   },
   {
     "title": "The First 5 Lifts Beginners Should Learn",
