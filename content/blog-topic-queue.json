@@ -91,7 +91,7 @@
   },
   {
     "title": "The First 5 Lifts Beginners Should Learn",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-09",
     "slug": "the-first-5-lifts-beginners-should-learn",
     "primary_keyword": "beginner weight lifting exercises",
@@ -100,7 +100,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Introduce five beginner-friendly lifts, explain what each teaches, and keep the focus on practice instead of showing off."
+    "angle": "Introduce five beginner-friendly lifts, explain what each teaches, and keep the focus on practice instead of showing off.",
+    "drafted_at": "2026-06-09T10:25:37.256Z",
+    "file": "content/blog/2026-06-09-the-first-5-lifts-beginners-should-learn.md"
   },
   {
     "title": "How to Start Lifting When You Are Out of Shape",
