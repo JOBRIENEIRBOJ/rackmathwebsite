@@ -106,7 +106,7 @@
   },
   {
     "title": "How to Start Lifting When You Are Out of Shape",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-10",
     "slug": "how-to-start-lifting-when-you-are-out-of-shape",
     "primary_keyword": "how to start lifting weights out of shape",
@@ -115,7 +115,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Teach beginners how to start lifting when they are out of shape with a small plan, manageable choices, and one way to avoid doing too much too soon."
+    "angle": "Teach beginners how to start lifting when they are out of shape with a small plan, manageable choices, and one way to avoid doing too much too soon.",
+    "drafted_at": "2026-06-10T10:39:01.416Z",
+    "file": "content/blog/2026-06-10-how-to-start-lifting-when-you-are-out-of-shape.md"
   },
   {
     "title": "How to Restart Lifting After a Long Break",
