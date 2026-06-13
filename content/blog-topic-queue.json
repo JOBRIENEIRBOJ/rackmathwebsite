@@ -151,7 +151,7 @@
   },
   {
     "title": "How to Pick Exercises Without Overthinking It",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-13",
     "slug": "how-to-pick-exercises-without-overthinking-it",
     "primary_keyword": "how to pick exercises without overthinking it",
@@ -160,7 +160,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Teach beginners how to pick exercises without overthinking it with a small plan, manageable choices, and one way to avoid doing too much too soon."
+    "angle": "Teach beginners how to pick exercises without overthinking it with a small plan, manageable choices, and one way to avoid doing too much too soon.",
+    "drafted_at": "2026-06-13T10:10:07.049Z",
+    "file": "content/blog/2026-06-13-how-to-pick-exercises-without-overthinking-it.md"
   },
   {
     "title": "Free Weights vs Machines for Beginners",
