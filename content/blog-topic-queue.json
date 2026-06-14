@@ -166,7 +166,7 @@
   },
   {
     "title": "Free Weights vs Machines for Beginners",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-14",
     "slug": "free-weights-vs-machines-for-beginners",
     "primary_keyword": "free weights vs machines for beginners",
@@ -175,7 +175,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Compare free weights and machines without taking sides, helping beginners choose the option that feels safe, clear, and repeatable."
+    "angle": "Compare free weights and machines without taking sides, helping beginners choose the option that feels safe, clear, and repeatable.",
+    "drafted_at": "2026-06-14T10:22:51.303Z",
+    "file": "content/blog/2026-06-14-free-weights-vs-machines-for-beginners.md"
   },
   {
     "title": "How to Use Machines Without Feeling Lost",
