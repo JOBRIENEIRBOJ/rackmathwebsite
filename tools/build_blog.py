@@ -21,6 +21,10 @@ SITE_NAME = "Rack Math"
 BASE_PAGES = [
     ("/", "1.0"),
     ("/tools/", "0.9"),
+    ("/workouts/", "0.9"),
+    ("/exercises/", "0.9"),
+    ("/programs/", "0.8"),
+    ("/for/", "0.8"),
     ("/features.html", "0.8"),
     ("/about.html", "0.7"),
     ("/faq.html", "0.8"),
@@ -197,8 +201,71 @@ def nav(current: str, prefix: str = "") -> str:
         ("AI Workout Builder", f"{prefix}tools/ai-workout-builder.html"),
         ("Workout Plan Importer", f"{prefix}tools/workout-plan-importer.html"),
     ]
+    workout_links = [
+        ("All workouts", f"{prefix}workouts/"),
+        ("3-Day Beginner Full Body", f"{prefix}workouts/3-day-beginner-full-body.html"),
+        ("Beginner Barbell Workout", f"{prefix}workouts/beginner-barbell-workout.html"),
+        ("5x5 Workout Tracker", f"{prefix}workouts/5x5-workout-tracker.html"),
+        ("4-Day Upper Lower", f"{prefix}workouts/4-day-upper-lower.html"),
+        ("Push Pull Legs", f"{prefix}workouts/push-pull-legs.html"),
+        ("Barbell-Only Plan", f"{prefix}workouts/barbell-only-workout-plan.html"),
+        ("Garage Gym Plan", f"{prefix}workouts/garage-gym-workout-plan.html"),
+        ("Beginner Powerlifting", f"{prefix}workouts/beginner-powerlifting-program.html"),
+        ("Strength and Hypertrophy", f"{prefix}workouts/strength-hypertrophy-program.html"),
+        ("2-Day Beginner Strength", f"{prefix}workouts/2-day-beginner-strength-plan.html"),
+        ("First Day at the Gym", f"{prefix}workouts/first-day-at-the-gym-workout.html"),
+        ("Dumbbell and Barbell", f"{prefix}workouts/dumbbell-barbell-workout.html"),
+    ]
+    exercise_links = [
+        ("All exercises", f"{prefix}exercises/"),
+        ("Bench Press", f"{prefix}exercises/bench-press.html"),
+        ("Barbell Squat", f"{prefix}exercises/barbell-squat.html"),
+        ("Deadlift", f"{prefix}exercises/deadlift.html"),
+        ("Overhead Press", f"{prefix}exercises/overhead-press.html"),
+        ("Barbell Row", f"{prefix}exercises/barbell-row.html"),
+        ("Romanian Deadlift", f"{prefix}exercises/romanian-deadlift.html"),
+        ("Front Squat", f"{prefix}exercises/front-squat.html"),
+        ("Incline Bench Press", f"{prefix}exercises/incline-bench-press.html"),
+        ("Close-Grip Bench Press", f"{prefix}exercises/close-grip-bench-press.html"),
+        ("Barbell Hip Thrust", f"{prefix}exercises/barbell-hip-thrust.html"),
+        ("Pull-Up", f"{prefix}exercises/pull-up.html"),
+        ("Lat Pulldown", f"{prefix}exercises/lat-pulldown.html"),
+        ("Dumbbell Bench Press", f"{prefix}exercises/dumbbell-bench-press.html"),
+        ("Goblet Squat", f"{prefix}exercises/goblet-squat.html"),
+        ("Leg Press", f"{prefix}exercises/leg-press.html"),
+        ("Cable Row", f"{prefix}exercises/cable-row.html"),
+        ("Dumbbell Row", f"{prefix}exercises/dumbbell-row.html"),
+        ("Barbell Curl", f"{prefix}exercises/barbell-curl.html"),
+        ("Skull Crusher", f"{prefix}exercises/skull-crusher.html"),
+        ("Bulgarian Split Squat", f"{prefix}exercises/bulgarian-split-squat.html"),
+    ]
+    persona_links = [
+        ("All lifter types", f"{prefix}for/"),
+        ("Garage Gyms", f"{prefix}for/garage-gyms.html"),
+        ("Beginners", f"{prefix}for/beginners.html"),
+        ("Powerlifters", f"{prefix}for/powerlifters.html"),
+        ("Strength Coaches", f"{prefix}for/strength-coaches.html"),
+        ("Personal Trainers", f"{prefix}for/personal-trainers.html"),
+        ("Home Gym Lifters", f"{prefix}for/home-gym-lifters.html"),
+        ("kg Gyms", f"{prefix}for/kg-gyms.html"),
+    ]
+    program_links = [
+        ("All programs", f"{prefix}programs/"),
+        ("3-Day Beginner Barbell", f"{prefix}programs/3-day-beginner-barbell-program.html"),
+        ("5x5 Beginner Strength", f"{prefix}programs/5x5-beginner-strength-program.html"),
+        ("Garage Gym Strength", f"{prefix}programs/garage-gym-strength-program.html"),
+        ("Upper Lower Strength Hypertrophy", f"{prefix}programs/upper-lower-strength-hypertrophy.html"),
+    ]
     tools_current = ' aria-current="page"' if current == "tools" else ""
     tools_dropdown = "\n".join(f'          <a href="{href}">{label}</a>' for label, href in tool_links)
+    workouts_current = ' aria-current="page"' if current == "workouts" else ""
+    workouts_dropdown = "\n".join(f'          <a href="{href}">{label}</a>' for label, href in workout_links)
+    exercises_current = ' aria-current="page"' if current == "exercises" else ""
+    exercises_dropdown = "\n".join(f'          <a href="{href}">{label}</a>' for label, href in exercise_links)
+    persona_current = ' aria-current="page"' if current == "for" else ""
+    persona_dropdown = "\n".join(f'          <a href="{href}">{label}</a>' for label, href in persona_links)
+    programs_current = ' aria-current="page"' if current == "programs" else ""
+    programs_dropdown = "\n".join(f'          <a href="{href}">{label}</a>' for label, href in program_links)
     links = [
         ("Features", f"{prefix}features.html", "features"),
         ("About", f"{prefix}about.html", "about"),
@@ -211,6 +278,30 @@ def nav(current: str, prefix: str = "") -> str:
           <button class="nav-dropdown-trigger" type="button">Tools</button>
           <div class="nav-dropdown-menu">
 {tools_dropdown}
+          </div>
+        </div>""",
+        f"""        <div class="nav-dropdown"{workouts_current}>
+          <button class="nav-dropdown-trigger" type="button">Workouts</button>
+          <div class="nav-dropdown-menu">
+{workouts_dropdown}
+          </div>
+        </div>""",
+        f"""        <div class="nav-dropdown"{exercises_current}>
+          <button class="nav-dropdown-trigger" type="button">Exercises</button>
+          <div class="nav-dropdown-menu">
+{exercises_dropdown}
+          </div>
+        </div>""",
+        f"""        <div class="nav-dropdown"{persona_current}>
+          <button class="nav-dropdown-trigger" type="button">For</button>
+          <div class="nav-dropdown-menu">
+{persona_dropdown}
+          </div>
+        </div>""",
+        f"""        <div class="nav-dropdown"{programs_current}>
+          <button class="nav-dropdown-trigger" type="button">Programs</button>
+          <div class="nav-dropdown-menu">
+{programs_dropdown}
           </div>
         </div>"""
     ]
@@ -248,6 +339,10 @@ def footer(prefix: str = "") -> str:
       </div>
       <nav aria-label="Footer navigation">
         <a href="{prefix}tools/">Tools</a>
+        <a href="{prefix}workouts/">Workouts</a>
+        <a href="{prefix}exercises/">Exercises</a>
+        <a href="{prefix}for/">For</a>
+        <a href="{prefix}programs/">Programs</a>
         <a href="{prefix}features.html">Features</a>
         <a href="{prefix}about.html">About</a>
         <a href="{prefix}faq.html">FAQ</a>
@@ -269,6 +364,10 @@ def footer_from_blog() -> str:
       </div>
       <nav aria-label="Footer navigation">
         <a href="../tools/">Tools</a>
+        <a href="../workouts/">Workouts</a>
+        <a href="../exercises/">Exercises</a>
+        <a href="../for/">For</a>
+        <a href="../programs/">Programs</a>
         <a href="../features.html">Features</a>
         <a href="../about.html">About</a>
         <a href="../faq.html">FAQ</a>

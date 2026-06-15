@@ -19,13 +19,12 @@ This tracker follows the RackMath SEO + value build plan. Update it whenever an 
 | Completed | Phase 1 | Calculator integration | Free barbell visualizer integrated from the landing kit |
 | Completed | Phase 1 | App handoff | Calculator CTA deep-links to RackMath with `source=seo` |
 | Completed | Phase 2 | Tool library | Warmup, 1RM, common weights, lb/kg, RPE, volume, attempts, AI builder, importer pages published |
-| Next | Phase 3 | Workout templates | Publish first 12 workout template pages |
-| Queued | Phase 4 | Exercise library | Publish first 20 exercise pages |
-| Queued | Phase 5 | Feature pages | Publish first 8 feature landing pages |
-| Queued | Phase 6 | Comparison pages | Publish first 6 comparison pages |
-| Queued | Phase 7 | Persona pages | Publish first 7 persona pages |
-| Queued | Phase 8 | Public programs | Publish curated public program pages and share links |
-| Queued | Phase 9 | Analytics | Connect website events to analytics/conversion reporting |
+| Completed | Phase 3 | Workout templates | First 12 workout template pages published |
+| Completed | Phase 4 | Exercise library | First 20 exercise pages published |
+| Completed | Phase 5 | Feature pages | First 8 feature landing pages published |
+| Completed | Phase 7 | Persona pages | First 7 persona pages published |
+| Completed | Phase 8 | Public programs | Curated public program pages and app start links published |
+| Completed | Phase 9 | Analytics | Website events connected; app-side conversion events documented in `docs/analytics-events.md` |
 
 ## Page Status Rules
 

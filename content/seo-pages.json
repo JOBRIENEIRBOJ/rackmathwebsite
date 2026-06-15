@@ -17,8 +17,12 @@
       "summary": "Start with the free barbell plate calculator, then use RackMath to save lifts, run workouts, track PRs, and personalize training.",
       "primaryCta": "Try RackMath free",
       "appRoute": "/?source=seo&section=tools",
-      "schema": ["BreadcrumbList"],
-      "related": ["/tools/barbell-plate-calculator.html"]
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html"
+      ]
     },
     {
       "status": "published",
@@ -31,10 +35,19 @@
       "eyebrow": "Free barbell plate calculator",
       "summary": "Enter your target weight, choose pounds or kilograms, select your bar and available plates, and see exactly what to load on each side.",
       "primaryKeyword": "barbell plate calculator",
-      "secondaryKeywords": ["plate calculator", "weight lifting calculator", "what plates make 225", "barbell calculator"],
+      "secondaryKeywords": [
+        "plate calculator",
+        "weight lifting calculator",
+        "what plates make 225",
+        "barbell calculator"
+      ],
       "primaryCta": "Save this lift in RackMath",
       "appRoute": "/tools/plate-calculator?source=seo&tool=barbell-plate-calculator&weight=225&unit=lb",
-      "schema": ["FAQPage", "BreadcrumbList", "SoftwareApplication"],
+      "schema": [
+        "FAQPage",
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
       "related": [
         "/tools/",
         "/features.html",
@@ -53,8 +66,15 @@
       "summary": "Enter your working weight and RackMath will build practical warmup jumps on the way to your top set.",
       "primaryCta": "Use these warmups in RackMath",
       "appRoute": "/tools/warmup-calculator?source=seo",
-      "schema": ["BreadcrumbList", "SoftwareApplication"],
-      "related": ["/tools/barbell-plate-calculator.html", "/tools/one-rep-max-calculator.html", "/features.html"]
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/one-rep-max-calculator.html",
+        "/features.html"
+      ]
     },
     {
       "status": "published",
@@ -68,8 +88,15 @@
       "summary": "Estimate your one rep max from a recent set, then use RackMath to track PRs and future training loads.",
       "primaryCta": "Track this PR",
       "appRoute": "/tools/one-rep-max?source=seo",
-      "schema": ["BreadcrumbList", "SoftwareApplication"],
-      "related": ["/tools/rpe-calculator.html", "/tools/powerlifting-attempt-calculator.html", "/tools/barbell-plate-calculator.html"]
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/rpe-calculator.html",
+        "/tools/powerlifting-attempt-calculator.html",
+        "/tools/barbell-plate-calculator.html"
+      ]
     },
     {
       "status": "published",
@@ -83,8 +110,15 @@
       "summary": "See the plate math for common gym numbers like 95, 135, 185, 225, 315, and 405 lb.",
       "primaryCta": "Calculate more weights",
       "appRoute": "/tools/plate-calculator?source=seo",
-      "schema": ["BreadcrumbList", "SoftwareApplication"],
-      "related": ["/tools/barbell-plate-calculator.html", "/tools/lb-kg-plate-converter.html", "/blog/what-is-a-weight-lifting-calculator.html"]
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/lb-kg-plate-converter.html",
+        "/blog/what-is-a-weight-lifting-calculator.html"
+      ]
     },
     {
       "status": "published",
@@ -98,8 +132,15 @@
       "summary": "Convert barbell loads between pounds and kilograms, then use RackMath to load the closest practical weight.",
       "primaryCta": "Switch units in RackMath",
       "appRoute": "/tools/plate-converter?source=seo",
-      "schema": ["BreadcrumbList", "SoftwareApplication"],
-      "related": ["/tools/barbell-plate-calculator.html", "/tools/common-barbell-weights.html", "/features.html"]
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/common-barbell-weights.html",
+        "/features.html"
+      ]
     },
     {
       "status": "published",
@@ -113,8 +154,15 @@
       "summary": "Estimate training loads from RPE and reps, then log the set in RackMath with context.",
       "primaryCta": "Log RPE",
       "appRoute": "/tools/rpe-calculator?source=seo",
-      "schema": ["BreadcrumbList", "SoftwareApplication"],
-      "related": ["/tools/one-rep-max-calculator.html", "/tools/training-volume-calculator.html", "/features.html"]
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/one-rep-max-calculator.html",
+        "/tools/training-volume-calculator.html",
+        "/features.html"
+      ]
     },
     {
       "status": "published",
@@ -128,8 +176,15 @@
       "summary": "Calculate training volume from sets, reps, and weight so you can understand the workload behind a session.",
       "primaryCta": "Track weekly volume",
       "appRoute": "/tools/volume-calculator?source=seo",
-      "schema": ["BreadcrumbList", "SoftwareApplication"],
-      "related": ["/tools/rpe-calculator.html", "/tools/one-rep-max-calculator.html", "/features.html"]
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/rpe-calculator.html",
+        "/tools/one-rep-max-calculator.html",
+        "/features.html"
+      ]
     },
     {
       "status": "published",
@@ -143,8 +198,15 @@
       "summary": "Plan sensible opener, second, and third attempts from a recent max or estimated max.",
       "primaryCta": "Plan attempts",
       "appRoute": "/tools/powerlifting-attempts?source=seo",
-      "schema": ["BreadcrumbList", "SoftwareApplication"],
-      "related": ["/tools/one-rep-max-calculator.html", "/tools/barbell-plate-calculator.html", "/tools/warmup-set-calculator.html"]
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/one-rep-max-calculator.html",
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html"
+      ]
     },
     {
       "status": "published",
@@ -158,8 +220,15 @@
       "summary": "Sketch a workout from your goal, schedule, equipment, and experience, then open RackMath to personalize and save it.",
       "primaryCta": "Build my workout",
       "appRoute": "/ai-workout-builder?source=seo",
-      "schema": ["BreadcrumbList", "SoftwareApplication"],
-      "related": ["/tools/workout-plan-importer.html", "/tools/training-volume-calculator.html", "/features.html"]
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/workout-plan-importer.html",
+        "/tools/training-volume-calculator.html",
+        "/features.html"
+      ]
     },
     {
       "status": "published",
@@ -173,143 +242,311 @@
       "summary": "Paste a coach plan, screenshot notes, or written routine idea, then open RackMath to turn it into a trackable workout.",
       "primaryCta": "Import my plan",
       "appRoute": "/import?source=seo",
-      "schema": ["BreadcrumbList", "SoftwareApplication"],
-      "related": ["/tools/ai-workout-builder.html", "/tools/barbell-plate-calculator.html", "/features.html"]
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/ai-workout-builder.html",
+        "/tools/barbell-plate-calculator.html",
+        "/features.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
+      "type": "hub",
+      "section": "workouts",
+      "slug": "/workouts/",
+      "title": "Free Workout Templates | RackMath",
+      "description": "Free RackMath workout templates for beginners, barbell training, 5x5, upper lower, push pull legs, garage gyms, and strength programs.",
+      "h1": "Free workout templates you can start in RackMath.",
+      "eyebrow": "Workouts",
+      "summary": "Use these plans for free on the web, then open RackMath when you want the workout saved, personalized, loaded, and tracked.",
+      "primaryCta": "Start a plan in RackMath",
+      "appRoute": "/start?source=seo&section=workouts",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html"
+      ]
+    },
+    {
+      "status": "published",
       "type": "workout",
       "section": "workouts",
       "slug": "/workouts/3-day-beginner-full-body.html",
       "title": "3-Day Beginner Full Body Workout | RackMath",
       "description": "A beginner-friendly 3-day full body workout with exercises, sets, reps, progression, and RackMath tracking.",
       "h1": "3-Day Beginner Full Body Workout",
+      "eyebrow": "Beginner workout",
+      "summary": "A simple three-day plan for learning the main movement patterns without living in the gym.",
       "primaryCta": "Start this plan",
-      "appRoute": "/start?source=seo&template=3-day-beginner-full-body"
+      "appRoute": "/start?source=seo&template=3-day-beginner-full-body",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/tools/one-rep-max-calculator.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "workout",
       "section": "workouts",
       "slug": "/workouts/beginner-barbell-workout.html",
       "title": "Beginner Barbell Workout | RackMath",
       "description": "A simple beginner barbell workout with loading guidance, warmups, and progression.",
       "h1": "Beginner Barbell Workout",
+      "eyebrow": "Barbell workout",
+      "summary": "A beginner barbell template focused on squat, press, pull, hinge, and steady progression.",
       "primaryCta": "Start workout",
-      "appRoute": "/start?source=seo&template=beginner-barbell-workout"
+      "appRoute": "/start?source=seo&template=beginner-barbell-workout",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/common-barbell-weights.html",
+        "/tools/warmup-set-calculator.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "workout",
       "section": "workouts",
       "slug": "/workouts/5x5-workout-tracker.html",
       "title": "5x5 Workout Tracker | RackMath",
       "description": "Track a 5x5 workout with barbell loading, warmups, sets, reps, and progression in RackMath.",
       "h1": "5x5 Workout Tracker",
+      "eyebrow": "Strength workout",
+      "summary": "A 5x5 strength template with clear barbell lifts, simple progression, and RackMath tracking.",
       "primaryCta": "Start 5x5",
-      "appRoute": "/start?source=seo&template=5x5"
+      "appRoute": "/start?source=seo&template=5x5",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/one-rep-max-calculator.html",
+        "/tools/warmup-set-calculator.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "workout",
       "section": "workouts",
       "slug": "/workouts/4-day-upper-lower.html",
       "title": "4-Day Upper Lower Workout | RackMath",
       "description": "A 4-day upper lower workout template with progression, warmups, and RackMath tracking.",
       "h1": "4-Day Upper Lower Workout",
+      "eyebrow": "Upper lower workout",
+      "summary": "A four-day split that trains upper and lower body twice per week with practical progression.",
       "primaryCta": "Save program",
-      "appRoute": "/start?source=seo&template=4-day-upper-lower"
+      "appRoute": "/start?source=seo&template=4-day-upper-lower",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/training-volume-calculator.html",
+        "/tools/rpe-calculator.html",
+        "/tools/barbell-plate-calculator.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "workout",
       "section": "workouts",
       "slug": "/workouts/push-pull-legs.html",
       "title": "Push Pull Legs Workout | RackMath",
       "description": "A push pull legs workout plan with exercises, sets, reps, and app tracking.",
       "h1": "Push Pull Legs Workout",
+      "eyebrow": "PPL workout",
+      "summary": "A push pull legs split for organizing pressing, pulling, and leg training across the week.",
       "primaryCta": "Build PPL",
-      "appRoute": "/start?source=seo&template=push-pull-legs"
+      "appRoute": "/start?source=seo&template=push-pull-legs",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/training-volume-calculator.html",
+        "/tools/rpe-calculator.html",
+        "/tools/ai-workout-builder.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "workout",
       "section": "workouts",
       "slug": "/workouts/barbell-only-workout-plan.html",
       "title": "Barbell-Only Workout Plan | RackMath",
       "description": "A barbell-only workout plan for lifters who want simple equipment and clear loading.",
       "h1": "Barbell-Only Workout Plan",
+      "eyebrow": "Barbell-only workout",
+      "summary": "A focused plan for lifters training with a barbell, plates, rack, and bench.",
       "primaryCta": "Start plan",
-      "appRoute": "/start?source=seo&template=barbell-only-workout-plan"
+      "appRoute": "/start?source=seo&template=barbell-only-workout-plan",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/common-barbell-weights.html",
+        "/tools/warmup-set-calculator.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "workout",
       "section": "workouts",
       "slug": "/workouts/garage-gym-workout-plan.html",
       "title": "Garage Gym Workout Plan | RackMath",
       "description": "A garage gym workout plan built around practical barbell loading and limited equipment.",
       "h1": "Garage Gym Workout Plan",
+      "eyebrow": "Garage gym workout",
+      "summary": "A garage gym plan built around limited equipment, useful loading options, and repeatable progress.",
       "primaryCta": "Customize plates",
-      "appRoute": "/setup/plates?source=seo&template=garage-gym-workout-plan"
+      "appRoute": "/setup/plates?source=seo&template=garage-gym-workout-plan",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/lb-kg-plate-converter.html",
+        "/tools/common-barbell-weights.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "workout",
       "section": "workouts",
       "slug": "/workouts/beginner-powerlifting-program.html",
       "title": "Beginner Powerlifting Program | RackMath",
       "description": "A beginner powerlifting program for squat, bench, and deadlift training.",
       "h1": "Beginner Powerlifting Program",
+      "eyebrow": "Powerlifting workout",
+      "summary": "A beginner powerlifting template centered on squat, bench press, deadlift, warmups, and attempts.",
       "primaryCta": "Track SBD",
-      "appRoute": "/start?source=seo&template=beginner-powerlifting-program"
+      "appRoute": "/start?source=seo&template=beginner-powerlifting-program",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/powerlifting-attempt-calculator.html",
+        "/tools/one-rep-max-calculator.html",
+        "/tools/barbell-plate-calculator.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "workout",
       "section": "workouts",
       "slug": "/workouts/strength-hypertrophy-program.html",
       "title": "Strength and Hypertrophy Program | RackMath",
       "description": "A strength and hypertrophy program with practical progression and tracking.",
       "h1": "Strength and Hypertrophy Program",
+      "eyebrow": "Strength hypertrophy workout",
+      "summary": "A balanced template for getting stronger while accumulating enough volume to build muscle.",
       "primaryCta": "Save program",
-      "appRoute": "/start?source=seo&template=strength-hypertrophy-program"
+      "appRoute": "/start?source=seo&template=strength-hypertrophy-program",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/training-volume-calculator.html",
+        "/tools/rpe-calculator.html",
+        "/tools/one-rep-max-calculator.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "workout",
       "section": "workouts",
       "slug": "/workouts/2-day-beginner-strength-plan.html",
       "title": "2-Day Beginner Strength Plan | RackMath",
       "description": "A simple 2-day beginner strength plan with barbell loading and progression.",
       "h1": "2-Day Beginner Strength Plan",
+      "eyebrow": "Beginner strength plan",
+      "summary": "A low-frequency beginner plan for learning the lifts and making progress with two sessions per week.",
       "primaryCta": "Start plan",
-      "appRoute": "/start?source=seo&template=2-day-beginner-strength-plan"
+      "appRoute": "/start?source=seo&template=2-day-beginner-strength-plan",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/tools/common-barbell-weights.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "workout",
       "section": "workouts",
       "slug": "/workouts/first-day-at-the-gym-workout.html",
       "title": "First Day at the Gym Workout | RackMath",
       "description": "A simple first day at the gym workout with beginner-friendly sets, reps, and loading guidance.",
       "h1": "First Day at the Gym Workout",
+      "eyebrow": "First gym workout",
+      "summary": "A calm first-day workout for learning the room, practicing basic movements, and leaving with confidence.",
       "primaryCta": "Start workout",
-      "appRoute": "/start?source=seo&template=first-day-at-the-gym-workout"
+      "appRoute": "/start?source=seo&template=first-day-at-the-gym-workout",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/blog/first-day-in-the-gym-no-stress-walkthrough.html",
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "workout",
       "section": "workouts",
       "slug": "/workouts/dumbbell-barbell-workout.html",
       "title": "Dumbbell and Barbell Workout | RackMath",
       "description": "A dumbbell and barbell workout plan with trackable exercises and progression.",
       "h1": "Dumbbell and Barbell Workout",
+      "eyebrow": "Mixed equipment workout",
+      "summary": "A practical plan that combines barbell lifts with dumbbell accessories for flexible training.",
       "primaryCta": "Save routine",
-      "appRoute": "/start?source=seo&template=dumbbell-barbell-workout"
+      "appRoute": "/start?source=seo&template=dumbbell-barbell-workout",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/training-volume-calculator.html",
+        "/tools/barbell-plate-calculator.html",
+        "/tools/ai-workout-builder.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
+      "type": "hub",
+      "section": "exercises",
+      "slug": "/exercises/",
+      "title": "Exercise Library | RackMath",
+      "description": "RackMath exercise guides for barbell lifts, dumbbells, machines, bodyweight movements, loading guidance, warmups, and workout tracking.",
+      "h1": "Exercise guides for loading, warming up, and tracking progress.",
+      "eyebrow": "Exercises",
+      "summary": "Learn the movement, choose a starting weight, warm up, load the bar when relevant, and open RackMath when tracking matters.",
+      "primaryCta": "Track exercises in RackMath",
+      "appRoute": "/exercises?source=seo&section=exercises",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
+    },
+    {
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/bench-press.html",
@@ -317,10 +554,20 @@
       "description": "Learn how to bench press, choose a starting weight, warm up, load the bar, and track progress.",
       "h1": "Bench Press",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/bench-press?action=track&source=seo"
+      "appRoute": "/exercises/bench-press?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use bench press in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/barbell-squat.html",
@@ -328,10 +575,20 @@
       "description": "Learn how to squat, choose loading, warm up, and track squat progress in RackMath.",
       "h1": "Barbell Squat",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/barbell-squat?action=track&source=seo"
+      "appRoute": "/exercises/barbell-squat?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use barbell squat in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/deadlift.html",
@@ -339,10 +596,20 @@
       "description": "Learn how to deadlift, warm up, load the bar, and track deadlift progress.",
       "h1": "Deadlift",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/deadlift?action=track&source=seo"
+      "appRoute": "/exercises/deadlift?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use deadlift in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/overhead-press.html",
@@ -350,10 +617,20 @@
       "description": "Learn overhead press setup, loading, warmups, and progress tracking.",
       "h1": "Overhead Press",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/overhead-press?action=track&source=seo"
+      "appRoute": "/exercises/overhead-press?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use overhead press in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/barbell-row.html",
@@ -361,10 +638,20 @@
       "description": "Learn barbell row form, loading guidance, warmups, and tracking.",
       "h1": "Barbell Row",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/barbell-row?action=track&source=seo"
+      "appRoute": "/exercises/barbell-row?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use barbell row in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/romanian-deadlift.html",
@@ -372,10 +659,20 @@
       "description": "Learn Romanian deadlift setup, loading, warmups, and tracking.",
       "h1": "Romanian Deadlift",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/romanian-deadlift?action=track&source=seo"
+      "appRoute": "/exercises/romanian-deadlift?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use romanian deadlift in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/front-squat.html",
@@ -383,10 +680,20 @@
       "description": "Learn front squat technique, barbell loading, warmups, and tracking.",
       "h1": "Front Squat",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/front-squat?action=track&source=seo"
+      "appRoute": "/exercises/front-squat?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use front squat in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/incline-bench-press.html",
@@ -394,10 +701,20 @@
       "description": "Learn incline bench press setup, loading guidance, and progress tracking.",
       "h1": "Incline Bench Press",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/incline-bench-press?action=track&source=seo"
+      "appRoute": "/exercises/incline-bench-press?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use incline bench press in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/close-grip-bench-press.html",
@@ -405,10 +722,20 @@
       "description": "Learn close-grip bench press setup, loading, warmups, and tracking.",
       "h1": "Close-Grip Bench Press",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/close-grip-bench-press?action=track&source=seo"
+      "appRoute": "/exercises/close-grip-bench-press?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use close-grip bench press in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/barbell-hip-thrust.html",
@@ -416,10 +743,20 @@
       "description": "Learn barbell hip thrust setup, loading, and progression tracking.",
       "h1": "Barbell Hip Thrust",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/barbell-hip-thrust?action=track&source=seo"
+      "appRoute": "/exercises/barbell-hip-thrust?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use barbell hip thrust in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/pull-up.html",
@@ -427,10 +764,20 @@
       "description": "Learn pull-up progressions, sets, reps, and tracking guidance.",
       "h1": "Pull-Up",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/pull-up?action=track&source=seo"
+      "appRoute": "/exercises/pull-up?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use pull-up in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/lat-pulldown.html",
@@ -438,10 +785,20 @@
       "description": "Learn lat pulldown setup, loading, sets, reps, and tracking.",
       "h1": "Lat Pulldown",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/lat-pulldown?action=track&source=seo"
+      "appRoute": "/exercises/lat-pulldown?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use lat pulldown in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/dumbbell-bench-press.html",
@@ -449,10 +806,20 @@
       "description": "Learn dumbbell bench press setup, loading choices, and tracking.",
       "h1": "Dumbbell Bench Press",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/dumbbell-bench-press?action=track&source=seo"
+      "appRoute": "/exercises/dumbbell-bench-press?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use dumbbell bench press in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/goblet-squat.html",
@@ -460,10 +827,20 @@
       "description": "Learn goblet squat form, loading, sets, reps, and tracking.",
       "h1": "Goblet Squat",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/goblet-squat?action=track&source=seo"
+      "appRoute": "/exercises/goblet-squat?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use goblet squat in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/leg-press.html",
@@ -471,10 +848,20 @@
       "description": "Learn leg press setup, loading, common mistakes, and tracking.",
       "h1": "Leg Press",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/leg-press?action=track&source=seo"
+      "appRoute": "/exercises/leg-press?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use leg press in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/cable-row.html",
@@ -482,10 +869,20 @@
       "description": "Learn cable row setup, form, sets, reps, and tracking.",
       "h1": "Cable Row",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/cable-row?action=track&source=seo"
+      "appRoute": "/exercises/cable-row?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use cable row in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/dumbbell-row.html",
@@ -493,10 +890,20 @@
       "description": "Learn dumbbell row setup, loading, mistakes, and tracking.",
       "h1": "Dumbbell Row",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/dumbbell-row?action=track&source=seo"
+      "appRoute": "/exercises/dumbbell-row?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use dumbbell row in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/barbell-curl.html",
@@ -504,10 +911,20 @@
       "description": "Learn barbell curl setup, loading, sets, reps, and tracking.",
       "h1": "Barbell Curl",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/barbell-curl?action=track&source=seo"
+      "appRoute": "/exercises/barbell-curl?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use barbell curl in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/skull-crusher.html",
@@ -515,10 +932,20 @@
       "description": "Learn skull crusher setup, loading, common mistakes, and tracking.",
       "h1": "Skull Crusher",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/skull-crusher?action=track&source=seo"
+      "appRoute": "/exercises/skull-crusher?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use skull crusher in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "exercise",
       "section": "exercises",
       "slug": "/exercises/bulgarian-split-squat.html",
@@ -526,282 +953,477 @@
       "description": "Learn Bulgarian split squat setup, loading, sets, reps, and tracking.",
       "h1": "Bulgarian Split Squat",
       "primaryCta": "Track this exercise",
-      "appRoute": "/exercises/bulgarian-split-squat?action=track&source=seo"
+      "appRoute": "/exercises/bulgarian-split-squat?action=track&source=seo",
+      "eyebrow": "Exercise guide",
+      "summary": "Learn how to use bulgarian split squat in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/warmup-set-calculator.html",
+        "/workouts/3-day-beginner-full-body.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "feature",
       "section": "features",
       "slug": "/features/barbell-plate-calculator.html",
       "title": "Barbell Plate Calculator Feature | RackMath",
       "description": "RackMath shows exact plates every set, with saved workouts, warmups, history, and custom setup support.",
       "h1": "Exact plates every set",
+      "eyebrow": "Plate calculator",
+      "summary": "Use RackMath to turn target weights into exact plates per side, then carry that loading context into saved workouts, warmups, and training history.",
       "primaryCta": "Try RackMath free",
-      "appRoute": "/tools/plate-calculator?source=seo"
+      "appRoute": "/tools/plate-calculator?source=seo&feature=barbell-plate-calculator",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/features/custom-plate-calculator.html",
+        "/features/warmup-planner.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "feature",
       "section": "features",
       "slug": "/features/custom-plate-calculator.html",
       "title": "Custom Plate Calculator | RackMath",
       "description": "Match RackMath to your actual plates, bars, collars, and gym setup.",
       "h1": "Custom Plate Calculator",
+      "eyebrow": "Custom setup",
+      "summary": "Save the bars, plates, collars, and loading options you actually use so RackMath gives practical answers for your gym instead of generic math.",
       "primaryCta": "Customize my plates",
-      "appRoute": "/setup/plates?source=seo"
+      "appRoute": "/setup/plates?source=seo&feature=custom-plate-calculator",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/tools/lb-kg-plate-converter.html",
+        "/features/barbell-plate-calculator.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "feature",
       "section": "features",
       "slug": "/features/warmup-planner.html",
       "title": "Warmup Planner | RackMath",
       "description": "Plan warmup jumps without breaking your lifting rhythm.",
       "h1": "Warmup Planner",
+      "eyebrow": "Warmup planning",
+      "summary": "Move from empty bar to working sets with clear jumps that respect the target weight, the bar, and the plates available.",
       "primaryCta": "Plan warmups",
-      "appRoute": "/tools/warmup-calculator?source=seo"
+      "appRoute": "/tools/warmup-calculator?source=seo&feature=warmup-planner",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/warmup-set-calculator.html",
+        "/features/barbell-plate-calculator.html",
+        "/workouts/5x5-workout-tracker.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "feature",
       "section": "features",
       "slug": "/features/workout-tracker.html",
       "title": "Workout Tracker | RackMath",
       "description": "Log sets, reps, weight, RPE, history, and progress in RackMath.",
       "h1": "Workout Tracker",
+      "eyebrow": "Workout tracking",
+      "summary": "Track sets, reps, weight, RPE, notes, and history in one place so each workout starts with the context from the last one.",
       "primaryCta": "Track a workout",
-      "appRoute": "/workouts?source=seo"
+      "appRoute": "/workouts?source=seo&feature=workout-tracker",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/workouts/3-day-beginner-full-body.html",
+        "/features/pr-tracker.html",
+        "/features/program-progress.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "feature",
       "section": "features",
       "slug": "/features/ai-workout-builder.html",
       "title": "AI Workout Builder Feature | RackMath",
       "description": "Build a training plan from your goal, schedule, equipment, and experience.",
       "h1": "AI Workout Builder",
+      "eyebrow": "AI planning",
+      "summary": "Turn goal, schedule, experience, and equipment constraints into a workout draft that can be saved, edited, and run inside RackMath.",
       "primaryCta": "Build my workout",
-      "appRoute": "/ai-workout-builder?source=seo"
+      "appRoute": "/ai-workout-builder?source=seo&feature=ai-workout-builder",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/ai-workout-builder.html",
+        "/workouts/4-day-upper-lower.html",
+        "/features/workout-tracker.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "feature",
       "section": "features",
       "slug": "/features/workout-plan-importer.html",
       "title": "Workout Plan Importer Feature | RackMath",
       "description": "Turn screenshots, PDFs, text, or coach programming into trackable RackMath workouts.",
       "h1": "Workout Plan Importer",
+      "eyebrow": "Plan importer",
+      "summary": "Bring outside programming into RackMath so a written plan becomes structured workouts with exercises, sets, reps, and tracking.",
       "primaryCta": "Import my plan",
-      "appRoute": "/import?source=seo"
+      "appRoute": "/import?source=seo&feature=workout-plan-importer",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/workout-plan-importer.html",
+        "/features/workout-tracker.html",
+        "/workouts/beginner-powerlifting-program.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "feature",
       "section": "features",
       "slug": "/features/pr-tracker.html",
       "title": "PR Tracker | RackMath",
       "description": "Track personal records and estimated one rep maxes in RackMath.",
       "h1": "PR Tracker",
+      "eyebrow": "PR tracking",
+      "summary": "Track personal records, estimated one rep maxes, and meaningful rep PRs without losing the training context around them.",
       "primaryCta": "Track my PRs",
-      "appRoute": "/prs?source=seo"
+      "appRoute": "/prs?source=seo&feature=pr-tracker",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/one-rep-max-calculator.html",
+        "/features/workout-tracker.html",
+        "/features/program-progress.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "feature",
       "section": "features",
       "slug": "/features/program-progress.html",
       "title": "Program Progress | RackMath",
       "description": "Know what workout comes next and keep progression moving in RackMath.",
       "h1": "Program Progress",
+      "eyebrow": "Program progression",
+      "summary": "See what workout comes next, repeat the right loads, and keep progression moving without rebuilding the plan every session.",
       "primaryCta": "Open my next workout",
-      "appRoute": "/programs?source=seo"
+      "appRoute": "/programs?source=seo&feature=program-progress",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/features/workout-tracker.html",
+        "/workouts/5x5-workout-tracker.html",
+        "/workouts/strength-hypertrophy-program.html"
+      ]
     },
     {
-      "status": "queued",
-      "type": "compare",
-      "section": "compare",
-      "slug": "/compare/best-barbell-plate-calculator-apps.html",
-      "title": "Best Barbell Plate Calculator Apps | RackMath",
-      "description": "Compare barbell plate calculator apps and see where RackMath fits for lifting, workouts, and custom plates.",
-      "h1": "Best Barbell Plate Calculator Apps",
+      "status": "published",
+      "type": "hub",
+      "section": "for",
+      "slug": "/for/",
+      "title": "RackMath for Lifters, Coaches, and Gyms",
+      "description": "See how RackMath helps garage gyms, beginners, powerlifters, coaches, trainers, home gym lifters, and kg gyms load bars and track workouts.",
+      "h1": "RackMath for the way you lift.",
+      "eyebrow": "For lifters",
+      "summary": "Find the RackMath workflow for your training context: beginner lifting, garage gyms, kg plates, coaching, personal training, powerlifting, or home gym sessions.",
       "primaryCta": "Try RackMath free",
-      "appRoute": "/?source=seo&compare=plate-calculator-apps"
+      "appRoute": "/?source=seo&section=for",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/tools/barbell-plate-calculator.html",
+        "/workouts/3-day-beginner-full-body.html",
+        "/features/workout-tracker.html"
+      ]
     },
     {
-      "status": "queued",
-      "type": "compare",
-      "section": "compare",
-      "slug": "/compare/best-workout-tracker-for-barbell-lifters.html",
-      "title": "Best Workout Tracker for Barbell Lifters | RackMath",
-      "description": "Compare workout trackers for barbell training, plate loading, warmups, and progression.",
-      "h1": "Best Workout Tracker for Barbell Lifters",
-      "primaryCta": "Try RackMath free",
-      "appRoute": "/?source=seo&compare=barbell-workout-trackers"
-    },
-    {
-      "status": "queued",
-      "type": "compare",
-      "section": "compare",
-      "slug": "/compare/rackmath-vs-strong.html",
-      "title": "RackMath vs Strong",
-      "description": "Compare RackMath and Strong for barbell loading, workout tracking, and lifting workflows.",
-      "h1": "RackMath vs Strong",
-      "primaryCta": "Try RackMath free",
-      "appRoute": "/?source=seo&compare=strong"
-    },
-    {
-      "status": "queued",
-      "type": "compare",
-      "section": "compare",
-      "slug": "/compare/rackmath-vs-hevy.html",
-      "title": "RackMath vs Hevy",
-      "description": "Compare RackMath and Hevy for barbell-first training, programs, and progress tracking.",
-      "h1": "RackMath vs Hevy",
-      "primaryCta": "Try RackMath free",
-      "appRoute": "/?source=seo&compare=hevy"
-    },
-    {
-      "status": "queued",
-      "type": "compare",
-      "section": "compare",
-      "slug": "/compare/rackmath-vs-fitbod.html",
-      "title": "RackMath vs Fitbod",
-      "description": "Compare RackMath and Fitbod for workout generation, barbell execution, and tracking.",
-      "h1": "RackMath vs Fitbod",
-      "primaryCta": "Try RackMath free",
-      "appRoute": "/?source=seo&compare=fitbod"
-    },
-    {
-      "status": "queued",
-      "type": "compare",
-      "section": "compare",
-      "slug": "/compare/workout-tracker-vs-spreadsheet.html",
-      "title": "Workout Tracker vs Spreadsheet | RackMath",
-      "description": "Compare workout trackers and spreadsheets for saving programs, logging sets, and tracking progress.",
-      "h1": "Workout Tracker vs Spreadsheet",
-      "primaryCta": "Try RackMath free",
-      "appRoute": "/?source=seo&compare=spreadsheet"
-    },
-    {
-      "status": "queued",
+      "status": "published",
       "type": "persona",
       "section": "for",
       "slug": "/for/garage-gyms.html",
       "title": "RackMath for Garage Gyms",
       "description": "Use RackMath to match your actual garage gym plates, bars, collars, warmups, and workouts.",
       "h1": "RackMath for Garage Gyms",
+      "eyebrow": "Garage gyms",
+      "summary": "Load the bar from the plates you actually own, plan warmups around small jumps, and keep garage gym workouts moving without guessing.",
       "primaryCta": "Customize my plates",
-      "appRoute": "/setup/plates?source=seo&persona=garage-gyms"
+      "appRoute": "/setup/plates?source=seo&persona=garage-gyms",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/features/custom-plate-calculator.html",
+        "/workouts/garage-gym-workout-plan.html",
+        "/tools/barbell-plate-calculator.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "persona",
       "section": "for",
       "slug": "/for/beginners.html",
       "title": "RackMath for Beginners",
       "description": "RackMath helps beginners stop guessing what to load and start tracking workouts.",
       "h1": "RackMath for Beginners",
+      "eyebrow": "Beginners",
+      "summary": "Start with simple workouts, exact plate loading, clear warmups, and exercise guides that make the first months of lifting less confusing.",
       "primaryCta": "Start lifting",
-      "appRoute": "/onboarding?source=seo&persona=beginners"
+      "appRoute": "/onboarding?source=seo&persona=beginners",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/workouts/3-day-beginner-full-body.html",
+        "/workouts/first-day-at-the-gym-workout.html",
+        "/exercises/bench-press.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "persona",
       "section": "for",
       "slug": "/for/powerlifters.html",
       "title": "RackMath for Powerlifters",
       "description": "RackMath helps powerlifters manage squat, bench, deadlift, warmups, and attempts.",
       "h1": "RackMath for Powerlifters",
+      "eyebrow": "Powerlifters",
+      "summary": "Plan squat, bench, and deadlift sessions with exact plates, warmup jumps, PR context, and attempt planning tools.",
       "primaryCta": "Track SBD",
-      "appRoute": "/onboarding?source=seo&persona=powerlifters"
+      "appRoute": "/onboarding?source=seo&persona=powerlifters",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/powerlifting-attempt-calculator.html",
+        "/workouts/beginner-powerlifting-program.html",
+        "/exercises/deadlift.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "persona",
       "section": "for",
       "slug": "/for/strength-coaches.html",
       "title": "RackMath for Strength Coaches",
       "description": "RackMath helps strength coaches manage plans and plate loading for athletes.",
       "h1": "RackMath for Strength Coaches",
+      "eyebrow": "Strength coaches",
+      "summary": "Convert written programming into run-ready sessions, reduce loading confusion, and help athletes execute workouts with clearer context.",
       "primaryCta": "Import a plan",
-      "appRoute": "/import?source=seo&persona=strength-coaches"
+      "appRoute": "/import?source=seo&persona=strength-coaches",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/features/workout-plan-importer.html",
+        "/tools/workout-plan-importer.html",
+        "/features/program-progress.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "persona",
       "section": "for",
       "slug": "/for/personal-trainers.html",
       "title": "RackMath for Personal Trainers",
       "description": "RackMath helps personal trainers build, import, and run client workouts.",
       "h1": "RackMath for Personal Trainers",
+      "eyebrow": "Personal trainers",
+      "summary": "Keep sessions moving with faster plate math, repeatable workouts, exercise context, and client-friendly loading decisions.",
       "primaryCta": "Build a workout",
-      "appRoute": "/ai-workout-builder?source=seo&persona=personal-trainers"
+      "appRoute": "/ai-workout-builder?source=seo&persona=personal-trainers",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/features/workout-tracker.html",
+        "/tools/warmup-set-calculator.html",
+        "/exercises/barbell-squat.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "persona",
       "section": "for",
       "slug": "/for/home-gym-lifters.html",
       "title": "RackMath for Home Gym Lifters",
       "description": "RackMath helps home gym lifters use limited plate inventory and track training.",
       "h1": "RackMath for Home Gym Lifters",
+      "eyebrow": "Home gym lifters",
+      "summary": "Train with the bars and plates you have, save custom setups, and keep a repeatable workout flow without commercial-gym assumptions.",
       "primaryCta": "Customize my plates",
-      "appRoute": "/setup/plates?source=seo&persona=home-gym-lifters"
+      "appRoute": "/setup/plates?source=seo&persona=home-gym-lifters",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/features/custom-plate-calculator.html",
+        "/workouts/barbell-only-workout-plan.html",
+        "/tools/common-barbell-weights.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "persona",
       "section": "for",
       "slug": "/for/kg-gyms.html",
       "title": "RackMath for kg Gyms",
       "description": "RackMath supports kg plates, bar options, conversions, warmups, and tracking.",
       "h1": "RackMath for kg Gyms",
+      "eyebrow": "kg gyms",
+      "summary": "Switch to kilogram loading, account for kg bars and plates, and avoid pound-based assumptions when training or coaching in metric gyms.",
       "primaryCta": "Switch units",
-      "appRoute": "/tools/plate-calculator?source=seo&persona=kg-gyms"
+      "appRoute": "/tools/plate-calculator?source=seo&persona=kg-gyms",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/tools/lb-kg-plate-converter.html",
+        "/tools/barbell-plate-calculator.html",
+        "/features/custom-plate-calculator.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
+      "type": "hub",
+      "section": "programs",
+      "slug": "/programs/",
+      "title": "Free Strength Programs | RackMath",
+      "description": "Free RackMath strength programs for beginners, 5x5 training, garage gyms, and upper lower strength and hypertrophy training.",
+      "h1": "Free strength programs you can run, track, and progress.",
+      "eyebrow": "Programs",
+      "summary": "Programs are multi-week plans: they tell you what sessions to repeat, how to progress, what to do after missed reps, and when to move on. Use them free, then open RackMath to save the plan and track progression.",
+      "primaryCta": "Try RackMath free",
+      "appRoute": "/programs?source=seo",
+      "schema": [
+        "BreadcrumbList"
+      ],
+      "related": [
+        "/workouts/3-day-beginner-full-body.html",
+        "/features/program-progress.html",
+        "/tools/barbell-plate-calculator.html"
+      ]
+    },
+    {
+      "status": "published",
       "type": "program",
       "section": "programs",
       "slug": "/programs/3-day-beginner-barbell-program.html",
       "title": "3-Day Beginner Barbell Program | RackMath",
       "description": "A curated beginner barbell program with schedule, exercises, sets, reps, progression, and app start link.",
       "h1": "3-Day Beginner Barbell Program",
+      "eyebrow": "Beginner program",
+      "summary": "A simple three-day barbell program for learning the main lifts, building weekly practice, and progressing without adding too much too soon.",
       "primaryCta": "Start this program",
-      "appRoute": "/start?source=seo&program=3-day-beginner-barbell-program"
+      "appRoute": "/start?source=seo&program=3-day-beginner-barbell-program",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/workouts/beginner-barbell-workout.html",
+        "/tools/barbell-plate-calculator.html",
+        "/exercises/barbell-squat.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "program",
       "section": "programs",
       "slug": "/programs/5x5-beginner-strength-program.html",
       "title": "5x5 Beginner Strength Program | RackMath",
       "description": "A curated 5x5 beginner strength program with exercises, progression, and app start link.",
       "h1": "5x5 Beginner Strength Program",
+      "eyebrow": "5x5 program",
+      "summary": "A straightforward 5x5 strength program for practicing the big barbell lifts, tracking load jumps, and repeating sessions consistently.",
       "primaryCta": "Start this program",
-      "appRoute": "/start?source=seo&program=5x5-beginner-strength-program"
+      "appRoute": "/start?source=seo&program=5x5-beginner-strength-program",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/workouts/5x5-workout-tracker.html",
+        "/tools/one-rep-max-calculator.html",
+        "/features/program-progress.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "program",
       "section": "programs",
       "slug": "/programs/garage-gym-strength-program.html",
       "title": "Garage Gym Strength Program | RackMath",
       "description": "A curated garage gym strength program built around practical equipment and plate loading.",
       "h1": "Garage Gym Strength Program",
+      "eyebrow": "Garage gym program",
+      "summary": "A barbell-first strength program for lifters training with a rack, bench, barbell, plates, and limited equipment.",
       "primaryCta": "Start this program",
-      "appRoute": "/start?source=seo&program=garage-gym-strength-program"
+      "appRoute": "/start?source=seo&program=garage-gym-strength-program",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/for/garage-gyms.html",
+        "/workouts/garage-gym-workout-plan.html",
+        "/features/custom-plate-calculator.html"
+      ]
     },
     {
-      "status": "queued",
+      "status": "published",
       "type": "program",
       "section": "programs",
       "slug": "/programs/upper-lower-strength-hypertrophy.html",
       "title": "Upper Lower Strength Hypertrophy Program | RackMath",
       "description": "A curated upper lower program for strength, hypertrophy, progression, and tracking.",
       "h1": "Upper Lower Strength Hypertrophy Program",
+      "eyebrow": "Upper lower program",
+      "summary": "A four-day upper/lower program that combines heavier barbell work with enough weekly volume for muscle growth.",
       "primaryCta": "Start this program",
-      "appRoute": "/start?source=seo&program=upper-lower-strength-hypertrophy"
+      "appRoute": "/start?source=seo&program=upper-lower-strength-hypertrophy",
+      "schema": [
+        "BreadcrumbList",
+        "SoftwareApplication"
+      ],
+      "related": [
+        "/workouts/4-day-upper-lower.html",
+        "/workouts/strength-hypertrophy-program.html",
+        "/tools/training-volume-calculator.html"
+      ]
     }
   ]
 }

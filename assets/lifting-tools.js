@@ -9,9 +9,15 @@
   }
 
   function trackTool(tool, details = {}) {
+    const payload = { tool, ...details };
+    if (window.RackMathAnalytics?.track) {
+      window.RackMathAnalytics.track('tool_completed', payload);
+      return;
+    }
+
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'tool_completed', tool, ...details });
-    window.dispatchEvent(new CustomEvent('rackmath:tool_completed', { detail: { tool, ...details } }));
+    window.dataLayer.push({ event: 'tool_completed', ...payload });
+    window.dispatchEvent(new CustomEvent('rackmath:tool_completed', { detail: payload }));
   }
 
   function plateSetup(total, bar = 45) {

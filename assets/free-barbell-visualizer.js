@@ -45,6 +45,11 @@
   };
 
   function track(eventName, payload = {}) {
+    if (window.RackMathAnalytics?.track) {
+      window.RackMathAnalytics.track(eventName, payload);
+      return;
+    }
+
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: eventName, ...payload });
     window.dispatchEvent(new CustomEvent(`rackmath:${eventName}`, { detail: payload }));

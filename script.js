@@ -38,18 +38,70 @@ document.addEventListener("keydown", (event) => {
   });
 });
 
-function trackRackMathEvent(eventName, payload = {}) {
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event: eventName, ...payload });
-  window.dispatchEvent(new CustomEvent(`rackmath:${eventName}`, { detail: payload }));
+function rackMathContentGroup(pathname) {
+  const firstSegment = pathname.split("/").filter(Boolean)[0] || "home";
+  return firstSegment.replace(/\.html$/, "");
 }
 
-document.querySelectorAll("[data-rm-app-link]").forEach((link) => {
+function rackMathLinkPayload(link) {
+  const url = new URL(link.href, window.location.href);
+  return {
+    destination: url.href,
+    destination_path: url.pathname,
+    label: link.textContent.trim(),
+    source_page: window.location.pathname,
+    content_group: rackMathContentGroup(window.location.pathname),
+    seo_source: url.searchParams.get("source") || "",
+    seo_tool: url.searchParams.get("tool") || "",
+    seo_template: url.searchParams.get("template") || "",
+    seo_program: url.searchParams.get("program") || "",
+    seo_persona: url.searchParams.get("persona") || "",
+    seo_feature: url.searchParams.get("feature") || "",
+  };
+}
+
+function trackRackMathEvent(eventName, payload = {}) {
+  const eventPayload = {
+    event: eventName,
+    source_page: window.location.pathname,
+    content_group: rackMathContentGroup(window.location.pathname),
+    timestamp: new Date().toISOString(),
+    ...payload,
+  };
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(eventPayload);
+  window.dispatchEvent(new CustomEvent(`rackmath:${eventName}`, { detail: eventPayload }));
+
+  if (typeof window.gtag === "function") {
+    const { event, ...gtagPayload } = eventPayload;
+    window.gtag("event", event, gtagPayload);
+  }
+
+  if (typeof window.plausible === "function") {
+    window.plausible(eventName, { props: eventPayload });
+  }
+
+  return eventPayload;
+}
+
+window.RackMathAnalytics = {
+  track: trackRackMathEvent,
+  contentGroup: rackMathContentGroup,
+};
+
+document.querySelectorAll('a[href^="https://www.rackmath.app"], [data-rm-app-link]').forEach((link) => {
   link.addEventListener("click", () => {
-    trackRackMathEvent(link.dataset.rmEvent || "app_deeplink_clicked", {
-      destination: link.href,
-      label: link.textContent.trim(),
-      source_page: window.location.pathname,
+    const payload = rackMathLinkPayload(link);
+    const primaryEvent = link.dataset.rmEvent || (link.textContent.toLowerCase().includes("try free") ? "signup_started" : "app_deeplink_clicked");
+
+    if (primaryEvent !== "app_deeplink_clicked") {
+      trackRackMathEvent(primaryEvent, payload);
+    }
+
+    trackRackMathEvent("app_deeplink_clicked", {
+      ...payload,
+      primary_event: primaryEvent,
     });
   });
 });
