@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /content/
-Disallow: /tools/
 Disallow: /website-landing-kit/
 
 Sitemap: https://www.rackmath.com/sitemap.xml

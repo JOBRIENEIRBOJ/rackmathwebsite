@@ -5,6 +5,10 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.rackmath.com/tools/</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.rackmath.com/features.html</loc>
     <priority>0.8</priority>
   </url>
@@ -23,6 +27,46 @@
   <url>
     <loc>https://www.rackmath.com/blog/archive.html</loc>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.rackmath.com/tools/barbell-plate-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rackmath.com/tools/warmup-set-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rackmath.com/tools/one-rep-max-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rackmath.com/tools/common-barbell-weights.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rackmath.com/tools/lb-kg-plate-converter.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rackmath.com/tools/rpe-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rackmath.com/tools/training-volume-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rackmath.com/tools/powerlifting-attempt-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rackmath.com/tools/ai-workout-builder.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rackmath.com/tools/workout-plan-importer.html</loc>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.rackmath.com/blog/how-to-use-machines-without-feeling-lost.html</loc>

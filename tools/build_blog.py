@@ -20,6 +20,7 @@ SITE_URL = "https://www.rackmath.com"
 SITE_NAME = "Rack Math"
 BASE_PAGES = [
     ("/", "1.0"),
+    ("/tools/", "0.9"),
     ("/features.html", "0.8"),
     ("/about.html", "0.7"),
     ("/faq.html", "0.8"),
@@ -183,6 +184,21 @@ def without_leading_h1(markdown: str) -> str:
 
 
 def nav(current: str, prefix: str = "") -> str:
+    tool_links = [
+        ("All tools", f"{prefix}tools/"),
+        ("Barbell Plate Calculator", f"{prefix}tools/barbell-plate-calculator.html"),
+        ("Warmup Set Calculator", f"{prefix}tools/warmup-set-calculator.html"),
+        ("One Rep Max Calculator", f"{prefix}tools/one-rep-max-calculator.html"),
+        ("Common Barbell Weights", f"{prefix}tools/common-barbell-weights.html"),
+        ("lb/kg Plate Converter", f"{prefix}tools/lb-kg-plate-converter.html"),
+        ("RPE Calculator", f"{prefix}tools/rpe-calculator.html"),
+        ("Training Volume Calculator", f"{prefix}tools/training-volume-calculator.html"),
+        ("Powerlifting Attempt Calculator", f"{prefix}tools/powerlifting-attempt-calculator.html"),
+        ("AI Workout Builder", f"{prefix}tools/ai-workout-builder.html"),
+        ("Workout Plan Importer", f"{prefix}tools/workout-plan-importer.html"),
+    ]
+    tools_current = ' aria-current="page"' if current == "tools" else ""
+    tools_dropdown = "\n".join(f'          <a href="{href}">{label}</a>' for label, href in tool_links)
     links = [
         ("Features", f"{prefix}features.html", "features"),
         ("About", f"{prefix}about.html", "about"),
@@ -190,7 +206,14 @@ def nav(current: str, prefix: str = "") -> str:
         ("Blog", f"{prefix}blog.html", "blog"),
         ("Premium", f"{prefix}index.html#premium", "premium"),
     ]
-    rendered = []
+    rendered = [
+        f"""        <div class="nav-dropdown"{tools_current}>
+          <button class="nav-dropdown-trigger" type="button">Tools</button>
+          <div class="nav-dropdown-menu">
+{tools_dropdown}
+          </div>
+        </div>"""
+    ]
     for label, href, key in links:
         current_attr = ' aria-current="page"' if current == key else ""
         rendered.append(f'        <a href="{href}"{current_attr}>{label}</a>')
@@ -224,6 +247,7 @@ def footer(prefix: str = "") -> str:
         <p>Barbell plate math, workout sessions, and progress tracking for lifters.</p>
       </div>
       <nav aria-label="Footer navigation">
+        <a href="{prefix}tools/">Tools</a>
         <a href="{prefix}features.html">Features</a>
         <a href="{prefix}about.html">About</a>
         <a href="{prefix}faq.html">FAQ</a>
@@ -244,6 +268,7 @@ def footer_from_blog() -> str:
         <p>Barbell plate math, workout sessions, and progress tracking for lifters.</p>
       </div>
       <nav aria-label="Footer navigation">
+        <a href="../tools/">Tools</a>
         <a href="../features.html">Features</a>
         <a href="../about.html">About</a>
         <a href="../faq.html">FAQ</a>
