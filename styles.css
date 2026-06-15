@@ -270,6 +270,11 @@ main img {
   margin-bottom: 24px;
 }
 
+.hero h1 span {
+  display: block;
+  margin-top: 0.28em;
+}
+
 .hero-text,
 .page-hero p {
   max-width: 660px;
@@ -332,7 +337,7 @@ main img {
 .product-gallery::before {
   inset: 7% 0 4% 10%;
   border-radius: 34px;
-  transform: rotate(3deg);
+  transform: rotate(2deg);
 }
 
 .phone-shot {
@@ -351,6 +356,7 @@ main img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  backface-visibility: hidden;
 }
 
 .phone-shot-primary {
@@ -359,7 +365,7 @@ main img {
   z-index: 4;
   width: min(390px, 64vw);
   aspect-ratio: 1206 / 2470;
-  transform: rotate(-4deg);
+  transform: rotate(-2.4deg);
   padding: 7px;
   background: linear-gradient(135deg, rgba(255, 22, 154, 0.95), rgba(40, 185, 255, 0.95));
 }
@@ -380,7 +386,7 @@ main img {
   left: 49%;
   z-index: 2;
   width: min(390px, 64vw);
-  transform: translateX(-50%) rotate(-1.25deg);
+  transform: translateX(-50%) rotate(-0.75deg);
   opacity: 0.96;
 }
 
@@ -388,7 +394,7 @@ main img {
   right: -10%;
   bottom: 4px;
   z-index: 5;
-  transform: rotate(3.5deg);
+  transform: rotate(2.2deg);
   background: #ffffff;
 }
 
@@ -2499,7 +2505,7 @@ details p {
     top: 96px;
     left: 4%;
     width: min(330px, 58vw);
-    transform: rotate(-4deg);
+    transform: rotate(-2.4deg);
   }
 
   .phone-shot-secondary {
@@ -2509,13 +2515,13 @@ details p {
   .phone-shot-program {
     top: 0;
     left: 52%;
-    transform: translateX(-50%) rotate(-1.25deg);
+    transform: translateX(-50%) rotate(-0.75deg);
   }
 
   .phone-shot-light {
     right: 0;
     bottom: 8px;
-    transform: rotate(3.5deg);
+    transform: rotate(2.2deg);
   }
 
   .phone-frame {
@@ -2607,7 +2613,7 @@ details p {
     top: 18px;
     left: 50%;
     width: min(310px, 82vw);
-    transform: translateX(-50%) rotate(-4deg);
+    transform: translateX(-50%) rotate(-2.4deg);
   }
 
   .phone-shot-program {
