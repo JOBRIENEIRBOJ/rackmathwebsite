@@ -181,7 +181,7 @@
   },
   {
     "title": "How to Use Machines Without Feeling Lost",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-15",
     "slug": "how-to-use-machines-without-feeling-lost",
     "primary_keyword": "how to use machines without feeling lost",
@@ -190,7 +190,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Teach beginners how to use machines without feeling lost with a small plan, manageable choices, and one way to avoid doing too much too soon."
+    "angle": "Teach beginners how to use machines without feeling lost with a small plan, manageable choices, and one way to avoid doing too much too soon.",
+    "drafted_at": "2026-06-15T11:20:29.530Z",
+    "file": "content/blog/2026-06-15-how-to-use-machines-without-feeling-lost.md"
   },
   {
     "title": "How to Read a Workout Plan for the First Time",
