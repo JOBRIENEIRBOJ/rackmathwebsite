@@ -7,7 +7,7 @@ import html
 import json
 from datetime import UTC, datetime
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import parse_qsl, urlencode, urlsplit
 from xml.etree import ElementTree as ET
 
 import build_blog
@@ -45,7 +45,17 @@ def escape(value: str) -> str:
 
 
 def app_href(route: str) -> str:
-    return urljoin(f"{APP_URL}/", route.lstrip("/"))
+    parsed = urlsplit(route)
+    params = dict(parse_qsl(parsed.query, keep_blank_values=True))
+    intent_path = parsed.path.strip("/")
+
+    if intent_path:
+        params.setdefault("intent", intent_path)
+
+    if not params:
+        return f"{APP_URL}/"
+
+    return f"{APP_URL}/?{urlencode(params)}"
 
 
 def prefix_for(slug: str) -> str:

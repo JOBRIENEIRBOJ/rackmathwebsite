@@ -57,6 +57,7 @@ function rackMathLinkPayload(link) {
     seo_program: url.searchParams.get("program") || "",
     seo_persona: url.searchParams.get("persona") || "",
     seo_feature: url.searchParams.get("feature") || "",
+    seo_intent: url.searchParams.get("intent") || "",
   };
 }
 
