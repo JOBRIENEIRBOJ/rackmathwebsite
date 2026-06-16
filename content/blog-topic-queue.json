@@ -196,7 +196,7 @@
   },
   {
     "title": "How to Read a Workout Plan for the First Time",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-16",
     "slug": "how-to-read-a-workout-plan-for-the-first-time",
     "primary_keyword": "how to read a workout plan for the first time",
@@ -205,7 +205,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Teach beginners how to read a workout plan for the first time with a small plan, manageable choices, and one way to avoid doing too much too soon."
+    "angle": "Teach beginners how to read a workout plan for the first time with a small plan, manageable choices, and one way to avoid doing too much too soon.",
+    "drafted_at": "2026-06-16T10:54:23.815Z",
+    "file": "content/blog/2026-06-16-how-to-read-a-workout-plan-for-the-first-time.md"
   },
   {
     "title": "What Sets and Reps Mean",
