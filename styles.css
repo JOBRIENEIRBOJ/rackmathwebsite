@@ -330,72 +330,48 @@ main img {
   place-items: center;
 }
 
-.product-gallery {
-  min-height: 700px;
+.hero-app-embed {
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+  min-width: 0;
 }
 
-.product-gallery::before {
-  inset: 7% 0 4% 10%;
+.hero-app-embed::before {
+  inset: 5% auto 6% 50%;
+  width: min(430px, 100%);
   border-radius: 34px;
-  transform: rotate(2deg);
+  transform: translateX(-48%) rotate(2deg);
 }
 
-.phone-shot {
-  position: absolute;
+.hero-app-frame-shell {
+  position: relative;
   z-index: 2;
+  width: min(390px, 100%);
+  min-height: 640px;
+  height: clamp(640px, 78vh, 780px);
   overflow: hidden;
+  border: 1px solid rgba(40, 185, 255, 0.2);
   border-radius: 24px;
-  background: #101418;
+  background: #ffffff;
   box-shadow:
     0 26px 70px rgba(16, 20, 24, 0.18),
     0 0 0 1px rgba(255, 255, 255, 0.55) inset;
 }
 
-.phone-shot img {
+.hero-app-frame {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  backface-visibility: hidden;
-}
-
-.phone-shot-primary {
-  top: 112px;
-  left: 3%;
-  z-index: 4;
-  width: min(390px, 64vw);
-  aspect-ratio: 1206 / 2470;
-  transform: rotate(-2.4deg);
-  padding: 7px;
-  background: linear-gradient(135deg, rgba(255, 22, 154, 0.95), rgba(40, 185, 255, 0.95));
-}
-
-.phone-shot-primary img,
-.phone-shot-secondary img {
-  border-radius: 20px;
-}
-
-.phone-shot-secondary {
-  width: min(390px, 64vw);
-  aspect-ratio: 1206 / 2470;
-  padding: 7px;
-}
-
-.phone-shot-program {
-  top: 0;
-  left: 49%;
-  z-index: 2;
-  width: min(390px, 64vw);
-  transform: translateX(-50%) rotate(-0.75deg);
-  opacity: 0.96;
-}
-
-.phone-shot-light {
-  right: -10%;
-  bottom: 4px;
-  z-index: 5;
-  transform: rotate(2.2deg);
+  border: 0;
   background: #ffffff;
+}
+
+.hero-app-fallback {
+  position: relative;
+  z-index: 2;
+  justify-self: center;
+  color: #255fbe;
 }
 
 .screenshot-brand {
@@ -2486,44 +2462,6 @@ details p {
     gap: 12px;
   }
 
-  .product-gallery {
-    display: block;
-    width: min(100%, 620px);
-    min-height: 560px;
-    margin: 0 auto;
-  }
-
-  .product-gallery::before {
-    inset: 7% 2% 4% 9%;
-  }
-
-  .phone-shot {
-    position: absolute;
-  }
-
-  .phone-shot-primary {
-    top: 96px;
-    left: 4%;
-    width: min(330px, 58vw);
-    transform: rotate(-2.4deg);
-  }
-
-  .phone-shot-secondary {
-    width: min(300px, 52vw);
-  }
-
-  .phone-shot-program {
-    top: 0;
-    left: 52%;
-    transform: translateX(-50%) rotate(-0.75deg);
-  }
-
-  .phone-shot-light {
-    right: 0;
-    bottom: 8px;
-    transform: rotate(2.2deg);
-  }
-
   .phone-frame {
     width: min(420px, 100%);
   }
@@ -2603,21 +2541,6 @@ details p {
 
   .hero {
     min-height: auto;
-  }
-
-  .product-gallery {
-    min-height: 650px;
-  }
-
-  .phone-shot-primary {
-    top: 18px;
-    left: 50%;
-    width: min(310px, 82vw);
-    transform: translateX(-50%) rotate(-2.4deg);
-  }
-
-  .phone-shot-program {
-    display: none;
   }
 
   .workflow-list li {

@@ -3,29 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Rack Math | Weight Lifting Calculator, Plate Calculator & Workout Tracker</title>
-    <meta name="description" content="Rack Math is a weight lifting calculator for loading barbell plates, following workouts, importing programs, logging sets, and tracking PRs from a fast mobile-first app.">
-    <meta name="keywords" content="weight lifting calculator, barbell plate calculator, workout tracker, weightlifting app, plate math, strength training tracker, program workout tracker, Rack Math">
+    <title>Rack Math | Weight Lifting Calculator, Barbell Calculator & Workout Tracker</title>
+    <meta name="description" content="Rack Math is a weight lifting calculator for loading the barbell, following workouts, importing programs, logging sets, and tracking PRs from a fast mobile-first app.">
+    <meta name="keywords" content="weight lifting calculator, barbell calculator, workout tracker, weightlifting app, barbell math, strength training tracker, program workout tracker, Rack Math">
     <link rel="canonical" href="https://www.rackmath.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Rack Math">
     <meta property="og:title" content="Rack Math | Weight Lifting Calculator & Workout Tracker">
-    <meta property="og:description" content="Calculate barbell plates, follow workouts, log sets, and track PRs from a fast mobile-first app.">
+    <meta property="og:description" content="Calculate barbell loads, follow workouts, log sets, and track PRs from a fast mobile-first app.">
     <meta property="og:url" content="https://www.rackmath.com/">
     <meta property="og:image" content="https://www.rackmath.com/assets/rackmathblue-gradient.png">
     <meta property="og:image:alt" content="Rack Math blue gradient logo">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Rack Math | Weight Lifting Calculator & Workout Tracker">
-    <meta name="twitter:description" content="Calculate barbell plates, follow workouts, log sets, and track PRs from a fast mobile-first app.">
+    <meta name="twitter:description" content="Calculate barbell loads, follow workouts, log sets, and track PRs from a fast mobile-first app.">
     <meta name="twitter:image" content="https://www.rackmath.com/assets/rackmathblue-gradient.png">
     <meta name="twitter:image:alt" content="Rack Math blue gradient logo">
     <meta name="theme-color" content="#0a6dff">
     <link rel="icon" href="assets/rackmathblue.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/rackmathblue.png">
-    <link rel="preload" as="image" href="assets/blackcalc.png" fetchpriority="high">
-    <link rel="preload" as="image" href="assets/pinkcalc.png">
-    <link rel="preload" as="image" href="assets/IMG_6664.png">
-    <link rel="stylesheet" href="styles.css?v=20260604">
+    <link rel="stylesheet" href="styles.css?v=20260616">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -34,7 +31,7 @@
         "applicationCategory": "HealthApplication",
         "operatingSystem": "Web",
         "url": "https://www.rackmath.com/",
-        "description": "Rack Math is a weight lifting calculator, barbell plate calculator, workout tracker, and program companion for lifters who want less friction between the plan and the bar.",
+        "description": "Rack Math is a weight lifting calculator, barbell calculator, workout tracker, and program companion for lifters who want less friction between the plan and the bar.",
         "offers": [
           {
             "@type": "Offer",
@@ -90,7 +87,7 @@
           <button class="nav-dropdown-trigger" type="button">Tools</button>
           <div class="nav-dropdown-menu">
           <a href="tools/">All tools</a>
-          <a href="tools/barbell-plate-calculator.html">Barbell Plate Calculator</a>
+          <a href="tools/barbell-plate-calculator.html">Barbell Calculator</a>
           <a href="tools/warmup-set-calculator.html">Warmup Set Calculator</a>
           <a href="tools/one-rep-max-calculator.html">One Rep Max Calculator</a>
           <a href="tools/common-barbell-weights.html">Common Barbell Weights</a>
@@ -181,9 +178,9 @@
     <main>
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Barbell plate calculator, workout builder, session tracker, and progress log</p>
+          <p class="eyebrow">Barbell calculator, workout builder, session tracker, and progress log</p>
           <h1>Know Exactly What to Lift Next.<span>Exactly What Plates to Load.</span></h1>
-          <p class="hero-text">RackMath combines a barbell plate calculator, workout builder, session tracker, and progress log in one fast gym app.</p>
+          <p class="hero-text">RackMath combines a barbell calculator, workout builder, session tracker, and progress log in one fast gym app.</p>
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button primary" href="https://www.rackmath.app/">Start a free workout</a>
             <a class="button secondary" href="tools/barbell-plate-calculator.html">Calculate plates</a>
@@ -195,16 +192,17 @@
           </div>
         </div>
 
-        <div class="hero-visual product-gallery" aria-label="Rack Math app screenshots">
-          <div class="phone-shot phone-shot-primary">
-            <img src="assets/blackcalc.png" width="310" height="635" alt="Rack Math dark mode calculator showing a deadlift set, rest timer, reps, total weight, and plates per side." fetchpriority="high">
+        <div class="hero-visual hero-app-embed" id="hero-calculator-app" aria-label="RackMath app barbell calculator">
+          <div class="hero-app-frame-shell">
+            <iframe
+              class="hero-app-frame"
+              src="https://www.rackmath.app/?source=homepage&amp;intent=tools%2Fplate-calculator"
+              title="RackMath Barbell Calculator"
+              loading="eager"
+              allow="clipboard-write"
+            ></iframe>
           </div>
-          <div class="phone-shot phone-shot-secondary phone-shot-program">
-            <img src="assets/pinkcalc.png" width="285" height="585" alt="Rack Math pink calculator screen showing a deadlift workout and exact plate loading." loading="eager">
-          </div>
-          <div class="phone-shot phone-shot-secondary phone-shot-light">
-            <img src="assets/IMG_6664.png" width="285" height="587" alt="Rack Math light mode calculator screen with exact plate loading for a deadlift set." loading="eager">
-          </div>
+          <a class="hero-app-fallback text-link" href="https://www.rackmath.app/?source=homepage&amp;intent=tools%2Fplate-calculator" target="_blank" rel="noopener">Open RackMath in a new tab</a>
         </div>
       </section>
 
@@ -229,7 +227,7 @@
         <div class="feature-grid">
           <article class="feature-card">
             <span class="feature-icon load-icon" aria-hidden="true"></span>
-            <h3>Plate math without the pause</h3>
+            <h3>Barbell math without the pause</h3>
             <p>Enter the target weight and Rack Math shows the plates to load on each side, with support for custom plates and units.</p>
           </article>
           <article class="feature-card">
@@ -303,7 +301,7 @@
             <h3>$0</h3>
             <p>For quick plate calculations at the rack.</p>
             <ul>
-              <li>Fast barbell plate calculator</li>
+              <li>Fast barbell calculator</li>
               <li>Common lb and kg plates</li>
               <li>Mobile web access</li>
             </ul>
@@ -335,7 +333,7 @@
           </details>
           <details>
             <summary>Is Rack Math a weight lifting calculator?</summary>
-            <p>Yes. Rack Math works as a weight lifting calculator for barbell plate loading, workout sessions, set history, and PR tracking.</p>
+            <p>Yes. Rack Math works as a weight lifting calculator for barbell loading, workout sessions, set history, and PR tracking.</p>
           </details>
           <details>
             <summary>Does it work on mobile?</summary>
@@ -357,7 +355,7 @@
 
       <section class="final-cta">
         <p class="eyebrow">RackMath.app on the web</p>
-        <h2>Spend less time doing plate math.</h2>
+        <h2>Spend less time doing barbell math.</h2>
         <p>Open Rack Math and get your next set loaded.</p>
         <div class="hero-actions">
           <a class="button primary" href="https://www.rackmath.app/">Open Rack Math</a>
@@ -375,7 +373,7 @@
           <img class="brand-mark" src="assets/rackmathblue-header.png" alt="" aria-hidden="true">
           <span>RackMath</span>
         </a>
-        <p>Barbell plate math, workout sessions, and progress tracking for lifters.</p>
+        <p>Barbell math, workout sessions, and progress tracking for lifters.</p>
       </div>
       <nav aria-label="Footer navigation">
         <a href="tools/">Tools</a>
