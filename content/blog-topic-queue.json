@@ -211,7 +211,7 @@
   },
   {
     "title": "What Sets and Reps Mean",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-17",
     "slug": "what-sets-and-reps-mean",
     "primary_keyword": "sets and reps for beginners",
@@ -220,7 +220,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Answer the beginner question about what sets and reps mean in plain language, then give one practical step they can use before the next workout."
+    "angle": "Answer the beginner question about what sets and reps mean in plain language, then give one practical step they can use before the next workout.",
+    "drafted_at": "2026-06-17T10:52:46.552Z",
+    "file": "content/blog/2026-06-17-what-sets-and-reps-mean.md"
   },
   {
     "title": "How Many Reps Should Beginners Do?",
