@@ -226,7 +226,7 @@
   },
   {
     "title": "How Many Reps Should Beginners Do?",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-18",
     "slug": "how-many-reps-should-beginners-do",
     "primary_keyword": "how many reps should beginners do",
@@ -235,7 +235,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Give beginners a realistic weekly lifting frequency, explain why repeatability matters, and show how to track the plan."
+    "angle": "Give beginners a realistic weekly lifting frequency, explain why repeatability matters, and show how to track the plan.",
+    "drafted_at": "2026-06-18T10:46:19.681Z",
+    "file": "content/blog/2026-06-18-how-many-reps-should-beginners-do.md"
   },
   {
     "title": "How Many Sets Should Beginners Do?",
