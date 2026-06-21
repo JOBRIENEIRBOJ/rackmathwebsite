@@ -1,5 +1,10 @@
 const header = document.querySelector(".site-header");
 const navToggle = document.querySelector(".nav-toggle");
+const rackMathScriptUrl = new URL(
+  document.currentScript?.getAttribute("src") || "script.js",
+  window.location.href,
+);
+const rackMathRootUrl = new URL(".", rackMathScriptUrl);
 
 if (header && navToggle) {
   navToggle.addEventListener("click", () => {
@@ -107,21 +112,92 @@ document.querySelectorAll('a[href^="https://www.rackmath.app"], [data-rm-app-lin
   });
 });
 
-function initRackMathMotion() {
-  if (!window.gsap || !window.ScrollTrigger) return;
-
+function shouldUseRackMathMotion() {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  if (reduceMotion.matches) return;
+  return !reduceMotion.matches;
+}
+
+function loadRackMathScript(src) {
+  return new Promise((resolve, reject) => {
+    const existingScript = Array.from(document.scripts).find((script) => script.src === src);
+
+    if (existingScript?.dataset.rmLoaded === "true") {
+      resolve();
+      return;
+    }
+
+    if (existingScript) {
+      existingScript.addEventListener("load", resolve, { once: true });
+      existingScript.addEventListener("error", reject, { once: true });
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = src;
+    script.defer = true;
+    script.dataset.rmMotionScript = "true";
+    script.addEventListener(
+      "load",
+      () => {
+        script.dataset.rmLoaded = "true";
+        resolve();
+      },
+      { once: true },
+    );
+    script.addEventListener("error", reject, { once: true });
+    document.head.append(script);
+  });
+}
+
+function loadRackMathMotionScripts() {
+  if (window.gsap && window.ScrollTrigger) {
+    return Promise.resolve();
+  }
+
+  const gsapSrc = new URL("assets/vendor/gsap/gsap.min.js", rackMathRootUrl).href;
+  const scrollTriggerSrc = new URL(
+    "assets/vendor/gsap/ScrollTrigger.min.js",
+    rackMathRootUrl,
+  ).href;
+
+  return loadRackMathScript(gsapSrc).then(() => loadRackMathScript(scrollTriggerSrc));
+}
+
+function initRackMathMotion() {
+  if (!window.gsap || !window.ScrollTrigger || !shouldUseRackMathMotion()) return;
 
   const { gsap } = window;
   gsap.registerPlugin(window.ScrollTrigger);
 
   document.documentElement.classList.add("has-rm-motion");
 
-  const scrollMeter = document.createElement("div");
-  scrollMeter.className = "scroll-meter";
-  scrollMeter.setAttribute("aria-hidden", "true");
-  document.body.prepend(scrollMeter);
+  let scrollMeter = document.querySelector(".scroll-meter");
+
+  if (!scrollMeter) {
+    scrollMeter = document.createElement("div");
+    scrollMeter.className = "scroll-meter";
+    scrollMeter.setAttribute("aria-hidden", "true");
+    document.body.prepend(scrollMeter);
+  }
+
+  const fromIfAny = (selector, vars, position, timeline) => {
+    const targets = gsap.utils.toArray(selector);
+    if (!targets.length) return timeline;
+
+    if (timeline) {
+      timeline.from(targets, vars, position);
+      return timeline;
+    }
+
+    gsap.from(targets, vars);
+    return null;
+  };
+
+  const toIfAny = (selector, vars) => {
+    const targets = gsap.utils.toArray(selector);
+    if (!targets.length) return;
+    gsap.to(targets, vars);
+  };
 
   gsap.to(scrollMeter, {
     scaleX: 1,
@@ -152,42 +228,49 @@ function initRackMathMotion() {
     },
   });
 
-  heroTimeline
-    .from(".site-header", {
+  fromIfAny(
+    ".site-header",
+    {
       autoAlpha: 0,
       y: -18,
       duration: 0.56,
-    })
-    .from(
-      ".hero-copy > *",
-      {
-        autoAlpha: 0,
-        y: 34,
-        stagger: 0.08,
-      },
-      "-=0.18",
-    )
-    .from(
-      ".hero-app-frame-shell",
-      {
-        autoAlpha: 0,
-        y: 42,
-        rotate: 1.2,
-      },
-      "-=0.56",
-    )
-    .from(
-      ".trust-row span",
-      {
-        autoAlpha: 0,
-        y: 12,
-        stagger: 0.06,
-        duration: 0.44,
-      },
-      "-=0.42",
-    );
+    },
+    undefined,
+    heroTimeline,
+  );
+  fromIfAny(
+    ".hero-copy > *, .page-hero > *",
+    {
+      autoAlpha: 0,
+      y: 34,
+      stagger: 0.08,
+    },
+    "-=0.18",
+    heroTimeline,
+  );
+  fromIfAny(
+    ".hero-app-frame-shell",
+    {
+      autoAlpha: 0,
+      y: 42,
+      rotate: 1.2,
+    },
+    "-=0.56",
+    heroTimeline,
+  );
+  fromIfAny(
+    ".trust-row span",
+    {
+      autoAlpha: 0,
+      y: 12,
+      stagger: 0.06,
+      duration: 0.44,
+    },
+    "-=0.42",
+    heroTimeline,
+  );
 
-  gsap.to(".hero-app-frame-shell", {
+  toIfAny(".hero-app-frame-shell", {
     y: -26,
     ease: "none",
     scrollTrigger: {
@@ -198,7 +281,39 @@ function initRackMathMotion() {
     },
   });
 
-  gsap.utils.toArray(".section-heading, .section-copy, .stat-grid > div, .feature-card, .price-card, .faq-list details, .final-cta > *").forEach((element) => {
+  const revealSelector = [
+    ".section-heading",
+    ".section-copy",
+    ".stat-grid > div",
+    ".feature-card",
+    ".price-card",
+    ".faq-list details",
+    ".final-cta > *",
+    ".detail-row",
+    ".about-card",
+    ".about-post > *",
+    ".story-band > *",
+    ".blog-post-content > *",
+    ".blog-post-nav a",
+    ".archive-list > *",
+    ".tool-workspace > *",
+    ".tool-panel",
+    ".tool-context",
+    ".rm-free-calculator-heading",
+    ".rm-free-calculator-grid > *",
+    ".seo-content-grid > *",
+    ".program-roadmap > *",
+    ".program-builder-list > *",
+    ".evidence-section > *",
+    ".workout-day",
+    ".exercise-guide-panel > *",
+    ".exercise-meta-list > *",
+    ".exercise-cue-list > *",
+    ".feature-list li",
+    ".table-section table",
+  ].join(", ");
+
+  gsap.utils.toArray(revealSelector).forEach((element) => {
     gsap.from(element, {
       autoAlpha: 0,
       y: 34,
@@ -208,6 +323,23 @@ function initRackMathMotion() {
         trigger: element,
         start: "top 84%",
         toggleActions: "play none none reverse",
+      },
+    });
+  });
+
+  gsap.utils.toArray(".tool-grid, .related-pages, .exercise-summary-grid").forEach((grid) => {
+    const items = grid.children;
+    if (!items.length) return;
+
+    gsap.from(items, {
+      autoAlpha: 0,
+      y: 28,
+      duration: 0.62,
+      ease: "power3.out",
+      stagger: 0.055,
+      scrollTrigger: {
+        trigger: grid,
+        start: "top 82%",
       },
     });
   });
@@ -251,18 +383,7 @@ function initRackMathMotion() {
     }
   });
 
-  gsap.from(".featured-price", {
-    y: 24,
-    scale: 0.98,
-    duration: 0.8,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".pricing-grid",
-      start: "top 76%",
-    },
-  });
-
-  gsap.to(".final-cta", {
+  toIfAny(".final-cta", {
     backgroundPosition: "100% 50%",
     ease: "none",
     scrollTrigger: {
@@ -278,4 +399,6 @@ function initRackMathMotion() {
   });
 }
 
-initRackMathMotion();
+if (shouldUseRackMathMotion()) {
+  loadRackMathMotionScripts().then(initRackMathMotion).catch(() => {});
+}

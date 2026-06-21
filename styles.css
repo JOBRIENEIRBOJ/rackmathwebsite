@@ -741,6 +741,16 @@ details {
 .price-card,
 .stat-grid div,
 .workflow-list li,
+.tool-card,
+.workout-day,
+.about-card,
+.blog-post-nav a,
+.related-pages a,
+.exercise-guide-panel,
+.tool-panel,
+.tool-context,
+.rm-calculator-panel,
+.rm-visualizer-panel,
 details {
   transition:
     border-color 180ms ease,
@@ -751,6 +761,16 @@ details {
 .feature-card:hover,
 .price-card:hover,
 .stat-grid div:hover,
+.tool-card:hover,
+.workout-day:hover,
+.about-card:hover,
+.blog-post-nav a:hover,
+.related-pages a:hover,
+.exercise-guide-panel:hover,
+.tool-panel:hover,
+.tool-context:hover,
+.rm-calculator-panel:hover,
+.rm-visualizer-panel:hover,
 details:hover {
   border-color: rgba(40, 185, 255, 0.32);
   box-shadow: 0 20px 54px rgba(16, 20, 24, 0.11);
