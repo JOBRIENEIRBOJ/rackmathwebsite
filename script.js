@@ -447,6 +447,18 @@ function initRackMathMotion() {
     heroTimeline,
   );
   fromIfAny(
+    ".hero-utility-card",
+    {
+      autoAlpha: 0,
+      y: 18,
+      scale: 0.96,
+      stagger: 0.08,
+      duration: 0.52,
+    },
+    "-=0.38",
+    heroTimeline,
+  );
+  fromIfAny(
     ".trust-row span",
     {
       autoAlpha: 0,
@@ -455,6 +467,17 @@ function initRackMathMotion() {
       duration: 0.44,
     },
     "-=0.42",
+    heroTimeline,
+  );
+  fromIfAny(
+    ".hero-signals div",
+    {
+      autoAlpha: 0,
+      y: 16,
+      stagger: 0.06,
+      duration: 0.44,
+    },
+    "-=0.36",
     heroTimeline,
   );
 
@@ -472,7 +495,11 @@ function initRackMathMotion() {
   const revealSelector = [
     ".section-heading",
     ".section-copy",
+    ".story-rail a",
+    ".story-step",
     ".stat-grid > div",
+    ".proof-grid > div",
+    ".plan-comparison > div",
     ".feature-card",
     ".price-card",
     ".faq-list details",
@@ -537,7 +564,7 @@ function initRackMathMotion() {
 
     gsap.from(item, {
       autoAlpha: 0,
-      x: index % 2 === 0 ? -34 : 34,
+      y: 34,
       duration: 0.74,
       ease: "power3.out",
       scrollTrigger: {

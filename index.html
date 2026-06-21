@@ -176,23 +176,32 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero product-hero">
         <div class="hero-copy">
-          <p class="eyebrow">Barbell calculator, workout builder, session tracker, and progress log</p>
-          <h1>Know Exactly What to Lift Next.<span>Exactly What Plates to Load.</span></h1>
-          <p class="hero-text">RackMath combines a barbell calculator, workout builder, session tracker, and progress log in one fast gym app.</p>
+          <p class="eyebrow">Training utility for planned lifts, live sets, and progress</p>
+          <h1>From target weight to loaded bar.<span>Without losing the set.</span></h1>
+          <p class="hero-text">RackMath turns plate math, warmups, workout sessions, and progress review into one fast flow for lifters who want the next set ready now.</p>
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="https://www.rackmath.app/">Start a free workout</a>
+            <a class="button primary" href="https://www.rackmath.app/">Open RackMath</a>
             <a class="button secondary" href="tools/barbell-plate-calculator.html">Calculate plates</a>
           </div>
           <div class="trust-row" aria-label="RackMath highlights">
             <span>Exact plates per side</span>
-            <span>Workout sessions and history</span>
-            <span>PRs, muscles, and insights</span>
+            <span>Live workout flow</span>
+            <span>PR and progress context</span>
+          </div>
+          <div class="hero-signals" aria-label="RackMath product signals">
+            <div><strong>lb + kg</strong><span>custom plate setups</span></div>
+            <div><strong>Next set</strong><span>exercise, load, reps</span></div>
+            <div><strong>History</strong><span>sessions and PRs</span></div>
           </div>
         </div>
 
         <div class="hero-visual hero-app-embed" id="hero-calculator-app" aria-label="RackMath app barbell calculator">
+          <div class="hero-utility-card utility-card-top" aria-hidden="true">
+            <span>Next set</span>
+            <strong>Bench press - 185 x 5</strong>
+          </div>
           <div class="hero-app-frame-shell">
             <iframe
               class="hero-app-frame"
@@ -202,27 +211,62 @@
               allow="clipboard-write"
             ></iframe>
           </div>
+          <div class="hero-utility-card utility-card-bottom" aria-hidden="true">
+            <span>Load per side</span>
+            <strong>45 + 25 + 5</strong>
+          </div>
           <a class="hero-app-fallback text-link" href="https://www.rackmath.app/?source=homepage&amp;intent=tools%2Fplate-calculator" target="_blank" rel="noopener">Open RackMath in a new tab</a>
         </div>
       </section>
 
-      <section class="section intro-band" aria-labelledby="why-heading">
-        <div class="section-copy">
-          <p class="eyebrow">Why lifters use it</p>
-          <h2 id="why-heading">A faster weight lifting calculator from planned weight to loaded bar.</h2>
-          <p>Every missed calculation costs focus. Rack Math keeps the plates, the active workout, and your training history in one mobile-first flow.</p>
-        </div>
-        <div class="stat-grid">
-          <div><strong>Plates</strong><span>exact weight per side for lb and kg setups</span></div>
-          <div><strong>Sessions</strong><span>sets, reps, timers, and workout history</span></div>
-          <div><strong>Progress</strong><span>PRs, muscles, and training insights</span></div>
+      <section class="section product-story" id="training-flow" aria-labelledby="story-heading">
+        <nav class="story-rail" aria-label="RackMath training flow">
+          <a href="#calculate">[1] Calculate</a>
+          <a href="#build">[2] Build</a>
+          <a href="#train">[3] Train</a>
+          <a href="#track">[4] Track</a>
+          <a href="#progress">[5] Progress</a>
+        </nav>
+        <div class="story-content">
+          <div class="section-heading">
+            <p class="eyebrow">The RackMath flow</p>
+            <h2 id="story-heading">One product path from the plan to the completed workout.</h2>
+            <p>Designed like a utility: fast enough for the rack, structured enough for a full training block, and clear enough to review later.</p>
+          </div>
+          <div class="story-grid">
+            <article class="story-step" id="calculate">
+              <span>01</span>
+              <h3>Calculate</h3>
+              <p>Type the target weight and see exactly what to load on each side.</p>
+            </article>
+            <article class="story-step" id="build">
+              <span>02</span>
+              <h3>Build</h3>
+              <p>Create workouts, import program structure, and keep every exercise ready.</p>
+            </article>
+            <article class="story-step" id="train">
+              <span>03</span>
+              <h3>Train</h3>
+              <p>Move through sets, reps, timers, and plate changes without leaving the flow.</p>
+            </article>
+            <article class="story-step" id="track">
+              <span>04</span>
+              <h3>Track</h3>
+              <p>Save sessions, review completed work, and keep useful history attached.</p>
+            </article>
+            <article class="story-step" id="progress">
+              <span>05</span>
+              <h3>Progress</h3>
+              <p>Use PRs, muscle volume, and consistency signals to plan the next session.</p>
+            </article>
+          </div>
         </div>
       </section>
 
       <section class="section" aria-labelledby="features-heading">
         <div class="section-heading">
-          <p class="eyebrow">Features</p>
-          <h2 id="features-heading">Everything you need between the plan and the bar.</h2>
+          <p class="eyebrow">Product coverage</p>
+          <h2 id="features-heading">The small gym decisions handled before they slow you down.</h2>
         </div>
         <div class="feature-grid">
           <article class="feature-card">
@@ -254,7 +298,8 @@
       <section class="section split-band workflow-band" id="how-it-works" aria-labelledby="workflow-heading">
         <div>
           <p class="eyebrow">How it works</p>
-          <h2 id="workflow-heading">Keep the workout moving.</h2>
+          <h2 id="workflow-heading">A guided set flow with the product screens to prove it.</h2>
+          <p>Borrowing the cinematic section rhythm from the reference sites, this walkthrough keeps the page moving while staying grounded in real RackMath app states.</p>
         </div>
         <ol class="workflow-list">
           <li>
@@ -290,16 +335,29 @@
         </ol>
       </section>
 
+      <section class="section proof-band" aria-labelledby="proof-heading">
+        <div class="section-copy">
+          <p class="eyebrow">Built for repeat use</p>
+          <h2 id="proof-heading">Premium polish, practical utility.</h2>
+          <p>RackMath should feel sharp enough to trust with serious training weeks and simple enough to open between sets.</p>
+        </div>
+        <div class="proof-grid">
+          <div><strong>Fast by default</strong><span>calculator-first flow for quick gym checks</span></div>
+          <div><strong>Structured when needed</strong><span>programs, workouts, sessions, and history</span></div>
+          <div><strong>Useful after the lift</strong><span>PRs, volume, consistency, and progression context</span></div>
+        </div>
+      </section>
+
       <section class="section pricing-section" id="premium" aria-labelledby="pricing-heading">
         <div class="section-heading">
           <p class="eyebrow">Premium</p>
-          <h2 id="pricing-heading">Built for serious training weeks.</h2>
+          <h2 id="pricing-heading">Start with plate math. Upgrade when the whole program needs context.</h2>
         </div>
         <div class="pricing-grid">
           <article class="price-card">
             <p class="plan">Free</p>
             <h3>$0</h3>
-            <p>For quick plate calculations at the rack.</p>
+            <p>For quick plate calculations, warmup checks, and fast access at the rack.</p>
             <ul>
               <li>Fast barbell calculator</li>
               <li>Common lb and kg plates</li>
@@ -318,6 +376,11 @@
             </ul>
             <a class="button primary" href="https://www.rackmath.app/">Open Rack Math</a>
           </article>
+        </div>
+        <div class="plan-comparison" aria-label="Free and upgrade comparison">
+          <div><span>Best for quick checks</span><strong>Free calculator</strong></div>
+          <div><span>Best for training blocks</span><strong>Programs, history, and insights</strong></div>
+          <div><span>Primary action</span><strong>Open the web app and start loading</strong></div>
         </div>
       </section>
 
