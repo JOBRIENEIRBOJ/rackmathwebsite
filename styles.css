@@ -71,6 +71,12 @@ main img {
   padding: 18px 24px;
   background: rgba(248, 251, 255, 0.84);
   backdrop-filter: blur(18px);
+  transition: box-shadow 180ms ease, transform 180ms ease, background-color 180ms ease;
+}
+
+.site-header.is-scrolled {
+  background: rgba(248, 251, 255, 0.94);
+  box-shadow: 0 14px 38px rgba(16, 20, 24, 0.08);
 }
 
 .brand {
@@ -731,6 +737,26 @@ details {
   box-shadow: 0 12px 40px rgba(40, 185, 255, 0.06);
 }
 
+.feature-card,
+.price-card,
+.stat-grid div,
+.workflow-list li,
+details {
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.feature-card:hover,
+.price-card:hover,
+.stat-grid div:hover,
+details:hover {
+  border-color: rgba(40, 185, 255, 0.32);
+  box-shadow: 0 20px 54px rgba(16, 20, 24, 0.11);
+  transform: translateY(-3px);
+}
+
 .stat-grid strong {
   display: block;
   font-size: 2rem;
@@ -826,6 +852,17 @@ details {
   border-radius: 8px;
   box-shadow: 0 12px 40px rgba(40, 185, 255, 0.06);
   overflow: hidden;
+}
+
+.workflow-list li.is-current {
+  border-color: rgba(255, 22, 154, 0.34);
+  box-shadow:
+    0 20px 58px rgba(16, 20, 24, 0.12),
+    0 0 0 1px rgba(40, 185, 255, 0.12) inset;
+}
+
+.workflow-list li.is-current::before {
+  box-shadow: 0 0 0 6px rgba(40, 185, 255, 0.12);
 }
 
 .workflow-list li:nth-child(even) .workflow-shot {
@@ -980,6 +1017,7 @@ details p {
   background:
     linear-gradient(90deg, rgba(255, 22, 154, 0.22), transparent 35%, rgba(40, 185, 255, 0.24)),
     var(--night);
+  background-size: 180% 100%, auto;
 }
 
 .final-cta p {
@@ -1051,6 +1089,23 @@ details p {
   flex-wrap: wrap;
   gap: 18px;
   color: var(--muted);
+}
+
+.scroll-meter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--hot-pink), var(--brand-blue), var(--green));
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.has-rm-motion .hero-app-frame-shell,
+.has-rm-motion .workflow-shot {
+  will-change: transform;
 }
 
 .page-hero {
