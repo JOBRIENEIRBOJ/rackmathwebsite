@@ -5,6 +5,51 @@ const rackMathScriptUrl = new URL(
   window.location.href,
 );
 const rackMathRootUrl = new URL(".", rackMathScriptUrl);
+const rackMathDropdownTimelines = new WeakMap();
+
+function closeRackMathDropdown(dropdown, immediate = false) {
+  const trigger = dropdown.querySelector(".nav-dropdown-trigger");
+  const timeline = rackMathDropdownTimelines.get(dropdown);
+
+  trigger?.setAttribute("aria-expanded", "false");
+
+  if (timeline && !immediate && timeline.progress() > 0) {
+    timeline.timeScale(1.2).reverse();
+    return;
+  }
+
+  timeline?.progress(0).pause();
+  dropdown.classList.remove("is-open");
+}
+
+function closeRackMathDropdowns(exceptDropdown = null, immediate = false) {
+  document.querySelectorAll(".nav-dropdown.is-open").forEach((dropdown) => {
+    if (dropdown === exceptDropdown) return;
+    closeRackMathDropdown(dropdown, immediate);
+  });
+}
+
+function openRackMathDropdown(dropdown) {
+  const trigger = dropdown.querySelector(".nav-dropdown-trigger");
+  const timeline = rackMathDropdownTimelines.get(dropdown);
+
+  closeRackMathDropdowns(dropdown);
+  dropdown.classList.add("is-open");
+  trigger?.setAttribute("aria-expanded", "true");
+
+  if (timeline) {
+    timeline.timeScale(1).play();
+  }
+}
+
+function toggleRackMathDropdown(dropdown) {
+  if (dropdown.classList.contains("is-open")) {
+    closeRackMathDropdown(dropdown);
+    return;
+  }
+
+  openRackMathDropdown(dropdown);
+}
 
 if (header && navToggle) {
   navToggle.addEventListener("click", () => {
@@ -17,30 +62,34 @@ document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
   const trigger = dropdown.querySelector(".nav-dropdown-trigger");
   if (!trigger) return;
 
+  dropdown.dataset.rmMenu = trigger.textContent.trim().toLowerCase().replace(/\s+/g, "-");
   trigger.setAttribute("aria-haspopup", "true");
   trigger.setAttribute("aria-expanded", "false");
 
   trigger.addEventListener("click", (event) => {
     event.stopPropagation();
-    const isOpen = dropdown.classList.toggle("is-open");
-    trigger.setAttribute("aria-expanded", String(isOpen));
+    if (
+      rackMathDropdownTimelines.has(dropdown) &&
+      window.matchMedia("(min-width: 901px)").matches
+    ) {
+      openRackMathDropdown(dropdown);
+      return;
+    }
+
+    toggleRackMathDropdown(dropdown);
   });
 });
 
 document.addEventListener("click", (event) => {
   document.querySelectorAll(".nav-dropdown.is-open").forEach((dropdown) => {
     if (dropdown.contains(event.target)) return;
-    dropdown.classList.remove("is-open");
-    dropdown.querySelector(".nav-dropdown-trigger")?.setAttribute("aria-expanded", "false");
+    closeRackMathDropdown(dropdown);
   });
 });
 
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape") return;
-  document.querySelectorAll(".nav-dropdown.is-open").forEach((dropdown) => {
-    dropdown.classList.remove("is-open");
-    dropdown.querySelector(".nav-dropdown-trigger")?.setAttribute("aria-expanded", "false");
-  });
+  closeRackMathDropdowns(null, true);
 });
 
 function rackMathContentGroup(pathname) {
@@ -163,6 +212,115 @@ function loadRackMathMotionScripts() {
   return loadRackMathScript(gsapSrc).then(() => loadRackMathScript(scrollTriggerSrc));
 }
 
+function prepareRackMathHeroMasks() {
+  document.querySelectorAll(".hero h1, .page-hero h1").forEach((heading) => {
+    if (heading.dataset.rmTextMasked === "true") return;
+
+    const maskFragment = document.createDocumentFragment();
+
+    const appendMaskedWords = (text, target) => {
+      text.split(/(\s+)/).forEach((token) => {
+        if (!token) return;
+
+        if (/^\s+$/.test(token)) {
+          target.append(document.createTextNode(token));
+          return;
+        }
+
+        const wordMask = document.createElement("span");
+        const wordInner = document.createElement("span");
+        wordMask.className = "rm-text-mask-word";
+        wordInner.className = "rm-text-mask-inner";
+        wordInner.textContent = token;
+        wordMask.append(wordInner);
+        target.append(wordMask);
+      });
+    };
+
+    Array.from(heading.childNodes).forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        appendMaskedWords(node.textContent || "", maskFragment);
+        return;
+      }
+
+      if (node.nodeType !== Node.ELEMENT_NODE) return;
+
+      const element = node;
+      const clone = document.createElement(element.tagName.toLowerCase());
+
+      Array.from(element.attributes).forEach((attribute) => {
+        clone.setAttribute(attribute.name, attribute.value);
+      });
+
+      appendMaskedWords(element.textContent || "", clone);
+      maskFragment.append(clone);
+    });
+
+    heading.replaceChildren(maskFragment);
+    heading.dataset.rmTextMasked = "true";
+  });
+}
+
+function initRackMathDropdownMotion(gsap) {
+  if (!window.matchMedia("(min-width: 901px)").matches) return;
+
+  gsap.utils.toArray(".nav-dropdown").forEach((dropdown) => {
+    const menu = dropdown.querySelector(".nav-dropdown-menu");
+    const trigger = dropdown.querySelector(".nav-dropdown-trigger");
+    const links = menu ? gsap.utils.toArray("a", menu) : [];
+
+    if (!menu || !trigger || rackMathDropdownTimelines.has(dropdown)) return;
+
+    gsap.set(menu, {
+      autoAlpha: 0,
+      y: -10,
+      clipPath: "inset(0% 0% 100% 0%)",
+      transformOrigin: "top center",
+    });
+    gsap.set(links, {
+      autoAlpha: 0,
+      y: -8,
+    });
+
+    const timeline = gsap
+      .timeline({
+        paused: true,
+        defaults: {
+          ease: "expo.out",
+        },
+        onReverseComplete: () => {
+          dropdown.classList.remove("is-open");
+        },
+      })
+      .to(menu, {
+        autoAlpha: 1,
+        y: 0,
+        clipPath: "inset(0% 0% 0% 0%)",
+        duration: 0.34,
+      })
+      .to(
+        links,
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.2,
+          ease: "power2.out",
+          stagger: 0.018,
+        },
+        "-=0.2",
+      );
+
+    rackMathDropdownTimelines.set(dropdown, timeline);
+
+    dropdown.addEventListener("mouseenter", () => openRackMathDropdown(dropdown));
+    dropdown.addEventListener("mouseleave", () => closeRackMathDropdown(dropdown));
+    dropdown.addEventListener("focusout", (event) => {
+      if (event.relatedTarget instanceof Node && dropdown.contains(event.relatedTarget)) return;
+      closeRackMathDropdown(dropdown);
+    });
+  });
+}
+
 function initRackMathMotion() {
   if (!window.gsap || !window.ScrollTrigger || !shouldUseRackMathMotion()) return;
 
@@ -170,6 +328,23 @@ function initRackMathMotion() {
   gsap.registerPlugin(window.ScrollTrigger);
 
   document.documentElement.classList.add("has-rm-motion");
+  prepareRackMathHeroMasks();
+  initRackMathDropdownMotion(gsap);
+
+  const heroMaskTargets = gsap.utils.toArray(
+    ".hero h1 .rm-text-mask-inner, .page-hero h1 .rm-text-mask-inner",
+  );
+
+  document.documentElement.classList.remove("has-rm-hero-mask");
+  if (heroMaskTargets.length) {
+    gsap.set(heroMaskTargets, { clearProps: "transform" });
+    gsap.set(heroMaskTargets, {
+      yPercent: 112,
+      y: 0,
+      rotate: 1.6,
+      transformOrigin: "left bottom",
+    });
+  }
 
   let scrollMeter = document.querySelector(".scroll-meter");
 
@@ -239,7 +414,7 @@ function initRackMathMotion() {
     heroTimeline,
   );
   fromIfAny(
-    ".hero-copy > *, .page-hero > *",
+    ".hero-copy > :not(h1), .page-hero > :not(h1)",
     {
       autoAlpha: 0,
       y: 34,
@@ -248,6 +423,19 @@ function initRackMathMotion() {
     "-=0.18",
     heroTimeline,
   );
+  if (heroMaskTargets.length) {
+    heroTimeline.to(
+      heroMaskTargets,
+      {
+        yPercent: 0,
+        rotate: 0,
+        duration: 0.92,
+        ease: "power4.out",
+        stagger: 0.035,
+      },
+      "-=0.5",
+    );
+  }
   fromIfAny(
     ".hero-app-frame-shell",
     {
@@ -400,5 +588,11 @@ function initRackMathMotion() {
 }
 
 if (shouldUseRackMathMotion()) {
-  loadRackMathMotionScripts().then(initRackMathMotion).catch(() => {});
+  prepareRackMathHeroMasks();
+  document.documentElement.classList.add("has-rm-hero-mask");
+  loadRackMathMotionScripts()
+    .then(initRackMathMotion)
+    .catch(() => {
+      document.documentElement.classList.remove("has-rm-hero-mask");
+    });
 }

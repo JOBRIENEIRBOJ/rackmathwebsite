@@ -195,6 +195,22 @@ main img {
   transform: translate(-50%, 0);
 }
 
+@media (min-width: 901px) {
+  .nav-dropdown[data-rm-menu="exercises"] .nav-dropdown-menu,
+  .nav-dropdown:has(.nav-dropdown-menu a[href$="exercises/bench-press.html"]) .nav-dropdown-menu {
+    width: min(780px, calc(100vw - 48px));
+    max-height: none;
+    overflow: visible;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 6px;
+  }
+
+  .nav-dropdown[data-rm-menu="exercises"] .nav-dropdown-menu a,
+  .nav-dropdown:has(.nav-dropdown-menu a[href$="exercises/bench-press.html"]) .nav-dropdown-menu a {
+    white-space: nowrap;
+  }
+}
+
 .header-cta,
 .button {
   display: inline-flex;
@@ -276,9 +292,30 @@ main img {
   margin-bottom: 24px;
 }
 
-.hero h1 span {
+.hero h1 {
+  font-size: clamp(3rem, 4vw, 3.75rem);
+}
+
+.hero h1 > span:not(.rm-text-mask-word) {
   display: block;
   margin-top: 0.28em;
+}
+
+.rm-text-mask-word {
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+  vertical-align: top;
+}
+
+.rm-text-mask-inner {
+  display: inline-block;
+  will-change: transform;
+}
+
+.has-rm-hero-mask .rm-text-mask-inner {
+  transform: translate3d(0, 112%, 0) rotate(1.6deg);
 }
 
 .hero-text,
@@ -1124,8 +1161,28 @@ details p {
 }
 
 .has-rm-motion .hero-app-frame-shell,
-.has-rm-motion .workflow-shot {
+.has-rm-motion .workflow-shot,
+.has-rm-motion .nav-dropdown-menu,
+.has-rm-motion .nav-dropdown-menu a {
   will-change: transform;
+}
+
+@media (min-width: 901px) {
+  .has-rm-motion .nav-dropdown-menu {
+    transition: none;
+    transform: translate(-50%, 0);
+  }
+
+  .has-rm-motion .nav-dropdown:hover .nav-dropdown-menu,
+  .has-rm-motion .nav-dropdown:focus-within .nav-dropdown-menu,
+  .has-rm-motion .nav-dropdown.is-open .nav-dropdown-menu {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+
+  .has-rm-motion .nav-dropdown.is-open .nav-dropdown-menu {
+    pointer-events: auto;
+  }
 }
 
 .page-hero {
@@ -2603,6 +2660,10 @@ details p {
   .hero h1,
   .page-hero h1 {
     font-size: 3rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.35rem, 10.5vw, 2.65rem);
   }
 
   .blog-post-layout {
