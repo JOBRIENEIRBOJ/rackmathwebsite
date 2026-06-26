@@ -256,7 +256,7 @@
   },
   {
     "title": "How Long Should a Beginner Workout Be?",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-20",
     "slug": "how-long-should-a-beginner-workout-be",
     "primary_keyword": "how long should a beginner workout be",
@@ -265,7 +265,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Teach beginners how to how long should a beginner workout be with a small plan, manageable choices, and one way to avoid doing too much too soon."
+    "angle": "Teach beginners how to how long should a beginner workout be with a small plan, manageable choices, and one way to avoid doing too much too soon.",
+    "drafted_at": "2026-06-26T10:22:20.216Z",
+    "file": "content/blog/2026-06-20-how-long-should-a-beginner-workout-be.md"
   },
   {
     "title": "Full-Body Workouts vs Split Routines for Beginners",
