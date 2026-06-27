@@ -271,7 +271,7 @@
   },
   {
     "title": "Full-Body Workouts vs Split Routines for Beginners",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-21",
     "slug": "full-body-workouts-vs-split-routines-for-beginners",
     "primary_keyword": "full body workout vs split routine beginners",
@@ -280,7 +280,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Explain full-body workouts and split routines, then recommend the simpler path for most new lifters."
+    "angle": "Explain full-body workouts and split routines, then recommend the simpler path for most new lifters.",
+    "drafted_at": "2026-06-27T09:54:11.893Z",
+    "file": "content/blog/2026-06-21-full-body-workouts-vs-split-routines-for-beginners.md"
   },
   {
     "title": "How to Choose Your First Gym Workout",
