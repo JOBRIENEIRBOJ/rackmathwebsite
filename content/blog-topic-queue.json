@@ -286,7 +286,7 @@
   },
   {
     "title": "How to Choose Your First Gym Workout",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-22",
     "slug": "how-to-choose-your-first-gym-workout",
     "primary_keyword": "how to choose your first gym workout",
@@ -295,7 +295,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Teach beginners how to choose their first gym workout with a small plan, manageable choices, and one way to avoid doing too much too soon."
+    "angle": "Teach beginners how to choose their first gym workout with a small plan, manageable choices, and one way to avoid doing too much too soon.",
+    "drafted_at": "2026-06-28T10:10:09.067Z",
+    "file": "content/blog/2026-06-22-how-to-choose-your-first-gym-workout.md"
   },
   {
     "title": "What Does Light Weight Actually Mean?",
