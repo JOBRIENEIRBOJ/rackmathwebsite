@@ -301,7 +301,7 @@
   },
   {
     "title": "What Does Light Weight Actually Mean?",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-23",
     "slug": "what-does-light-weight-actually-mean",
     "primary_keyword": "what weight should I start lifting",
@@ -310,7 +310,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Answer the beginner question about light weight actually mean in plain language, then give one practical step they can use before the next workout."
+    "angle": "Answer the beginner question about light weight actually mean in plain language, then give one practical step they can use before the next workout.",
+    "drafted_at": "2026-06-29T10:52:33.172Z",
+    "file": "content/blog/2026-06-23-what-does-light-weight-actually-mean.md"
   },
   {
     "title": "How to Know If You Are Ready for Barbells",
