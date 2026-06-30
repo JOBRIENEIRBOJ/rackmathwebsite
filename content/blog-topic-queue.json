@@ -316,7 +316,7 @@
   },
   {
     "title": "How to Know If You Are Ready for Barbells",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-24",
     "slug": "how-to-know-if-you-are-ready-for-barbells",
     "primary_keyword": "how to know if you are ready for barbells",
@@ -325,7 +325,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Teach beginners how to know if they are ready for barbells with a small plan, manageable choices, and one way to avoid doing too much too soon."
+    "angle": "Teach beginners how to know if they are ready for barbells with a small plan, manageable choices, and one way to avoid doing too much too soon.",
+    "drafted_at": "2026-06-30T10:24:02.220Z",
+    "file": "content/blog/2026-06-24-how-to-know-if-you-are-ready-for-barbells.md"
   },
   {
     "title": "How to Start With Dumbbells Before Barbells",
