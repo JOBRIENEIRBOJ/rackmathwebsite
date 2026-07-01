@@ -331,7 +331,7 @@
   },
   {
     "title": "How to Start With Dumbbells Before Barbells",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-25",
     "slug": "how-to-start-with-dumbbells-before-barbells",
     "primary_keyword": "how to start with dumbbells before barbells",
@@ -340,7 +340,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Teach beginners how to start with dumbbells before barbells with a small plan, manageable choices, and one way to avoid doing too much too soon."
+    "angle": "Teach beginners how to start with dumbbells before barbells with a small plan, manageable choices, and one way to avoid doing too much too soon.",
+    "drafted_at": "2026-07-01T10:35:41.226Z",
+    "file": "content/blog/2026-06-25-how-to-start-with-dumbbells-before-barbells.md"
   },
   {
     "title": "How to Make Your First Workout Repeatable",
