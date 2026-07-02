@@ -346,7 +346,7 @@
   },
   {
     "title": "How to Make Your First Workout Repeatable",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-26",
     "slug": "how-to-make-your-first-workout-repeatable",
     "primary_keyword": "how to make your first workout repeatable",
@@ -355,7 +355,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Teach beginners how to make their first workout repeatable with a small plan, manageable choices, and one way to avoid doing too much too soon."
+    "angle": "Teach beginners how to make their first workout repeatable with a small plan, manageable choices, and one way to avoid doing too much too soon.",
+    "drafted_at": "2026-07-02T10:15:00.663Z",
+    "file": "content/blog/2026-06-26-how-to-make-your-first-workout-repeatable.md"
   },
   {
     "title": "How to Finish a Workout Without Doing Too Much",
