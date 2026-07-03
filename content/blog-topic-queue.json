@@ -361,7 +361,7 @@
   },
   {
     "title": "How to Finish a Workout Without Doing Too Much",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-27",
     "slug": "how-to-finish-a-workout-without-doing-too-much",
     "primary_keyword": "how to finish a workout without doing too much",
@@ -370,7 +370,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Teach beginners how to finish a workout without doing too much with a small plan, manageable choices, and one way to avoid doing too much too soon."
+    "angle": "Teach beginners how to finish a workout without doing too much with a small plan, manageable choices, and one way to avoid doing too much too soon.",
+    "drafted_at": "2026-07-03T10:11:35.802Z",
+    "file": "content/blog/2026-06-27-how-to-finish-a-workout-without-doing-too-much.md"
   },
   {
     "title": "How to Start Lifting at Home With Basic Equipment",
