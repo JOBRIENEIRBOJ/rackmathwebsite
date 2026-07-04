@@ -376,7 +376,7 @@
   },
   {
     "title": "How to Start Lifting at Home With Basic Equipment",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-28",
     "slug": "how-to-start-lifting-at-home-with-basic-equipment",
     "primary_keyword": "how to start lifting at home with basic equipment",
@@ -385,7 +385,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Teach beginners how to start lifting at home with basic equipment with a small plan, manageable choices, and one way to avoid doing too much too soon."
+    "angle": "Teach beginners how to start lifting at home with basic equipment with a small plan, manageable choices, and one way to avoid doing too much too soon.",
+    "drafted_at": "2026-07-04T09:55:58.926Z",
+    "file": "content/blog/2026-06-28-how-to-start-lifting-at-home-with-basic-equipment.md"
   },
   {
     "title": "The Beginner's Guide to Gym Etiquette",
