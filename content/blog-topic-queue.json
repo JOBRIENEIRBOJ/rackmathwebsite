@@ -391,7 +391,7 @@
   },
   {
     "title": "The Beginner's Guide to Gym Etiquette",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-29",
     "slug": "the-beginners-guide-to-gym-etiquette",
     "primary_keyword": "gym etiquette for beginners",
@@ -400,7 +400,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Teach beginners how to gym etiquette with a small plan, manageable choices, and one way to avoid doing too much too soon."
+    "angle": "Teach beginners how to gym etiquette with a small plan, manageable choices, and one way to avoid doing too much too soon.",
+    "drafted_at": "2026-07-05T09:57:34.369Z",
+    "file": "content/blog/2026-06-29-the-beginners-guide-to-gym-etiquette.md"
   },
   {
     "title": "What to Do Before You Touch a Weight",
