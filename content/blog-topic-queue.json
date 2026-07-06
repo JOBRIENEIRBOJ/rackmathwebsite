@@ -406,7 +406,7 @@
   },
   {
     "title": "What to Do Before You Touch a Weight",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-06-30",
     "slug": "what-to-do-before-you-touch-a-weight",
     "primary_keyword": "what to do before you touch a weight",
@@ -415,7 +415,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Answer the beginner question about do before they touch a weight in plain language, then give one practical step they can use before the next workout."
+    "angle": "Answer the beginner question about do before they touch a weight in plain language, then give one practical step they can use before the next workout.",
+    "drafted_at": "2026-07-06T10:51:07.635Z",
+    "file": "content/blog/2026-06-30-what-to-do-before-you-touch-a-weight.md"
   },
   {
     "title": "How to Warm Up Before Lifting Weights",
