@@ -421,7 +421,7 @@
   },
   {
     "title": "How to Warm Up Before Lifting Weights",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-01",
     "slug": "how-to-warm-up-before-lifting-weights",
     "primary_keyword": "warm up before lifting weights",
@@ -430,7 +430,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Teach beginners how to warm up before lifting weights with a small plan, manageable choices, and one way to avoid doing too much too soon."
+    "angle": "Teach beginners how to warm up before lifting weights with a small plan, manageable choices, and one way to avoid doing too much too soon.",
+    "drafted_at": "2026-07-07T10:22:52.928Z",
+    "file": "content/blog/2026-07-01-how-to-warm-up-before-lifting-weights.md"
   },
   {
     "title": "How to Cool Down Without Making It Complicated",
