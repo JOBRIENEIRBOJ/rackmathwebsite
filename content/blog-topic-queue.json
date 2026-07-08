@@ -436,7 +436,7 @@
   },
   {
     "title": "How to Cool Down Without Making It Complicated",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-02",
     "slug": "how-to-cool-down-without-making-it-complicated",
     "primary_keyword": "cool down after lifting weights",
@@ -445,7 +445,9 @@
       "how to start lifting weights",
       "beginner gym workout"
     ],
-    "angle": "Teach beginners how to cool down without making it complicated with a small plan, manageable choices, and one way to avoid doing too much too soon."
+    "angle": "Teach beginners how to cool down without making it complicated with a small plan, manageable choices, and one way to avoid doing too much too soon.",
+    "drafted_at": "2026-07-08T09:59:27.800Z",
+    "file": "content/blog/2026-07-02-how-to-cool-down-without-making-it-complicated.md"
   },
   {
     "title": "How to Stop Feeling Awkward in the Gym",
