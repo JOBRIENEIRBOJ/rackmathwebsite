@@ -451,7 +451,7 @@
   },
   {
     "title": "How to Stop Feeling Awkward in the Gym",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-03",
     "slug": "how-to-stop-feeling-awkward-in-the-gym",
     "primary_keyword": "how to stop feeling awkward at the gym",
@@ -460,7 +460,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners stop feeling awkward in the gym by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners stop feeling awkward in the gym by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-07-09T10:22:30.818Z",
+    "file": "content/blog/2026-07-03-how-to-stop-feeling-awkward-in-the-gym.md"
   },
   {
     "title": "What to Do When You Feel Lost in the Weight Room",
