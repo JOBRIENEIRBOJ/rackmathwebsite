@@ -466,7 +466,7 @@
   },
   {
     "title": "What to Do When You Feel Lost in the Weight Room",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-04",
     "slug": "what-to-do-when-you-feel-lost-in-the-weight-room",
     "primary_keyword": "first time in weight room",
@@ -475,7 +475,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Normalize the awkward moment when beginners face they feel lost in the weight room, then give a calm script or simple action they can use."
+    "angle": "Normalize the awkward moment when beginners face they feel lost in the weight room, then give a calm script or simple action they can use.",
+    "drafted_at": "2026-07-10T10:22:12.052Z",
+    "file": "content/blog/2026-07-04-what-to-do-when-you-feel-lost-in-the-weight-room.md"
   },
   {
     "title": "How to Use the Squat Rack Without Panicking",
