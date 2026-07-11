@@ -481,7 +481,7 @@
   },
   {
     "title": "How to Use the Squat Rack Without Panicking",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-05",
     "slug": "how-to-use-the-squat-rack-without-panicking",
     "primary_keyword": "how to use the squat rack without panicking",
@@ -490,7 +490,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners use the squat rack without panicking by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners use the squat rack without panicking by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-07-11T09:46:28.827Z",
+    "file": "content/blog/2026-07-05-how-to-use-the-squat-rack-without-panicking.md"
   },
   {
     "title": "How to Ask for Help at the Gym",
