@@ -496,7 +496,7 @@
   },
   {
     "title": "How to Ask for Help at the Gym",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-06",
     "slug": "how-to-ask-for-help-at-the-gym",
     "primary_keyword": "how to ask for help at the gym",
@@ -505,7 +505,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners ask for help at the gym by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners ask for help at the gym by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-07-12T09:51:32.940Z",
+    "file": "content/blog/2026-07-06-how-to-ask-for-help-at-the-gym.md"
   },
   {
     "title": "What to Do When Equipment Is Taken",
