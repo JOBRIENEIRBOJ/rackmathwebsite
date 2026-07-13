@@ -511,7 +511,7 @@
   },
   {
     "title": "What to Do When Equipment Is Taken",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-07",
     "slug": "what-to-do-when-equipment-is-taken",
     "primary_keyword": "what to do when equipment is taken",
@@ -520,7 +520,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Normalize the awkward moment when beginners face equipment is taken, then give a calm script or simple action they can use."
+    "angle": "Normalize the awkward moment when beginners face equipment is taken, then give a calm script or simple action they can use.",
+    "drafted_at": "2026-07-13T10:22:15.272Z",
+    "file": "content/blog/2026-07-07-what-to-do-when-equipment-is-taken.md"
   },
   {
     "title": "How to Stop Comparing Yourself to Stronger Lifters",
