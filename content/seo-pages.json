@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "Rack Math",
-    "url": "https://www.rackmath.com",
+    "url": "https://rackmath.com",
     "appUrl": "https://www.rackmath.app"
   },
   "pages": [
@@ -29,10 +29,11 @@
       "type": "tool",
       "section": "tools",
       "slug": "/tools/barbell-plate-calculator.html",
-      "title": "Barbell Plate Calculator | Free RackMath Plate Visualizer",
-      "description": "Use the free RackMath barbell plate calculator to calculate plates per side for pounds or kilograms, choose your bar, and see the loaded bar before your next set.",
-      "h1": "Barbell Plate Calculator",
-      "eyebrow": "Free barbell plate calculator",
+      "publicPath": "/tools/barbell-plate-calculator",
+      "title": "Barbell Calculator | Free Plate Calculator & Visualizer",
+      "description": "Use the free RackMath barbell calculator to calculate plates per side for pounds or kilograms, choose your bar, and see exactly what to load on each side.",
+      "h1": "Barbell Calculator",
+      "eyebrow": "Free barbell calculator",
       "summary": "Enter your target weight, choose pounds or kilograms, select your bar and available plates, and see exactly what to load on each side.",
       "primaryKeyword": "barbell plate calculator",
       "secondaryKeywords": [

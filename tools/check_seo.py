@@ -20,6 +20,10 @@ def page_path(slug: str) -> Path:
     return ROOT / slug.lstrip("/")
 
 
+def public_path(page: dict) -> str:
+    return page.get("publicPath", page["slug"])
+
+
 def count(pattern: str, text: str) -> int:
     return len(re.findall(pattern, text, flags=re.IGNORECASE))
 
@@ -34,6 +38,7 @@ def main() -> int:
             continue
 
         slug = page["slug"]
+        public_url = f"https://rackmath.com{public_path(page)}"
         path = page_path(slug)
         if not path.exists():
             errors.append(f"{slug}: missing generated file {path.relative_to(ROOT)}")
@@ -45,8 +50,8 @@ def main() -> int:
             (count(r'<meta\s+name="description"', html) == 1, "must have exactly one meta description"),
             (count(r"<h1\b", html) == 1, "must have exactly one h1"),
             (count(r'rel="canonical"', html) == 1, "must have exactly one canonical"),
-            (f"https://www.rackmath.com{slug}" in html, "must contain self-referencing canonical URL"),
-            (f"https://www.rackmath.com{slug}" in sitemap, "must be included in sitemap.xml"),
+            (public_url in html, "must contain self-referencing canonical URL"),
+            (public_url in sitemap, "must be included in sitemap.xml"),
             (count(r"<a\s+[^>]*href=", html) >= 3, "must contain crawlable links"),
         ]
         for ok, message in checks:

@@ -15,7 +15,7 @@ import build_blog
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_PATH = ROOT / "content" / "seo-pages.json"
-SITE_URL = "https://www.rackmath.com"
+SITE_URL = "https://rackmath.com"
 APP_URL = "https://www.rackmath.app"
 BASE_PAGES = [
     ("/", "1.0"),
@@ -64,10 +64,22 @@ def prefix_for(slug: str) -> str:
     return "../" * depth
 
 
+def public_path(page: dict) -> str:
+    return page.get("publicPath", page["slug"])
+
+
+def public_url(page: dict) -> str:
+    return f"{SITE_URL}{public_path(page)}"
+
+
+def href_for(page: dict, prefix: str = "") -> str:
+    return f"{prefix}{public_path(page).lstrip('/')}"
+
+
 def nav(current: str, prefix: str = "") -> str:
     tool_links = [
         ("All tools", f"{prefix}tools/"),
-        ("Barbell Plate Calculator", f"{prefix}tools/barbell-plate-calculator.html"),
+        ("Barbell Calculator", f"{prefix}tools/barbell-plate-calculator"),
         ("Warmup Set Calculator", f"{prefix}tools/warmup-set-calculator.html"),
         ("One Rep Max Calculator", f"{prefix}tools/one-rep-max-calculator.html"),
         ("Common Barbell Weights", f"{prefix}tools/common-barbell-weights.html"),
@@ -250,7 +262,7 @@ def breadcrumb_schema(page: dict) -> dict:
                 "@type": "ListItem",
                 "position": len(items) + 1,
                 "name": page["h1"],
-                "item": f"{SITE_URL}{page['slug']}",
+                "item": public_url(page),
             }
         )
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items}
@@ -263,7 +275,7 @@ def software_schema(page: dict) -> dict:
         "name": "Rack Math",
         "applicationCategory": "HealthApplication",
         "operatingSystem": "Web",
-        "url": f"{SITE_URL}{page['slug']}",
+        "url": public_url(page),
         "description": page["description"],
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
     }
@@ -318,7 +330,7 @@ def schema_scripts(page: dict) -> str:
 
 def page_shell(page: dict, body: str, current: str = "tools", extra_script: str = "") -> str:
     prefix = prefix_for(page["slug"])
-    canonical = f"{SITE_URL}{page['slug']}"
+    canonical = public_url(page)
     schema = schema_scripts(page)
     return f"""<!doctype html>
 <html lang="en">
@@ -363,7 +375,7 @@ def render_related_links(page: dict, registry: dict, prefix: str) -> str:
     for slug in page.get("related", []):
         related = pages_by_slug.get(slug)
         if related:
-            href = f"{prefix}{slug.lstrip('/')}"
+            href = href_for(related, prefix)
             label = related["h1"]
         else:
             href = f"{prefix}{slug.lstrip('/')}"
@@ -393,7 +405,7 @@ def render_tools_hub(page: dict, registry: dict) -> str:
         <p>{escape(page["summary"])}</p>
         <div class="hero-actions">
           <a class="button primary" href="{app_href(page["appRoute"])}" data-rm-app-link data-rm-event="app_deeplink_clicked">Try RackMath free</a>
-          <a class="button secondary" href="{prefix}tools/barbell-plate-calculator.html">Try the plate calculator</a>
+          <a class="button secondary" href="{prefix}tools/barbell-plate-calculator">Try the plate calculator</a>
         </div>
       </section>
 
@@ -1001,7 +1013,7 @@ def render_workouts_hub(page: dict, registry: dict) -> str:
         <p>{escape(page["summary"])}</p>
         <div class="hero-actions">
           <a class="button primary" href="{app_href(page["appRoute"])}" data-rm-app-link data-rm-event="app_deeplink_clicked">{escape(page["primaryCta"])}</a>
-          <a class="button secondary" href="{prefix}tools/barbell-plate-calculator.html">Try plate calculator</a>
+          <a class="button secondary" href="{prefix}tools/barbell-plate-calculator">Try plate calculator</a>
         </div>
       </section>
 
@@ -1023,7 +1035,7 @@ def render_workout_page(page: dict, registry: dict) -> str:
         <p>{escape(page.get("summary", page["description"]))}</p>
         <div class="hero-actions">
           <a class="button primary" href="{app_href(page["appRoute"])}" data-rm-app-link data-rm-event="template_started">{escape(page["primaryCta"])}</a>
-          <a class="button secondary" href="{prefix}tools/barbell-plate-calculator.html">Calculate plates</a>
+          <a class="button secondary" href="{prefix}tools/barbell-plate-calculator">Calculate plates</a>
         </div>
       </section>
 
@@ -1563,7 +1575,7 @@ def feature_library() -> dict[str, dict]:
                 "Accounts for bar weight before building the plate stack.",
                 "Pairs with warmups, saved workouts, and exercise history.",
             ],
-            "free_link": "/tools/barbell-plate-calculator.html",
+            "free_link": "/tools/barbell-plate-calculator",
             "free_label": "Try the free calculator",
         },
         "/features/custom-plate-calculator.html": {
@@ -1834,7 +1846,7 @@ def render_persona_hub(page: dict, registry: dict) -> str:
         <p>{escape(page["summary"])}</p>
         <div class="hero-actions">
           <a class="button primary" href="{app_href(page["appRoute"])}" data-rm-app-link data-rm-event="app_deeplink_clicked">{escape(page["primaryCta"])}</a>
-          <a class="button secondary" href="{prefix}tools/barbell-plate-calculator.html">Try plate calculator</a>
+          <a class="button secondary" href="{prefix}tools/barbell-plate-calculator">Try plate calculator</a>
         </div>
       </section>
 
@@ -2199,7 +2211,7 @@ def write_sitemap(posts: list[build_blog.Post], registry: dict) -> None:
         "feature": "0.7",
     }
     for page in published_pages(registry):
-        add(page["slug"], priority_by_type.get(page["type"], "0.6"))
+        add(public_path(page), priority_by_type.get(page["type"], "0.6"))
 
     for post in posts:
         add(post.url_path, "0.6", post.date.isoformat())

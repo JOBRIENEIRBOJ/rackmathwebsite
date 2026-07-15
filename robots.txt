@@ -3,4 +3,4 @@ Allow: /
 Disallow: /content/
 Disallow: /website-landing-kit/
 
-Sitemap: https://www.rackmath.com/sitemap.xml
+Sitemap: https://rackmath.com/sitemap.xml

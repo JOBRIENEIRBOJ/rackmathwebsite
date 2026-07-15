@@ -16,7 +16,7 @@ from xml.etree import ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT_DIR = ROOT / "content" / "blog"
 BLOG_DIR = ROOT / "blog"
-SITE_URL = "https://www.rackmath.com"
+SITE_URL = "https://rackmath.com"
 SITE_NAME = "Rack Math"
 BASE_PAGES = [
     ("/", "1.0"),
