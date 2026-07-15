@@ -79,7 +79,7 @@ def href_for(page: dict, prefix: str = "") -> str:
 def nav(current: str, prefix: str = "") -> str:
     tool_links = [
         ("All tools", f"{prefix}tools/"),
-        ("Barbell Calculator", f"{prefix}tools/barbell-plate-calculator"),
+        ("Barbell Calculator", f"{prefix}tools/barbell-calculator"),
         ("Warmup Set Calculator", f"{prefix}tools/warmup-set-calculator.html"),
         ("One Rep Max Calculator", f"{prefix}tools/one-rep-max-calculator.html"),
         ("Common Barbell Weights", f"{prefix}tools/common-barbell-weights.html"),
@@ -320,7 +320,7 @@ def schema_scripts(page: dict) -> str:
         schemas.append(breadcrumb_schema(page))
     if "SoftwareApplication" in page.get("schema", []):
         schemas.append(software_schema(page))
-    if page["slug"] == "/tools/barbell-plate-calculator.html":
+    if page["slug"] == "/tools/barbell-calculator.html":
         schemas.append(calculator_faq_schema())
     return "\n".join(
         f'    <script type="application/ld+json">\n      {json.dumps(schema, indent=6)}\n    </script>'
@@ -405,7 +405,7 @@ def render_tools_hub(page: dict, registry: dict) -> str:
         <p>{escape(page["summary"])}</p>
         <div class="hero-actions">
           <a class="button primary" href="{app_href(page["appRoute"])}" data-rm-app-link data-rm-event="app_deeplink_clicked">Try RackMath free</a>
-          <a class="button secondary" href="{prefix}tools/barbell-plate-calculator">Try the plate calculator</a>
+          <a class="button secondary" href="{prefix}tools/barbell-calculator">Try the plate calculator</a>
         </div>
       </section>
 
@@ -1013,7 +1013,7 @@ def render_workouts_hub(page: dict, registry: dict) -> str:
         <p>{escape(page["summary"])}</p>
         <div class="hero-actions">
           <a class="button primary" href="{app_href(page["appRoute"])}" data-rm-app-link data-rm-event="app_deeplink_clicked">{escape(page["primaryCta"])}</a>
-          <a class="button secondary" href="{prefix}tools/barbell-plate-calculator">Try plate calculator</a>
+          <a class="button secondary" href="{prefix}tools/barbell-calculator">Try plate calculator</a>
         </div>
       </section>
 
@@ -1035,7 +1035,7 @@ def render_workout_page(page: dict, registry: dict) -> str:
         <p>{escape(page.get("summary", page["description"]))}</p>
         <div class="hero-actions">
           <a class="button primary" href="{app_href(page["appRoute"])}" data-rm-app-link data-rm-event="template_started">{escape(page["primaryCta"])}</a>
-          <a class="button secondary" href="{prefix}tools/barbell-plate-calculator">Calculate plates</a>
+          <a class="button secondary" href="{prefix}tools/barbell-calculator">Calculate plates</a>
         </div>
       </section>
 
@@ -1575,7 +1575,7 @@ def feature_library() -> dict[str, dict]:
                 "Accounts for bar weight before building the plate stack.",
                 "Pairs with warmups, saved workouts, and exercise history.",
             ],
-            "free_link": "/tools/barbell-plate-calculator",
+            "free_link": "/tools/barbell-calculator",
             "free_label": "Try the free calculator",
         },
         "/features/custom-plate-calculator.html": {
@@ -1846,7 +1846,7 @@ def render_persona_hub(page: dict, registry: dict) -> str:
         <p>{escape(page["summary"])}</p>
         <div class="hero-actions">
           <a class="button primary" href="{app_href(page["appRoute"])}" data-rm-app-link data-rm-event="app_deeplink_clicked">{escape(page["primaryCta"])}</a>
-          <a class="button secondary" href="{prefix}tools/barbell-plate-calculator">Try plate calculator</a>
+          <a class="button secondary" href="{prefix}tools/barbell-calculator">Try plate calculator</a>
         </div>
       </section>
 
@@ -2248,7 +2248,7 @@ def main() -> None:
             write_page(page, render_persona_hub(page, registry))
         elif page["slug"] == "/programs/":
             write_page(page, render_program_hub(page, registry))
-        elif page["slug"] == "/tools/barbell-plate-calculator.html":
+        elif page["slug"] == "/tools/barbell-calculator.html":
             write_page(page, render_calculator_page(page, registry))
         elif page.get("type") == "tool":
             write_page(page, render_standard_tool_page(page, registry))
