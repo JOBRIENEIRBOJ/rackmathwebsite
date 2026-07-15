@@ -541,7 +541,7 @@
   },
   {
     "title": "How to Lift When the Gym Is Crowded",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-09",
     "slug": "how-to-lift-when-the-gym-is-crowded",
     "primary_keyword": "how to lift when the gym is crowded",
@@ -550,7 +550,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners lift when the gym is crowded by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners lift when the gym is crowded by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-07-15T09:53:17.888Z",
+    "file": "content/blog/2026-07-09-how-to-lift-when-the-gym-is-crowded.md"
   },
   {
     "title": "How to Build Confidence Under the Bar",
