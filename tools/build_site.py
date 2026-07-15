@@ -390,7 +390,7 @@ def render_tools_hub(page: dict, registry: dict) -> str:
         item for item in registry["pages"] if item.get("section") == "tools" and item.get("type") == "tool"
     ]
     cards = "\n".join(
-        f"""          <a class="tool-card" href="{prefix + item["slug"].lstrip("/") if item.get("status") == "published" else '#'}"{" aria-disabled=\"true\"" if item.get("status") != "published" else ""}>
+        f"""          <a class="tool-card" href="{href_for(item, prefix) if item.get("status") == "published" else '#'}"{" aria-disabled=\"true\"" if item.get("status") != "published" else ""}>
             <span class="tool-card-kicker">{escape(item.get("eyebrow", "RackMath tool"))}</span>
             <h2>{escape(item["h1"])}</h2>
             <p>{escape(item["description"])}</p>

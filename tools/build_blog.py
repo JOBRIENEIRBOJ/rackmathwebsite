@@ -190,7 +190,7 @@ def without_leading_h1(markdown: str) -> str:
 def nav(current: str, prefix: str = "") -> str:
     tool_links = [
         ("All tools", f"{prefix}tools/"),
-        ("Barbell Plate Calculator", f"{prefix}tools/barbell-plate-calculator.html"),
+        ("Barbell Calculator", f"{prefix}tools/barbell-plate-calculator"),
         ("Warmup Set Calculator", f"{prefix}tools/warmup-set-calculator.html"),
         ("One Rep Max Calculator", f"{prefix}tools/one-rep-max-calculator.html"),
         ("Common Barbell Weights", f"{prefix}tools/common-barbell-weights.html"),
