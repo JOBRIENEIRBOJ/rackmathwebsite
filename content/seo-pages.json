@@ -1058,28 +1058,6 @@
       "status": "published",
       "type": "feature",
       "section": "features",
-      "slug": "/features/ai-workout-builder.html",
-      "title": "AI Workout Builder Feature | RackMath",
-      "description": "Build a training plan from your goal, schedule, equipment, and experience.",
-      "h1": "AI Workout Builder",
-      "eyebrow": "AI planning",
-      "summary": "Turn goal, schedule, experience, and equipment constraints into a workout draft that can be saved, edited, and run inside RackMath.",
-      "primaryCta": "Build my workout",
-      "appRoute": "/ai-workout-builder?source=seo&feature=ai-workout-builder",
-      "schema": [
-        "BreadcrumbList",
-        "SoftwareApplication"
-      ],
-      "related": [
-        "/tools/ai-workout-builder.html",
-        "/workouts/4-day-upper-lower.html",
-        "/features/workout-tracker.html"
-      ]
-    },
-    {
-      "status": "published",
-      "type": "feature",
-      "section": "features",
       "slug": "/features/workout-plan-importer.html",
       "title": "Workout Plan Importer Feature | RackMath",
       "description": "Turn screenshots, PDFs, text, or coach programming into trackable RackMath workouts.",

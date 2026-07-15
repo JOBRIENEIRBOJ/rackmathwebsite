@@ -1611,17 +1611,6 @@ def feature_library() -> dict[str, dict]:
             "free_link": "/workouts/3-day-beginner-full-body.html",
             "free_label": "Browse free workouts",
         },
-        "/features/ai-workout-builder.html": {
-            "problem": "A blank workout plan makes beginners guess and makes experienced lifters repeat setup work.",
-            "solution": "RackMath can draft a plan from your goal, schedule, equipment, and experience, then let you edit and track it.",
-            "highlights": [
-                "Starts from goal and availability instead of a blank page.",
-                "Creates a trackable structure, not just loose text.",
-                "Works alongside the free evidence-based templates.",
-            ],
-            "free_link": "/tools/ai-workout-builder.html",
-            "free_label": "Preview the AI builder",
-        },
         "/features/workout-plan-importer.html": {
             "problem": "Useful plans often live in screenshots, notes, PDFs, spreadsheets, or messages.",
             "solution": "RackMath helps turn outside programming into structured workouts you can run, edit, and track.",
