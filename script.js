@@ -447,18 +447,6 @@ function initRackMathMotion() {
     heroTimeline,
   );
   fromIfAny(
-    ".hero-utility-card",
-    {
-      autoAlpha: 0,
-      y: 18,
-      scale: 0.96,
-      stagger: 0.08,
-      duration: 0.52,
-    },
-    "-=0.38",
-    heroTimeline,
-  );
-  fromIfAny(
     ".trust-row span",
     {
       autoAlpha: 0,

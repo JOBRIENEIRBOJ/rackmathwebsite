@@ -465,46 +465,6 @@ main img {
     0 0 0 1px rgba(255, 255, 255, 0.55) inset;
 }
 
-.hero-utility-card {
-  position: absolute;
-  z-index: 3;
-  width: min(230px, 52vw);
-  padding: 14px 16px;
-  border: 1px solid rgba(40, 185, 255, 0.22);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 22px 58px rgba(16, 20, 24, 0.12);
-  backdrop-filter: blur(18px);
-}
-
-.hero-utility-card span,
-.hero-utility-card strong {
-  display: block;
-}
-
-.hero-utility-card span {
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.hero-utility-card strong {
-  margin-top: 5px;
-  font-size: 1rem;
-  line-height: 1.25;
-}
-
-.utility-card-top {
-  top: 58px;
-  left: -34px;
-}
-
-.utility-card-bottom {
-  right: -18px;
-  bottom: 82px;
-}
-
 .hero-app-frame {
   display: block;
   width: 100%;
@@ -2824,14 +2784,6 @@ details p {
 
   .hero {
     padding-top: 46px;
-  }
-
-  .hero-utility-card {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    max-width: 390px;
-    justify-self: center;
   }
 
   .story-rail {
