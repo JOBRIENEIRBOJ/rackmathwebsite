@@ -556,7 +556,7 @@
   },
   {
     "title": "How to Build Confidence Under the Bar",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-10",
     "slug": "how-to-build-confidence-under-the-bar",
     "primary_keyword": "how to build confidence under the bar",
@@ -565,7 +565,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners build confidence under the bar by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners build confidence under the bar by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-07-16T09:54:12.405Z",
+    "file": "content/blog/2026-07-10-how-to-build-confidence-under-the-bar.md"
   },
   {
     "title": "How to Handle a Bad Gym Day",
