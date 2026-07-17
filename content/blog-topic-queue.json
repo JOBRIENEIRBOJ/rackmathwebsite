@@ -571,7 +571,7 @@
   },
   {
     "title": "How to Handle a Bad Gym Day",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-11",
     "slug": "how-to-handle-a-bad-gym-day",
     "primary_keyword": "how to handle a bad gym day",
@@ -580,7 +580,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners handle a bad gym day by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners handle a bad gym day by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-07-17T09:52:49.562Z",
+    "file": "content/blog/2026-07-11-how-to-handle-a-bad-gym-day.md"
   },
   {
     "title": "How to Go Back After an Embarrassing Workout",
