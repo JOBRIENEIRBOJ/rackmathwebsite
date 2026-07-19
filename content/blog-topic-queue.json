@@ -599,7 +599,7 @@
   },
   {
     "title": "How to Train When You Feel Like Everyone Is Watching",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-13",
     "slug": "how-to-train-when-you-feel-like-everyone-is-watching",
     "primary_keyword": "how to train when you feel like everyone is watching",
@@ -608,7 +608,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners train when they feel like everyone is watching by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners train when they feel like everyone is watching by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-07-19T09:51:32.513Z",
+    "file": "content/blog/2026-07-13-how-to-train-when-you-feel-like-everyone-is-watching.md"
   },
   {
     "title": "Your First Time Bench Pressing in Public",
