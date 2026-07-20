@@ -614,7 +614,7 @@
   },
   {
     "title": "Your First Time Bench Pressing in Public",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-14",
     "slug": "your-first-time-bench-pressing-in-public",
     "primary_keyword": "your first time bench pressing in public",
@@ -623,7 +623,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Walk beginners through benching in public with a simple setup, a safety check, and permission to start lighter than expected."
+    "angle": "Walk beginners through benching in public with a simple setup, a safety check, and permission to start lighter than expected.",
+    "drafted_at": "2026-07-20T10:19:40.887Z",
+    "file": "content/blog/2026-07-14-your-first-time-bench-pressing-in-public.md"
   },
   {
     "title": "How to Find Your Spot in the Weight Room",
