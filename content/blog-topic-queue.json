@@ -629,7 +629,7 @@
   },
   {
     "title": "How to Find Your Spot in the Weight Room",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-15",
     "slug": "how-to-find-your-spot-in-the-weight-room",
     "primary_keyword": "how to find your spot in the weight room",
@@ -638,7 +638,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners find their spot in the weight room by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners find their spot in the weight room by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-07-21T10:04:40.879Z",
+    "file": "content/blog/2026-07-15-how-to-find-your-spot-in-the-weight-room.md"
   },
   {
     "title": "How to Deal With Gym Anxiety Before You Leave the House",
