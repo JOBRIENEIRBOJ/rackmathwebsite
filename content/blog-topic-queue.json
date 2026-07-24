@@ -674,7 +674,7 @@
   },
   {
     "title": "What Beginners Should Know About Spotters",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-18",
     "slug": "what-beginners-should-know-about-spotters",
     "primary_keyword": "bench press spotter beginners",
@@ -683,7 +683,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Normalize the awkward moment when beginners face spotters, then give a calm script or simple action they can use."
+    "angle": "Normalize the awkward moment when beginners face spotters, then give a calm script or simple action they can use.",
+    "drafted_at": "2026-07-24T09:59:46.753Z",
+    "file": "content/blog/2026-07-18-what-beginners-should-know-about-spotters.md"
   },
   {
     "title": "How to Share Equipment Without Making It Weird",
