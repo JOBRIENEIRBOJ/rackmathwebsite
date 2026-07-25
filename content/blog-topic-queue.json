@@ -687,7 +687,7 @@
   },
   {
     "title": "How to Share Equipment Without Making It Weird",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-19",
     "slug": "how-to-share-equipment-without-making-it-weird",
     "primary_keyword": "how to share equipment without making it weird",
@@ -696,7 +696,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners share equipment without making it weird by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners share equipment without making it weird by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-07-25T09:51:11.203Z",
+    "file": "content/blog/2026-07-19-how-to-share-equipment-without-making-it-weird.md"
   },
   {
     "title": "How to Wait for a Rack Without Feeling Awkward",
