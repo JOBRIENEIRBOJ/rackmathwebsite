@@ -702,7 +702,7 @@
   },
   {
     "title": "How to Wait for a Rack Without Feeling Awkward",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-20",
     "slug": "how-to-wait-for-a-rack-without-feeling-awkward",
     "primary_keyword": "how to wait for a rack without feeling awkward",
@@ -711,7 +711,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners wait for a rack without feeling awkward by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners wait for a rack without feeling awkward by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-07-26T09:52:52.445Z",
+    "file": "content/blog/2026-07-20-how-to-wait-for-a-rack-without-feeling-awkward.md"
   },
   {
     "title": "What to Say When Someone Gives Unwanted Gym Advice",
