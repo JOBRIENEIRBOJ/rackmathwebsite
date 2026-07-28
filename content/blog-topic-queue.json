@@ -732,7 +732,7 @@
   },
   {
     "title": "How to Be a Beginner Without Apologizing",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-22",
     "slug": "how-to-be-a-beginner-without-apologizing",
     "primary_keyword": "how to be a beginner without apologizing",
@@ -741,7 +741,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners be a beginner without apologizing by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners be a beginner without apologizing by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-07-28T10:07:13.969Z",
+    "file": "content/blog/2026-07-22-how-to-be-a-beginner-without-apologizing.md"
   },
   {
     "title": "How to Try a New Exercise Without Feeling Silly",
