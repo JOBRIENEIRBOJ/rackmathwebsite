@@ -747,7 +747,7 @@
   },
   {
     "title": "How to Try a New Exercise Without Feeling Silly",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-23",
     "slug": "how-to-try-a-new-exercise-without-feeling-silly",
     "primary_keyword": "how to try a new exercise without feeling silly",
@@ -756,7 +756,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners try a new exercise without feeling silly by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners try a new exercise without feeling silly by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-07-29T10:07:16.196Z",
+    "file": "content/blog/2026-07-23-how-to-try-a-new-exercise-without-feeling-silly.md"
   },
   {
     "title": "How to Use Headphones and Still Stay Aware",
