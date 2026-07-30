@@ -762,7 +762,7 @@
   },
   {
     "title": "How to Use Headphones and Still Stay Aware",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-24",
     "slug": "how-to-use-headphones-and-still-stay-aware",
     "primary_keyword": "how to use headphones and still stay aware",
@@ -771,7 +771,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners use headphones and still stay aware by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners use headphones and still stay aware by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-07-30T10:01:54.137Z",
+    "file": "content/blog/2026-07-24-how-to-use-headphones-and-still-stay-aware.md"
   },
   {
     "title": "How to Walk Away From an Exercise That Feels Wrong",
