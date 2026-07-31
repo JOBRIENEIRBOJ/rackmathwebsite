@@ -777,7 +777,7 @@
   },
   {
     "title": "How to Walk Away From an Exercise That Feels Wrong",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-25",
     "slug": "how-to-walk-away-from-an-exercise-that-feels-wrong",
     "primary_keyword": "how to walk away from an exercise that feels wrong",
@@ -786,7 +786,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners walk away from an exercise that feels wrong by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners walk away from an exercise that feels wrong by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-07-31T10:05:55.636Z",
+    "file": "content/blog/2026-07-25-how-to-walk-away-from-an-exercise-that-feels-wrong.md"
   },
   {
     "title": "How to Keep Lifting When Confidence Dips",
