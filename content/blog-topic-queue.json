@@ -807,7 +807,7 @@
   },
   {
     "title": "How to Train Alone When You Are New",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-27",
     "slug": "how-to-train-alone-when-you-are-new",
     "primary_keyword": "how to train alone when you are new",
@@ -816,7 +816,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners train alone when they are new by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners train alone when they are new by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-08-02T09:52:31.538Z",
+    "file": "content/blog/2026-07-27-how-to-train-alone-when-you-are-new.md"
   },
   {
     "title": "How to Lift With a Friend Without Turning It Into a Contest",
