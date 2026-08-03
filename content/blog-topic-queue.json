@@ -822,7 +822,7 @@
   },
   {
     "title": "How to Lift With a Friend Without Turning It Into a Contest",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-28",
     "slug": "how-to-lift-with-a-friend-without-turning-it-into-a-contest",
     "primary_keyword": "how to lift with a friend without turning it into a contest",
@@ -831,7 +831,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners lift with a friend without turning it into a contest by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners lift with a friend without turning it into a contest by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-08-03T10:27:47.586Z",
+    "file": "content/blog/2026-07-28-how-to-lift-with-a-friend-without-turning-it-into-a-contest.md"
   },
   {
     "title": "How to Handle Mirrors in the Weight Room",
