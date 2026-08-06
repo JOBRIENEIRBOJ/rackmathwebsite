@@ -867,7 +867,7 @@
   },
   {
     "title": "How to Build a Simple Gym Routine You Trust",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-31",
     "slug": "how-to-build-a-simple-gym-routine-you-trust",
     "primary_keyword": "how to build a simple gym routine you trust",
@@ -876,7 +876,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners build a simple gym routine they trust by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners build a simple gym routine they trust by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-08-06T10:07:33.944Z",
+    "file": "content/blog/2026-07-31-how-to-build-a-simple-gym-routine-you-trust.md"
   },
   {
     "title": "How to Make Your Second Gym Visit Easier Than the First",
