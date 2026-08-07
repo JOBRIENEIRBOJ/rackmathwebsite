@@ -882,7 +882,7 @@
   },
   {
     "title": "How to Make Your Second Gym Visit Easier Than the First",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-08-01",
     "slug": "how-to-make-your-second-gym-visit-easier-than-the-first",
     "primary_keyword": "how to make your second gym visit easier than the first",
@@ -891,7 +891,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners make their second gym visit easier than the first by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners make their second gym visit easier than the first by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-08-07T09:35:01.823Z",
+    "file": "content/blog/2026-08-01-how-to-make-your-second-gym-visit-easier-than-the-first.md"
   },
   {
     "title": "The Beginner's Guide to Loading a Barbell",
