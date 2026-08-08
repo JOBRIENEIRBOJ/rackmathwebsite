@@ -897,7 +897,7 @@
   },
   {
     "title": "The Beginner's Guide to Loading a Barbell",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-08-02",
     "slug": "the-beginners-guide-to-loading-a-barbell",
     "primary_keyword": "how to load a barbell",
@@ -906,7 +906,9 @@
       "barbell math",
       "how to calculate plates on a barbell"
     ],
-    "angle": "Teach beginners how to load a barbell from empty bar to working weight, with simple plate math and a quick safety check."
+    "angle": "Teach beginners how to load a barbell from empty bar to working weight, with simple plate math and a quick safety check.",
+    "drafted_at": "2026-08-08T09:23:56.430Z",
+    "file": "content/blog/2026-08-02-the-beginners-guide-to-loading-a-barbell.md"
   },
   {
     "title": "How to Calculate Plates on a Barbell",
