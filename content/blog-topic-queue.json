@@ -912,7 +912,7 @@
   },
   {
     "title": "How to Calculate Plates on a Barbell",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-08-03",
     "slug": "how-to-calculate-plates-on-a-barbell",
     "primary_keyword": "how to calculate plates on a barbell",
@@ -921,7 +921,9 @@
       "barbell math",
       "how to calculate plates on a barbell"
     ],
-    "angle": "Teach beginners how to calculate plates on a barbell with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+    "angle": "Teach beginners how to calculate plates on a barbell with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in.",
+    "drafted_at": "2026-08-09T09:25:15.080Z",
+    "file": "content/blog/2026-08-03-how-to-calculate-plates-on-a-barbell.md"
   },
   {
     "title": "What Does the Bar Weigh?",
