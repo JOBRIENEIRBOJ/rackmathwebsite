@@ -927,7 +927,7 @@
   },
   {
     "title": "What Does the Bar Weigh?",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-08-04",
     "slug": "what-does-the-bar-weigh",
     "primary_keyword": "how much does a barbell weigh",
@@ -936,7 +936,9 @@
       "barbell math",
       "how to calculate plates on a barbell"
     ],
-    "angle": "Explain the bar weigh clearly, show the beginner mistake to avoid, and connect the answer to loading the bar correctly."
+    "angle": "Explain the bar weigh clearly, show the beginner mistake to avoid, and connect the answer to loading the bar correctly.",
+    "drafted_at": "2026-08-10T09:45:50.324Z",
+    "file": "content/blog/2026-08-04-what-does-the-bar-weigh.md"
   },
   {
     "title": "How Much Weight Is on the Bar?",
