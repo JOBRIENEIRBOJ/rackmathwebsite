@@ -942,7 +942,7 @@
   },
   {
     "title": "How Much Weight Is on the Bar?",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-08-05",
     "slug": "how-much-weight-is-on-the-bar",
     "primary_keyword": "how much weight is on the bar",
@@ -951,7 +951,9 @@
       "barbell math",
       "how to calculate plates on a barbell"
     ],
-    "angle": "Teach beginners how to how much weight is on the bar with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+    "angle": "Teach beginners how to how much weight is on the bar with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in.",
+    "drafted_at": "2026-08-11T09:34:33.909Z",
+    "file": "content/blog/2026-08-05-how-much-weight-is-on-the-bar.md"
   },
   {
     "title": "Barbell Plate Math: The Simple Version",
