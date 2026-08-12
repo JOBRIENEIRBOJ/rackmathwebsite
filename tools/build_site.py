@@ -119,7 +119,7 @@ def calculator_faq_schema() -> dict:
                 "name": "What if my target weight cannot be loaded exactly?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The calculator shows the closest achievable weight at or below your target based on the plate sizes you selected.",
+                    "text": "The calculator loads selected plates from largest to smallest. If that stack leaves a remainder, it shows the lower weight produced by that calculation.",
                 },
             },
             {
@@ -492,8 +492,8 @@ def render_calculator_page(page: dict, registry: dict) -> str:
         <article>
           <p class="eyebrow">How it works</p>
           <h2>Calculate plates without doing gym-floor arithmetic.</h2>
-          <p>RackMath subtracts the bar weight from your target weight, divides the remaining load across both sleeves, and builds the closest plate setup from the plates you selected.</p>
-          <p>If the selected plate sizes cannot make the exact target, this free calculator shows the closest achievable total at or below it. See <a href="{formula_href}">how to calculate plates on a barbell</a> for the full formula and worked examples.</p>
+          <p>RackMath subtracts the bar weight from your target weight, divides the remaining load across both sleeves, and builds a largest-to-smallest stack from the plates you selected.</p>
+          <p>The free calculator loads selected plates from largest to smallest. If that stack leaves a remainder, it shows the lower total produced by that calculation. See <a href="{formula_href}">how to calculate plates on a barbell</a> for the full formula and worked examples.</p>
         </article>
         <article>
           <p class="eyebrow">Equipment scope</p>
@@ -542,7 +542,7 @@ def render_calculator_page(page: dict, registry: dict) -> str:
         </details>
         <details>
           <summary>What if my target weight cannot be loaded exactly?</summary>
-          <p>The calculator shows the closest achievable weight at or below your target based on the plate sizes you selected, so you can adjust the set without doing extra math.</p>
+          <p>The calculator loads selected plates from largest to smallest. If that stack leaves a remainder, it shows the lower weight produced by that calculation so you can adjust the set.</p>
         </details>
         <details>
           <summary>Does the free calculator include collars or specialty bars?</summary>
@@ -2198,7 +2198,7 @@ def write_sitemap(posts: list[build_blog.Post], registry: dict) -> None:
         )
 
     for post in posts:
-        add(post.url_path, "0.6", post.date.isoformat())
+        add(post.url_path, "0.6", (post.updated or post.date).isoformat())
 
     ET.indent(urlset, space="  ")
     ET.ElementTree(urlset).write(ROOT / "sitemap.xml", encoding="utf-8", xml_declaration=True)

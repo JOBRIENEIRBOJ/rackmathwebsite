@@ -1530,16 +1530,26 @@ details p {
   color: #202833;
 }
 
-.blog-post-content h2 {
+.blog-post-content h2,
+.blog-post-content h3 {
   color: #101418;
-  font-size: 1.05rem;
   line-height: 1.35;
-  margin-top: 32px;
   margin-bottom: 8px;
   font-weight: 750;
 }
 
-.blog-post-content ul {
+.blog-post-content h2 {
+  margin-top: 32px;
+  font-size: 1.05rem;
+}
+
+.blog-post-content h3 {
+  margin-top: 24px;
+  font-size: 0.98rem;
+}
+
+.blog-post-content ul,
+.blog-post-content ol {
   color: #343d48;
   line-height: 1.78;
   padding-left: 22px;
@@ -1553,6 +1563,45 @@ details p {
 .blog-post-content a {
   color: #087ec0;
   font-weight: 800;
+}
+
+.blog-post-content blockquote {
+  margin: 24px 0;
+  padding: 16px 20px;
+  border-left: 4px solid var(--brand-blue);
+  border-radius: 0 8px 8px 0;
+  background: #f2f9fd;
+}
+
+.blog-post-content blockquote p {
+  margin: 0;
+  color: #202833;
+}
+
+.blog-post-content sup {
+  margin-left: 2px;
+  font-size: 0.72em;
+  line-height: 0;
+}
+
+.blog-post-content .footnotes {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.blog-post-content .footnotes h2 {
+  margin-top: 0;
+}
+
+.blog-post-content .footnotes ol {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.blog-post-content .footnote-backref {
+  padding-inline: 3px;
+  text-decoration: none;
 }
 
 .blog-post-nav {
