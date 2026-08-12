@@ -5,10 +5,38 @@ Static marketing site for RackMath.app.
 ## Local preview
 
 ```bash
-python3 -m http.server 4173
+npm run build
+python3 -m http.server 4173 --directory dist
 ```
 
 Then open `http://localhost:4173`.
+
+The production build regenerates the static site, runs the SEO checks, and
+stages an allowlisted deploy artifact in `dist/`. Netlify publishes only this
+directory, so source content, documentation, scripts, build tools, package
+metadata, and repository files are never part of the public deployment.
+The staging step also gives the first-party CSS and JavaScript files
+content-based filenames and rewrites references only in `dist/`, allowing
+those immutable assets to use a one-year browser cache while HTML continues
+to revalidate on every request.
+
+To recheck an existing deploy artifact without rebuilding it, run:
+
+```bash
+npm run check:dist
+```
+
+Remote analytics is optional. When both `RACKMATH_ANALYTICS_URL` (the full
+HTTPS tracking endpoint) and `RACKMATH_ANALYTICS_ANON_KEY` are available at
+build time, the staging step creates `assets/analytics-config.js` inside
+`dist/` and loads it before the fingerprinted main script on every page. If
+neither variable is set, no runtime config file or tag is emitted. Supplying
+only one variable fails the build so a partial analytics configuration cannot
+be deployed.
+Both values are intentionally visible in the browser: use only the Supabase
+public anon/publishable key, never a service-role key or another secret. In
+Netlify, do not mark this public key as a secret value because secret scanning
+correctly rejects secret values found in deploy output.
 
 ## Blog workflow
 

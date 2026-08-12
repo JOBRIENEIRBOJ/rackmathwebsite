@@ -2,7 +2,12 @@
   "type": "module",
   "scripts": {
     "generate:blog": "node scripts/generate-rackmath-blog.js",
-    "build:blog": "python3 tools/build_blog.py"
+    "build:blog": "python3 tools/build_blog.py",
+    "build:site": "python3 tools/build_site.py",
+    "check:seo": "python3 tools/check_seo.py",
+    "stage:dist": "python3 tools/build_dist.py",
+    "check:dist": "python3 tools/build_dist.py --validate-only",
+    "build": "npm run build:site && npm run check:seo && npm run stage:dist"
   },
   "dependencies": {
     "gsap": "^3.15.0",

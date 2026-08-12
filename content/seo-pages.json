@@ -15,6 +15,10 @@
       "h1": "Free lifting tools that get you from target weight to loaded bar.",
       "eyebrow": "Tools",
       "summary": "Start with the free barbell plate calculator, then use RackMath to save lifts, run workouts, track PRs, and personalize training.",
+      "primaryKeyword": "free weightlifting tools",
+      "searchIntent": "transactional",
+      "cluster": "strength-tools",
+      "canonicalOwner": "/tools/",
       "primaryCta": "Try RackMath free",
       "appRoute": "/?source=seo&section=tools",
       "schema": [
@@ -31,17 +35,24 @@
       "slug": "/tools/barbell-calculator.html",
       "publicPath": "/tools/barbell-calculator",
       "title": "Barbell Calculator | Free Plate Calculator & Visualizer",
-      "description": "Use the free RackMath barbell calculator to calculate plates per side for pounds or kilograms, choose your bar, and see exactly what to load on each side.",
+      "description": "Enter your target weight and instantly see which plates to load on each side. Free calculator for lb, kg, common bars, and standard plate sizes.",
       "h1": "Barbell Calculator",
       "eyebrow": "Free barbell calculator",
-      "summary": "Enter your target weight, choose pounds or kilograms, select your bar and available plates, and see exactly what to load on each side.",
-      "primaryKeyword": "barbell plate calculator",
+      "summary": "Enter your target weight, choose pounds or kilograms, select your bar and available plate sizes, and see what to load on each side.",
+      "primaryKeyword": "barbell calculator",
       "secondaryKeywords": [
         "plate calculator",
         "weight lifting calculator",
         "what plates make 225",
-        "barbell calculator"
+        "barbell plate calculator"
       ],
+      "searchIntent": "transactional",
+      "cluster": "barbell-loading",
+      "canonicalOwner": "/tools/barbell-calculator",
+      "updated": "2026-08-11",
+      "softwareName": "RackMath Barbell Plate Calculator",
+      "socialImage": "/assets/rackmath-app-screenshot.png",
+      "socialImageAlt": "RackMath barbell plate calculator app preview",
       "primaryCta": "Save this lift in RackMath",
       "appRoute": "/tools/plate-calculator?source=seo&tool=barbell-plate-calculator&weight=225&unit=lb",
       "schema": [
@@ -50,9 +61,12 @@
         "SoftwareApplication"
       ],
       "related": [
-        "/tools/",
-        "/features.html",
-        "/blog/what-is-a-weight-lifting-calculator.html"
+        "/tools/common-barbell-weights.html",
+        "/tools/lb-kg-plate-converter.html",
+        "/blog/how-to-calculate-plates-on-a-barbell.html",
+        "/blog/the-beginners-guide-to-loading-a-barbell.html",
+        "/blog/what-does-the-bar-weigh.html",
+        "/features/custom-plate-calculator.html"
       ]
     },
     {
@@ -65,6 +79,10 @@
       "h1": "Warmup Set Calculator",
       "eyebrow": "Free warmup calculator",
       "summary": "Enter your working weight and RackMath will build practical warmup jumps on the way to your top set.",
+      "primaryKeyword": "warmup set calculator",
+      "searchIntent": "transactional",
+      "cluster": "strength-calculators",
+      "canonicalOwner": "/tools/warmup-set-calculator",
       "primaryCta": "Use these warmups in RackMath",
       "appRoute": "/tools/warmup-calculator?source=seo",
       "schema": [
@@ -87,6 +105,10 @@
       "h1": "One Rep Max Calculator",
       "eyebrow": "Free strength calculator",
       "summary": "Estimate your one rep max from a recent set, then use RackMath to track PRs and future training loads.",
+      "primaryKeyword": "one rep max calculator",
+      "searchIntent": "transactional",
+      "cluster": "strength-calculators",
+      "canonicalOwner": "/tools/one-rep-max-calculator",
       "primaryCta": "Track this PR",
       "appRoute": "/tools/one-rep-max?source=seo",
       "schema": [
@@ -109,6 +131,16 @@
       "h1": "Common Barbell Weights",
       "eyebrow": "Common plate setups",
       "summary": "See the plate math for common gym numbers like 95, 135, 185, 225, 315, and 405 lb.",
+      "primaryKeyword": "common barbell weights",
+      "secondaryKeywords": [
+        "barbell plate chart",
+        "common plate combinations",
+        "what plates make 225"
+      ],
+      "searchIntent": "informational",
+      "cluster": "barbell-loading",
+      "canonicalOwner": "/tools/common-barbell-weights",
+      "updated": "2026-08-11",
       "primaryCta": "Calculate more weights",
       "appRoute": "/tools/plate-calculator?source=seo",
       "schema": [
@@ -131,6 +163,16 @@
       "h1": "Pounds to Kilograms Plate Converter",
       "eyebrow": "Free unit converter",
       "summary": "Convert barbell loads between pounds and kilograms, then use RackMath to load the closest practical weight.",
+      "primaryKeyword": "lb kg plate converter",
+      "secondaryKeywords": [
+        "pounds to kilograms barbell converter",
+        "kg to lb plate conversion",
+        "barbell weight conversion"
+      ],
+      "searchIntent": "transactional",
+      "cluster": "barbell-loading",
+      "canonicalOwner": "/tools/lb-kg-plate-converter",
+      "updated": "2026-08-11",
       "primaryCta": "Switch units in RackMath",
       "appRoute": "/tools/plate-converter?source=seo",
       "schema": [
@@ -153,6 +195,10 @@
       "h1": "RPE Calculator",
       "eyebrow": "Free RPE calculator",
       "summary": "Estimate training loads from RPE and reps, then log the set in RackMath with context.",
+      "primaryKeyword": "RPE calculator",
+      "searchIntent": "transactional",
+      "cluster": "strength-calculators",
+      "canonicalOwner": "/tools/rpe-calculator",
       "primaryCta": "Log RPE",
       "appRoute": "/tools/rpe-calculator?source=seo",
       "schema": [
@@ -175,6 +221,10 @@
       "h1": "Training Volume Calculator",
       "eyebrow": "Free volume calculator",
       "summary": "Calculate training volume from sets, reps, and weight so you can understand the workload behind a session.",
+      "primaryKeyword": "training volume calculator",
+      "searchIntent": "transactional",
+      "cluster": "strength-calculators",
+      "canonicalOwner": "/tools/training-volume-calculator",
       "primaryCta": "Track weekly volume",
       "appRoute": "/tools/volume-calculator?source=seo",
       "schema": [
@@ -197,6 +247,10 @@
       "h1": "Powerlifting Attempt Calculator",
       "eyebrow": "Free attempt planner",
       "summary": "Plan sensible opener, second, and third attempts from a recent max or estimated max.",
+      "primaryKeyword": "powerlifting attempt calculator",
+      "searchIntent": "transactional",
+      "cluster": "powerlifting",
+      "canonicalOwner": "/tools/powerlifting-attempt-calculator",
       "primaryCta": "Plan attempts",
       "appRoute": "/tools/powerlifting-attempts?source=seo",
       "schema": [
@@ -219,6 +273,10 @@
       "h1": "AI Workout Builder",
       "eyebrow": "Workout builder",
       "summary": "Sketch a workout from your goal, schedule, equipment, and experience, then open RackMath to personalize and save it.",
+      "primaryKeyword": "AI workout builder",
+      "searchIntent": "transactional",
+      "cluster": "workout-planning",
+      "canonicalOwner": "/tools/ai-workout-builder",
       "primaryCta": "Build my workout",
       "appRoute": "/ai-workout-builder?source=seo",
       "schema": [
@@ -241,6 +299,11 @@
       "h1": "Workout Plan Importer",
       "eyebrow": "Workout importer",
       "summary": "Paste a coach plan, screenshot notes, or written routine idea, then open RackMath to turn it into a trackable workout.",
+      "primaryKeyword": "workout plan importer",
+      "searchIntent": "transactional",
+      "cluster": "workout-plan-import",
+      "canonicalOwner": "/tools/workout-plan-importer",
+      "updated": "2026-08-11",
       "primaryCta": "Import my plan",
       "appRoute": "/import?source=seo",
       "schema": [
@@ -263,6 +326,10 @@
       "h1": "Free workout templates you can start in RackMath.",
       "eyebrow": "Workouts",
       "summary": "Use these plans for free on the web, then open RackMath when you want the workout saved, personalized, loaded, and tracked.",
+      "primaryKeyword": "free workout templates",
+      "searchIntent": "transactional",
+      "cluster": "workout-templates",
+      "canonicalOwner": "/workouts/",
       "primaryCta": "Start a plan in RackMath",
       "appRoute": "/start?source=seo&section=workouts",
       "schema": [
@@ -283,6 +350,10 @@
       "h1": "3-Day Beginner Full Body Workout",
       "eyebrow": "Beginner workout",
       "summary": "A simple three-day plan for learning the main movement patterns without living in the gym.",
+      "primaryKeyword": "3 day beginner full body workout",
+      "searchIntent": "transactional",
+      "cluster": "beginner-workouts",
+      "canonicalOwner": "/workouts/3-day-beginner-full-body",
       "primaryCta": "Start this plan",
       "appRoute": "/start?source=seo&template=3-day-beginner-full-body",
       "schema": [
@@ -304,6 +375,10 @@
       "h1": "Beginner Barbell Workout",
       "eyebrow": "Barbell workout",
       "summary": "A beginner barbell template focused on squat, press, pull, hinge, and steady progression.",
+      "primaryKeyword": "beginner barbell workout",
+      "searchIntent": "transactional",
+      "cluster": "beginner-workouts",
+      "canonicalOwner": "/workouts/beginner-barbell-workout",
       "primaryCta": "Start workout",
       "appRoute": "/start?source=seo&template=beginner-barbell-workout",
       "schema": [
@@ -325,6 +400,10 @@
       "h1": "5x5 Workout Tracker",
       "eyebrow": "Strength workout",
       "summary": "A 5x5 strength template with clear barbell lifts, simple progression, and RackMath tracking.",
+      "primaryKeyword": "5x5 workout tracker",
+      "searchIntent": "transactional",
+      "cluster": "strength-workouts",
+      "canonicalOwner": "/workouts/5x5-workout-tracker",
       "primaryCta": "Start 5x5",
       "appRoute": "/start?source=seo&template=5x5",
       "schema": [
@@ -346,6 +425,10 @@
       "h1": "4-Day Upper Lower Workout",
       "eyebrow": "Upper lower workout",
       "summary": "A four-day split that trains upper and lower body twice per week with practical progression.",
+      "primaryKeyword": "4 day upper lower workout",
+      "searchIntent": "transactional",
+      "cluster": "workout-splits",
+      "canonicalOwner": "/workouts/4-day-upper-lower",
       "primaryCta": "Save program",
       "appRoute": "/start?source=seo&template=4-day-upper-lower",
       "schema": [
@@ -367,6 +450,10 @@
       "h1": "Push Pull Legs Workout",
       "eyebrow": "PPL workout",
       "summary": "A push pull legs split for organizing pressing, pulling, and leg training across the week.",
+      "primaryKeyword": "push pull legs workout",
+      "searchIntent": "transactional",
+      "cluster": "workout-splits",
+      "canonicalOwner": "/workouts/push-pull-legs",
       "primaryCta": "Build PPL",
       "appRoute": "/start?source=seo&template=push-pull-legs",
       "schema": [
@@ -388,6 +475,10 @@
       "h1": "Barbell-Only Workout Plan",
       "eyebrow": "Barbell-only workout",
       "summary": "A focused plan for lifters training with a barbell, plates, rack, and bench.",
+      "primaryKeyword": "barbell only workout plan",
+      "searchIntent": "transactional",
+      "cluster": "barbell-workouts",
+      "canonicalOwner": "/workouts/barbell-only-workout-plan",
       "primaryCta": "Start plan",
       "appRoute": "/start?source=seo&template=barbell-only-workout-plan",
       "schema": [
@@ -409,6 +500,10 @@
       "h1": "Garage Gym Workout Plan",
       "eyebrow": "Garage gym workout",
       "summary": "A garage gym plan built around limited equipment, useful loading options, and repeatable progress.",
+      "primaryKeyword": "garage gym workout plan",
+      "searchIntent": "transactional",
+      "cluster": "home-gym",
+      "canonicalOwner": "/workouts/garage-gym-workout-plan",
       "primaryCta": "Customize plates",
       "appRoute": "/setup/plates?source=seo&template=garage-gym-workout-plan",
       "schema": [
@@ -430,6 +525,10 @@
       "h1": "Beginner Powerlifting Program",
       "eyebrow": "Powerlifting workout",
       "summary": "A beginner powerlifting template centered on squat, bench press, deadlift, warmups, and attempts.",
+      "primaryKeyword": "beginner powerlifting program",
+      "searchIntent": "transactional",
+      "cluster": "powerlifting",
+      "canonicalOwner": "/workouts/beginner-powerlifting-program",
       "primaryCta": "Track SBD",
       "appRoute": "/start?source=seo&template=beginner-powerlifting-program",
       "schema": [
@@ -451,6 +550,10 @@
       "h1": "Strength and Hypertrophy Program",
       "eyebrow": "Strength hypertrophy workout",
       "summary": "A balanced template for getting stronger while accumulating enough volume to build muscle.",
+      "primaryKeyword": "strength and hypertrophy workout",
+      "searchIntent": "transactional",
+      "cluster": "strength-workouts",
+      "canonicalOwner": "/workouts/strength-hypertrophy-program",
       "primaryCta": "Save program",
       "appRoute": "/start?source=seo&template=strength-hypertrophy-program",
       "schema": [
@@ -472,6 +575,10 @@
       "h1": "2-Day Beginner Strength Plan",
       "eyebrow": "Beginner strength plan",
       "summary": "A low-frequency beginner plan for learning the lifts and making progress with two sessions per week.",
+      "primaryKeyword": "2 day beginner strength plan",
+      "searchIntent": "transactional",
+      "cluster": "beginner-workouts",
+      "canonicalOwner": "/workouts/2-day-beginner-strength-plan",
       "primaryCta": "Start plan",
       "appRoute": "/start?source=seo&template=2-day-beginner-strength-plan",
       "schema": [
@@ -493,6 +600,10 @@
       "h1": "First Day at the Gym Workout",
       "eyebrow": "First gym workout",
       "summary": "A calm first-day workout for learning the room, practicing basic movements, and leaving with confidence.",
+      "primaryKeyword": "first day at the gym workout",
+      "searchIntent": "transactional",
+      "cluster": "beginner-workouts",
+      "canonicalOwner": "/workouts/first-day-at-the-gym-workout",
       "primaryCta": "Start workout",
       "appRoute": "/start?source=seo&template=first-day-at-the-gym-workout",
       "schema": [
@@ -514,6 +625,10 @@
       "h1": "Dumbbell and Barbell Workout",
       "eyebrow": "Mixed equipment workout",
       "summary": "A practical plan that combines barbell lifts with dumbbell accessories for flexible training.",
+      "primaryKeyword": "dumbbell and barbell workout",
+      "searchIntent": "transactional",
+      "cluster": "strength-workouts",
+      "canonicalOwner": "/workouts/dumbbell-barbell-workout",
       "primaryCta": "Save routine",
       "appRoute": "/start?source=seo&template=dumbbell-barbell-workout",
       "schema": [
@@ -535,6 +650,10 @@
       "h1": "Exercise guides for loading, warming up, and tracking progress.",
       "eyebrow": "Exercises",
       "summary": "Learn the movement, choose a starting weight, warm up, load the bar when relevant, and open RackMath when tracking matters.",
+      "primaryKeyword": "weightlifting exercise guides",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/",
       "primaryCta": "Track exercises in RackMath",
       "appRoute": "/exercises?source=seo&section=exercises",
       "schema": [
@@ -558,6 +677,10 @@
       "appRoute": "/exercises/bench-press?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use bench press in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "bench press guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/bench-press",
       "schema": [
         "BreadcrumbList"
       ],
@@ -579,6 +702,10 @@
       "appRoute": "/exercises/barbell-squat?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use barbell squat in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "barbell squat guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/barbell-squat",
       "schema": [
         "BreadcrumbList"
       ],
@@ -600,6 +727,10 @@
       "appRoute": "/exercises/deadlift?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use deadlift in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "deadlift guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/deadlift",
       "schema": [
         "BreadcrumbList"
       ],
@@ -621,6 +752,10 @@
       "appRoute": "/exercises/overhead-press?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use overhead press in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "overhead press guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/overhead-press",
       "schema": [
         "BreadcrumbList"
       ],
@@ -642,6 +777,10 @@
       "appRoute": "/exercises/barbell-row?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use barbell row in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "barbell row guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/barbell-row",
       "schema": [
         "BreadcrumbList"
       ],
@@ -663,6 +802,10 @@
       "appRoute": "/exercises/romanian-deadlift?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use romanian deadlift in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "Romanian deadlift guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/romanian-deadlift",
       "schema": [
         "BreadcrumbList"
       ],
@@ -684,6 +827,10 @@
       "appRoute": "/exercises/front-squat?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use front squat in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "front squat guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/front-squat",
       "schema": [
         "BreadcrumbList"
       ],
@@ -705,6 +852,10 @@
       "appRoute": "/exercises/incline-bench-press?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use incline bench press in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "incline bench press guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/incline-bench-press",
       "schema": [
         "BreadcrumbList"
       ],
@@ -726,6 +877,10 @@
       "appRoute": "/exercises/close-grip-bench-press?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use close-grip bench press in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "close grip bench press guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/close-grip-bench-press",
       "schema": [
         "BreadcrumbList"
       ],
@@ -747,6 +902,10 @@
       "appRoute": "/exercises/barbell-hip-thrust?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use barbell hip thrust in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "barbell hip thrust guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/barbell-hip-thrust",
       "schema": [
         "BreadcrumbList"
       ],
@@ -768,6 +927,10 @@
       "appRoute": "/exercises/pull-up?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use pull-up in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "pull up guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/pull-up",
       "schema": [
         "BreadcrumbList"
       ],
@@ -789,6 +952,10 @@
       "appRoute": "/exercises/lat-pulldown?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use lat pulldown in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "lat pulldown guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/lat-pulldown",
       "schema": [
         "BreadcrumbList"
       ],
@@ -810,6 +977,10 @@
       "appRoute": "/exercises/dumbbell-bench-press?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use dumbbell bench press in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "dumbbell bench press guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/dumbbell-bench-press",
       "schema": [
         "BreadcrumbList"
       ],
@@ -831,6 +1002,10 @@
       "appRoute": "/exercises/goblet-squat?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use goblet squat in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "goblet squat guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/goblet-squat",
       "schema": [
         "BreadcrumbList"
       ],
@@ -852,6 +1027,10 @@
       "appRoute": "/exercises/leg-press?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use leg press in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "leg press guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/leg-press",
       "schema": [
         "BreadcrumbList"
       ],
@@ -873,6 +1052,10 @@
       "appRoute": "/exercises/cable-row?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use cable row in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "cable row guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/cable-row",
       "schema": [
         "BreadcrumbList"
       ],
@@ -894,6 +1077,10 @@
       "appRoute": "/exercises/dumbbell-row?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use dumbbell row in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "dumbbell row guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/dumbbell-row",
       "schema": [
         "BreadcrumbList"
       ],
@@ -915,6 +1102,10 @@
       "appRoute": "/exercises/barbell-curl?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use barbell curl in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "barbell curl guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/barbell-curl",
       "schema": [
         "BreadcrumbList"
       ],
@@ -936,6 +1127,10 @@
       "appRoute": "/exercises/skull-crusher?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use skull crusher in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "skull crusher exercise guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/skull-crusher",
       "schema": [
         "BreadcrumbList"
       ],
@@ -957,6 +1152,10 @@
       "appRoute": "/exercises/bulgarian-split-squat?action=track&source=seo",
       "eyebrow": "Exercise guide",
       "summary": "Learn how to use bulgarian split squat in training, choose practical loads, avoid common mistakes, and track progress in RackMath.",
+      "primaryKeyword": "Bulgarian split squat guide",
+      "searchIntent": "informational",
+      "cluster": "exercise-guides",
+      "canonicalOwner": "/exercises/bulgarian-split-squat",
       "schema": [
         "BreadcrumbList"
       ],
@@ -976,6 +1175,16 @@
       "h1": "Exact plates every set",
       "eyebrow": "Plate calculator",
       "summary": "Use RackMath to turn target weights into exact plates per side, then carry that loading context into saved workouts, warmups, and training history.",
+      "primaryKeyword": "barbell calculator app",
+      "secondaryKeywords": [
+        "plate calculator workout tracker",
+        "barbell loading app",
+        "plates per side app"
+      ],
+      "searchIntent": "commercial",
+      "cluster": "barbell-loading",
+      "canonicalOwner": "/features/barbell-plate-calculator",
+      "updated": "2026-08-11",
       "primaryCta": "Try RackMath free",
       "appRoute": "/tools/plate-calculator?source=seo&feature=barbell-plate-calculator",
       "schema": [
@@ -998,6 +1207,16 @@
       "h1": "Custom Plate Calculator",
       "eyebrow": "Custom setup",
       "summary": "Save the bars, plates, collars, and loading options you actually use so RackMath gives practical answers for your gym instead of generic math.",
+      "primaryKeyword": "custom plate inventory calculator",
+      "secondaryKeywords": [
+        "limited plate inventory calculator",
+        "specialty bar plate calculator",
+        "barbell collar weight calculator"
+      ],
+      "searchIntent": "commercial",
+      "cluster": "barbell-loading",
+      "canonicalOwner": "/features/custom-plate-calculator",
+      "updated": "2026-08-11",
       "primaryCta": "Customize my plates",
       "appRoute": "/setup/plates?source=seo&feature=custom-plate-calculator",
       "schema": [
@@ -1020,6 +1239,10 @@
       "h1": "Warmup Planner",
       "eyebrow": "Warmup planning",
       "summary": "Move from empty bar to working sets with clear jumps that respect the target weight, the bar, and the plates available.",
+      "primaryKeyword": "warmup planner app",
+      "searchIntent": "commercial",
+      "cluster": "barbell-loading",
+      "canonicalOwner": "/features/warmup-planner",
       "primaryCta": "Plan warmups",
       "appRoute": "/tools/warmup-calculator?source=seo&feature=warmup-planner",
       "schema": [
@@ -1042,6 +1265,10 @@
       "h1": "Workout Tracker",
       "eyebrow": "Workout tracking",
       "summary": "Track sets, reps, weight, RPE, notes, and history in one place so each workout starts with the context from the last one.",
+      "primaryKeyword": "workout tracker app",
+      "searchIntent": "commercial",
+      "cluster": "workout-tracking",
+      "canonicalOwner": "/features/workout-tracker",
       "primaryCta": "Track a workout",
       "appRoute": "/workouts?source=seo&feature=workout-tracker",
       "schema": [
@@ -1061,9 +1288,14 @@
       "slug": "/features/workout-plan-importer.html",
       "title": "Workout Plan Importer Feature | RackMath",
       "description": "Turn screenshots, PDFs, text, or coach programming into trackable RackMath workouts.",
-      "h1": "Workout Plan Importer",
+      "h1": "Import Workout Plans into RackMath",
       "eyebrow": "Plan importer",
       "summary": "Bring outside programming into RackMath so a written plan becomes structured workouts with exercises, sets, reps, and tracking.",
+      "primaryKeyword": "workout plan import app",
+      "searchIntent": "commercial",
+      "cluster": "workout-plan-import",
+      "canonicalOwner": "/features/workout-plan-importer",
+      "updated": "2026-08-11",
       "primaryCta": "Import my plan",
       "appRoute": "/import?source=seo&feature=workout-plan-importer",
       "schema": [
@@ -1086,6 +1318,10 @@
       "h1": "PR Tracker",
       "eyebrow": "PR tracking",
       "summary": "Track personal records, estimated one rep maxes, and meaningful rep PRs without losing the training context around them.",
+      "primaryKeyword": "personal record tracker app",
+      "searchIntent": "commercial",
+      "cluster": "workout-tracking",
+      "canonicalOwner": "/features/pr-tracker",
       "primaryCta": "Track my PRs",
       "appRoute": "/prs?source=seo&feature=pr-tracker",
       "schema": [
@@ -1108,6 +1344,10 @@
       "h1": "Program Progress",
       "eyebrow": "Program progression",
       "summary": "See what workout comes next, repeat the right loads, and keep progression moving without rebuilding the plan every session.",
+      "primaryKeyword": "strength program tracker app",
+      "searchIntent": "commercial",
+      "cluster": "workout-tracking",
+      "canonicalOwner": "/features/program-progress",
       "primaryCta": "Open my next workout",
       "appRoute": "/programs?source=seo&feature=program-progress",
       "schema": [
@@ -1130,6 +1370,10 @@
       "h1": "RackMath for the way you lift.",
       "eyebrow": "For lifters",
       "summary": "Find the RackMath workflow for your training context: beginner lifting, garage gyms, kg plates, coaching, personal training, powerlifting, or home gym sessions.",
+      "primaryKeyword": "workout app for lifters",
+      "searchIntent": "commercial",
+      "cluster": "audience-solutions",
+      "canonicalOwner": "/for/",
       "primaryCta": "Try RackMath free",
       "appRoute": "/?source=seo&section=for",
       "schema": [
@@ -1151,6 +1395,10 @@
       "h1": "RackMath for Garage Gyms",
       "eyebrow": "Garage gyms",
       "summary": "Load the bar from the plates you actually own, plan warmups around small jumps, and keep garage gym workouts moving without guessing.",
+      "primaryKeyword": "garage gym workout app",
+      "searchIntent": "commercial",
+      "cluster": "home-gym",
+      "canonicalOwner": "/for/garage-gyms",
       "primaryCta": "Customize my plates",
       "appRoute": "/setup/plates?source=seo&persona=garage-gyms",
       "schema": [
@@ -1173,6 +1421,10 @@
       "h1": "RackMath for Beginners",
       "eyebrow": "Beginners",
       "summary": "Start with simple workouts, exact plate loading, clear warmups, and exercise guides that make the first months of lifting less confusing.",
+      "primaryKeyword": "weightlifting app for beginners",
+      "searchIntent": "commercial",
+      "cluster": "beginner-workouts",
+      "canonicalOwner": "/for/beginners",
       "primaryCta": "Start lifting",
       "appRoute": "/onboarding?source=seo&persona=beginners",
       "schema": [
@@ -1195,6 +1447,10 @@
       "h1": "RackMath for Powerlifters",
       "eyebrow": "Powerlifters",
       "summary": "Plan squat, bench, and deadlift sessions with exact plates, warmup jumps, PR context, and attempt planning tools.",
+      "primaryKeyword": "powerlifting workout app",
+      "searchIntent": "commercial",
+      "cluster": "powerlifting",
+      "canonicalOwner": "/for/powerlifters",
       "primaryCta": "Track SBD",
       "appRoute": "/onboarding?source=seo&persona=powerlifters",
       "schema": [
@@ -1217,6 +1473,10 @@
       "h1": "RackMath for Strength Coaches",
       "eyebrow": "Strength coaches",
       "summary": "Convert written programming into run-ready sessions, reduce loading confusion, and help athletes execute workouts with clearer context.",
+      "primaryKeyword": "strength coaching app",
+      "searchIntent": "commercial",
+      "cluster": "coaching",
+      "canonicalOwner": "/for/strength-coaches",
       "primaryCta": "Import a plan",
       "appRoute": "/import?source=seo&persona=strength-coaches",
       "schema": [
@@ -1239,6 +1499,10 @@
       "h1": "RackMath for Personal Trainers",
       "eyebrow": "Personal trainers",
       "summary": "Keep sessions moving with faster plate math, repeatable workouts, exercise context, and client-friendly loading decisions.",
+      "primaryKeyword": "workout app for personal trainers",
+      "searchIntent": "commercial",
+      "cluster": "coaching",
+      "canonicalOwner": "/for/personal-trainers",
       "primaryCta": "Build a workout",
       "appRoute": "/ai-workout-builder?source=seo&persona=personal-trainers",
       "schema": [
@@ -1261,6 +1525,10 @@
       "h1": "RackMath for Home Gym Lifters",
       "eyebrow": "Home gym lifters",
       "summary": "Train with the bars and plates you have, save custom setups, and keep a repeatable workout flow without commercial-gym assumptions.",
+      "primaryKeyword": "home gym workout app",
+      "searchIntent": "commercial",
+      "cluster": "home-gym",
+      "canonicalOwner": "/for/home-gym-lifters",
       "primaryCta": "Customize my plates",
       "appRoute": "/setup/plates?source=seo&persona=home-gym-lifters",
       "schema": [
@@ -1283,6 +1551,10 @@
       "h1": "RackMath for kg Gyms",
       "eyebrow": "kg gyms",
       "summary": "Switch to kilogram loading, account for kg bars and plates, and avoid pound-based assumptions when training or coaching in metric gyms.",
+      "primaryKeyword": "kilogram plate calculator app",
+      "searchIntent": "commercial",
+      "cluster": "barbell-loading",
+      "canonicalOwner": "/for/kg-gyms",
       "primaryCta": "Switch units",
       "appRoute": "/tools/plate-calculator?source=seo&persona=kg-gyms",
       "schema": [
@@ -1305,6 +1577,10 @@
       "h1": "Free strength programs you can run, track, and progress.",
       "eyebrow": "Programs",
       "summary": "Programs are multi-week plans: they tell you what sessions to repeat, how to progress, what to do after missed reps, and when to move on. Use them free, then open RackMath to save the plan and track progression.",
+      "primaryKeyword": "free strength training programs",
+      "searchIntent": "transactional",
+      "cluster": "strength-programs",
+      "canonicalOwner": "/programs/",
       "primaryCta": "Try RackMath free",
       "appRoute": "/programs?source=seo",
       "schema": [
@@ -1326,6 +1602,10 @@
       "h1": "3-Day Beginner Barbell Program",
       "eyebrow": "Beginner program",
       "summary": "A simple three-day barbell program for learning the main lifts, building weekly practice, and progressing without adding too much too soon.",
+      "primaryKeyword": "3 day beginner barbell program",
+      "searchIntent": "transactional",
+      "cluster": "strength-programs",
+      "canonicalOwner": "/programs/3-day-beginner-barbell-program",
       "primaryCta": "Start this program",
       "appRoute": "/start?source=seo&program=3-day-beginner-barbell-program",
       "schema": [
@@ -1348,6 +1628,10 @@
       "h1": "5x5 Beginner Strength Program",
       "eyebrow": "5x5 program",
       "summary": "A straightforward 5x5 strength program for practicing the big barbell lifts, tracking load jumps, and repeating sessions consistently.",
+      "primaryKeyword": "5x5 beginner strength program",
+      "searchIntent": "transactional",
+      "cluster": "strength-programs",
+      "canonicalOwner": "/programs/5x5-beginner-strength-program",
       "primaryCta": "Start this program",
       "appRoute": "/start?source=seo&program=5x5-beginner-strength-program",
       "schema": [
@@ -1370,6 +1654,10 @@
       "h1": "Garage Gym Strength Program",
       "eyebrow": "Garage gym program",
       "summary": "A barbell-first strength program for lifters training with a rack, bench, barbell, plates, and limited equipment.",
+      "primaryKeyword": "garage gym strength program",
+      "searchIntent": "transactional",
+      "cluster": "strength-programs",
+      "canonicalOwner": "/programs/garage-gym-strength-program",
       "primaryCta": "Start this program",
       "appRoute": "/start?source=seo&program=garage-gym-strength-program",
       "schema": [
@@ -1392,6 +1680,10 @@
       "h1": "Upper Lower Strength Hypertrophy Program",
       "eyebrow": "Upper lower program",
       "summary": "A four-day upper/lower program that combines heavier barbell work with enough weekly volume for muscle growth.",
+      "primaryKeyword": "upper lower strength hypertrophy program",
+      "searchIntent": "transactional",
+      "cluster": "strength-programs",
+      "canonicalOwner": "/programs/upper-lower-strength-hypertrophy",
       "primaryCta": "Start this program",
       "appRoute": "/start?source=seo&program=upper-lower-strength-hypertrophy",
       "schema": [
