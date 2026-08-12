@@ -39,6 +39,11 @@
   "premium": {
     "headline": "Built for serious training weeks",
     "body": "Upgrade when you want imported programs, cloud sync, deeper tracking, and a smoother path from plan to completed workout.",
+    "pricing": {
+      "monthly": "$3.97/month",
+      "annual": "$31/year",
+      "annualSavings": "$16.64 (35%)"
+    },
     "items": [
       "Import and run structured workouts",
       "Sync training across devices",
@@ -48,7 +53,11 @@
   "faq": [
     {
       "question": "Is RackMath free?",
-      "answer": "Yes. The core plate calculator is designed to be fast and useful before you ever upgrade."
+      "answer": "Yes. The core plate calculator is designed to be fast and useful before you ever upgrade. RackMath Pro costs $3.97/month or $31/year."
+    },
+    {
+      "question": "How much does RackMath Pro cost?",
+      "answer": "RackMath Pro costs $3.97/month or $31/year in USD. Annual billing saves $16.64, or about 35%, compared with paying monthly for 12 months."
     },
     {
       "question": "Does it work on mobile?",
