@@ -1,6 +1,6 @@
-# Rack Math Landing Page Optimization Kit
+# RackMath Landing Page Optimization Kit
 
-Use this folder as a portable source kit for the separate Rack Math website project.
+Use this folder as a portable source kit for the separate RackMath website project.
 It includes copy, SEO metadata, markup sections, CSS tokens, and brand assets you
 can upload into another Codespace.
 
@@ -12,7 +12,7 @@ can upload into another Codespace.
 - `landing-sections.html`: semantic HTML sections for a website landing page.
 - `landing-styles.css`: CSS tokens and component styling for the supplied sections.
 - `asset-manifest.json`: asset descriptions, recommended usage, and alt text.
-- `assets/`: Rack Math logos, app icon, and calculator screenshot.
+- `assets/`: RackMath logos, app icon, and calculator screenshot.
 
 ## Recommended Upload Path
 
@@ -31,7 +31,7 @@ quickly, then explain programs, tracking, sync, and premium value. Avoid hiding
 the product behind a generic marketing hero.
 
 Primary CTA:
-`Open Rack Math`
+`Open RackMath`
 
 Secondary CTA:
 `See how it works`
@@ -39,4 +39,3 @@ Secondary CTA:
 Best first viewport:
 brand, concise value proposition, two CTAs, app screenshot, and three short
 proof/value points.
-

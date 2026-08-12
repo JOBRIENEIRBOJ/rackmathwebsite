@@ -1,12 +1,12 @@
-# Rack Math Landing Page Brief
+# RackMath Landing Page Brief
 
 ## Objective
 
-Improve the Rack Math website homepage so a new lifter immediately understands
+Improve the RackMath website homepage so a new lifter immediately understands
 what the app does and has a clear path into the product.
 
 Positioning:
-Rack Math is a barbell plate calculator, workout tracker, and program companion
+RackMath is a barbell plate calculator, workout tracker, and program companion
 for lifters who want less friction between the plan and the bar.
 
 ## Audience
@@ -22,11 +22,11 @@ Headline:
 Load the right plates. Track every set.
 
 Supporting copy:
-Rack Math turns planned lifts into clear plate math, workout sessions, PRs, and
+RackMath turns planned lifts into clear plate math, workout sessions, PRs, and
 progress insights, so you can stay focused under the bar.
 
 Primary CTA:
-Open Rack Math
+Open RackMath
 
 Secondary CTA:
 See how it works
@@ -34,7 +34,7 @@ See how it works
 ## Page Structure
 
 1. Hero
-   - Rack Math logo
+   - RackMath logo
    - headline
    - short value statement
    - primary and secondary CTA
@@ -69,7 +69,7 @@ See how it works
 ## Design Direction
 
 - App-first, not brochure-first.
-- Use Rack Math blue as the main action color.
+- Use RackMath blue as the main action color.
 - Use real app imagery where possible.
 - Keep cards tight, with small radius and dense useful content.
 - Avoid oversized decorative hero sections that delay the product.
@@ -78,10 +78,10 @@ See how it works
 ## SEO Targets
 
 Primary title:
-Rack Math | Barbell Plate Calculator & Workout Tracker
+RackMath | Barbell Plate Calculator & Workout Tracker
 
 Primary description:
-Rack Math helps lifters calculate barbell plates, follow workouts, import
+RackMath helps lifters calculate barbell plates, follow workouts, import
 programs, log sets, and track PRs from a fast mobile-first app.
 
 Keyword themes:
@@ -101,4 +101,3 @@ Keyword themes:
 - Keep hero text readable with no overlay collisions.
 - Test at 375px, 430px, 768px, and desktop widths.
 - Run Lighthouse after implementation.
-

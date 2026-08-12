@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a dated Markdown draft for a new Rack Math blog post."""
+"""Create a dated Markdown draft for a new RackMath blog post."""
 
 from __future__ import annotations
 
@@ -34,7 +34,7 @@ def main() -> None:
     path.write_text(
         f"""---
 title: "{title}"
-description: "A short Rack Math post about weight lifting calculator tips, barbell plate loading, and workout tracking."
+description: "A short RackMath post about weight lifting calculator tips, barbell plate loading, and workout tracking."
 date: "{post_date}"
 slug: "{slug}"
 ---

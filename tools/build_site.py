@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Rack Math static pages from registry-backed content."""
+"""Build RackMath static pages from registry-backed content."""
 
 from __future__ import annotations
 
@@ -84,7 +84,7 @@ def software_schema(page: dict) -> dict:
     return {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": page.get("softwareName", "Rack Math"),
+        "name": page.get("softwareName", "RackMath"),
         "applicationCategory": "HealthApplication",
         "operatingSystem": "Web",
         "url": public_url(page),

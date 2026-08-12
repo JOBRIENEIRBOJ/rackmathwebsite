@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Rack Math blog pages from Markdown posts."""
+"""Build RackMath blog pages from Markdown posts."""
 
 from __future__ import annotations
 
@@ -483,7 +483,7 @@ def render_blog_index(posts: list[Post]) -> str:
           </article>"""
     body = f"""    <main>
       <section class="page-hero">
-        <p class="eyebrow">Rack Math Blog</p>
+        <p class="eyebrow">RackMath Blog</p>
         <h1>Practical guides for loading and lifting.</h1>
         <p>Clear, beginner-friendly guides about barbell loading, lifting calculations, training, and the small decisions that keep workouts moving.</p>
       </section>
@@ -497,8 +497,8 @@ def render_blog_index(posts: list[Post]) -> str:
       </section>
     </main>"""
     return document_shell(
-        title="Rack Math Blog | Weight Lifting Calculator Tips",
-        description="Practical Rack Math guides about barbell loading, lifting calculations, beginner training, and workout progress.",
+        title="RackMath Blog | Weight Lifting Calculator Tips",
+        description="Practical RackMath guides about barbell loading, lifting calculations, beginner training, and workout progress.",
         canonical_path="/blog",
         body=body,
         current="blog",
@@ -540,7 +540,7 @@ def render_archive(posts: list[Post]) -> str:
     body = f"""    <main>
       <section class="page-hero">
         <p class="eyebrow">Archive</p>
-        <h1>All Rack Math guides.</h1>
+        <h1>All RackMath guides.</h1>
         <p>Browse every practical guide about lifting calculations, barbell loading, workout tracking, and training.</p>
       </section>
 
@@ -549,8 +549,8 @@ def render_archive(posts: list[Post]) -> str:
       </section>
     </main>"""
     return document_shell(
-        title="Rack Math Blog Archive",
-        description="Browse every Rack Math guide about lifting calculations, barbell loading, workout tracking, and training progress.",
+        title="RackMath Blog Archive",
+        description="Browse every RackMath guide about lifting calculations, barbell loading, workout tracking, and training progress.",
         canonical_path="/blog/archive",
         body=body,
         current="blog",
@@ -573,7 +573,7 @@ def render_post(post: Post) -> str:
     }
     body = f"""    <main>
       <section class="page-hero blog-post-hero">
-        <p class="eyebrow">Rack Math Blog</p>
+        <p class="eyebrow">RackMath Blog</p>
         <p class="blog-date"><time datetime="{post.date.isoformat()}">{post.date.strftime("%B %-d, %Y")}</time></p>
         <h1>{html.escape(post.title)}</h1>
         <p>{html.escape(post.description)}</p>
@@ -595,7 +595,7 @@ def render_post(post: Post) -> str:
       </script>
     </main>"""
     return document_shell(
-        title=f"{post.title} | Rack Math Blog",
+        title=f"{post.title} | RackMath Blog",
         description=post.description,
         canonical_path=post.url_path,
         body=body,
@@ -647,7 +647,7 @@ def write_sitemap(posts: list[Post]) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Build Rack Math blog pages from Markdown posts.")
+    parser = argparse.ArgumentParser(description="Build RackMath blog pages from Markdown posts.")
     parser.add_argument(
         "--include-future",
         action="store_true",

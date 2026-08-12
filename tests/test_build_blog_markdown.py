@@ -133,9 +133,9 @@ A note.[^1]
         archive = build_blog.render_archive([])
 
         self.assertIn("Practical guides for loading and lifting.", index)
-        self.assertIn("Practical Rack Math guides about barbell loading", index)
+        self.assertIn("Practical RackMath guides about barbell loading", index)
         self.assertNotIn("Daily weight lifting calculator notes", index)
-        self.assertIn("All Rack Math guides.", archive)
+        self.assertIn("All RackMath guides.", archive)
         self.assertNotIn("Every published note", archive)
 
     def test_consolidation_redirects_include_clean_and_html_legacy_urls(self) -> None:
