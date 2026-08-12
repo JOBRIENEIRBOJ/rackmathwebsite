@@ -20,6 +20,8 @@ REGISTRY_PATH = ROOT / "content" / "seo-pages.json"
 SITEMAP_PATH = ROOT / "sitemap.xml"
 REDIRECTS_PATH = ROOT / "_redirects"
 SITE_URL = "https://rackmath.com"
+SITE_ICON_URL = f"{SITE_URL}/assets/RackMath_logo.webp"
+APPLE_TOUCH_ICON_URL = f"{SITE_URL}/assets/RackMath_logo.png"
 LEGACY_SITE_NAME = "Rack" + " Math"
 
 BASE_OUTPUTS = {
@@ -40,6 +42,8 @@ class PageParser(HTMLParser):
         self.anchors: list[str] = []
         self.app_links: list[str] = []
         self.canonicals: list[str] = []
+        self.icons: list[str] = []
+        self.apple_touch_icons: list[str] = []
         self.og_urls: list[str] = []
         self.og_site_names: list[str] = []
         self.titles: list[str] = []
@@ -68,6 +72,12 @@ class PageParser(HTMLParser):
         elif tag == "link" and "canonical" in str(values.get("rel", "")).lower().split():
             if values.get("href"):
                 self.canonicals.append(str(values["href"]))
+        elif tag == "link" and values.get("href"):
+            rel_values = str(values.get("rel", "")).lower().split()
+            if "icon" in rel_values:
+                self.icons.append(str(values["href"]))
+            elif "apple-touch-icon" in rel_values:
+                self.apple_touch_icons.append(str(values["href"]))
         elif tag == "meta" and values.get("property") == "og:url" and values.get("content"):
             self.og_urls.append(str(values["content"]))
         elif tag == "meta" and values.get("property") == "og:site_name" and values.get("content"):
@@ -233,6 +243,11 @@ def main() -> int:
             if len(paths) > 1:
                 errors.append(f"{canonical}: duplicate canonical owners: {', '.join(paths)}")
 
+    if not (ROOT / "assets" / "RackMath_logo.webp").is_file():
+        errors.append("missing assets/RackMath_logo.webp favicon")
+    if not (ROOT / "assets" / "RackMath_logo.png").is_file():
+        errors.append("missing assets/RackMath_logo.png Apple touch icon")
+
     sitemap_urls = sitemap_locations(errors)
     sitemap_dates = sitemap_lastmods(errors)
     sitemap_set = set(sitemap_urls)
@@ -283,6 +298,15 @@ def main() -> int:
             (count(r"<h1\b", text) == 1, "must have exactly one h1"),
             (len(parser.canonicals) == 1, "must have exactly one canonical"),
             (parser.og_site_names == [SITE_NAME], f"og:site_name must be {SITE_NAME}"),
+            (
+                [urljoin(canonical_url, href) for href in parser.icons] == [SITE_ICON_URL],
+                f"favicon must be exactly {SITE_ICON_URL}",
+            ),
+            (
+                [urljoin(canonical_url, href) for href in parser.apple_touch_icons]
+                == [APPLE_TOUCH_ICON_URL],
+                f"apple-touch-icon must be exactly {APPLE_TOUCH_ICON_URL}",
+            ),
             (len(parser.anchors) >= 3, "must contain at least three crawlable links"),
         ]
         for ok, message in checks:
