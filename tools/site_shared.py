@@ -17,7 +17,8 @@ BRAND_NAME = "RackMath"
 ASSET_VERSION = "20260615"
 ASSETS = {
     "brand_mark": "assets/rackmathblue-header.png",
-    "icon": "assets/rackmathblue.png",
+    "icon": "assets/RackMath_logo.webp",
+    "apple_touch_icon": "assets/RackMath_logo.png",
     "social_image": "assets/rackmathblue-gradient.png",
     "stylesheet": "styles.css",
     "script": "script.js",
@@ -326,8 +327,8 @@ def document_shell(
     <meta name="twitter:image" content="{escape(social_image_url)}">
     <meta name="twitter:image:alt" content="{escape(social_alt)}">
     <meta name="theme-color" content="#0a6dff">
-    <link rel="icon" href="{prefix}{ASSETS['icon']}" type="image/png">
-    <link rel="apple-touch-icon" href="{prefix}{ASSETS['icon']}">
+    <link rel="icon" href="{prefix}{ASSETS['icon']}" type="image/webp">
+    <link rel="apple-touch-icon" href="{prefix}{ASSETS['apple_touch_icon']}">
     <link rel="stylesheet" href="{prefix}{ASSETS['stylesheet']}?v={ASSET_VERSION}">
 {schema_block}  </head>
   <body>
