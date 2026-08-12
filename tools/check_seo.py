@@ -247,7 +247,7 @@ def main() -> int:
             )
     for post in posts:
         url = f"{SITE_URL}{post.url_path}"
-        expected_date = post.date.isoformat()
+        expected_date = (post.updated or post.date).isoformat()
         if sitemap_dates.get(url) != expected_date:
             errors.append(
                 f"sitemap.xml lastmod for {url} is {sitemap_dates.get(url) or 'missing'}, "

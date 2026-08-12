@@ -10,6 +10,7 @@ import re
 from dataclasses import dataclass
 from datetime import date, datetime, timezone
 from pathlib import Path
+from urllib.parse import urlsplit
 from xml.etree import ElementTree as ET
 
 from site_shared import (
@@ -28,6 +29,10 @@ BLOG_DIR = ROOT / "blog"
 REDIRECTS_PATH = ROOT / "_redirects"
 REDIRECTS_START = "# BEGIN GENERATED CLEAN URL REDIRECTS"
 REDIRECTS_END = "# END GENERATED CLEAN URL REDIRECTS"
+CONSOLIDATION_REDIRECTS = {
+    "/blog/barbell-plate-math-the-simple-version": "/blog/how-to-calculate-plates-on-a-barbell",
+    "/blog/what-is-a-weight-lifting-calculator": "/tools/barbell-calculator",
+}
 
 
 def output_paths(posts: list[Post] | None = None) -> list[str]:
@@ -59,17 +64,22 @@ def output_paths(posts: list[Post] | None = None) -> list[str]:
 
 
 def clean_redirect_rules(posts: list[Post]) -> list[tuple[str, str]]:
-    """Redirect physical HTML outputs to their canonical public URLs.
+    """Redirect legacy and physical HTML URLs to their canonical owners.
 
     Netlify normalizes trailing slashes while matching ``_redirects`` rules, so
     explicit ``/page/ -> /page`` rules also match ``/page`` and self-redirect.
     Its serving layer already handles the slash form for clean URLs.
     """
-    rules: set[tuple[str, str]] = set()
+    rules: set[tuple[str, str]] = set(CONSOLIDATION_REDIRECTS.items())
+    rules.update(
+        (f"{source}.html", destination)
+        for source, destination in CONSOLIDATION_REDIRECTS.items()
+    )
     for output_path in output_paths(posts):
         canonical_path = clean_url_path(output_path)
-        if output_path != canonical_path:
-            rules.add((output_path, canonical_path))
+        destination = CONSOLIDATION_REDIRECTS.get(canonical_path, canonical_path)
+        if output_path != destination:
+            rules.add((output_path, destination))
 
     return sorted(rules)
 
@@ -104,6 +114,7 @@ class Post:
     slug: str
     source_path: Path
     body: str
+    updated: date | None = None
 
     @property
     def url_path(self) -> str:
@@ -138,6 +149,16 @@ def load_posts(*, include_future: bool = False, today: date | None = None) -> li
             raise ValueError(f"{path} is missing front matter fields: {', '.join(missing)}")
 
         post_date = datetime.strptime(meta["date"], "%Y-%m-%d").date()
+        updated_date = (
+            datetime.strptime(meta["updated"], "%Y-%m-%d").date()
+            if meta.get("updated")
+            else None
+        )
+        if updated_date is not None and updated_date < post_date:
+            raise ValueError(
+                f"{path} has updated date {updated_date.isoformat()} before "
+                f"publication date {post_date.isoformat()}"
+            )
         if post_date > publish_date and not include_future:
             continue
 
@@ -149,6 +170,7 @@ def load_posts(*, include_future: bool = False, today: date | None = None) -> li
                 slug=meta["slug"],
                 source_path=path,
                 body=body,
+                updated=updated_date,
             )
         )
 
@@ -191,55 +213,247 @@ def validate_unique_posts(posts: list[Post]) -> None:
         seen_slugs[slug_key] = post
 
 
-def render_inline(text: str) -> str:
+INLINE_TOKEN = re.compile(
+    r"\[([^\]\n]+)\]\(([^)\n]+)\)"
+    r"|\[\^([A-Za-z0-9_-]+)\]"
+    r"|https?://[^\s<]+"
+)
+FOOTNOTE_DEFINITION = re.compile(r"^ {0,3}\[\^([A-Za-z0-9_-]+)\]:\s*(.*)$")
+ORDERED_LIST_ITEM = re.compile(r"^\d+[.)]\s+(.+)$")
+
+
+def render_emphasis(text: str) -> str:
+    """Render the small emphasis subset used by RackMath blog Markdown."""
     escaped = html.escape(text)
-    escaped = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", escaped)
-    escaped = re.sub(r"\[(.+?)\]\((https?://[^\s)]+)\)", r'<a href="\2">\1</a>', escaped)
+    escaped = re.sub(r"\*\*(?=\S)(.+?\S)\*\*", r"<strong>\1</strong>", escaped)
+    escaped = re.sub(r"__(?=\S)(.+?\S)__", r"<strong>\1</strong>", escaped)
+    escaped = re.sub(
+        r"(?<!\*)\*(?![\s*])(.+?\S)\*(?!\*)",
+        r"<em>\1</em>",
+        escaped,
+    )
+    escaped = re.sub(
+        r"(?<![\w_])_(?![\s_])(.+?\S)_(?![\w_])",
+        r"<em>\1</em>",
+        escaped,
+    )
     return escaped
 
 
-def render_markdown(markdown: str) -> str:
+def safe_markdown_href(href: str) -> str | None:
+    """Allow web URLs and same-site relative URLs, but reject active schemes."""
+    href = href.strip()
+    if not href or any(ord(character) < 32 for character in href):
+        return None
+    if "\\" in href or href.startswith("//"):
+        return None
+
+    parsed = urlsplit(href)
+    if parsed.scheme:
+        if parsed.scheme.lower() not in {"http", "https"} or not parsed.netloc:
+            return None
+    elif parsed.netloc:
+        return None
+    return href
+
+
+def render_inline(
+    text: str,
+    *,
+    footnote_references: dict[str, list[str]] | None = None,
+    known_footnotes: set[str] | None = None,
+) -> str:
+    """Render escaped inline Markdown, links, citations, and emphasis."""
+    rendered: list[str] = []
+    cursor = 0
+
+    for match in INLINE_TOKEN.finditer(text):
+        rendered.append(render_emphasis(text[cursor : match.start()]))
+        token = match.group(0)
+        link_label, link_href, footnote_label = match.groups()
+
+        if link_label is not None and link_href is not None:
+            safe_href = safe_markdown_href(link_href)
+            if safe_href is None:
+                rendered.append(render_emphasis(link_label))
+            else:
+                rendered.append(
+                    f'<a href="{html.escape(safe_href, quote=True)}">'
+                    f"{render_emphasis(link_label)}</a>"
+                )
+        elif footnote_label is not None:
+            if (
+                footnote_references is None
+                or known_footnotes is None
+                or footnote_label not in known_footnotes
+            ):
+                rendered.append(html.escape(token))
+            else:
+                reference_ids = footnote_references.setdefault(footnote_label, [])
+                suffix = f"-{len(reference_ids) + 1}" if reference_ids else ""
+                reference_id = f"fnref-{footnote_label}{suffix}"
+                reference_ids.append(reference_id)
+                rendered.append(
+                    f'<sup id="{reference_id}"><a class="footnote-ref" '
+                    f'href="#fn-{footnote_label}" aria-label="Footnote '
+                    f'{html.escape(footnote_label, quote=True)}">'
+                    f"{html.escape(footnote_label)}</a></sup>"
+                )
+        else:
+            bare_href = token.rstrip(".,;:!?")
+            trailing_punctuation = token[len(bare_href) :]
+            rendered.append(
+                f'<a href="{html.escape(bare_href, quote=True)}">'
+                f"{html.escape(bare_href)}</a>"
+            )
+            rendered.append(html.escape(trailing_punctuation))
+
+        cursor = match.end()
+
+    rendered.append(render_emphasis(text[cursor:]))
+    return "".join(rendered)
+
+
+def extract_footnotes(markdown: str) -> tuple[list[str], dict[str, str]]:
+    """Remove footnote definitions from the document and preserve their order."""
     lines = markdown.splitlines()
+    body_lines: list[str] = []
+    definitions: dict[str, str] = {}
+    index = 0
+
+    while index < len(lines):
+        match = FOOTNOTE_DEFINITION.match(lines[index])
+        if not match:
+            body_lines.append(lines[index])
+            index += 1
+            continue
+
+        label, definition = match.groups()
+        continuation: list[str] = [definition.strip()]
+        index += 1
+        while index < len(lines) and re.match(r"^ {2,}\S", lines[index]):
+            continuation.append(lines[index].strip())
+            index += 1
+        definitions[label] = " ".join(part for part in continuation if part)
+
+    return body_lines, definitions
+
+
+def render_markdown(markdown: str) -> str:
+    lines, footnotes = extract_footnotes(markdown)
+    terminal_sources_heading = False
+    if footnotes:
+        last_content_index = len(lines) - 1
+        while last_content_index >= 0 and not lines[last_content_index].strip():
+            last_content_index -= 1
+        if (
+            last_content_index >= 0
+            and lines[last_content_index].strip().casefold() == "## sources"
+        ):
+            terminal_sources_heading = True
+            del lines[last_content_index:]
+
     html_lines: list[str] = []
     paragraph: list[str] = []
     list_items: list[str] = []
+    list_tag: str | None = None
+    quote_lines: list[str] = []
+    footnote_references: dict[str, list[str]] = {}
+    known_footnotes = set(footnotes)
+
+    def inline(text: str) -> str:
+        return render_inline(
+            text,
+            footnote_references=footnote_references,
+            known_footnotes=known_footnotes,
+        )
 
     def flush_paragraph() -> None:
         if paragraph:
-            html_lines.append(f"<p>{render_inline(' '.join(paragraph))}</p>")
+            html_lines.append(f"<p>{inline(' '.join(paragraph))}</p>")
             paragraph.clear()
 
     def flush_list() -> None:
-        if list_items:
-            html_lines.append("<ul>")
-            html_lines.extend(f"  <li>{render_inline(item)}</li>" for item in list_items)
-            html_lines.append("</ul>")
+        nonlocal list_tag
+        if list_items and list_tag:
+            html_lines.append(f"<{list_tag}>")
+            html_lines.extend(f"  <li>{inline(item)}</li>" for item in list_items)
+            html_lines.append(f"</{list_tag}>")
             list_items.clear()
+        list_tag = None
+
+    def flush_quote() -> None:
+        if quote_lines:
+            html_lines.append(f"<blockquote><p>{inline(' '.join(quote_lines))}</p></blockquote>")
+            quote_lines.clear()
+
+    def flush_blocks() -> None:
+        flush_paragraph()
+        flush_list()
+        flush_quote()
 
     for raw_line in lines:
         line = raw_line.strip()
         if not line:
-            flush_paragraph()
-            flush_list()
+            flush_blocks()
             continue
 
-        if line.startswith("## "):
-            flush_paragraph()
-            flush_list()
-            html_lines.append(f"<h2>{render_inline(line[3:])}</h2>")
+        ordered_item = ORDERED_LIST_ITEM.match(line)
+        if line.startswith("### "):
+            flush_blocks()
+            html_lines.append(f"<h3>{inline(line[4:])}</h3>")
+        elif line.startswith("## "):
+            flush_blocks()
+            html_lines.append(f"<h2>{inline(line[3:])}</h2>")
         elif line.startswith("# "):
+            flush_blocks()
+            html_lines.append(f"<h1>{inline(line[2:])}</h1>")
+        elif line.startswith(">"):
             flush_paragraph()
             flush_list()
-            html_lines.append(f"<h1>{render_inline(line[2:])}</h1>")
+            quote_lines.append(line[1:].lstrip())
         elif line.startswith("- "):
             flush_paragraph()
+            flush_quote()
+            if list_tag not in (None, "ul"):
+                flush_list()
+            list_tag = "ul"
             list_items.append(line[2:])
+        elif ordered_item:
+            flush_paragraph()
+            flush_quote()
+            if list_tag not in (None, "ol"):
+                flush_list()
+            list_tag = "ol"
+            list_items.append(ordered_item.group(1))
         else:
             flush_list()
+            flush_quote()
             paragraph.append(line)
 
-    flush_paragraph()
-    flush_list()
+    flush_blocks()
+
+    if footnotes:
+        labels = list(footnote_references)
+        labels.extend(label for label in footnotes if label not in footnote_references)
+        footnotes_heading = "Sources" if terminal_sources_heading else "Sources and notes"
+        html_lines.append('<section class="footnotes" aria-labelledby="footnotes-heading">')
+        html_lines.append(f'<h2 id="footnotes-heading">{footnotes_heading}</h2>')
+        html_lines.append("<ol>")
+        for label in labels:
+            backlinks = " ".join(
+                f'<a class="footnote-backref" href="#{reference_id}" '
+                f'aria-label="Back to footnote {html.escape(label, quote=True)} reference">↩</a>'
+                for reference_id in footnote_references.get(label, [])
+            )
+            suffix = f" {backlinks}" if backlinks else ""
+            html_lines.append(
+                f'  <li id="fn-{html.escape(label, quote=True)}">'
+                f"{render_inline(footnotes[label])}{suffix}</li>"
+            )
+        html_lines.append("</ol>")
+        html_lines.append("</section>")
+
     return "\n".join(html_lines)
 
 
@@ -270,8 +484,8 @@ def render_blog_index(posts: list[Post]) -> str:
     body = f"""    <main>
       <section class="page-hero">
         <p class="eyebrow">Rack Math Blog</p>
-        <h1>Daily weight lifting calculator notes.</h1>
-        <p>Short posts about barbell plate loading, workout tracking, training flow, and the small decisions that keep lifting sessions moving.</p>
+        <h1>Practical guides for loading and lifting.</h1>
+        <p>Clear, beginner-friendly guides about barbell loading, lifting calculations, training, and the small decisions that keep workouts moving.</p>
       </section>
 
       <section class="section blog-list" aria-label="Blog posts">
@@ -284,7 +498,7 @@ def render_blog_index(posts: list[Post]) -> str:
     </main>"""
     return document_shell(
         title="Rack Math Blog | Weight Lifting Calculator Tips",
-        description="Daily Rack Math posts about weight lifting calculator tips, barbell plate loading, workout tracking, and training progress.",
+        description="Practical Rack Math guides about barbell loading, lifting calculations, beginner training, and workout progress.",
         canonical_path="/blog",
         body=body,
         current="blog",
@@ -326,8 +540,8 @@ def render_archive(posts: list[Post]) -> str:
     body = f"""    <main>
       <section class="page-hero">
         <p class="eyebrow">Archive</p>
-        <h1>All Rack Math blog posts.</h1>
-        <p>Every published note about weight lifting calculators, barbell plate loading, workout tracking, and training flow.</p>
+        <h1>All Rack Math guides.</h1>
+        <p>Browse every practical guide about lifting calculations, barbell loading, workout tracking, and training.</p>
       </section>
 
       <section class="section archive-list" aria-label="All blog posts">
@@ -336,7 +550,7 @@ def render_archive(posts: list[Post]) -> str:
     </main>"""
     return document_shell(
         title="Rack Math Blog Archive",
-        description="Browse every Rack Math blog post about weight lifting calculators, barbell plate loading, workout tracking, and training progress.",
+        description="Browse every Rack Math guide about lifting calculations, barbell loading, workout tracking, and training progress.",
         canonical_path="/blog/archive",
         body=body,
         current="blog",
@@ -352,7 +566,7 @@ def render_post(post: Post) -> str:
         "headline": post.title,
         "description": post.description,
         "datePublished": post.date.isoformat(),
-        "dateModified": post.date.isoformat(),
+        "dateModified": (post.updated or post.date).isoformat(),
         "mainEntityOfPage": f"{SITE_URL}{post.url_path}",
         "author": {"@type": "Organization", "name": SITE_NAME},
         "publisher": {"@type": "Organization", "name": SITE_NAME},
@@ -374,7 +588,7 @@ def render_post(post: Post) -> str:
       <section class="section blog-post-nav" aria-label="Blog navigation">
         <a class="text-link" href="../blog">Back to blog</a>
         <a class="text-link" href="archive">Archive</a>
-        <a class="text-link" href="https://www.rackmath.app/?source=seo&amp;intent=onboarding">Open Rack Math</a>
+        <a class="text-link" href="https://www.rackmath.app/?source=seo&amp;tool=barbell-plate-calculator&amp;intent=tools%2Fplate-calculator">Open RackMath calculator</a>
       </section>
       <script type="application/ld+json">
         {json.dumps(schema, indent=8)}
@@ -425,7 +639,7 @@ def write_sitemap(posts: list[Post]) -> None:
             add(path, priority_by_type.get(page["type"], "0.6"), registry_lastmod(page))
 
     for post in posts:
-        add(post.url_path, "0.6", post.date.isoformat())
+        add(post.url_path, "0.6", (post.updated or post.date).isoformat())
 
     ET.indent(urlset, space="  ")
     tree = ET.ElementTree(urlset)

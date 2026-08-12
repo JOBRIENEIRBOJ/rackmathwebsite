@@ -896,7 +896,7 @@
     "file": "content/blog/2026-08-01-how-to-make-your-second-gym-visit-easier-than-the-first.md"
   },
   {
-    "title": "The Beginner's Guide to Loading a Barbell",
+    "title": "How to Load a Barbell Safely",
     "status": "drafted",
     "publish_date": "2026-08-02",
     "slug": "the-beginners-guide-to-loading-a-barbell",
@@ -906,7 +906,7 @@
       "barbell math",
       "how to calculate plates on a barbell"
     ],
-    "angle": "Teach beginners how to load a barbell from empty bar to working weight, with simple plate math and a quick safety check.",
+    "angle": "Teach the physical process of loading and unloading a barbell evenly, identifying equipment, using collars appropriately, and checking the setup before lifting.",
     "drafted_at": "2026-08-08T09:23:56.430Z",
     "file": "content/blog/2026-08-02-the-beginners-guide-to-loading-a-barbell.md"
   },
@@ -926,7 +926,7 @@
     "file": "content/blog/2026-08-03-how-to-calculate-plates-on-a-barbell.md"
   },
   {
-    "title": "What Does the Bar Weigh?",
+    "title": "How Much Does a Barbell Weigh?",
     "status": "drafted",
     "publish_date": "2026-08-04",
     "slug": "what-does-the-bar-weigh",
@@ -936,13 +936,13 @@
       "barbell math",
       "how to calculate plates on a barbell"
     ],
-    "angle": "Explain the bar weigh clearly, show the beginner mistake to avoid, and connect the answer to loading the bar correctly.",
+    "angle": "Help lifters identify Olympic and specialty bars, verify the empty weight, and record different equipment accurately without duplicating the plate-calculation guide.",
     "drafted_at": "2026-08-10T09:45:50.324Z",
     "file": "content/blog/2026-08-04-what-does-the-bar-weigh.md"
   },
   {
     "title": "How Much Weight Is on the Bar?",
-    "status": "ready",
+    "status": "removed",
     "publish_date": "2026-08-05",
     "slug": "how-much-weight-is-on-the-bar",
     "primary_keyword": "how much weight is on the bar",
@@ -951,11 +951,13 @@
       "barbell math",
       "how to calculate plates on a barbell"
     ],
-    "angle": "Teach beginners how to how much weight is on the bar with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+    "angle": "Teach beginners how to how much weight is on the bar with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in.",
+    "removed_at": "2026-08-12T18:08:09Z",
+    "removal_reason": "Overlaps the published plate-math pillar and Common Barbell Weights tool."
   },
   {
     "title": "Barbell Plate Math: The Simple Version",
-    "status": "drafted",
+    "status": "removed",
     "publish_date": "2026-08-06",
     "slug": "barbell-plate-math-the-simple-version",
     "primary_keyword": "barbell plate math",
@@ -965,12 +967,12 @@
       "how to calculate plates on a barbell"
     ],
     "angle": "Explain barbell plate math in simple terms, then show beginners how to check both sides of the bar before lifting.",
-    "drafted_at": "2026-08-12T09:37:30.042Z",
-    "file": "content/blog/2026-08-06-barbell-plate-math-the-simple-version.md"
+    "removed_at": "2026-08-12T18:08:09Z",
+    "removal_reason": "Consolidated into content/blog/2026-08-03-how-to-calculate-plates-on-a-barbell.md."
   },
   {
     "title": "How to Use a Barbell Plate Calculator",
-    "status": "ready",
+    "status": "removed",
     "publish_date": "2026-08-07",
     "slug": "how-to-use-a-barbell-plate-calculator",
     "primary_keyword": "barbell plate calculator",
@@ -979,11 +981,13 @@
       "barbell math",
       "how to calculate plates on a barbell"
     ],
-    "angle": "Teach beginners how to use a barbell plate calculator with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+    "angle": "Teach beginners how to use a barbell plate calculator with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in.",
+    "removed_at": "2026-08-12T18:08:09Z",
+    "removal_reason": "The transactional intent is owned by /tools/barbell-calculator."
   },
   {
     "title": "How to Load a 45-Pound Barbell",
-    "status": "ready",
+    "status": "removed",
     "publish_date": "2026-08-08",
     "slug": "how-to-load-a-45-pound-barbell",
     "primary_keyword": "45 pound barbell calculator",
@@ -992,11 +996,13 @@
       "barbell math",
       "how to calculate plates on a barbell"
     ],
-    "angle": "Teach beginners how to load a 45-pound barbell with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+    "angle": "Teach beginners how to load a 45-pound barbell with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in.",
+    "removed_at": "2026-08-12T18:08:09Z",
+    "removal_reason": "Consolidated into the general plate-math pillar and bar-weight identification guide."
   },
   {
     "title": "How to Load a 35-Pound Barbell",
-    "status": "ready",
+    "status": "removed",
     "publish_date": "2026-08-09",
     "slug": "how-to-load-a-35-pound-barbell",
     "primary_keyword": "35 pound barbell plate calculator",
@@ -1005,11 +1011,13 @@
       "barbell math",
       "how to calculate plates on a barbell"
     ],
-    "angle": "Teach beginners how to load a 35-pound barbell with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+    "angle": "Teach beginners how to load a 35-pound barbell with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in.",
+    "removed_at": "2026-08-12T18:08:09Z",
+    "removal_reason": "Consolidated into the general plate-math pillar and bar-weight identification guide."
   },
   {
     "title": "How to Load a 15-Pound Training Bar",
-    "status": "ready",
+    "status": "removed",
     "publish_date": "2026-08-10",
     "slug": "how-to-load-a-15-pound-training-bar",
     "primary_keyword": "training bar plate calculator",
@@ -1018,7 +1026,9 @@
       "barbell math",
       "how to calculate plates on a barbell"
     ],
-    "angle": "Teach beginners how to load a 15-pound training bar with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+    "angle": "Teach beginners how to load a 15-pound training bar with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in.",
+    "removed_at": "2026-08-12T18:08:09Z",
+    "removal_reason": "Consolidated into the general plate-math pillar and bar-weight identification guide."
   },
   {
     "title": "Pounds vs Kilograms in the Gym",
@@ -1035,7 +1045,7 @@
   },
   {
     "title": "How to Convert Pounds to Plates",
-    "status": "ready",
+    "status": "removed",
     "publish_date": "2026-08-12",
     "slug": "how-to-convert-pounds-to-plates",
     "primary_keyword": "pounds to plates calculator",
@@ -1044,11 +1054,13 @@
       "barbell math",
       "how to calculate plates on a barbell"
     ],
-    "angle": "Teach beginners how to convert pounds to plates with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+    "angle": "Teach beginners how to convert pounds to plates with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in.",
+    "removed_at": "2026-08-12T18:08:09Z",
+    "removal_reason": "Transactional conversion intent is owned by /tools/barbell-calculator and /tools/lb-kg-plate-converter."
   },
   {
     "title": "How to Convert Kilograms to Plates",
-    "status": "ready",
+    "status": "removed",
     "publish_date": "2026-08-13",
     "slug": "how-to-convert-kilograms-to-plates",
     "primary_keyword": "kg plate calculator",
@@ -1057,7 +1069,9 @@
       "barbell math",
       "how to calculate plates on a barbell"
     ],
-    "angle": "Teach beginners how to convert kilograms to plates with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in."
+    "angle": "Teach beginners how to convert kilograms to plates with simple barbell math, a quick loading check, and a natural RackMath calculator tie-in.",
+    "removed_at": "2026-08-12T18:08:09Z",
+    "removal_reason": "Transactional conversion intent is owned by /tools/barbell-calculator and /tools/lb-kg-plate-converter."
   },
   {
     "title": "What Are Change Plates?",

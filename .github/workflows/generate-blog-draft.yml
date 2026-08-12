@@ -2,8 +2,6 @@ name: Generate blog draft for review
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "15 9 * * *"
 
 permissions:
   contents: write

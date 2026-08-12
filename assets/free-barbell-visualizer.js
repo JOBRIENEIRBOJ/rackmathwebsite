@@ -210,8 +210,8 @@
     if (remaining > 0.01) {
       return {
         status: 'error',
-        message: `Cannot achieve ${formatWeight(targetTotal)} ${SETTINGS[unit].label}.`,
-        suggestion: `Closest loadable weight: ${formatWeight(loadedTotal)} ${SETTINGS[unit].label}.`,
+        message: `The largest-plate-first stack cannot create ${formatWeight(targetTotal)} ${SETTINGS[unit].label}.`,
+        suggestion: `Lower suggested weight: ${formatWeight(loadedTotal)} ${SETTINGS[unit].label}.`,
         achieved: loadedTotal,
         plates: [],
         perSide: roundWeight(perSide),
