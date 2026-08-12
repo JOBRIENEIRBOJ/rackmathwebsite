@@ -12,6 +12,7 @@ from urllib.parse import parse_qsl, urljoin, urlsplit
 from xml.etree import ElementTree as ET
 
 import build_blog
+from site_shared import SITE_NAME
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,6 +20,7 @@ REGISTRY_PATH = ROOT / "content" / "seo-pages.json"
 SITEMAP_PATH = ROOT / "sitemap.xml"
 REDIRECTS_PATH = ROOT / "_redirects"
 SITE_URL = "https://rackmath.com"
+LEGACY_SITE_NAME = "Rack" + " Math"
 
 BASE_OUTPUTS = {
     ROOT / "index.html": "/",
@@ -39,6 +41,7 @@ class PageParser(HTMLParser):
         self.app_links: list[str] = []
         self.canonicals: list[str] = []
         self.og_urls: list[str] = []
+        self.og_site_names: list[str] = []
         self.titles: list[str] = []
         self.descriptions: list[str] = []
         self.h1s: list[str] = []
@@ -67,6 +70,8 @@ class PageParser(HTMLParser):
                 self.canonicals.append(str(values["href"]))
         elif tag == "meta" and values.get("property") == "og:url" and values.get("content"):
             self.og_urls.append(str(values["content"]))
+        elif tag == "meta" and values.get("property") == "og:site_name" and values.get("content"):
+            self.og_site_names.append(str(values["content"]))
         elif tag == "meta" and values.get("name", "").lower() == "description" and values.get("content"):
             self.descriptions.append(" ".join(str(values["content"]).split()))
         elif tag == "script" and values.get("type") == "application/ld+json":
@@ -164,6 +169,14 @@ def schema_urls(value: object) -> list[str]:
         return [url for child in value for url in schema_urls(child)]
     if isinstance(value, str) and value.startswith((f"{SITE_URL}/", "https://www.rackmath.com/")):
         return [value]
+    return []
+
+
+def schema_nodes(value: object) -> list[dict]:
+    if isinstance(value, dict):
+        return [value, *(node for child in value.values() for node in schema_nodes(child))]
+    if isinstance(value, list):
+        return [node for child in value for node in schema_nodes(child)]
     return []
 
 
@@ -269,6 +282,7 @@ def main() -> int:
             (count(r'<meta\s+name="description"', text) == 1, "must have exactly one meta description"),
             (count(r"<h1\b", text) == 1, "must have exactly one h1"),
             (len(parser.canonicals) == 1, "must have exactly one canonical"),
+            (parser.og_site_names == [SITE_NAME], f"og:site_name must be {SITE_NAME}"),
             (len(parser.anchors) >= 3, "must contain at least three crawlable links"),
         ]
         for ok, message in checks:
@@ -302,7 +316,14 @@ def main() -> int:
             errors.append(f"{label}: hub trailing-slash convention does not match its output path")
         if parser.og_urls and parser.og_urls != [canonical_url]:
             errors.append(f"{label}: og:url must match the canonical URL")
+        if LEGACY_SITE_NAME in text:
+            errors.append(f"{label}: legacy spaced brand spelling must be {SITE_NAME}")
 
+        homepage_schema_names: dict[str, list[str]] = {
+            "WebSite": [],
+            "Organization": [],
+            "SoftwareApplication": [],
+        }
         for raw_schema in parser.schema_text:
             try:
                 schema = json.loads(raw_schema)
@@ -312,6 +333,19 @@ def main() -> int:
             for url in schema_urls(schema):
                 if ".html" in urlsplit(url).path:
                     errors.append(f"{label}: schema contains an .html URL: {url}")
+            if canonical_path == "/":
+                for node in schema_nodes(schema):
+                    schema_type = node.get("@type")
+                    if schema_type in homepage_schema_names and isinstance(node.get("name"), str):
+                        homepage_schema_names[schema_type].append(node["name"])
+
+        if canonical_path == "/":
+            for schema_type, names in homepage_schema_names.items():
+                if names != [SITE_NAME]:
+                    errors.append(
+                        f"{label}: homepage {schema_type} name must be exactly {SITE_NAME}; "
+                        f"found {names or 'none'}"
+                    )
 
         for href in parser.anchors:
             target_path = internal_path(href, canonical_url)

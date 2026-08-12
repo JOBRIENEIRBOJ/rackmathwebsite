@@ -11,7 +11,7 @@ from urllib.parse import parse_qsl, urlencode, urlsplit
 
 SITE_URL = "https://rackmath.com"
 APP_URL = "https://www.rackmath.app"
-SITE_NAME = "Rack Math"
+SITE_NAME = "RackMath"
 BRAND_NAME = "RackMath"
 
 ASSET_VERSION = "20260615"
