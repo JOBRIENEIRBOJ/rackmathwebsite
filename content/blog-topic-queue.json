@@ -955,7 +955,7 @@
   },
   {
     "title": "Barbell Plate Math: The Simple Version",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-08-06",
     "slug": "barbell-plate-math-the-simple-version",
     "primary_keyword": "barbell plate math",
@@ -964,7 +964,9 @@
       "barbell math",
       "how to calculate plates on a barbell"
     ],
-    "angle": "Explain barbell plate math in simple terms, then show beginners how to check both sides of the bar before lifting."
+    "angle": "Explain barbell plate math in simple terms, then show beginners how to check both sides of the bar before lifting.",
+    "drafted_at": "2026-08-12T09:37:30.042Z",
+    "file": "content/blog/2026-08-06-barbell-plate-math-the-simple-version.md"
   },
   {
     "title": "How to Use a Barbell Plate Calculator",
