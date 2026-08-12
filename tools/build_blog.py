@@ -59,18 +59,17 @@ def output_paths(posts: list[Post] | None = None) -> list[str]:
 
 
 def clean_redirect_rules(posts: list[Post]) -> list[tuple[str, str]]:
-    """Build redirects that leave one 200 URL variant for every HTML page."""
+    """Redirect physical HTML outputs to their canonical public URLs.
+
+    Netlify normalizes trailing slashes while matching ``_redirects`` rules, so
+    explicit ``/page/ -> /page`` rules also match ``/page`` and self-redirect.
+    Its serving layer already handles the slash form for clean URLs.
+    """
     rules: set[tuple[str, str]] = set()
     for output_path in output_paths(posts):
         canonical_path = clean_url_path(output_path)
         if output_path != canonical_path:
             rules.add((output_path, canonical_path))
-
-        if canonical_path != "/":
-            if canonical_path.endswith("/"):
-                rules.add((canonical_path.rstrip("/"), canonical_path))
-            else:
-                rules.add((f"{canonical_path}/", canonical_path))
 
     return sorted(rules)
 
