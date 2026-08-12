@@ -3,32 +3,37 @@
 
 from __future__ import annotations
 
-import html
 import json
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import parse_qsl, urlencode, urlsplit
 from xml.etree import ElementTree as ET
 
 import build_blog
+from site_shared import (
+    BASE_PAGES,
+    SITE_URL,
+    app_href,
+    document_shell,
+    escape,
+    href_for_page as href_for,
+    prefix_for,
+    public_path,
+    public_url,
+    registry_lastmod,
+    replace_document_chrome,
+    relative_href as href_for_path,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_PATH = ROOT / "content" / "seo-pages.json"
-SITE_URL = "https://rackmath.com"
-APP_URL = "https://www.rackmath.app"
-BASE_PAGES = [
-    ("/", "1.0"),
-    ("/tools/", "0.9"),
-    ("/workouts/", "0.9"),
-    ("/exercises/", "0.9"),
-    ("/programs/", "0.8"),
-    ("/for/", "0.8"),
-    ("/features.html", "0.8"),
-    ("/about.html", "0.7"),
-    ("/faq.html", "0.8"),
-    ("/blog.html", "0.8"),
-    ("/blog/archive.html", "0.7"),
+HAND_AUTHORED_PAGES = [
+    ("index.html", "", "homepage"),
+    ("features.html", "features", "seo"),
+    ("about.html", "about", "seo"),
+    ("faq.html", "faq", "seo"),
+    ("privacy.html", "", "seo"),
+    ("terms.html", "", "seo"),
 ]
 
 
@@ -40,206 +45,13 @@ def published_pages(registry: dict) -> list[dict]:
     return [page for page in registry["pages"] if page.get("status") == "published"]
 
 
-def escape(value: str) -> str:
-    return html.escape(str(value), quote=True)
-
-
-def app_href(route: str) -> str:
-    parsed = urlsplit(route)
-    params = dict(parse_qsl(parsed.query, keep_blank_values=True))
-    intent_path = parsed.path.strip("/")
-
-    if intent_path:
-        params.setdefault("intent", intent_path)
-
-    if not params:
-        return f"{APP_URL}/"
-
-    return f"{APP_URL}/?{urlencode(params)}"
-
-
-def prefix_for(slug: str) -> str:
-    parts = [part for part in slug.strip("/").split("/") if part]
-    depth = len(parts) if slug.endswith("/") else max(len(parts) - 1, 0)
-    return "../" * depth
-
-
-def public_path(page: dict) -> str:
-    return page.get("publicPath", page["slug"])
-
-
-def public_url(page: dict) -> str:
-    return f"{SITE_URL}{public_path(page)}"
-
-
-def href_for(page: dict, prefix: str = "") -> str:
-    return f"{prefix}{public_path(page).lstrip('/')}"
-
-
-def nav(current: str, prefix: str = "") -> str:
-    tool_links = [
-        ("All tools", f"{prefix}tools/"),
-        ("Barbell Calculator", f"{prefix}tools/barbell-calculator"),
-        ("Warmup Set Calculator", f"{prefix}tools/warmup-set-calculator.html"),
-        ("One Rep Max Calculator", f"{prefix}tools/one-rep-max-calculator.html"),
-        ("Common Barbell Weights", f"{prefix}tools/common-barbell-weights.html"),
-        ("lb/kg Plate Converter", f"{prefix}tools/lb-kg-plate-converter.html"),
-        ("RPE Calculator", f"{prefix}tools/rpe-calculator.html"),
-        ("Training Volume Calculator", f"{prefix}tools/training-volume-calculator.html"),
-        ("Powerlifting Attempt Calculator", f"{prefix}tools/powerlifting-attempt-calculator.html"),
-        ("AI Workout Builder", f"{prefix}tools/ai-workout-builder.html"),
-        ("Workout Plan Importer", f"{prefix}tools/workout-plan-importer.html"),
-    ]
-    workout_links = [
-        ("All workouts", f"{prefix}workouts/"),
-        ("3-Day Beginner Full Body", f"{prefix}workouts/3-day-beginner-full-body.html"),
-        ("Beginner Barbell Workout", f"{prefix}workouts/beginner-barbell-workout.html"),
-        ("5x5 Workout Tracker", f"{prefix}workouts/5x5-workout-tracker.html"),
-        ("4-Day Upper Lower", f"{prefix}workouts/4-day-upper-lower.html"),
-        ("Push Pull Legs", f"{prefix}workouts/push-pull-legs.html"),
-        ("Barbell-Only Plan", f"{prefix}workouts/barbell-only-workout-plan.html"),
-        ("Garage Gym Plan", f"{prefix}workouts/garage-gym-workout-plan.html"),
-        ("Beginner Powerlifting", f"{prefix}workouts/beginner-powerlifting-program.html"),
-        ("Strength and Hypertrophy", f"{prefix}workouts/strength-hypertrophy-program.html"),
-        ("2-Day Beginner Strength", f"{prefix}workouts/2-day-beginner-strength-plan.html"),
-        ("First Day at the Gym", f"{prefix}workouts/first-day-at-the-gym-workout.html"),
-        ("Dumbbell and Barbell", f"{prefix}workouts/dumbbell-barbell-workout.html"),
-    ]
-    exercise_links = [
-        ("All exercises", f"{prefix}exercises/"),
-        ("Bench Press", f"{prefix}exercises/bench-press.html"),
-        ("Barbell Squat", f"{prefix}exercises/barbell-squat.html"),
-        ("Deadlift", f"{prefix}exercises/deadlift.html"),
-        ("Overhead Press", f"{prefix}exercises/overhead-press.html"),
-        ("Barbell Row", f"{prefix}exercises/barbell-row.html"),
-        ("Romanian Deadlift", f"{prefix}exercises/romanian-deadlift.html"),
-        ("Front Squat", f"{prefix}exercises/front-squat.html"),
-        ("Incline Bench Press", f"{prefix}exercises/incline-bench-press.html"),
-        ("Close-Grip Bench Press", f"{prefix}exercises/close-grip-bench-press.html"),
-        ("Barbell Hip Thrust", f"{prefix}exercises/barbell-hip-thrust.html"),
-        ("Pull-Up", f"{prefix}exercises/pull-up.html"),
-        ("Lat Pulldown", f"{prefix}exercises/lat-pulldown.html"),
-        ("Dumbbell Bench Press", f"{prefix}exercises/dumbbell-bench-press.html"),
-        ("Goblet Squat", f"{prefix}exercises/goblet-squat.html"),
-        ("Leg Press", f"{prefix}exercises/leg-press.html"),
-        ("Cable Row", f"{prefix}exercises/cable-row.html"),
-        ("Dumbbell Row", f"{prefix}exercises/dumbbell-row.html"),
-        ("Barbell Curl", f"{prefix}exercises/barbell-curl.html"),
-        ("Skull Crusher", f"{prefix}exercises/skull-crusher.html"),
-        ("Bulgarian Split Squat", f"{prefix}exercises/bulgarian-split-squat.html"),
-    ]
-    persona_links = [
-        ("All lifter types", f"{prefix}for/"),
-        ("Garage Gyms", f"{prefix}for/garage-gyms.html"),
-        ("Beginners", f"{prefix}for/beginners.html"),
-        ("Powerlifters", f"{prefix}for/powerlifters.html"),
-        ("Strength Coaches", f"{prefix}for/strength-coaches.html"),
-        ("Personal Trainers", f"{prefix}for/personal-trainers.html"),
-        ("Home Gym Lifters", f"{prefix}for/home-gym-lifters.html"),
-        ("kg Gyms", f"{prefix}for/kg-gyms.html"),
-    ]
-    program_links = [
-        ("All programs", f"{prefix}programs/"),
-        ("3-Day Beginner Barbell", f"{prefix}programs/3-day-beginner-barbell-program.html"),
-        ("5x5 Beginner Strength", f"{prefix}programs/5x5-beginner-strength-program.html"),
-        ("Garage Gym Strength", f"{prefix}programs/garage-gym-strength-program.html"),
-        ("Upper Lower Strength Hypertrophy", f"{prefix}programs/upper-lower-strength-hypertrophy.html"),
-    ]
-    tools_current = ' aria-current="page"' if current == "tools" else ""
-    tools_dropdown = "\n".join(f'          <a href="{href}">{label}</a>' for label, href in tool_links)
-    workouts_current = ' aria-current="page"' if current == "workouts" else ""
-    workouts_dropdown = "\n".join(f'          <a href="{href}">{label}</a>' for label, href in workout_links)
-    exercises_current = ' aria-current="page"' if current == "exercises" else ""
-    exercises_dropdown = "\n".join(f'          <a href="{href}">{label}</a>' for label, href in exercise_links)
-    persona_current = ' aria-current="page"' if current == "for" else ""
-    persona_dropdown = "\n".join(f'          <a href="{href}">{label}</a>' for label, href in persona_links)
-    programs_current = ' aria-current="page"' if current == "programs" else ""
-    programs_dropdown = "\n".join(f'          <a href="{href}">{label}</a>' for label, href in program_links)
-    links = [
-        ("Features", f"{prefix}features.html", "features"),
-        ("About", f"{prefix}about.html", "about"),
-        ("FAQ", f"{prefix}faq.html", "faq"),
-        ("Blog", f"{prefix}blog.html", "blog"),
-        ("Premium", f"{prefix}index.html#premium", "premium"),
-    ]
-    rendered = [
-        f"""        <div class="nav-dropdown"{tools_current}>
-          <button class="nav-dropdown-trigger" type="button">Tools</button>
-          <div class="nav-dropdown-menu">
-{tools_dropdown}
-          </div>
-        </div>""",
-        f"""        <div class="nav-dropdown"{workouts_current}>
-          <button class="nav-dropdown-trigger" type="button">Workouts</button>
-          <div class="nav-dropdown-menu">
-{workouts_dropdown}
-          </div>
-        </div>""",
-        f"""        <div class="nav-dropdown"{exercises_current}>
-          <button class="nav-dropdown-trigger" type="button">Exercises</button>
-          <div class="nav-dropdown-menu">
-{exercises_dropdown}
-          </div>
-        </div>""",
-        f"""        <div class="nav-dropdown"{persona_current}>
-          <button class="nav-dropdown-trigger" type="button">For</button>
-          <div class="nav-dropdown-menu">
-{persona_dropdown}
-          </div>
-        </div>""",
-        f"""        <div class="nav-dropdown"{programs_current}>
-          <button class="nav-dropdown-trigger" type="button">Programs</button>
-          <div class="nav-dropdown-menu">
-{programs_dropdown}
-          </div>
-        </div>"""
-    ]
-    rendered.extend(
-        f'        <a href="{href}"{" aria-current=\"page\"" if current == key else ""}>{label}</a>'
-        for label, href, key in links
-    )
-    return "\n".join(rendered)
-
-
-def header(current: str, prefix: str = "") -> str:
-    return f"""    <header class="site-header">
-      <a class="brand" href="{prefix}index.html" aria-label="RackMath home">
-        <img class="brand-mark" src="{prefix}assets/rackmathblue-header.png" alt="" aria-hidden="true">
-        <span>RackMath</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="site-nav" aria-label="Primary navigation">
-{nav(current, prefix)}
-      </nav>
-      <a class="header-cta" href="{APP_URL}/">Try free</a>
-    </header>"""
-
-
-def footer(prefix: str = "") -> str:
-    return f"""    <footer class="site-footer">
-      <div>
-        <a class="brand" href="{prefix}index.html" aria-label="RackMath home">
-          <img class="brand-mark" src="{prefix}assets/rackmathblue-header.png" alt="" aria-hidden="true">
-          <span>RackMath</span>
-        </a>
-        <p>Barbell plate math, workout sessions, and progress tracking for lifters.</p>
-      </div>
-      <nav aria-label="Footer navigation">
-        <a href="{prefix}tools/">Tools</a>
-        <a href="{prefix}workouts/">Workouts</a>
-        <a href="{prefix}exercises/">Exercises</a>
-        <a href="{prefix}for/">For</a>
-        <a href="{prefix}programs/">Programs</a>
-        <a href="{prefix}features.html">Features</a>
-        <a href="{prefix}about.html">About</a>
-        <a href="{prefix}faq.html">FAQ</a>
-        <a href="{prefix}blog.html">Blog</a>
-        <a href="{APP_URL}/">Open app</a>
-      </nav>
-    </footer>"""
+def refresh_hand_authored_chrome() -> None:
+    for filename, current, app_source in HAND_AUTHORED_PAGES:
+        path = ROOT / filename
+        source = path.read_text(encoding="utf-8")
+        rendered = replace_document_chrome(source, current=current, app_source=app_source)
+        if rendered != source:
+            path.write_text(rendered, encoding="utf-8")
 
 
 def breadcrumb_schema(page: dict) -> dict:
@@ -272,7 +84,7 @@ def software_schema(page: dict) -> dict:
     return {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "Rack Math",
+        "name": page.get("softwareName", "Rack Math"),
         "applicationCategory": "HealthApplication",
         "operatingSystem": "Web",
         "url": public_url(page),
@@ -307,7 +119,15 @@ def calculator_faq_schema() -> dict:
                 "name": "What if my target weight cannot be loaded exactly?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The calculator shows the closest loadable weight based on the plates you selected.",
+                    "text": "The calculator shows the closest achievable weight at or below your target based on the plate sizes you selected.",
+                },
+            },
+            {
+                "@type": "Question",
+                "name": "Does the free calculator include collars or specialty bars?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The free web calculator uses only the listed bars and plate sizes and does not add collar weight. Use RackMath's custom equipment setup for collars, specialty bars, or other plate sizes.",
                 },
             },
         ],
@@ -330,44 +150,18 @@ def schema_scripts(page: dict) -> str:
 
 def page_shell(page: dict, body: str, current: str = "tools", extra_script: str = "") -> str:
     prefix = prefix_for(page["slug"])
-    canonical = public_url(page)
-    schema = schema_scripts(page)
-    return f"""<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{escape(page["title"])}</title>
-    <meta name="description" content="{escape(page["description"])}">
-    <link rel="canonical" href="{canonical}">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Rack Math">
-    <meta property="og:title" content="{escape(page["title"])}">
-    <meta property="og:description" content="{escape(page["description"])}">
-    <meta property="og:url" content="{canonical}">
-    <meta property="og:image" content="{SITE_URL}/assets/rackmathblue-gradient.png">
-    <meta property="og:image:alt" content="Rack Math blue gradient logo">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{escape(page["title"])}">
-    <meta name="twitter:description" content="{escape(page["description"])}">
-    <meta name="twitter:image" content="{SITE_URL}/assets/rackmathblue-gradient.png">
-    <meta name="twitter:image:alt" content="Rack Math blue gradient logo">
-    <meta name="theme-color" content="#0a6dff">
-    <link rel="icon" href="{prefix}assets/rackmathblue.png" type="image/png">
-    <link rel="apple-touch-icon" href="{prefix}assets/rackmathblue.png">
-    <link rel="stylesheet" href="{prefix}styles.css?v=20260615">
-{schema}
-  </head>
-  <body>
-{header(current, prefix)}
-{body}
-{footer(prefix)}
-    <script src="{prefix}script.js"></script>
-{extra_script}
-  </body>
-</html>
-"""
-
+    return document_shell(
+        title=page["title"],
+        description=page["description"],
+        canonical_path=public_path(page),
+        body=body,
+        current=current,
+        prefix=prefix,
+        schema_html=schema_scripts(page),
+        extra_script=extra_script,
+        social_image=page.get("socialImage"),
+        social_image_alt=page.get("socialImageAlt"),
+    )
 
 def render_related_links(page: dict, registry: dict, prefix: str) -> str:
     pages_by_slug = {item["slug"]: item for item in registry["pages"]}
@@ -378,7 +172,7 @@ def render_related_links(page: dict, registry: dict, prefix: str) -> str:
             href = href_for(related, prefix)
             label = related["h1"]
         else:
-            href = f"{prefix}{slug.lstrip('/')}"
+            href = href_for_path(slug, prefix)
             label = slug.strip("/").replace("-", " ").replace(".html", "").title()
         links.append(f'          <a class="related-card" href="{href}">{escape(label)}</a>')
     return "\n".join(links)
@@ -389,15 +183,19 @@ def render_tools_hub(page: dict, registry: dict) -> str:
     published_tools = [
         item for item in registry["pages"] if item.get("section") == "tools" and item.get("type") == "tool"
     ]
-    cards = "\n".join(
-        f"""          <a class="tool-card" href="{href_for(item, prefix) if item.get("status") == "published" else '#'}"{" aria-disabled=\"true\"" if item.get("status") != "published" else ""}>
+    cards_list = []
+    for item in published_tools:
+        item_href = href_for(item, prefix) if item.get("status") == "published" else "#"
+        disabled_attr = ' aria-disabled="true"' if item.get("status") != "published" else ""
+        cards_list.append(
+            f"""          <a class="tool-card" href="{item_href}"{disabled_attr}>
             <span class="tool-card-kicker">{escape(item.get("eyebrow", "RackMath tool"))}</span>
             <h2>{escape(item["h1"])}</h2>
             <p>{escape(item["description"])}</p>
             <span class="tool-card-action">{'Open tool' if item.get("status") == "published" else 'Planned'}</span>
           </a>"""
-        for item in published_tools
-    )
+        )
+    cards = "\n".join(cards_list)
     body = f"""    <main>
       <section class="page-hero seo-hero">
         <p class="eyebrow">{escape(page["eyebrow"])}</p>
@@ -418,86 +216,244 @@ def render_tools_hub(page: dict, registry: dict) -> str:
 
 def render_calculator_section(page: dict) -> str:
     cta_href = app_href(page["appRoute"])
-    return f"""      <section class="rm-free-calculator" id="barbell-plate-calculator" data-rm-calculator aria-labelledby="rm-free-calculator-title">
-        <div class="rm-section-heading rm-free-calculator-heading">
-          <p class="rm-eyebrow">Free barbell plate calculator</p>
-          <h2 id="rm-free-calculator-title">Visualize the plates for any barbell lift.</h2>
-          <p class="rm-section-copy">Use this free RackMath barbell visualizer to calculate plates per side for pounds or kilograms. Enter a target weight, choose your bar, and see the loaded bar before your next set.</p>
-        </div>
-
-        <div class="rm-free-calculator-grid">
-          <form class="rm-calculator-panel" data-rm-calculator-form aria-label="Free barbell plate calculator">
-            <div class="rm-field">
-              <label for="rm-target-weight">Target weight</label>
-              <div class="rm-input-shell">
-                <input id="rm-target-weight" data-rm-target-weight type="number" inputmode="decimal" min="0" step="2.5" value="225">
-                <span data-rm-unit-label>lb</span>
-              </div>
+    timer_href = app_href(
+        "/tools/plate-calculator?source=seo&tool=barbell-plate-calculator&feature=rest-timer"
+    )
+    streak_href = app_href(
+        "/tools/plate-calculator?source=seo&tool=barbell-plate-calculator&feature=workout-streak"
+    )
+    plate_colors_href = app_href(
+        "/setup/plates?source=seo&feature=custom-plate-calculator"
+    )
+    import_href = app_href(
+        "/start?source=seo&template=workout-plan-importer"
+    )
+    save_workout_href = app_href(
+        "/tools/plate-calculator?source=seo&tool=barbell-plate-calculator&action=track"
+    )
+    pro_href = app_href(
+        "/?source=seo&intent=onboarding&feature=pro-trial"
+    )
+    return f"""      <section class="rm-free-calculator" id="barbell-plate-calculator" data-rm-calculator aria-label="Free RackMath barbell calculator">
+        <div class="rm-dark-workout-shell">
+          <div class="rm-dark-workout-bar">
+            <div>
+              <span class="rm-dark-workout-mark" aria-hidden="true"></span>
+              <span>
+                <small>Workout</small>
+                <strong>My Workout</strong>
+              </span>
             </div>
-
-            <div class="rm-field">
-              <span class="rm-control-label">Units</span>
-              <div class="rm-segmented" role="radiogroup" aria-label="Weight unit">
-                <label><input data-rm-unit type="radio" name="rm-free-unit" value="lbs" checked><span>lb</span></label>
-                <label><input data-rm-unit type="radio" name="rm-free-unit" value="kg"><span>kg</span></label>
-              </div>
-            </div>
-
-            <div class="rm-field">
-              <label for="rm-bar-weight">Bar</label>
-              <select id="rm-bar-weight" data-rm-bar-select>
-                <option value="45">Olympic barbell, 45 lb</option>
-                <option value="33">Women's Olympic barbell, 33 lb</option>
-                <option value="20">Training bar, 20 lb</option>
-              </select>
-            </div>
-
-            <fieldset class="rm-field rm-plate-field">
-              <legend>Available plates</legend>
-              <div class="rm-plate-toggle-grid" data-rm-plate-controls>
-                <label><input type="checkbox" value="55" data-rm-plate-option><span>55</span></label>
-                <label><input type="checkbox" value="45" data-rm-plate-option checked><span>45</span></label>
-                <label><input type="checkbox" value="35" data-rm-plate-option checked><span>35</span></label>
-                <label><input type="checkbox" value="25" data-rm-plate-option checked><span>25</span></label>
-                <label><input type="checkbox" value="10" data-rm-plate-option checked><span>10</span></label>
-                <label><input type="checkbox" value="5" data-rm-plate-option checked><span>5</span></label>
-                <label><input type="checkbox" value="2.5" data-rm-plate-option checked><span>2.5</span></label>
-              </div>
-            </fieldset>
-
-            <button class="button primary rm-calculator-submit" type="submit">Calculate plates</button>
-          </form>
-
-          <div class="rm-visualizer-panel">
-            <p class="rm-result-message" data-rm-result-message aria-live="polite">225 lb uses 90 lb per side.</p>
-            <div class="rm-barbell-frame" data-rm-visualizer aria-label="Barbell visualizer">
-              <div class="rm-plate-stack rm-plate-stack-left" data-rm-left-stack>
-                <span class="rm-plate" style="--rm-plate-color: #f8fafc; --rm-plate-text: #111827; --rm-plate-height: 126px; --rm-plate-width: 30px;">45</span>
-                <span class="rm-plate" style="--rm-plate-color: #f8fafc; --rm-plate-text: #111827; --rm-plate-height: 126px; --rm-plate-width: 30px;">45</span>
-              </div>
-              <div class="rm-bar-core"><span data-rm-bar-label>45 lb bar</span></div>
-              <div class="rm-plate-stack rm-plate-stack-right" data-rm-right-stack>
-                <span class="rm-plate" style="--rm-plate-color: #f8fafc; --rm-plate-text: #111827; --rm-plate-height: 126px; --rm-plate-width: 30px;">45</span>
-                <span class="rm-plate" style="--rm-plate-color: #f8fafc; --rm-plate-text: #111827; --rm-plate-height: 126px; --rm-plate-width: 30px;">45</span>
-              </div>
-            </div>
-
-            <div class="rm-result-grid">
-              <div><span>Each side</span><strong data-rm-per-side>90 lb</strong></div>
-              <div><span>Total loaded</span><strong data-rm-total>225 lb</strong></div>
-              <div><span>Plates per side</span><strong data-rm-plate-list>45 + 45</strong></div>
-            </div>
-
-            <a class="button secondary rm-full-app-link" href="{cta_href}" data-rm-app-link data-rm-event="app_deeplink_clicked">Save this lift in RackMath</a>
+            <span class="rm-dark-live-badge"><i aria-hidden="true"></i> Live calculator session</span>
           </div>
+
+          <form class="rm-dark-calculator" data-rm-calculator-form aria-label="Free RackMath barbell calculator">
+            <div class="rm-dark-calculator-header">
+              <div class="rm-dark-ordinal-date" data-rm-date-label aria-label="12th, session preview date">
+                <span data-rm-date-day>12</span><sup data-rm-date-suffix>th</sup>
+              </div>
+
+              <div class="rm-dark-session-actions" aria-label="Session preview details">
+                <a class="rm-dark-timer" href="{timer_href}" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Continue in RackMath to use the rest timer" title="Use the RackMath rest timer">
+                  <small>Timer</small>
+                  <strong>2:00</strong>
+                </a>
+                <a class="rm-dark-streak" href="{streak_href}" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Continue in RackMath to build your workout streak" title="Build your RackMath workout streak">
+                  <span aria-hidden="true">🔥</span>
+                  <strong>4</strong>
+                </a>
+
+                <details class="rm-dark-settings">
+                  <summary data-rm-settings-toggle aria-label="Open calculator settings" aria-expanded="false" title="Calculator settings">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                  </summary>
+
+                  <div class="rm-dark-settings-panel" data-rm-settings-panel>
+                    <div class="rm-dark-settings-heading">
+                      <div>
+                        <small>Free calculator</small>
+                        <strong>Equipment settings</strong>
+                      </div>
+                      <span>Changes update the bar live</span>
+                    </div>
+
+                    <fieldset class="rm-dark-settings-field">
+                      <legend>Weight unit</legend>
+                      <div class="rm-dark-segmented" role="radiogroup" aria-label="Weight unit">
+                        <label><input data-rm-unit type="radio" name="rm-free-unit" value="lbs" checked><span>lbs</span></label>
+                        <label><input data-rm-unit type="radio" name="rm-free-unit" value="kg"><span>kg</span></label>
+                      </div>
+                    </fieldset>
+
+                    <div class="rm-dark-settings-field">
+                      <label for="rm-bar-weight">Barbell</label>
+                      <select id="rm-bar-weight" data-rm-bar-select>
+                        <option value="45">Olympic barbell, 45 lb</option>
+                        <option value="33">Women's Olympic barbell, 33 lb</option>
+                        <option value="20">Standard barbell, 20 lb</option>
+                        <option value="25">Technique bar, 25 lb</option>
+                        <option value="custom">Custom bar weight</option>
+                      </select>
+                      <div class="rm-dark-custom-bar" data-rm-custom-bar-field hidden>
+                        <label for="rm-custom-bar-weight">Custom bar weight</label>
+                        <span>
+                          <input id="rm-custom-bar-weight" data-rm-custom-bar-weight type="number" inputmode="decimal" min="0" max="200" step="any" value="45">
+                          <b data-rm-custom-bar-unit>lbs</b>
+                        </span>
+                      </div>
+                    </div>
+
+                    <fieldset class="rm-dark-settings-field rm-dark-plate-field">
+                      <legend>Available plates</legend>
+                      <div class="rm-dark-plate-toggles" data-rm-plate-controls>
+                        <label><input type="checkbox" value="55" data-rm-plate-option><span>55</span></label>
+                        <label><input type="checkbox" value="45" data-rm-plate-option checked><span>45</span></label>
+                        <label><input type="checkbox" value="35" data-rm-plate-option checked><span>35</span></label>
+                        <label><input type="checkbox" value="25" data-rm-plate-option checked><span>25</span></label>
+                        <label><input type="checkbox" value="10" data-rm-plate-option checked><span>10</span></label>
+                        <label><input type="checkbox" value="5" data-rm-plate-option checked><span>5</span></label>
+                        <label><input type="checkbox" value="2.5" data-rm-plate-option checked><span>2.5</span></label>
+                      </div>
+                    </fieldset>
+
+                    <button class="rm-dark-settings-apply rm-calculator-submit" type="submit">Update plate load</button>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <div class="rm-dark-set-row">
+              <span>Sets</span>
+              <div class="rm-dark-set-controls">
+                <a href="{cta_href}" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Open RackMath to add a set">+</a>
+                <a href="{cta_href}" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Open RackMath to remove a set">−</a>
+              </div>
+            </div>
+
+            <div class="rm-dark-weight-stage">
+              <label for="rm-target-weight">Weight</label>
+              <span class="rm-dark-plate-builder-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+              <div class="rm-dark-weight-control">
+                <input id="rm-target-weight" data-rm-target-weight type="number" inputmode="decimal" min="0" max="2000" step="any" value="135" aria-describedby="rm-target-weight-unit">
+                <span id="rm-target-weight-unit" data-rm-unit-label>lbs</span>
+              </div>
+            </div>
+
+            <div class="rm-dark-visualizer" data-rm-visualizer aria-label="Barbell visualizer">
+              <p class="rm-dark-result-message" data-rm-result-message aria-live="polite">135 lbs uses 45 lbs per side.</p>
+              <div class="rm-dark-barbell-frame">
+                <div class="rm-dark-barbell-assembly">
+                  <div class="rm-dark-plate-stack rm-dark-plate-stack-left" data-rm-left-stack>
+                    <span class="rm-plate" style="--rm-plate-height: 130px; --rm-plate-width: 28px; --rm-plate-font-size: 16px; --rm-plate-mobile-height: 110px; --rm-plate-mobile-width: 24px; --rm-plate-mobile-font-size: 14px; --rm-plate-border-width: 2px; --rm-plate-border-color: #111;"><span class="rm-plate-num">45</span></span>
+                  </div>
+                  <div class="rm-dark-bar-core"><span data-rm-bar-label>45 lbs</span></div>
+                  <div class="rm-dark-plate-stack rm-dark-plate-stack-right" data-rm-right-stack>
+                    <span class="rm-plate" style="--rm-plate-height: 130px; --rm-plate-width: 28px; --rm-plate-font-size: 16px; --rm-plate-mobile-height: 110px; --rm-plate-mobile-width: 24px; --rm-plate-mobile-font-size: 14px; --rm-plate-border-width: 2px; --rm-plate-border-color: #111;"><span class="rm-plate-num">45</span></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rm-dark-result-grid">
+                <div><span>Each side</span><strong data-rm-per-side>45 lbs</strong></div>
+                <div><span>Total</span><strong data-rm-total>135 lbs</strong></div>
+              </div>
+
+              <p class="rm-dark-plate-list"><span>Plates per side</span><strong data-rm-plate-list>45</strong></p>
+            </div>
+
+            <a class="rm-dark-track-cta rm-full-app-link" href="{cta_href}" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Track this lift in the RackMath app">
+              <span>Track This Lift!</span>
+            </a>
+
+            <div class="rm-dark-feature-list" aria-label="More RackMath app features">
+              <a class="rm-dark-feature-teaser" href="{plate_colors_href}" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Customize plate colors in the RackMath app">
+                <span class="rm-dark-feature-icon" aria-hidden="true">
+                  <img src="../assets/plate-colors-icon.webp" alt="" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                </span>
+                <div class="rm-dark-feature-copy">
+                  <strong>Customize Plate Colors</strong>
+                  <p>Make your barbell match your gym</p>
+                </div>
+                <svg class="rm-dark-feature-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+
+              <a class="rm-dark-feature-teaser" href="{import_href}" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Turn a screenshot into a workout in the RackMath app">
+                <span class="rm-dark-feature-icon" aria-hidden="true">
+                  <img src="../assets/training-cards-icon.webp" alt="" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                </span>
+                <div class="rm-dark-feature-copy">
+                  <strong>Turn a Screenshot Into a Workout</strong>
+                  <p>Import a plan and RackMath builds sets, reps, and weights.</p>
+                </div>
+                <svg class="rm-dark-feature-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+
+              <a class="rm-dark-feature-teaser" href="{save_workout_href}" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Save this workout in the RackMath app">
+                <span class="rm-dark-feature-icon" aria-hidden="true">
+                  <img src="../assets/workout-tracker-icon.webp" alt="" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                </span>
+                <div class="rm-dark-feature-copy">
+                  <strong>Save This Workout</strong>
+                  <p>Track sets, PRs, volume, and progress from today's lift.</p>
+                </div>
+                <svg class="rm-dark-feature-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+            </div>
+
+            <div class="rm-dark-pro-card">
+              <div>
+                <strong>RackMath Pro</strong>
+                <p>Import plans, customize your rack, save unlimited workouts, and track progress.</p>
+              </div>
+              <a href="{pro_href}" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Start a RackMath Pro trial">Start Pro Trial</a>
+            </div>
+          </form>
         </div>
       </section>"""
 
 
 def render_calculator_page(page: dict, registry: dict) -> str:
     prefix = prefix_for(page["slug"])
-    related = render_related_links(page, registry, prefix)
-    examples = [
+    related_details = {
+        "/tools/common-barbell-weights.html": (
+            "Common barbell weights",
+            "Reference common pound plate combinations from 95 to 405 lb.",
+        ),
+        "/tools/lb-kg-plate-converter.html": (
+            "lb and kg plate converter",
+            "Convert a target between units before choosing a practical load.",
+        ),
+        "/blog/how-to-calculate-plates-on-a-barbell.html": (
+            "How to calculate plates on a barbell",
+            "Learn the per-side formula and work through the arithmetic.",
+        ),
+        "/blog/the-beginners-guide-to-loading-a-barbell.html": (
+            "Beginner barbell loading and safety guide",
+            "Load evenly, use collars when appropriate, and unload with control.",
+        ),
+        "/blog/what-does-the-bar-weigh.html": (
+            "How much does the bar weigh?",
+            "Check common Olympic, training, and specialty bar weights.",
+        ),
+        "/features/custom-plate-calculator.html": (
+            "Custom plate inventory and equipment",
+            "Use your actual bars, collars, plate sizes, and available equipment.",
+        ),
+    }
+    related_cards = []
+    for slug in page.get("related", []):
+        label, description = related_details.get(
+            slug,
+            (slug.strip("/").replace("-", " ").replace(".html", "").title(), "Explore this related RackMath resource."),
+        )
+        related_cards.append(
+            f'''          <a class="related-card calculator-related-card" href="{href_for_path(slug, prefix)}">
+            <strong>{escape(label)}</strong>
+            <span>{escape(description)}</span>
+          </a>'''
+        )
+    related = "\n".join(related_cards)
+    lb_examples = [
         ("95 lb", "25 lb per side"),
         ("135 lb", "45 lb per side"),
         ("185 lb", "45 + 25 per side"),
@@ -505,7 +461,24 @@ def render_calculator_page(page: dict, registry: dict) -> str:
         ("315 lb", "45 + 45 + 45 per side"),
         ("405 lb", "45 + 45 + 45 + 45 per side"),
     ]
-    rows = "\n".join(f"              <tr><td>{target}</td><td>{plates}</td></tr>" for target, plates in examples)
+    kg_examples = [
+        ("60 kg", "20 kg per side"),
+        ("80 kg", "20 + 10 per side"),
+        ("100 kg", "20 + 20 per side"),
+        ("120 kg", "20 + 20 + 10 per side"),
+        ("140 kg", "20 + 20 + 20 per side"),
+        ("180 kg", "20 + 20 + 20 + 20 per side"),
+    ]
+    lb_rows = "\n".join(
+        f"                <tr><td>{target}</td><td>{plates}</td></tr>" for target, plates in lb_examples
+    )
+    kg_rows = "\n".join(
+        f"                <tr><td>{target}</td><td>{plates}</td></tr>" for target, plates in kg_examples
+    )
+    formula_href = href_for_path("/blog/how-to-calculate-plates-on-a-barbell.html", prefix)
+    safety_href = href_for_path("/blog/the-beginners-guide-to-loading-a-barbell.html", prefix)
+    bar_weight_href = href_for_path("/blog/what-does-the-bar-weigh.html", prefix)
+    custom_inventory_href = href_for_path("/features/custom-plate-calculator.html", prefix)
     body = f"""    <main>
       <section class="page-hero seo-hero">
         <p class="eyebrow">{escape(page["eyebrow"])}</p>
@@ -520,27 +493,41 @@ def render_calculator_page(page: dict, registry: dict) -> str:
           <p class="eyebrow">How it works</p>
           <h2>Calculate plates without doing gym-floor arithmetic.</h2>
           <p>RackMath subtracts the bar weight from your target weight, divides the remaining load across both sleeves, and builds the closest plate setup from the plates you selected.</p>
-          <p>If your exact target cannot be loaded with the available plates, the calculator shows the closest loadable weight so you can adjust the set without guessing.</p>
+          <p>If the selected plate sizes cannot make the exact target, this free calculator shows the closest achievable total at or below it. See <a href="{formula_href}">how to calculate plates on a barbell</a> for the full formula and worked examples.</p>
         </article>
         <article>
-          <p class="eyebrow">Mistakes to avoid</p>
-          <h2>Check the bar before counting plates.</h2>
-          <p>A 45 lb bar, 20 kg bar, women's bar, training bar, specialty bar, or collars can change the math. Pick the actual bar and plates you have before you load the set.</p>
+          <p class="eyebrow">Equipment scope</p>
+          <h2>Use the weights that are actually on your bar.</h2>
+          <p>The free calculator includes Olympic, standard, training, and common specialty bars, plus a custom bar-weight option and standard plates down to 2.5 lb or 1.25 kg. It assumes each selected plate size is available as needed; it does not count a finite inventory.</p>
+          <p>Collars and finite plate counts are not added in this free tool. Check <a href="{bar_weight_href}">what your bar weighs</a>, then use the <a href="{custom_inventory_href}">custom equipment setup</a> when collars, unlisted fractional plates, or available plate counts differ. Follow the <a href="{safety_href}">barbell loading and safety guide</a> while changing plates.</p>
         </article>
       </section>
 
       <section class="section table-section" aria-labelledby="common-loads-heading">
         <div class="section-heading">
           <p class="eyebrow">Common examples</p>
-          <h2 id="common-loads-heading">Common barbell plate setups.</h2>
+          <h2 id="common-loads-heading">Common lb and kg barbell plate setups.</h2>
+          <p>Each setup is per side and assumes a 45 lb or 20 kg bar with no collars included.</p>
         </div>
-        <div class="responsive-table">
-          <table>
-            <thead><tr><th>Target weight</th><th>45 lb bar plate setup</th></tr></thead>
-            <tbody>
-{rows}
-            </tbody>
-          </table>
+        <div class="calculator-example-grid">
+          <div class="responsive-table">
+            <table>
+              <caption>Pound plate examples with a 45 lb bar</caption>
+              <thead><tr><th>Target weight</th><th>Plate setup per side</th></tr></thead>
+              <tbody>
+{lb_rows}
+              </tbody>
+            </table>
+          </div>
+          <div class="responsive-table">
+            <table>
+              <caption>Kilogram plate examples with a 20 kg bar</caption>
+              <thead><tr><th>Target weight</th><th>Plate setup per side</th></tr></thead>
+              <tbody>
+{kg_rows}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -555,14 +542,18 @@ def render_calculator_page(page: dict, registry: dict) -> str:
         </details>
         <details>
           <summary>What if my target weight cannot be loaded exactly?</summary>
-          <p>The calculator shows the closest loadable weight based on the plates you selected, so you can adjust the set without doing extra math.</p>
+          <p>The calculator shows the closest achievable weight at or below your target based on the plate sizes you selected, so you can adjust the set without doing extra math.</p>
+        </details>
+        <details>
+          <summary>Does the free calculator include collars or specialty bars?</summary>
+          <p>The free web calculator uses only the listed bars and plate sizes and does not add collar weight. Use RackMath's <a href="{custom_inventory_href}">custom equipment setup</a> for collars, specialty bars, other fractional plates, or a finite plate inventory.</p>
         </details>
       </section>
 
       <section class="section related-pages" aria-labelledby="related-heading">
         <div class="section-heading">
-          <p class="eyebrow">Related</p>
-          <h2 id="related-heading">Keep the workout moving.</h2>
+          <p class="eyebrow">Related plate math</p>
+          <h2 id="related-heading">Calculate, convert, and load the bar with confidence.</h2>
         </div>
         <div class="related-grid">
 {related}
@@ -998,7 +989,7 @@ def render_workouts_hub(page: dict, registry: dict) -> str:
     prefix = prefix_for(page["slug"])
     workouts = [item for item in registry["pages"] if item.get("section") == "workouts" and item.get("type") == "workout"]
     cards = "\n".join(
-        f"""          <a class="tool-card" href="{prefix + item["slug"].lstrip("/")}">
+        f"""          <a class="tool-card" href="{href_for(item, prefix)}">
             <span class="tool-card-kicker">{escape(item.get("eyebrow", "Workout template"))}</span>
             <h2>{escape(item["h1"])}</h2>
             <p>{escape(item["description"])}</p>
@@ -1429,7 +1420,7 @@ def render_exercises_hub(page: dict, registry: dict) -> str:
     prefix = prefix_for(page["slug"])
     exercises = [item for item in registry["pages"] if item.get("section") == "exercises" and item.get("type") == "exercise"]
     cards = "\n".join(
-        f"""          <a class="tool-card" href="{prefix + item["slug"].lstrip("/")}">
+        f"""          <a class="tool-card" href="{href_for(item, prefix)}">
             <span class="tool-card-kicker">{escape(item.get("eyebrow", "Exercise guide"))}</span>
             <h2>{escape(item["h1"])}</h2>
             <p>{escape(item["description"])}</p>
@@ -1444,7 +1435,7 @@ def render_exercises_hub(page: dict, registry: dict) -> str:
         <p>{escape(page["summary"])}</p>
         <div class="hero-actions">
           <a class="button primary" href="{app_href(page["appRoute"])}" data-rm-app-link data-rm-event="app_deeplink_clicked">{escape(page["primaryCta"])}</a>
-          <a class="button secondary" href="{prefix}workouts/3-day-beginner-full-body.html">Browse workouts</a>
+          <a class="button secondary" href="{prefix}workouts/3-day-beginner-full-body">Browse workouts</a>
         </div>
       </section>
 
@@ -1492,7 +1483,7 @@ def render_exercise_page(page: dict, registry: dict) -> str:
         <p>{escape(page.get("summary", page["description"]))}</p>
         <div class="hero-actions">
           <a class="button primary" href="{app_href(page["appRoute"])}" data-rm-app-link data-rm-event="app_deeplink_clicked">{escape(page["primaryCta"])}</a>
-          <a class="button secondary" href="{prefix}tools/warmup-set-calculator.html">Plan warmups</a>
+          <a class="button secondary" href="{prefix}tools/warmup-set-calculator">Plan warmups</a>
         </div>
       </section>
 
@@ -1652,7 +1643,7 @@ def render_feature_page(page: dict, registry: dict) -> str:
     feature = feature_library()[page["slug"]]
     related = render_related_links(page, registry, prefix)
     highlight_items = "\n".join(f"              <li>{escape(item)}</li>" for item in feature["highlights"])
-    free_href = f"{prefix}{feature['free_link'].lstrip('/')}"
+    free_href = href_for_path(feature["free_link"], prefix)
     body = f"""    <main>
       <section class="page-hero seo-hero">
         <p class="eyebrow">{escape(page.get("eyebrow", "RackMath feature"))}</p>
@@ -1820,7 +1811,7 @@ def render_persona_hub(page: dict, registry: dict) -> str:
     prefix = prefix_for(page["slug"])
     personas = [item for item in registry["pages"] if item.get("section") == "for" and item.get("type") == "persona"]
     cards = "\n".join(
-        f"""          <a class="tool-card" href="{prefix + item["slug"].lstrip("/")}">
+        f"""          <a class="tool-card" href="{href_for(item, prefix)}">
             <span class="tool-card-kicker">{escape(item.get("eyebrow", "For lifters"))}</span>
             <h2>{escape(item["h1"])}</h2>
             <p>{escape(item["description"])}</p>
@@ -2014,7 +2005,7 @@ def render_program_hub(page: dict, registry: dict) -> str:
     prefix = prefix_for(page["slug"])
     programs = [item for item in registry["pages"] if item.get("section") == "programs" and item.get("type") == "program"]
     cards = "\n".join(
-        f"""          <a class="tool-card" href="{prefix + item["slug"].lstrip("/")}">
+        f"""          <a class="tool-card" href="{href_for(item, prefix)}">
             <span class="tool-card-kicker">{escape(item.get("eyebrow", "Program"))}</span>
             <h2>{escape(item["h1"])}</h2>
             <p>{escape(item["description"])}</p>
@@ -2200,7 +2191,11 @@ def write_sitemap(posts: list[build_blog.Post], registry: dict) -> None:
         "feature": "0.7",
     }
     for page in published_pages(registry):
-        add(public_path(page), priority_by_type.get(page["type"], "0.6"))
+        add(
+            public_path(page),
+            priority_by_type.get(page["type"], "0.6"),
+            registry_lastmod(page),
+        )
 
     for post in posts:
         add(post.url_path, "0.6", post.date.isoformat())
@@ -2224,6 +2219,7 @@ def build_blog_pages(posts: list[build_blog.Post]) -> None:
 def main() -> None:
     registry = load_registry()
     posts = build_blog.load_posts()
+    refresh_hand_authored_chrome()
     build_blog_pages(posts)
 
     for page in published_pages(registry):
@@ -2253,10 +2249,11 @@ def main() -> None:
             write_page(page, render_program_page(page, registry))
 
     write_sitemap(posts, registry)
+    build_blog.write_clean_url_redirects(posts)
     print(
         f"Built {len(posts)} blog post(s), "
         f"{len(published_pages(registry))} published SEO page(s), "
-        f"and sitemap.xml at {datetime.now(UTC).isoformat(timespec='seconds')}"
+        f"and sitemap.xml at {datetime.now(timezone.utc).isoformat(timespec='seconds')}"
     )
 
 

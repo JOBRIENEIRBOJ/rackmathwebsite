@@ -12,25 +12,89 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
+from site_shared import (
+    BASE_PAGES,
+    SITE_NAME,
+    SITE_URL,
+    clean_url_path,
+    document_shell,
+    registry_lastmod,
+)
+
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT_DIR = ROOT / "content" / "blog"
 BLOG_DIR = ROOT / "blog"
-SITE_URL = "https://rackmath.com"
-SITE_NAME = "Rack Math"
-BASE_PAGES = [
-    ("/", "1.0"),
-    ("/tools/", "0.9"),
-    ("/workouts/", "0.9"),
-    ("/exercises/", "0.9"),
-    ("/programs/", "0.8"),
-    ("/for/", "0.8"),
-    ("/features.html", "0.8"),
-    ("/about.html", "0.7"),
-    ("/faq.html", "0.8"),
-    ("/blog.html", "0.8"),
-    ("/blog/archive.html", "0.7"),
-]
+REDIRECTS_PATH = ROOT / "_redirects"
+REDIRECTS_START = "# BEGIN GENERATED CLEAN URL REDIRECTS"
+REDIRECTS_END = "# END GENERATED CLEAN URL REDIRECTS"
+
+
+def output_paths(posts: list[Post] | None = None) -> list[str]:
+    """List public HTML output paths without assuming they share one generator."""
+    paths = [
+        "/index.html",
+        "/features.html",
+        "/about.html",
+        "/faq.html",
+        "/blog.html",
+        "/privacy.html",
+        "/terms.html",
+        "/blog/archive.html",
+    ]
+
+    registry_path = ROOT / "content" / "seo-pages.json"
+    if registry_path.exists():
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        paths.extend(
+            f"{page['slug']}index.html" if page["slug"].endswith("/") else page["slug"]
+            for page in registry["pages"]
+            if page.get("status") == "published"
+        )
+
+    if posts is not None:
+        paths.extend(f"/blog/{post.slug}.html" for post in posts)
+
+    return sorted(set(paths))
+
+
+def clean_redirect_rules(posts: list[Post]) -> list[tuple[str, str]]:
+    """Build redirects that leave one 200 URL variant for every HTML page."""
+    rules: set[tuple[str, str]] = set()
+    for output_path in output_paths(posts):
+        canonical_path = clean_url_path(output_path)
+        if output_path != canonical_path:
+            rules.add((output_path, canonical_path))
+
+        if canonical_path != "/":
+            if canonical_path.endswith("/"):
+                rules.add((canonical_path.rstrip("/"), canonical_path))
+            else:
+                rules.add((f"{canonical_path}/", canonical_path))
+
+    return sorted(rules)
+
+
+def write_clean_url_redirects(posts: list[Post]) -> None:
+    """Refresh the generated redirect block without changing legacy rules."""
+    existing = REDIRECTS_PATH.read_text(encoding="utf-8") if REDIRECTS_PATH.exists() else ""
+    generated_block = re.compile(
+        rf"\n?{re.escape(REDIRECTS_START)}.*?{re.escape(REDIRECTS_END)}\n?",
+        flags=re.DOTALL,
+    )
+    manual = generated_block.sub("\n", existing).strip()
+    manual_sources = {
+        line.split()[0]
+        for line in manual.splitlines()
+        if line.strip() and not line.lstrip().startswith("#") and len(line.split()) >= 2
+    }
+    generated = [
+        f"{source} {destination} 301!"
+        for source, destination in clean_redirect_rules(posts)
+        if source not in manual_sources
+    ]
+    parts = [part for part in (manual, REDIRECTS_START, "\n".join(generated), REDIRECTS_END) if part]
+    REDIRECTS_PATH.write_text("\n".join(parts) + "\n", encoding="utf-8")
 
 
 @dataclass(frozen=True)
@@ -44,7 +108,7 @@ class Post:
 
     @property
     def url_path(self) -> str:
-        return f"/blog/{self.slug}.html"
+        return f"/blog/{self.slug}"
 
     @property
     def output_path(self) -> Path:
@@ -187,250 +251,14 @@ def without_leading_h1(markdown: str) -> str:
     return markdown
 
 
-def nav(current: str, prefix: str = "") -> str:
-    tool_links = [
-        ("All tools", f"{prefix}tools/"),
-        ("Barbell Calculator", f"{prefix}tools/barbell-calculator"),
-        ("Warmup Set Calculator", f"{prefix}tools/warmup-set-calculator.html"),
-        ("One Rep Max Calculator", f"{prefix}tools/one-rep-max-calculator.html"),
-        ("Common Barbell Weights", f"{prefix}tools/common-barbell-weights.html"),
-        ("lb/kg Plate Converter", f"{prefix}tools/lb-kg-plate-converter.html"),
-        ("RPE Calculator", f"{prefix}tools/rpe-calculator.html"),
-        ("Training Volume Calculator", f"{prefix}tools/training-volume-calculator.html"),
-        ("Powerlifting Attempt Calculator", f"{prefix}tools/powerlifting-attempt-calculator.html"),
-        ("AI Workout Builder", f"{prefix}tools/ai-workout-builder.html"),
-        ("Workout Plan Importer", f"{prefix}tools/workout-plan-importer.html"),
-    ]
-    workout_links = [
-        ("All workouts", f"{prefix}workouts/"),
-        ("3-Day Beginner Full Body", f"{prefix}workouts/3-day-beginner-full-body.html"),
-        ("Beginner Barbell Workout", f"{prefix}workouts/beginner-barbell-workout.html"),
-        ("5x5 Workout Tracker", f"{prefix}workouts/5x5-workout-tracker.html"),
-        ("4-Day Upper Lower", f"{prefix}workouts/4-day-upper-lower.html"),
-        ("Push Pull Legs", f"{prefix}workouts/push-pull-legs.html"),
-        ("Barbell-Only Plan", f"{prefix}workouts/barbell-only-workout-plan.html"),
-        ("Garage Gym Plan", f"{prefix}workouts/garage-gym-workout-plan.html"),
-        ("Beginner Powerlifting", f"{prefix}workouts/beginner-powerlifting-program.html"),
-        ("Strength and Hypertrophy", f"{prefix}workouts/strength-hypertrophy-program.html"),
-        ("2-Day Beginner Strength", f"{prefix}workouts/2-day-beginner-strength-plan.html"),
-        ("First Day at the Gym", f"{prefix}workouts/first-day-at-the-gym-workout.html"),
-        ("Dumbbell and Barbell", f"{prefix}workouts/dumbbell-barbell-workout.html"),
-    ]
-    exercise_links = [
-        ("All exercises", f"{prefix}exercises/"),
-        ("Bench Press", f"{prefix}exercises/bench-press.html"),
-        ("Barbell Squat", f"{prefix}exercises/barbell-squat.html"),
-        ("Deadlift", f"{prefix}exercises/deadlift.html"),
-        ("Overhead Press", f"{prefix}exercises/overhead-press.html"),
-        ("Barbell Row", f"{prefix}exercises/barbell-row.html"),
-        ("Romanian Deadlift", f"{prefix}exercises/romanian-deadlift.html"),
-        ("Front Squat", f"{prefix}exercises/front-squat.html"),
-        ("Incline Bench Press", f"{prefix}exercises/incline-bench-press.html"),
-        ("Close-Grip Bench Press", f"{prefix}exercises/close-grip-bench-press.html"),
-        ("Barbell Hip Thrust", f"{prefix}exercises/barbell-hip-thrust.html"),
-        ("Pull-Up", f"{prefix}exercises/pull-up.html"),
-        ("Lat Pulldown", f"{prefix}exercises/lat-pulldown.html"),
-        ("Dumbbell Bench Press", f"{prefix}exercises/dumbbell-bench-press.html"),
-        ("Goblet Squat", f"{prefix}exercises/goblet-squat.html"),
-        ("Leg Press", f"{prefix}exercises/leg-press.html"),
-        ("Cable Row", f"{prefix}exercises/cable-row.html"),
-        ("Dumbbell Row", f"{prefix}exercises/dumbbell-row.html"),
-        ("Barbell Curl", f"{prefix}exercises/barbell-curl.html"),
-        ("Skull Crusher", f"{prefix}exercises/skull-crusher.html"),
-        ("Bulgarian Split Squat", f"{prefix}exercises/bulgarian-split-squat.html"),
-    ]
-    persona_links = [
-        ("All lifter types", f"{prefix}for/"),
-        ("Garage Gyms", f"{prefix}for/garage-gyms.html"),
-        ("Beginners", f"{prefix}for/beginners.html"),
-        ("Powerlifters", f"{prefix}for/powerlifters.html"),
-        ("Strength Coaches", f"{prefix}for/strength-coaches.html"),
-        ("Personal Trainers", f"{prefix}for/personal-trainers.html"),
-        ("Home Gym Lifters", f"{prefix}for/home-gym-lifters.html"),
-        ("kg Gyms", f"{prefix}for/kg-gyms.html"),
-    ]
-    program_links = [
-        ("All programs", f"{prefix}programs/"),
-        ("3-Day Beginner Barbell", f"{prefix}programs/3-day-beginner-barbell-program.html"),
-        ("5x5 Beginner Strength", f"{prefix}programs/5x5-beginner-strength-program.html"),
-        ("Garage Gym Strength", f"{prefix}programs/garage-gym-strength-program.html"),
-        ("Upper Lower Strength Hypertrophy", f"{prefix}programs/upper-lower-strength-hypertrophy.html"),
-    ]
-    tools_current = ' aria-current="page"' if current == "tools" else ""
-    tools_dropdown = "\n".join(f'          <a href="{href}">{label}</a>' for label, href in tool_links)
-    workouts_current = ' aria-current="page"' if current == "workouts" else ""
-    workouts_dropdown = "\n".join(f'          <a href="{href}">{label}</a>' for label, href in workout_links)
-    exercises_current = ' aria-current="page"' if current == "exercises" else ""
-    exercises_dropdown = "\n".join(f'          <a href="{href}">{label}</a>' for label, href in exercise_links)
-    persona_current = ' aria-current="page"' if current == "for" else ""
-    persona_dropdown = "\n".join(f'          <a href="{href}">{label}</a>' for label, href in persona_links)
-    programs_current = ' aria-current="page"' if current == "programs" else ""
-    programs_dropdown = "\n".join(f'          <a href="{href}">{label}</a>' for label, href in program_links)
-    links = [
-        ("Features", f"{prefix}features.html", "features"),
-        ("About", f"{prefix}about.html", "about"),
-        ("FAQ", f"{prefix}faq.html", "faq"),
-        ("Blog", f"{prefix}blog.html", "blog"),
-        ("Premium", f"{prefix}index.html#premium", "premium"),
-    ]
-    rendered = [
-        f"""        <div class="nav-dropdown"{tools_current}>
-          <button class="nav-dropdown-trigger" type="button">Tools</button>
-          <div class="nav-dropdown-menu">
-{tools_dropdown}
-          </div>
-        </div>""",
-        f"""        <div class="nav-dropdown"{workouts_current}>
-          <button class="nav-dropdown-trigger" type="button">Workouts</button>
-          <div class="nav-dropdown-menu">
-{workouts_dropdown}
-          </div>
-        </div>""",
-        f"""        <div class="nav-dropdown"{exercises_current}>
-          <button class="nav-dropdown-trigger" type="button">Exercises</button>
-          <div class="nav-dropdown-menu">
-{exercises_dropdown}
-          </div>
-        </div>""",
-        f"""        <div class="nav-dropdown"{persona_current}>
-          <button class="nav-dropdown-trigger" type="button">For</button>
-          <div class="nav-dropdown-menu">
-{persona_dropdown}
-          </div>
-        </div>""",
-        f"""        <div class="nav-dropdown"{programs_current}>
-          <button class="nav-dropdown-trigger" type="button">Programs</button>
-          <div class="nav-dropdown-menu">
-{programs_dropdown}
-          </div>
-        </div>"""
-    ]
-    for label, href, key in links:
-        current_attr = ' aria-current="page"' if current == key else ""
-        rendered.append(f'        <a href="{href}"{current_attr}>{label}</a>')
-    return "\n".join(rendered)
-
-
-def header(current: str, prefix: str = "") -> str:
-    return f"""    <header class="site-header">
-      <a class="brand" href="{prefix}index.html" aria-label="RackMath home">
-        <img class="brand-mark" src="{prefix}assets/rackmathblue-header.png" alt="" aria-hidden="true">
-        <span>RackMath</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="site-nav" aria-label="Primary navigation">
-{nav(current, prefix)}
-      </nav>
-      <a class="header-cta" href="https://www.rackmath.app/">Try free</a>
-    </header>"""
-
-
-def footer(prefix: str = "") -> str:
-    return f"""    <footer class="site-footer">
-      <div>
-        <a class="brand" href="{prefix}index.html" aria-label="RackMath home">
-          <img class="brand-mark" src="{prefix}assets/rackmathblue-header.png" alt="" aria-hidden="true">
-          <span>RackMath</span>
-        </a>
-        <p>Barbell plate math, workout sessions, and progress tracking for lifters.</p>
-      </div>
-      <nav aria-label="Footer navigation">
-        <a href="{prefix}tools/">Tools</a>
-        <a href="{prefix}workouts/">Workouts</a>
-        <a href="{prefix}exercises/">Exercises</a>
-        <a href="{prefix}for/">For</a>
-        <a href="{prefix}programs/">Programs</a>
-        <a href="{prefix}features.html">Features</a>
-        <a href="{prefix}about.html">About</a>
-        <a href="{prefix}faq.html">FAQ</a>
-        <a href="{prefix}blog.html">Blog</a>
-        <a href="{prefix}blog/archive.html">Archive</a>
-        <a href="https://www.rackmath.app/">Open app</a>
-      </nav>
-    </footer>"""
-
-
-def footer_from_blog() -> str:
-    return """    <footer class="site-footer">
-      <div>
-        <a class="brand" href="../index.html" aria-label="RackMath home">
-          <img class="brand-mark" src="../assets/rackmathblue-header.png" alt="" aria-hidden="true">
-          <span>RackMath</span>
-        </a>
-        <p>Barbell plate math, workout sessions, and progress tracking for lifters.</p>
-      </div>
-      <nav aria-label="Footer navigation">
-        <a href="../tools/">Tools</a>
-        <a href="../workouts/">Workouts</a>
-        <a href="../exercises/">Exercises</a>
-        <a href="../for/">For</a>
-        <a href="../programs/">Programs</a>
-        <a href="../features.html">Features</a>
-        <a href="../about.html">About</a>
-        <a href="../faq.html">FAQ</a>
-        <a href="../blog.html">Blog</a>
-        <a href="archive.html">Archive</a>
-        <a href="https://www.rackmath.app/">Open app</a>
-      </nav>
-    </footer>"""
-
-
-def page_shell(
-    title: str,
-    description: str,
-    canonical_path: str,
-    body: str,
-    current: str,
-    prefix: str = "",
-    footer_html: str | None = None,
-) -> str:
-    title_text = html.escape(title)
-    description_text = html.escape(description)
-    canonical = f"{SITE_URL}{canonical_path}"
-    return f"""<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{title_text}</title>
-    <meta name="description" content="{description_text}">
-    <link rel="canonical" href="{canonical}">
-    <meta property="og:type" content="article">
-    <meta property="og:site_name" content="{SITE_NAME}">
-    <meta property="og:title" content="{title_text}">
-    <meta property="og:description" content="{description_text}">
-    <meta property="og:url" content="{canonical}">
-    <meta property="og:image" content="{SITE_URL}/assets/rackmathblue-gradient.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{title_text}">
-    <meta name="twitter:description" content="{description_text}">
-    <meta name="twitter:image" content="{SITE_URL}/assets/rackmathblue-gradient.png">
-    <meta name="theme-color" content="#0a6dff">
-    <link rel="icon" href="{prefix}assets/rackmathblue.png" type="image/png">
-    <link rel="apple-touch-icon" href="{prefix}assets/rackmathblue.png">
-    <link rel="stylesheet" href="{prefix}styles.css?v=20260604">
-  </head>
-  <body>
-{header(current, prefix)}
-{body}
-{footer_html or footer(prefix)}
-    <script src="{prefix}script.js"></script>
-  </body>
-</html>
-"""
-
-
 def render_blog_index(posts: list[Post]) -> str:
     latest_posts = posts[:6]
     cards = "\n".join(
         f"""          <article class="blog-card">
             <p class="blog-date"><time datetime="{post.date.isoformat()}">{post.date.strftime("%B %-d, %Y")}</time></p>
-            <h2><a href="blog/{post.slug}.html">{html.escape(post.title)}</a></h2>
+            <h2><a href="blog/{post.slug}">{html.escape(post.title)}</a></h2>
             <p>{html.escape(post.description)}</p>
-            <a class="text-link" href="blog/{post.slug}.html">Read post</a>
+            <a class="text-link" href="blog/{post.slug}">Read post</a>
           </article>"""
         for post in latest_posts
     )
@@ -452,15 +280,15 @@ def render_blog_index(posts: list[Post]) -> str:
       </section>
 
       <section class="section blog-post-nav" aria-label="Blog archive">
-        <a class="text-link" href="blog/archive.html">View all posts in the archive</a>
+        <a class="text-link" href="blog/archive">View all posts in the archive</a>
       </section>
     </main>"""
-    return page_shell(
-        "Rack Math Blog | Weight Lifting Calculator Tips",
-        "Daily Rack Math posts about weight lifting calculator tips, barbell plate loading, workout tracking, and training progress.",
-        "/blog.html",
-        body,
-        "blog",
+    return document_shell(
+        title="Rack Math Blog | Weight Lifting Calculator Tips",
+        description="Daily Rack Math posts about weight lifting calculator tips, barbell plate loading, workout tracking, and training progress.",
+        canonical_path="/blog",
+        body=body,
+        current="blog",
     )
 
 
@@ -474,7 +302,7 @@ def render_archive(posts: list[Post]) -> str:
         items = "\n".join(
             f"""            <li>
               <time datetime="{post.date.isoformat()}">{post.date.strftime("%B %-d, %Y")}</time>
-              <a href="{post.slug}.html">{html.escape(post.title)}</a>
+              <a href="{post.slug}">{html.escape(post.title)}</a>
             </li>"""
             for post in by_year[year]
         )
@@ -495,6 +323,7 @@ def render_archive(posts: list[Post]) -> str:
         </section>"""
         )
 
+    groups_html = "\n".join(groups)
     body = f"""    <main>
       <section class="page-hero">
         <p class="eyebrow">Archive</p>
@@ -503,17 +332,16 @@ def render_archive(posts: list[Post]) -> str:
       </section>
 
       <section class="section archive-list" aria-label="All blog posts">
-{"\n".join(groups)}
+{groups_html}
       </section>
     </main>"""
-    return page_shell(
-        "Rack Math Blog Archive",
-        "Browse every Rack Math blog post about weight lifting calculators, barbell plate loading, workout tracking, and training progress.",
-        "/blog/archive.html",
-        body,
-        "blog",
-        "../",
-        footer_from_blog(),
+    return document_shell(
+        title="Rack Math Blog Archive",
+        description="Browse every Rack Math blog post about weight lifting calculators, barbell plate loading, workout tracking, and training progress.",
+        canonical_path="/blog/archive",
+        body=body,
+        current="blog",
+        prefix="../",
     )
 
 
@@ -545,37 +373,60 @@ def render_post(post: Post) -> str:
       </section>
 
       <section class="section blog-post-nav" aria-label="Blog navigation">
-        <a class="text-link" href="../blog.html">Back to blog</a>
-        <a class="text-link" href="archive.html">Archive</a>
-        <a class="text-link" href="https://www.rackmath.app/">Open Rack Math</a>
+        <a class="text-link" href="../blog">Back to blog</a>
+        <a class="text-link" href="archive">Archive</a>
+        <a class="text-link" href="https://www.rackmath.app/?source=seo&amp;intent=onboarding">Open Rack Math</a>
       </section>
       <script type="application/ld+json">
         {json.dumps(schema, indent=8)}
       </script>
     </main>"""
-    return page_shell(
-        f"{post.title} | Rack Math Blog",
-        post.description,
-        post.url_path,
-        body,
-        "blog",
-        "../",
-        footer_from_blog(),
+    return document_shell(
+        title=f"{post.title} | Rack Math Blog",
+        description=post.description,
+        canonical_path=post.url_path,
+        body=body,
+        current="blog",
+        prefix="../",
+        og_type="article",
     )
 
 
 def write_sitemap(posts: list[Post]) -> None:
     urlset = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
-    for path, priority in BASE_PAGES:
+    seen: set[str] = set()
+
+    def add(path: str, priority: str, lastmod: str | None = None) -> None:
+        if path in seen:
+            return
+        seen.add(path)
         url = ET.SubElement(urlset, "url")
         ET.SubElement(url, "loc").text = f"{SITE_URL}{path}"
+        if lastmod:
+            ET.SubElement(url, "lastmod").text = lastmod
         ET.SubElement(url, "priority").text = priority
 
+    for path, priority in BASE_PAGES:
+        add(path, priority)
+
+    registry_path = ROOT / "content" / "seo-pages.json"
+    if registry_path.exists():
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        priority_by_type = {
+            "hub": "0.8",
+            "tool": "0.8",
+            "workout": "0.7",
+            "exercise": "0.7",
+            "feature": "0.7",
+        }
+        for page in registry["pages"]:
+            if page.get("status") != "published":
+                continue
+            path = clean_url_path(page.get("publicPath", page["slug"]))
+            add(path, priority_by_type.get(page["type"], "0.6"), registry_lastmod(page))
+
     for post in posts:
-        url = ET.SubElement(urlset, "url")
-        ET.SubElement(url, "loc").text = f"{SITE_URL}{post.url_path}"
-        ET.SubElement(url, "lastmod").text = post.date.isoformat()
-        ET.SubElement(url, "priority").text = "0.6"
+        add(post.url_path, "0.6", post.date.isoformat())
 
     ET.indent(urlset, space="  ")
     tree = ET.ElementTree(urlset)
@@ -608,6 +459,7 @@ def main() -> None:
     for post in posts:
         post.output_path.write_text(render_post(post), encoding="utf-8")
     write_sitemap(posts)
+    write_clean_url_redirects(posts)
     print(f"Built {len(posts)} published blog post(s)")
 
 

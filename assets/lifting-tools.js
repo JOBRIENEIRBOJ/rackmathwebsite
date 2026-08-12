@@ -43,7 +43,7 @@
   }
 
   function initWarmup(root) {
-    const update = () => {
+    const update = (trackCompletion = false) => {
       const weight = numberValue(root, '[name="workingWeight"]', 225);
       const unit = root.querySelector('[name="unit"]')?.value || 'lb';
       const percents = [0.4, 0.55, 0.7, 0.82, 0.92];
@@ -55,17 +55,17 @@
         })
         .join('');
       setOutput(root, `<table><thead><tr><th>Jump</th><th>Load</th><th>Reps</th></tr></thead><tbody>${rows}</tbody></table>`);
-      trackTool('warmup_set_calculator', { working_weight: weight, unit });
+      if (trackCompletion) trackTool('warmup_set_calculator', { working_weight: weight, unit });
     };
     root.addEventListener('submit', (event) => {
       event.preventDefault();
-      update();
+      update(true);
     });
     update();
   }
 
   function initOneRepMax(root) {
-    const update = () => {
+    const update = (trackCompletion = false) => {
       const weight = numberValue(root, '[name="weight"]', 185);
       const reps = Math.max(1, numberValue(root, '[name="reps"]', 5));
       const unit = root.querySelector('[name="unit"]')?.value || 'lb';
@@ -76,11 +76,13 @@
         root,
         `<div class="tool-result-number">${format(average, 0)} ${unit}</div><p>Average of Epley and Brzycki estimates. Epley: ${format(epley, 0)} ${unit}. Brzycki: ${format(brzycki, 0)} ${unit}.</p>`
       );
-      trackTool('one_rep_max_calculator', { weight, reps, estimated_1rm: Math.round(average), unit });
+      if (trackCompletion) {
+        trackTool('one_rep_max_calculator', { weight, reps, estimated_1rm: Math.round(average), unit });
+      }
     };
     root.addEventListener('submit', (event) => {
       event.preventDefault();
-      update();
+      update(true);
     });
     update();
   }
@@ -94,7 +96,7 @@
   }
 
   function initConverter(root) {
-    const update = () => {
+    const update = (trackCompletion = false) => {
       const pounds = numberValue(root, '[name="pounds"]', 225);
       const kg = pounds * LB_TO_KG;
       const roundedKg = Math.round(kg / 2.5) * 2.5;
@@ -103,17 +105,19 @@
         root,
         `<div class="tool-result-number">${format(kg, 1)} kg</div><p>Nearest practical 2.5 kg jump: ${format(roundedKg, 1)} kg, about ${format(roundedLb, 0)} lb.</p>`
       );
-      trackTool('lb_kg_plate_converter', { pounds, kilograms: Number(format(kg, 1)) });
+      if (trackCompletion) {
+        trackTool('lb_kg_plate_converter', { pounds, kilograms: Number(format(kg, 1)) });
+      }
     };
     root.addEventListener('submit', (event) => {
       event.preventDefault();
-      update();
+      update(true);
     });
     update();
   }
 
   function initRpe(root) {
-    const update = () => {
+    const update = (trackCompletion = false) => {
       const oneRm = numberValue(root, '[name="oneRm"]', 250);
       const reps = Math.max(1, numberValue(root, '[name="reps"]', 5));
       const rpe = Math.min(10, Math.max(6, numberValue(root, '[name="rpe"]', 8)));
@@ -124,33 +128,35 @@
         root,
         `<div class="tool-result-number">${format(load, 0)} lb</div><p>Estimated target for ${reps} reps at RPE ${format(rpe, 1)}. This treats RPE as reps in reserve, so RPE 8 means about 2 reps left.</p>`
       );
-      trackTool('rpe_calculator', { one_rep_max: oneRm, reps, rpe, target_load: Math.round(load) });
+      if (trackCompletion) {
+        trackTool('rpe_calculator', { one_rep_max: oneRm, reps, rpe, target_load: Math.round(load) });
+      }
     };
     root.addEventListener('submit', (event) => {
       event.preventDefault();
-      update();
+      update(true);
     });
     update();
   }
 
   function initVolume(root) {
-    const update = () => {
+    const update = (trackCompletion = false) => {
       const sets = numberValue(root, '[name="sets"]', 5);
       const reps = numberValue(root, '[name="reps"]', 5);
       const weight = numberValue(root, '[name="weight"]', 225);
       const volume = sets * reps * weight;
       setOutput(root, `<div class="tool-result-number">${format(volume, 0)} lb</div><p>${sets} sets x ${reps} reps x ${weight} lb.</p>`);
-      trackTool('training_volume_calculator', { sets, reps, weight, volume });
+      if (trackCompletion) trackTool('training_volume_calculator', { sets, reps, weight, volume });
     };
     root.addEventListener('submit', (event) => {
       event.preventDefault();
-      update();
+      update(true);
     });
     update();
   }
 
   function initAttempts(root) {
-    const update = () => {
+    const update = (trackCompletion = false) => {
       const max = numberValue(root, '[name="max"]', 315);
       const opener = Math.round((max * 0.9) / 5) * 5;
       const second = Math.round((max * 0.97) / 5) * 5;
@@ -159,11 +165,11 @@
         root,
         `<table><thead><tr><th>Attempt</th><th>Load</th><th>Intent</th></tr></thead><tbody><tr><td>Opener</td><td>${opener} lb</td><td>Confident make</td></tr><tr><td>Second</td><td>${second} lb</td><td>Build total</td></tr><tr><td>Third</td><td>${third} lb</td><td>PR option</td></tr></tbody></table>`
       );
-      trackTool('powerlifting_attempt_calculator', { max, opener, second, third });
+      if (trackCompletion) trackTool('powerlifting_attempt_calculator', { max, opener, second, third });
     };
     root.addEventListener('submit', (event) => {
       event.preventDefault();
-      update();
+      update(true);
     });
     update();
   }

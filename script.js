@@ -115,6 +115,115 @@ function rackMathLinkPayload(link) {
   };
 }
 
+const rackMathRemoteEventNames = Object.freeze({
+  page_viewed: "seo_page_viewed",
+  tool_completed: "seo_tool_completed",
+  app_deeplink_clicked: "seo_app_link_clicked",
+  template_started: "seo_template_link_clicked",
+  signup_started: "seo_signup_link_clicked",
+});
+
+const rackMathRemotePropertyKeys = new Set([
+  "source_page",
+  "content_group",
+  "destination_path",
+  "label",
+  "primary_event",
+  "page_title",
+  "tool",
+]);
+
+function rackMathAnalyticsConfig() {
+  const config = window.RACKMATH_ANALYTICS_CONFIG;
+  if (!config?.endpoint || !config?.anonKey) return null;
+
+  try {
+    const endpoint = new URL(config.endpoint, window.location.href);
+    if (endpoint.protocol !== "https:" && endpoint.hostname !== "localhost") return null;
+    return { endpoint: endpoint.href, anonKey: String(config.anonKey) };
+  } catch {
+    return null;
+  }
+}
+
+function rackMathAnonymousId() {
+  const storageKey = "rackmath_marketing_analytics_id";
+
+  try {
+    const stored = window.sessionStorage.getItem(storageKey);
+    if (stored) return stored;
+
+    const randomId =
+      typeof window.crypto?.randomUUID === "function"
+        ? window.crypto.randomUUID()
+        : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    const anonymousId = `web_${randomId}`;
+    window.sessionStorage.setItem(storageKey, anonymousId);
+    return anonymousId;
+  } catch {
+    return `web_${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  }
+}
+
+function rackMathAttribution(payload) {
+  const currentParams = new URLSearchParams(window.location.search);
+  const candidates = {
+    source: payload.seo_source || currentParams.get("source") || "organic_or_direct",
+    intent: payload.seo_intent || currentParams.get("intent"),
+    tool: payload.seo_tool || payload.tool || currentParams.get("tool"),
+    template: payload.seo_template || currentParams.get("template"),
+    program: payload.seo_program || currentParams.get("program"),
+    persona: payload.seo_persona || currentParams.get("persona"),
+    feature: payload.seo_feature || currentParams.get("feature"),
+  };
+
+  return Object.fromEntries(
+    Object.entries(candidates)
+      .filter(([, value]) => value !== null && value !== undefined && String(value).trim())
+      .map(([key, value]) => [key, String(value).slice(0, 160)]),
+  );
+}
+
+function rackMathRemoteProperties(payload) {
+  return Object.fromEntries(
+    Object.entries(payload)
+      .filter(([key, value]) => rackMathRemotePropertyKeys.has(key) && value !== null && value !== undefined)
+      .map(([key, value]) => [key, String(value).slice(0, 160)]),
+  );
+}
+
+function sendRackMathEvent(eventName, payload) {
+  const config = rackMathAnalyticsConfig();
+  const remoteEventName = rackMathRemoteEventNames[eventName];
+  if (!config || !remoteEventName) return;
+
+  const occurredAt = new Date().toISOString();
+  const suffix =
+    typeof window.crypto?.randomUUID === "function"
+      ? window.crypto.randomUUID()
+      : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  const event = {
+    id: `${remoteEventName}:${occurredAt}:${suffix}`,
+    eventName: remoteEventName,
+    occurredAt,
+    anonymousId: rackMathAnonymousId(),
+    attribution: rackMathAttribution(payload),
+    properties: rackMathRemoteProperties(payload),
+  };
+
+  void fetch(config.endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      apikey: config.anonKey,
+      "x-app-version": "rackmath-marketing",
+    },
+    body: JSON.stringify({ event }),
+    credentials: "omit",
+    keepalive: true,
+  }).catch(() => {});
+}
+
 function trackRackMathEvent(eventName, payload = {}) {
   const eventPayload = {
     event: eventName,
@@ -137,6 +246,8 @@ function trackRackMathEvent(eventName, payload = {}) {
     window.plausible(eventName, { props: eventPayload });
   }
 
+  sendRackMathEvent(eventName, eventPayload);
+
   return eventPayload;
 }
 
@@ -145,7 +256,21 @@ window.RackMathAnalytics = {
   contentGroup: rackMathContentGroup,
 };
 
+trackRackMathEvent("page_viewed", {
+  page_title: document.title,
+});
+
 document.querySelectorAll('a[href^="https://www.rackmath.app"], [data-rm-app-link]').forEach((link) => {
+  const destination = new URL(link.href, window.location.href);
+  const source = destination.searchParams.get("source") || "";
+  if (!/^[a-z0-9_-]{1,40}$/i.test(source)) {
+    destination.searchParams.set("source", window.location.pathname === "/" ? "homepage" : "seo");
+  }
+  if (!destination.searchParams.get("intent")) {
+    destination.searchParams.set("intent", "onboarding");
+  }
+  link.href = destination.href;
+
   link.addEventListener("click", () => {
     const payload = rackMathLinkPayload(link);
     const primaryEvent = link.dataset.rmEvent || (link.textContent.toLowerCase().includes("try free") ? "signup_started" : "app_deeplink_clicked");
@@ -437,7 +562,7 @@ function initRackMathMotion() {
     );
   }
   fromIfAny(
-    ".hero-app-frame-shell",
+    ".hero-app-static-link",
     {
       autoAlpha: 0,
       y: 42,
@@ -469,7 +594,7 @@ function initRackMathMotion() {
     heroTimeline,
   );
 
-  toIfAny(".hero-app-frame-shell", {
+  toIfAny(".hero-app-static-link", {
     y: -26,
     ease: "none",
     scrollTrigger: {
@@ -503,7 +628,7 @@ function initRackMathMotion() {
     ".tool-panel",
     ".tool-context",
     ".rm-free-calculator-heading",
-    ".rm-free-calculator-grid > *",
+    ".rm-app-calculator-shell",
     ".seo-content-grid > *",
     ".program-roadmap > *",
     ".program-builder-list > *",

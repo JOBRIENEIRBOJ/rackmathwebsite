@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Barbell Calculator | Free Plate Calculator &amp; Visualizer</title>
-    <meta name="description" content="Use the free RackMath barbell calculator to calculate plates per side for pounds or kilograms, choose your bar, and see exactly what to load on each side.">
+    <meta name="description" content="Enter your target weight and instantly see which plates to load on each side. Free calculator for lb, kg, common bars, and standard plate sizes.">
     <link rel="canonical" href="https://rackmath.com/tools/barbell-calculator">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Rack Math">
     <meta property="og:title" content="Barbell Calculator | Free Plate Calculator &amp; Visualizer">
-    <meta property="og:description" content="Use the free RackMath barbell calculator to calculate plates per side for pounds or kilograms, choose your bar, and see exactly what to load on each side.">
+    <meta property="og:description" content="Enter your target weight and instantly see which plates to load on each side. Free calculator for lb, kg, common bars, and standard plate sizes.">
     <meta property="og:url" content="https://rackmath.com/tools/barbell-calculator">
-    <meta property="og:image" content="https://rackmath.com/assets/rackmathblue-gradient.png">
-    <meta property="og:image:alt" content="Rack Math blue gradient logo">
+    <meta property="og:image" content="https://rackmath.com/assets/rackmath-app-screenshot.png">
+    <meta property="og:image:alt" content="RackMath barbell plate calculator app preview">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Barbell Calculator | Free Plate Calculator &amp; Visualizer">
-    <meta name="twitter:description" content="Use the free RackMath barbell calculator to calculate plates per side for pounds or kilograms, choose your bar, and see exactly what to load on each side.">
-    <meta name="twitter:image" content="https://rackmath.com/assets/rackmathblue-gradient.png">
-    <meta name="twitter:image:alt" content="Rack Math blue gradient logo">
+    <meta name="twitter:description" content="Enter your target weight and instantly see which plates to load on each side. Free calculator for lb, kg, common bars, and standard plate sizes.">
+    <meta name="twitter:image" content="https://rackmath.com/assets/rackmath-app-screenshot.png">
+    <meta name="twitter:image:alt" content="RackMath barbell plate calculator app preview">
     <meta name="theme-color" content="#0a6dff">
     <link rel="icon" href="../assets/rackmathblue.png" type="image/png">
     <link rel="apple-touch-icon" href="../assets/rackmathblue.png">
@@ -52,11 +52,11 @@
       {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "Rack Math",
+      "name": "RackMath Barbell Plate Calculator",
       "applicationCategory": "HealthApplication",
       "operatingSystem": "Web",
       "url": "https://rackmath.com/tools/barbell-calculator",
-      "description": "Use the free RackMath barbell calculator to calculate plates per side for pounds or kilograms, choose your bar, and see exactly what to load on each side.",
+      "description": "Enter your target weight and instantly see which plates to load on each side. Free calculator for lb, kg, common bars, and standard plate sizes.",
       "offers": {
             "@type": "Offer",
             "price": "0",
@@ -90,7 +90,15 @@
                   "name": "What if my target weight cannot be loaded exactly?",
                   "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "The calculator shows the closest loadable weight based on the plates you selected."
+                        "text": "The calculator shows the closest achievable weight at or below your target based on the plate sizes you selected."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "Does the free calculator include collars or specialty bars?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The free web calculator uses only the listed bars and plate sizes and does not add collar weight. Use RackMath's custom equipment setup for collars, specialty bars, or other plate sizes."
                   }
             }
       ]
@@ -99,8 +107,8 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="RackMath home">
-        <img class="brand-mark" src="../assets/rackmathblue-header.png" alt="" aria-hidden="true">
+      <a class="brand" href="../" aria-label="RackMath home">
+        <img class="brand-mark" src="../assets/rackmathblue-header.png" width="779" height="308" alt="" aria-hidden="true">
         <span>RackMath</span>
       </a>
       <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
@@ -113,171 +121,237 @@
           <div class="nav-dropdown-menu">
           <a href="../tools/">All tools</a>
           <a href="../tools/barbell-calculator">Barbell Calculator</a>
-          <a href="../tools/warmup-set-calculator.html">Warmup Set Calculator</a>
-          <a href="../tools/one-rep-max-calculator.html">One Rep Max Calculator</a>
-          <a href="../tools/common-barbell-weights.html">Common Barbell Weights</a>
-          <a href="../tools/lb-kg-plate-converter.html">lb/kg Plate Converter</a>
-          <a href="../tools/rpe-calculator.html">RPE Calculator</a>
-          <a href="../tools/training-volume-calculator.html">Training Volume Calculator</a>
-          <a href="../tools/powerlifting-attempt-calculator.html">Powerlifting Attempt Calculator</a>
-          <a href="../tools/ai-workout-builder.html">AI Workout Builder</a>
-          <a href="../tools/workout-plan-importer.html">Workout Plan Importer</a>
+          <a href="../tools/warmup-set-calculator">Warmup Set Calculator</a>
+          <a href="../tools/common-barbell-weights">Common Barbell Weights</a>
+          <a href="../tools/lb-kg-plate-converter">lb/kg Plate Converter</a>
           </div>
         </div>
         <div class="nav-dropdown">
           <button class="nav-dropdown-trigger" type="button">Workouts</button>
           <div class="nav-dropdown-menu">
           <a href="../workouts/">All workouts</a>
-          <a href="../workouts/3-day-beginner-full-body.html">3-Day Beginner Full Body</a>
-          <a href="../workouts/beginner-barbell-workout.html">Beginner Barbell Workout</a>
-          <a href="../workouts/5x5-workout-tracker.html">5x5 Workout Tracker</a>
-          <a href="../workouts/4-day-upper-lower.html">4-Day Upper Lower</a>
-          <a href="../workouts/push-pull-legs.html">Push Pull Legs</a>
-          <a href="../workouts/barbell-only-workout-plan.html">Barbell-Only Plan</a>
-          <a href="../workouts/garage-gym-workout-plan.html">Garage Gym Plan</a>
-          <a href="../workouts/beginner-powerlifting-program.html">Beginner Powerlifting</a>
-          <a href="../workouts/strength-hypertrophy-program.html">Strength and Hypertrophy</a>
-          <a href="../workouts/2-day-beginner-strength-plan.html">2-Day Beginner Strength</a>
-          <a href="../workouts/first-day-at-the-gym-workout.html">First Day at the Gym</a>
-          <a href="../workouts/dumbbell-barbell-workout.html">Dumbbell and Barbell</a>
+          <a href="../workouts/beginner-barbell-workout">Beginner Barbell Workout</a>
+          <a href="../workouts/5x5-workout-tracker">5x5 Workout Tracker</a>
+          <a href="../workouts/push-pull-legs">Push Pull Legs</a>
           </div>
         </div>
         <div class="nav-dropdown">
           <button class="nav-dropdown-trigger" type="button">Exercises</button>
           <div class="nav-dropdown-menu">
           <a href="../exercises/">All exercises</a>
-          <a href="../exercises/bench-press.html">Bench Press</a>
-          <a href="../exercises/barbell-squat.html">Barbell Squat</a>
-          <a href="../exercises/deadlift.html">Deadlift</a>
-          <a href="../exercises/overhead-press.html">Overhead Press</a>
-          <a href="../exercises/barbell-row.html">Barbell Row</a>
-          <a href="../exercises/romanian-deadlift.html">Romanian Deadlift</a>
-          <a href="../exercises/front-squat.html">Front Squat</a>
-          <a href="../exercises/incline-bench-press.html">Incline Bench Press</a>
-          <a href="../exercises/close-grip-bench-press.html">Close-Grip Bench Press</a>
-          <a href="../exercises/barbell-hip-thrust.html">Barbell Hip Thrust</a>
-          <a href="../exercises/pull-up.html">Pull-Up</a>
-          <a href="../exercises/lat-pulldown.html">Lat Pulldown</a>
-          <a href="../exercises/dumbbell-bench-press.html">Dumbbell Bench Press</a>
-          <a href="../exercises/goblet-squat.html">Goblet Squat</a>
-          <a href="../exercises/leg-press.html">Leg Press</a>
-          <a href="../exercises/cable-row.html">Cable Row</a>
-          <a href="../exercises/dumbbell-row.html">Dumbbell Row</a>
-          <a href="../exercises/barbell-curl.html">Barbell Curl</a>
-          <a href="../exercises/skull-crusher.html">Skull Crusher</a>
-          <a href="../exercises/bulgarian-split-squat.html">Bulgarian Split Squat</a>
+          <a href="../exercises/bench-press">Bench Press</a>
+          <a href="../exercises/barbell-squat">Barbell Squat</a>
+          <a href="../exercises/deadlift">Deadlift</a>
+          <a href="../exercises/overhead-press">Overhead Press</a>
           </div>
         </div>
         <div class="nav-dropdown">
           <button class="nav-dropdown-trigger" type="button">For</button>
           <div class="nav-dropdown-menu">
           <a href="../for/">All lifter types</a>
-          <a href="../for/garage-gyms.html">Garage Gyms</a>
-          <a href="../for/beginners.html">Beginners</a>
-          <a href="../for/powerlifters.html">Powerlifters</a>
-          <a href="../for/strength-coaches.html">Strength Coaches</a>
-          <a href="../for/personal-trainers.html">Personal Trainers</a>
-          <a href="../for/home-gym-lifters.html">Home Gym Lifters</a>
-          <a href="../for/kg-gyms.html">kg Gyms</a>
+          <a href="../for/beginners">Beginners</a>
+          <a href="../for/home-gym-lifters">Home Gym Lifters</a>
+          <a href="../for/powerlifters">Powerlifters</a>
           </div>
         </div>
         <div class="nav-dropdown">
           <button class="nav-dropdown-trigger" type="button">Programs</button>
           <div class="nav-dropdown-menu">
           <a href="../programs/">All programs</a>
-          <a href="../programs/3-day-beginner-barbell-program.html">3-Day Beginner Barbell</a>
-          <a href="../programs/5x5-beginner-strength-program.html">5x5 Beginner Strength</a>
-          <a href="../programs/garage-gym-strength-program.html">Garage Gym Strength</a>
-          <a href="../programs/upper-lower-strength-hypertrophy.html">Upper Lower Strength Hypertrophy</a>
+          <a href="../programs/3-day-beginner-barbell-program">3-Day Beginner Barbell</a>
+          <a href="../programs/5x5-beginner-strength-program">5x5 Beginner Strength</a>
+          <a href="../programs/upper-lower-strength-hypertrophy">Upper Lower Strength Hypertrophy</a>
           </div>
         </div>
-        <a href="../features.html">Features</a>
-        <a href="../about.html">About</a>
-        <a href="../faq.html">FAQ</a>
-        <a href="../blog.html">Blog</a>
-        <a href="../index.html#premium">Premium</a>
+        <a href="../features">Features</a>
+        <a href="../about">About</a>
+        <a href="../faq">FAQ</a>
+        <a href="../blog">Blog</a>
+        <a href="../#premium">Premium</a>
       </nav>
-      <a class="header-cta" href="https://www.rackmath.app/">Try free</a>
+      <a class="header-cta" href="https://www.rackmath.app/?source=seo&amp;intent=onboarding" data-rm-app-link data-rm-event="app_deeplink_clicked">Try free</a>
     </header>
     <main>
       <section class="page-hero seo-hero">
         <p class="eyebrow">Free barbell calculator</p>
         <h1>Barbell Calculator</h1>
-        <p>Enter your target weight, choose pounds or kilograms, select your bar and available plates, and see exactly what to load on each side.</p>
+        <p>Enter your target weight, choose pounds or kilograms, select your bar and available plate sizes, and see what to load on each side.</p>
       </section>
 
-      <section class="rm-free-calculator" id="barbell-plate-calculator" data-rm-calculator aria-labelledby="rm-free-calculator-title">
-        <div class="rm-section-heading rm-free-calculator-heading">
-          <p class="rm-eyebrow">Free barbell plate calculator</p>
-          <h2 id="rm-free-calculator-title">Visualize the plates for any barbell lift.</h2>
-          <p class="rm-section-copy">Use this free RackMath barbell visualizer to calculate plates per side for pounds or kilograms. Enter a target weight, choose your bar, and see the loaded bar before your next set.</p>
-        </div>
-
-        <div class="rm-free-calculator-grid">
-          <form class="rm-calculator-panel" data-rm-calculator-form aria-label="Free barbell plate calculator">
-            <div class="rm-field">
-              <label for="rm-target-weight">Target weight</label>
-              <div class="rm-input-shell">
-                <input id="rm-target-weight" data-rm-target-weight type="number" inputmode="decimal" min="0" step="2.5" value="225">
-                <span data-rm-unit-label>lb</span>
-              </div>
+      <section class="rm-free-calculator" id="barbell-plate-calculator" data-rm-calculator aria-label="Free RackMath barbell calculator">
+        <div class="rm-dark-workout-shell">
+          <div class="rm-dark-workout-bar">
+            <div>
+              <span class="rm-dark-workout-mark" aria-hidden="true"></span>
+              <span>
+                <small>Workout</small>
+                <strong>My Workout</strong>
+              </span>
             </div>
-
-            <div class="rm-field">
-              <span class="rm-control-label">Units</span>
-              <div class="rm-segmented" role="radiogroup" aria-label="Weight unit">
-                <label><input data-rm-unit type="radio" name="rm-free-unit" value="lbs" checked><span>lb</span></label>
-                <label><input data-rm-unit type="radio" name="rm-free-unit" value="kg"><span>kg</span></label>
-              </div>
-            </div>
-
-            <div class="rm-field">
-              <label for="rm-bar-weight">Bar</label>
-              <select id="rm-bar-weight" data-rm-bar-select>
-                <option value="45">Olympic barbell, 45 lb</option>
-                <option value="33">Women's Olympic barbell, 33 lb</option>
-                <option value="20">Training bar, 20 lb</option>
-              </select>
-            </div>
-
-            <fieldset class="rm-field rm-plate-field">
-              <legend>Available plates</legend>
-              <div class="rm-plate-toggle-grid" data-rm-plate-controls>
-                <label><input type="checkbox" value="55" data-rm-plate-option><span>55</span></label>
-                <label><input type="checkbox" value="45" data-rm-plate-option checked><span>45</span></label>
-                <label><input type="checkbox" value="35" data-rm-plate-option checked><span>35</span></label>
-                <label><input type="checkbox" value="25" data-rm-plate-option checked><span>25</span></label>
-                <label><input type="checkbox" value="10" data-rm-plate-option checked><span>10</span></label>
-                <label><input type="checkbox" value="5" data-rm-plate-option checked><span>5</span></label>
-                <label><input type="checkbox" value="2.5" data-rm-plate-option checked><span>2.5</span></label>
-              </div>
-            </fieldset>
-
-            <button class="button primary rm-calculator-submit" type="submit">Calculate plates</button>
-          </form>
-
-          <div class="rm-visualizer-panel">
-            <p class="rm-result-message" data-rm-result-message aria-live="polite">225 lb uses 90 lb per side.</p>
-            <div class="rm-barbell-frame" data-rm-visualizer aria-label="Barbell visualizer">
-              <div class="rm-plate-stack rm-plate-stack-left" data-rm-left-stack>
-                <span class="rm-plate" style="--rm-plate-color: #f8fafc; --rm-plate-text: #111827; --rm-plate-height: 126px; --rm-plate-width: 30px;">45</span>
-                <span class="rm-plate" style="--rm-plate-color: #f8fafc; --rm-plate-text: #111827; --rm-plate-height: 126px; --rm-plate-width: 30px;">45</span>
-              </div>
-              <div class="rm-bar-core"><span data-rm-bar-label>45 lb bar</span></div>
-              <div class="rm-plate-stack rm-plate-stack-right" data-rm-right-stack>
-                <span class="rm-plate" style="--rm-plate-color: #f8fafc; --rm-plate-text: #111827; --rm-plate-height: 126px; --rm-plate-width: 30px;">45</span>
-                <span class="rm-plate" style="--rm-plate-color: #f8fafc; --rm-plate-text: #111827; --rm-plate-height: 126px; --rm-plate-width: 30px;">45</span>
-              </div>
-            </div>
-
-            <div class="rm-result-grid">
-              <div><span>Each side</span><strong data-rm-per-side>90 lb</strong></div>
-              <div><span>Total loaded</span><strong data-rm-total>225 lb</strong></div>
-              <div><span>Plates per side</span><strong data-rm-plate-list>45 + 45</strong></div>
-            </div>
-
-            <a class="button secondary rm-full-app-link" href="https://www.rackmath.app/?source=seo&tool=barbell-plate-calculator&weight=225&unit=lb&intent=tools%2Fplate-calculator" data-rm-app-link data-rm-event="app_deeplink_clicked">Save this lift in RackMath</a>
+            <span class="rm-dark-live-badge"><i aria-hidden="true"></i> Live calculator session</span>
           </div>
+
+          <form class="rm-dark-calculator" data-rm-calculator-form aria-label="Free RackMath barbell calculator">
+            <div class="rm-dark-calculator-header">
+              <div class="rm-dark-ordinal-date" data-rm-date-label aria-label="12th, session preview date">
+                <span data-rm-date-day>12</span><sup data-rm-date-suffix>th</sup>
+              </div>
+
+              <div class="rm-dark-session-actions" aria-label="Session preview details">
+                <a class="rm-dark-timer" href="https://www.rackmath.app/?source=seo&amp;tool=barbell-plate-calculator&amp;feature=rest-timer&amp;intent=tools%2Fplate-calculator" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Continue in RackMath to use the rest timer" title="Use the RackMath rest timer">
+                  <small>Timer</small>
+                  <strong>2:00</strong>
+                </a>
+                <a class="rm-dark-streak" href="https://www.rackmath.app/?source=seo&amp;tool=barbell-plate-calculator&amp;feature=workout-streak&amp;intent=tools%2Fplate-calculator" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Continue in RackMath to build your workout streak" title="Build your RackMath workout streak">
+                  <span aria-hidden="true">🔥</span>
+                  <strong>4</strong>
+                </a>
+
+                <details class="rm-dark-settings">
+                  <summary data-rm-settings-toggle aria-label="Open calculator settings" aria-expanded="false" title="Calculator settings">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                  </summary>
+
+                  <div class="rm-dark-settings-panel" data-rm-settings-panel>
+                    <div class="rm-dark-settings-heading">
+                      <div>
+                        <small>Free calculator</small>
+                        <strong>Equipment settings</strong>
+                      </div>
+                      <span>Changes update the bar live</span>
+                    </div>
+
+                    <fieldset class="rm-dark-settings-field">
+                      <legend>Weight unit</legend>
+                      <div class="rm-dark-segmented" role="radiogroup" aria-label="Weight unit">
+                        <label><input data-rm-unit type="radio" name="rm-free-unit" value="lbs" checked><span>lbs</span></label>
+                        <label><input data-rm-unit type="radio" name="rm-free-unit" value="kg"><span>kg</span></label>
+                      </div>
+                    </fieldset>
+
+                    <div class="rm-dark-settings-field">
+                      <label for="rm-bar-weight">Barbell</label>
+                      <select id="rm-bar-weight" data-rm-bar-select>
+                        <option value="45">Olympic barbell, 45 lb</option>
+                        <option value="33">Women's Olympic barbell, 33 lb</option>
+                        <option value="20">Standard barbell, 20 lb</option>
+                        <option value="25">Technique bar, 25 lb</option>
+                        <option value="custom">Custom bar weight</option>
+                      </select>
+                      <div class="rm-dark-custom-bar" data-rm-custom-bar-field hidden>
+                        <label for="rm-custom-bar-weight">Custom bar weight</label>
+                        <span>
+                          <input id="rm-custom-bar-weight" data-rm-custom-bar-weight type="number" inputmode="decimal" min="0" max="200" step="any" value="45">
+                          <b data-rm-custom-bar-unit>lbs</b>
+                        </span>
+                      </div>
+                    </div>
+
+                    <fieldset class="rm-dark-settings-field rm-dark-plate-field">
+                      <legend>Available plates</legend>
+                      <div class="rm-dark-plate-toggles" data-rm-plate-controls>
+                        <label><input type="checkbox" value="55" data-rm-plate-option><span>55</span></label>
+                        <label><input type="checkbox" value="45" data-rm-plate-option checked><span>45</span></label>
+                        <label><input type="checkbox" value="35" data-rm-plate-option checked><span>35</span></label>
+                        <label><input type="checkbox" value="25" data-rm-plate-option checked><span>25</span></label>
+                        <label><input type="checkbox" value="10" data-rm-plate-option checked><span>10</span></label>
+                        <label><input type="checkbox" value="5" data-rm-plate-option checked><span>5</span></label>
+                        <label><input type="checkbox" value="2.5" data-rm-plate-option checked><span>2.5</span></label>
+                      </div>
+                    </fieldset>
+
+                    <button class="rm-dark-settings-apply rm-calculator-submit" type="submit">Update plate load</button>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <div class="rm-dark-set-row">
+              <span>Sets</span>
+              <div class="rm-dark-set-controls">
+                <a href="https://www.rackmath.app/?source=seo&amp;tool=barbell-plate-calculator&amp;weight=225&amp;unit=lb&amp;intent=tools%2Fplate-calculator" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Open RackMath to add a set">+</a>
+                <a href="https://www.rackmath.app/?source=seo&amp;tool=barbell-plate-calculator&amp;weight=225&amp;unit=lb&amp;intent=tools%2Fplate-calculator" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Open RackMath to remove a set">−</a>
+              </div>
+            </div>
+
+            <div class="rm-dark-weight-stage">
+              <label for="rm-target-weight">Weight</label>
+              <span class="rm-dark-plate-builder-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+              <div class="rm-dark-weight-control">
+                <input id="rm-target-weight" data-rm-target-weight type="number" inputmode="decimal" min="0" max="2000" step="any" value="135" aria-describedby="rm-target-weight-unit">
+                <span id="rm-target-weight-unit" data-rm-unit-label>lbs</span>
+              </div>
+            </div>
+
+            <div class="rm-dark-visualizer" data-rm-visualizer aria-label="Barbell visualizer">
+              <p class="rm-dark-result-message" data-rm-result-message aria-live="polite">135 lbs uses 45 lbs per side.</p>
+              <div class="rm-dark-barbell-frame">
+                <div class="rm-dark-barbell-assembly">
+                  <div class="rm-dark-plate-stack rm-dark-plate-stack-left" data-rm-left-stack>
+                    <span class="rm-plate" style="--rm-plate-height: 130px; --rm-plate-width: 28px; --rm-plate-font-size: 16px; --rm-plate-mobile-height: 110px; --rm-plate-mobile-width: 24px; --rm-plate-mobile-font-size: 14px; --rm-plate-border-width: 2px; --rm-plate-border-color: #111;"><span class="rm-plate-num">45</span></span>
+                  </div>
+                  <div class="rm-dark-bar-core"><span data-rm-bar-label>45 lbs</span></div>
+                  <div class="rm-dark-plate-stack rm-dark-plate-stack-right" data-rm-right-stack>
+                    <span class="rm-plate" style="--rm-plate-height: 130px; --rm-plate-width: 28px; --rm-plate-font-size: 16px; --rm-plate-mobile-height: 110px; --rm-plate-mobile-width: 24px; --rm-plate-mobile-font-size: 14px; --rm-plate-border-width: 2px; --rm-plate-border-color: #111;"><span class="rm-plate-num">45</span></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rm-dark-result-grid">
+                <div><span>Each side</span><strong data-rm-per-side>45 lbs</strong></div>
+                <div><span>Total</span><strong data-rm-total>135 lbs</strong></div>
+              </div>
+
+              <p class="rm-dark-plate-list"><span>Plates per side</span><strong data-rm-plate-list>45</strong></p>
+            </div>
+
+            <a class="rm-dark-track-cta rm-full-app-link" href="https://www.rackmath.app/?source=seo&amp;tool=barbell-plate-calculator&amp;weight=225&amp;unit=lb&amp;intent=tools%2Fplate-calculator" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Track this lift in the RackMath app">
+              <span>Track This Lift!</span>
+            </a>
+
+            <div class="rm-dark-feature-list" aria-label="More RackMath app features">
+              <a class="rm-dark-feature-teaser" href="https://www.rackmath.app/?source=seo&amp;feature=custom-plate-calculator&amp;intent=setup%2Fplates" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Customize plate colors in the RackMath app">
+                <span class="rm-dark-feature-icon" aria-hidden="true">
+                  <img src="../assets/plate-colors-icon.webp" alt="" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                </span>
+                <div class="rm-dark-feature-copy">
+                  <strong>Customize Plate Colors</strong>
+                  <p>Make your barbell match your gym</p>
+                </div>
+                <svg class="rm-dark-feature-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+
+              <a class="rm-dark-feature-teaser" href="https://www.rackmath.app/?source=seo&amp;template=workout-plan-importer&amp;intent=start" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Turn a screenshot into a workout in the RackMath app">
+                <span class="rm-dark-feature-icon" aria-hidden="true">
+                  <img src="../assets/training-cards-icon.webp" alt="" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                </span>
+                <div class="rm-dark-feature-copy">
+                  <strong>Turn a Screenshot Into a Workout</strong>
+                  <p>Import a plan and RackMath builds sets, reps, and weights.</p>
+                </div>
+                <svg class="rm-dark-feature-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+
+              <a class="rm-dark-feature-teaser" href="https://www.rackmath.app/?source=seo&amp;tool=barbell-plate-calculator&amp;action=track&amp;intent=tools%2Fplate-calculator" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Save this workout in the RackMath app">
+                <span class="rm-dark-feature-icon" aria-hidden="true">
+                  <img src="../assets/workout-tracker-icon.webp" alt="" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                </span>
+                <div class="rm-dark-feature-copy">
+                  <strong>Save This Workout</strong>
+                  <p>Track sets, PRs, volume, and progress from today's lift.</p>
+                </div>
+                <svg class="rm-dark-feature-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+            </div>
+
+            <div class="rm-dark-pro-card">
+              <div>
+                <strong>RackMath Pro</strong>
+                <p>Import plans, customize your rack, save unlimited workouts, and track progress.</p>
+              </div>
+              <a href="https://www.rackmath.app/?source=seo&amp;intent=onboarding&amp;feature=pro-trial" data-rm-app-link data-rm-event="app_deeplink_clicked" aria-label="Start a RackMath Pro trial">Start Pro Trial</a>
+            </div>
+          </form>
         </div>
       </section>
 
@@ -286,32 +360,51 @@
           <p class="eyebrow">How it works</p>
           <h2>Calculate plates without doing gym-floor arithmetic.</h2>
           <p>RackMath subtracts the bar weight from your target weight, divides the remaining load across both sleeves, and builds the closest plate setup from the plates you selected.</p>
-          <p>If your exact target cannot be loaded with the available plates, the calculator shows the closest loadable weight so you can adjust the set without guessing.</p>
+          <p>If the selected plate sizes cannot make the exact target, this free calculator shows the closest achievable total at or below it. See <a href="../blog/how-to-calculate-plates-on-a-barbell">how to calculate plates on a barbell</a> for the full formula and worked examples.</p>
         </article>
         <article>
-          <p class="eyebrow">Mistakes to avoid</p>
-          <h2>Check the bar before counting plates.</h2>
-          <p>A 45 lb bar, 20 kg bar, women's bar, training bar, specialty bar, or collars can change the math. Pick the actual bar and plates you have before you load the set.</p>
+          <p class="eyebrow">Equipment scope</p>
+          <h2>Use the weights that are actually on your bar.</h2>
+          <p>The free calculator includes Olympic, standard, training, and common specialty bars, plus a custom bar-weight option and standard plates down to 2.5 lb or 1.25 kg. It assumes each selected plate size is available as needed; it does not count a finite inventory.</p>
+          <p>Collars and finite plate counts are not added in this free tool. Check <a href="../blog/what-does-the-bar-weigh">what your bar weighs</a>, then use the <a href="../features/custom-plate-calculator">custom equipment setup</a> when collars, unlisted fractional plates, or available plate counts differ. Follow the <a href="../blog/the-beginners-guide-to-loading-a-barbell">barbell loading and safety guide</a> while changing plates.</p>
         </article>
       </section>
 
       <section class="section table-section" aria-labelledby="common-loads-heading">
         <div class="section-heading">
           <p class="eyebrow">Common examples</p>
-          <h2 id="common-loads-heading">Common barbell plate setups.</h2>
+          <h2 id="common-loads-heading">Common lb and kg barbell plate setups.</h2>
+          <p>Each setup is per side and assumes a 45 lb or 20 kg bar with no collars included.</p>
         </div>
-        <div class="responsive-table">
-          <table>
-            <thead><tr><th>Target weight</th><th>45 lb bar plate setup</th></tr></thead>
-            <tbody>
-              <tr><td>95 lb</td><td>25 lb per side</td></tr>
-              <tr><td>135 lb</td><td>45 lb per side</td></tr>
-              <tr><td>185 lb</td><td>45 + 25 per side</td></tr>
-              <tr><td>225 lb</td><td>45 + 45 per side</td></tr>
-              <tr><td>315 lb</td><td>45 + 45 + 45 per side</td></tr>
-              <tr><td>405 lb</td><td>45 + 45 + 45 + 45 per side</td></tr>
-            </tbody>
-          </table>
+        <div class="calculator-example-grid">
+          <div class="responsive-table">
+            <table>
+              <caption>Pound plate examples with a 45 lb bar</caption>
+              <thead><tr><th>Target weight</th><th>Plate setup per side</th></tr></thead>
+              <tbody>
+                <tr><td>95 lb</td><td>25 lb per side</td></tr>
+                <tr><td>135 lb</td><td>45 lb per side</td></tr>
+                <tr><td>185 lb</td><td>45 + 25 per side</td></tr>
+                <tr><td>225 lb</td><td>45 + 45 per side</td></tr>
+                <tr><td>315 lb</td><td>45 + 45 + 45 per side</td></tr>
+                <tr><td>405 lb</td><td>45 + 45 + 45 + 45 per side</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="responsive-table">
+            <table>
+              <caption>Kilogram plate examples with a 20 kg bar</caption>
+              <thead><tr><th>Target weight</th><th>Plate setup per side</th></tr></thead>
+              <tbody>
+                <tr><td>60 kg</td><td>20 kg per side</td></tr>
+                <tr><td>80 kg</td><td>20 + 10 per side</td></tr>
+                <tr><td>100 kg</td><td>20 + 20 per side</td></tr>
+                <tr><td>120 kg</td><td>20 + 20 + 10 per side</td></tr>
+                <tr><td>140 kg</td><td>20 + 20 + 20 per side</td></tr>
+                <tr><td>180 kg</td><td>20 + 20 + 20 + 20 per side</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -326,19 +419,44 @@
         </details>
         <details>
           <summary>What if my target weight cannot be loaded exactly?</summary>
-          <p>The calculator shows the closest loadable weight based on the plates you selected, so you can adjust the set without doing extra math.</p>
+          <p>The calculator shows the closest achievable weight at or below your target based on the plate sizes you selected, so you can adjust the set without doing extra math.</p>
+        </details>
+        <details>
+          <summary>Does the free calculator include collars or specialty bars?</summary>
+          <p>The free web calculator uses only the listed bars and plate sizes and does not add collar weight. Use RackMath's <a href="../features/custom-plate-calculator">custom equipment setup</a> for collars, specialty bars, other fractional plates, or a finite plate inventory.</p>
         </details>
       </section>
 
       <section class="section related-pages" aria-labelledby="related-heading">
         <div class="section-heading">
-          <p class="eyebrow">Related</p>
-          <h2 id="related-heading">Keep the workout moving.</h2>
+          <p class="eyebrow">Related plate math</p>
+          <h2 id="related-heading">Calculate, convert, and load the bar with confidence.</h2>
         </div>
         <div class="related-grid">
-          <a class="related-card" href="../tools/">Free lifting tools that get you from target weight to loaded bar.</a>
-          <a class="related-card" href="../features.html">Features</a>
-          <a class="related-card" href="../blog/what-is-a-weight-lifting-calculator.html">Blog/What Is A Weight Lifting Calculator</a>
+          <a class="related-card calculator-related-card" href="../tools/common-barbell-weights">
+            <strong>Common barbell weights</strong>
+            <span>Reference common pound plate combinations from 95 to 405 lb.</span>
+          </a>
+          <a class="related-card calculator-related-card" href="../tools/lb-kg-plate-converter">
+            <strong>lb and kg plate converter</strong>
+            <span>Convert a target between units before choosing a practical load.</span>
+          </a>
+          <a class="related-card calculator-related-card" href="../blog/how-to-calculate-plates-on-a-barbell">
+            <strong>How to calculate plates on a barbell</strong>
+            <span>Learn the per-side formula and work through the arithmetic.</span>
+          </a>
+          <a class="related-card calculator-related-card" href="../blog/the-beginners-guide-to-loading-a-barbell">
+            <strong>Beginner barbell loading and safety guide</strong>
+            <span>Load evenly, use collars when appropriate, and unload with control.</span>
+          </a>
+          <a class="related-card calculator-related-card" href="../blog/what-does-the-bar-weigh">
+            <strong>How much does the bar weigh?</strong>
+            <span>Check common Olympic, training, and specialty bar weights.</span>
+          </a>
+          <a class="related-card calculator-related-card" href="../features/custom-plate-calculator">
+            <strong>Custom plate inventory and equipment</strong>
+            <span>Use your actual bars, collars, plate sizes, and available equipment.</span>
+          </a>
         </div>
       </section>
 
@@ -346,14 +464,14 @@
         <p class="eyebrow">Want this inside your workout?</p>
         <h2>Save the lift in RackMath and get exact plates, warmups, timers, and history.</h2>
         <div class="hero-actions">
-          <a class="button primary" href="https://www.rackmath.app/?source=seo&tool=barbell-plate-calculator&weight=225&unit=lb&intent=tools%2Fplate-calculator" data-rm-app-link data-rm-event="app_deeplink_clicked">Save this lift in RackMath</a>
+          <a class="button primary" href="https://www.rackmath.app/?source=seo&amp;tool=barbell-plate-calculator&amp;weight=225&amp;unit=lb&amp;intent=tools%2Fplate-calculator" data-rm-app-link data-rm-event="app_deeplink_clicked">Save this lift in RackMath</a>
         </div>
       </section>
     </main>
     <footer class="site-footer">
       <div>
-        <a class="brand" href="../index.html" aria-label="RackMath home">
-          <img class="brand-mark" src="../assets/rackmathblue-header.png" alt="" aria-hidden="true">
+        <a class="brand" href="../" aria-label="RackMath home">
+          <img class="brand-mark" src="../assets/rackmathblue-header.png" width="779" height="308" alt="" aria-hidden="true">
           <span>RackMath</span>
         </a>
         <p>Barbell plate math, workout sessions, and progress tracking for lifters.</p>
@@ -364,11 +482,14 @@
         <a href="../exercises/">Exercises</a>
         <a href="../for/">For</a>
         <a href="../programs/">Programs</a>
-        <a href="../features.html">Features</a>
-        <a href="../about.html">About</a>
-        <a href="../faq.html">FAQ</a>
-        <a href="../blog.html">Blog</a>
-        <a href="https://www.rackmath.app/">Open app</a>
+        <a href="../features">Features</a>
+        <a href="../about">About</a>
+        <a href="../faq">FAQ</a>
+        <a href="../blog">Blog</a>
+        <a href="../blog/archive">Archive</a>
+        <a href="../privacy">Privacy</a>
+        <a href="../terms">Terms</a>
+        <a href="https://www.rackmath.app/?source=seo&amp;intent=onboarding" data-rm-app-link data-rm-event="app_deeplink_clicked">Open app</a>
       </nav>
     </footer>
     <script src="../script.js"></script>

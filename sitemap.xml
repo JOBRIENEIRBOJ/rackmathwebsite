@@ -25,572 +25,587 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/features.html</loc>
+    <loc>https://rackmath.com/features</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/about.html</loc>
+    <loc>https://rackmath.com/about</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/faq.html</loc>
+    <loc>https://rackmath.com/faq</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog.html</loc>
+    <loc>https://rackmath.com/blog</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/archive.html</loc>
+    <loc>https://rackmath.com/blog/archive</loc>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rackmath.com/privacy</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://rackmath.com/terms</loc>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://rackmath.com/tools/barbell-calculator</loc>
+    <lastmod>2026-08-11</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/tools/warmup-set-calculator.html</loc>
+    <loc>https://rackmath.com/tools/warmup-set-calculator</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/tools/one-rep-max-calculator.html</loc>
+    <loc>https://rackmath.com/tools/one-rep-max-calculator</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/tools/common-barbell-weights.html</loc>
+    <loc>https://rackmath.com/tools/common-barbell-weights</loc>
+    <lastmod>2026-08-11</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/tools/lb-kg-plate-converter.html</loc>
+    <loc>https://rackmath.com/tools/lb-kg-plate-converter</loc>
+    <lastmod>2026-08-11</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/tools/rpe-calculator.html</loc>
+    <loc>https://rackmath.com/tools/rpe-calculator</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/tools/training-volume-calculator.html</loc>
+    <loc>https://rackmath.com/tools/training-volume-calculator</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/tools/powerlifting-attempt-calculator.html</loc>
+    <loc>https://rackmath.com/tools/powerlifting-attempt-calculator</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/tools/ai-workout-builder.html</loc>
+    <loc>https://rackmath.com/tools/ai-workout-builder</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/tools/workout-plan-importer.html</loc>
+    <loc>https://rackmath.com/tools/workout-plan-importer</loc>
+    <lastmod>2026-08-11</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/workouts/3-day-beginner-full-body.html</loc>
+    <loc>https://rackmath.com/workouts/3-day-beginner-full-body</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/workouts/beginner-barbell-workout.html</loc>
+    <loc>https://rackmath.com/workouts/beginner-barbell-workout</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/workouts/5x5-workout-tracker.html</loc>
+    <loc>https://rackmath.com/workouts/5x5-workout-tracker</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/workouts/4-day-upper-lower.html</loc>
+    <loc>https://rackmath.com/workouts/4-day-upper-lower</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/workouts/push-pull-legs.html</loc>
+    <loc>https://rackmath.com/workouts/push-pull-legs</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/workouts/barbell-only-workout-plan.html</loc>
+    <loc>https://rackmath.com/workouts/barbell-only-workout-plan</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/workouts/garage-gym-workout-plan.html</loc>
+    <loc>https://rackmath.com/workouts/garage-gym-workout-plan</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/workouts/beginner-powerlifting-program.html</loc>
+    <loc>https://rackmath.com/workouts/beginner-powerlifting-program</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/workouts/strength-hypertrophy-program.html</loc>
+    <loc>https://rackmath.com/workouts/strength-hypertrophy-program</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/workouts/2-day-beginner-strength-plan.html</loc>
+    <loc>https://rackmath.com/workouts/2-day-beginner-strength-plan</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/workouts/first-day-at-the-gym-workout.html</loc>
+    <loc>https://rackmath.com/workouts/first-day-at-the-gym-workout</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/workouts/dumbbell-barbell-workout.html</loc>
+    <loc>https://rackmath.com/workouts/dumbbell-barbell-workout</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/bench-press.html</loc>
+    <loc>https://rackmath.com/exercises/bench-press</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/barbell-squat.html</loc>
+    <loc>https://rackmath.com/exercises/barbell-squat</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/deadlift.html</loc>
+    <loc>https://rackmath.com/exercises/deadlift</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/overhead-press.html</loc>
+    <loc>https://rackmath.com/exercises/overhead-press</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/barbell-row.html</loc>
+    <loc>https://rackmath.com/exercises/barbell-row</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/romanian-deadlift.html</loc>
+    <loc>https://rackmath.com/exercises/romanian-deadlift</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/front-squat.html</loc>
+    <loc>https://rackmath.com/exercises/front-squat</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/incline-bench-press.html</loc>
+    <loc>https://rackmath.com/exercises/incline-bench-press</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/close-grip-bench-press.html</loc>
+    <loc>https://rackmath.com/exercises/close-grip-bench-press</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/barbell-hip-thrust.html</loc>
+    <loc>https://rackmath.com/exercises/barbell-hip-thrust</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/pull-up.html</loc>
+    <loc>https://rackmath.com/exercises/pull-up</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/lat-pulldown.html</loc>
+    <loc>https://rackmath.com/exercises/lat-pulldown</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/dumbbell-bench-press.html</loc>
+    <loc>https://rackmath.com/exercises/dumbbell-bench-press</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/goblet-squat.html</loc>
+    <loc>https://rackmath.com/exercises/goblet-squat</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/leg-press.html</loc>
+    <loc>https://rackmath.com/exercises/leg-press</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/cable-row.html</loc>
+    <loc>https://rackmath.com/exercises/cable-row</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/dumbbell-row.html</loc>
+    <loc>https://rackmath.com/exercises/dumbbell-row</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/barbell-curl.html</loc>
+    <loc>https://rackmath.com/exercises/barbell-curl</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/skull-crusher.html</loc>
+    <loc>https://rackmath.com/exercises/skull-crusher</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/exercises/bulgarian-split-squat.html</loc>
+    <loc>https://rackmath.com/exercises/bulgarian-split-squat</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/features/barbell-plate-calculator.html</loc>
+    <loc>https://rackmath.com/features/barbell-plate-calculator</loc>
+    <lastmod>2026-08-11</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/features/custom-plate-calculator.html</loc>
+    <loc>https://rackmath.com/features/custom-plate-calculator</loc>
+    <lastmod>2026-08-11</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/features/warmup-planner.html</loc>
+    <loc>https://rackmath.com/features/warmup-planner</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/features/workout-tracker.html</loc>
+    <loc>https://rackmath.com/features/workout-tracker</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/features/workout-plan-importer.html</loc>
+    <loc>https://rackmath.com/features/workout-plan-importer</loc>
+    <lastmod>2026-08-11</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/features/pr-tracker.html</loc>
+    <loc>https://rackmath.com/features/pr-tracker</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/features/program-progress.html</loc>
+    <loc>https://rackmath.com/features/program-progress</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/for/garage-gyms.html</loc>
+    <loc>https://rackmath.com/for/garage-gyms</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/for/beginners.html</loc>
+    <loc>https://rackmath.com/for/beginners</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/for/powerlifters.html</loc>
+    <loc>https://rackmath.com/for/powerlifters</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/for/strength-coaches.html</loc>
+    <loc>https://rackmath.com/for/strength-coaches</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/for/personal-trainers.html</loc>
+    <loc>https://rackmath.com/for/personal-trainers</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/for/home-gym-lifters.html</loc>
+    <loc>https://rackmath.com/for/home-gym-lifters</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/for/kg-gyms.html</loc>
+    <loc>https://rackmath.com/for/kg-gyms</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/programs/3-day-beginner-barbell-program.html</loc>
+    <loc>https://rackmath.com/programs/3-day-beginner-barbell-program</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/programs/5x5-beginner-strength-program.html</loc>
+    <loc>https://rackmath.com/programs/5x5-beginner-strength-program</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/programs/garage-gym-strength-program.html</loc>
+    <loc>https://rackmath.com/programs/garage-gym-strength-program</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/programs/upper-lower-strength-hypertrophy.html</loc>
+    <loc>https://rackmath.com/programs/upper-lower-strength-hypertrophy</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/what-does-the-bar-weigh.html</loc>
+    <loc>https://rackmath.com/blog/what-does-the-bar-weigh</loc>
     <lastmod>2026-08-04</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-calculate-plates-on-a-barbell.html</loc>
+    <loc>https://rackmath.com/blog/how-to-calculate-plates-on-a-barbell</loc>
     <lastmod>2026-08-03</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/the-beginners-guide-to-loading-a-barbell.html</loc>
+    <loc>https://rackmath.com/blog/the-beginners-guide-to-loading-a-barbell</loc>
     <lastmod>2026-08-02</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-make-your-second-gym-visit-easier-than-the-first.html</loc>
+    <loc>https://rackmath.com/blog/how-to-make-your-second-gym-visit-easier-than-the-first</loc>
     <lastmod>2026-08-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-build-a-simple-gym-routine-you-trust.html</loc>
+    <loc>https://rackmath.com/blog/how-to-build-a-simple-gym-routine-you-trust</loc>
     <lastmod>2026-07-31</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-stop-rushing-through-sets-because-you-feel-awkward.html</loc>
+    <loc>https://rackmath.com/blog/how-to-stop-rushing-through-sets-because-you-feel-awkward</loc>
     <lastmod>2026-07-30</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-handle-mirrors-in-the-weight-room.html</loc>
+    <loc>https://rackmath.com/blog/how-to-handle-mirrors-in-the-weight-room</loc>
     <lastmod>2026-07-29</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-lift-with-a-friend-without-turning-it-into-a-contest.html</loc>
+    <loc>https://rackmath.com/blog/how-to-lift-with-a-friend-without-turning-it-into-a-contest</loc>
     <lastmod>2026-07-28</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-train-alone-when-you-are-new.html</loc>
+    <loc>https://rackmath.com/blog/how-to-train-alone-when-you-are-new</loc>
     <lastmod>2026-07-27</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-keep-lifting-when-confidence-dips.html</loc>
+    <loc>https://rackmath.com/blog/how-to-keep-lifting-when-confidence-dips</loc>
     <lastmod>2026-07-26</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-walk-away-from-an-exercise-that-feels-wrong.html</loc>
+    <loc>https://rackmath.com/blog/how-to-walk-away-from-an-exercise-that-feels-wrong</loc>
     <lastmod>2026-07-25</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-use-headphones-and-still-stay-aware.html</loc>
+    <loc>https://rackmath.com/blog/how-to-use-headphones-and-still-stay-aware</loc>
     <lastmod>2026-07-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-try-a-new-exercise-without-feeling-silly.html</loc>
+    <loc>https://rackmath.com/blog/how-to-try-a-new-exercise-without-feeling-silly</loc>
     <lastmod>2026-07-23</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-be-a-beginner-without-apologizing.html</loc>
+    <loc>https://rackmath.com/blog/how-to-be-a-beginner-without-apologizing</loc>
     <lastmod>2026-07-22</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/what-to-say-when-someone-gives-unwanted-gym-advice.html</loc>
+    <loc>https://rackmath.com/blog/what-to-say-when-someone-gives-unwanted-gym-advice</loc>
     <lastmod>2026-07-21</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-wait-for-a-rack-without-feeling-awkward.html</loc>
+    <loc>https://rackmath.com/blog/how-to-wait-for-a-rack-without-feeling-awkward</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-share-equipment-without-making-it-weird.html</loc>
+    <loc>https://rackmath.com/blog/how-to-share-equipment-without-making-it-weird</loc>
     <lastmod>2026-07-19</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-make-the-weight-room-feel-familiar.html</loc>
+    <loc>https://rackmath.com/blog/how-to-make-the-weight-room-feel-familiar</loc>
     <lastmod>2026-07-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-deal-with-gym-anxiety-before-you-leave-the-house.html</loc>
+    <loc>https://rackmath.com/blog/how-to-deal-with-gym-anxiety-before-you-leave-the-house</loc>
     <lastmod>2026-07-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-find-your-spot-in-the-weight-room.html</loc>
+    <loc>https://rackmath.com/blog/how-to-find-your-spot-in-the-weight-room</loc>
     <lastmod>2026-07-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/your-first-time-bench-pressing-in-public.html</loc>
+    <loc>https://rackmath.com/blog/your-first-time-bench-pressing-in-public</loc>
     <lastmod>2026-07-14</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-train-when-you-feel-like-everyone-is-watching.html</loc>
+    <loc>https://rackmath.com/blog/how-to-train-when-you-feel-like-everyone-is-watching</loc>
     <lastmod>2026-07-13</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-handle-a-bad-gym-day.html</loc>
+    <loc>https://rackmath.com/blog/how-to-handle-a-bad-gym-day</loc>
     <lastmod>2026-07-11</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-build-confidence-under-the-bar.html</loc>
+    <loc>https://rackmath.com/blog/how-to-build-confidence-under-the-bar</loc>
     <lastmod>2026-07-10</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-lift-when-the-gym-is-crowded.html</loc>
+    <loc>https://rackmath.com/blog/how-to-lift-when-the-gym-is-crowded</loc>
     <lastmod>2026-07-09</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-stop-comparing-yourself-to-stronger-lifters.html</loc>
+    <loc>https://rackmath.com/blog/how-to-stop-comparing-yourself-to-stronger-lifters</loc>
     <lastmod>2026-07-08</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/what-to-do-when-equipment-is-taken.html</loc>
+    <loc>https://rackmath.com/blog/what-to-do-when-equipment-is-taken</loc>
     <lastmod>2026-07-07</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-ask-for-help-at-the-gym.html</loc>
+    <loc>https://rackmath.com/blog/how-to-ask-for-help-at-the-gym</loc>
     <lastmod>2026-07-06</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-use-the-squat-rack-without-panicking.html</loc>
+    <loc>https://rackmath.com/blog/how-to-use-the-squat-rack-without-panicking</loc>
     <lastmod>2026-07-05</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/what-to-do-when-you-feel-lost-in-the-weight-room.html</loc>
+    <loc>https://rackmath.com/blog/what-to-do-when-you-feel-lost-in-the-weight-room</loc>
     <lastmod>2026-07-04</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-stop-feeling-awkward-in-the-gym.html</loc>
+    <loc>https://rackmath.com/blog/how-to-stop-feeling-awkward-in-the-gym</loc>
     <lastmod>2026-07-03</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-cool-down-without-making-it-complicated.html</loc>
+    <loc>https://rackmath.com/blog/how-to-cool-down-without-making-it-complicated</loc>
     <lastmod>2026-07-02</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-warm-up-before-lifting-weights.html</loc>
+    <loc>https://rackmath.com/blog/how-to-warm-up-before-lifting-weights</loc>
     <lastmod>2026-07-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/what-to-do-before-you-touch-a-weight.html</loc>
+    <loc>https://rackmath.com/blog/what-to-do-before-you-touch-a-weight</loc>
     <lastmod>2026-06-30</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/the-beginners-guide-to-gym-etiquette.html</loc>
+    <loc>https://rackmath.com/blog/the-beginners-guide-to-gym-etiquette</loc>
     <lastmod>2026-06-29</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-start-lifting-at-home-with-basic-equipment.html</loc>
+    <loc>https://rackmath.com/blog/how-to-start-lifting-at-home-with-basic-equipment</loc>
     <lastmod>2026-06-28</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-finish-a-workout-without-doing-too-much.html</loc>
+    <loc>https://rackmath.com/blog/how-to-finish-a-workout-without-doing-too-much</loc>
     <lastmod>2026-06-27</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-make-your-first-workout-repeatable.html</loc>
+    <loc>https://rackmath.com/blog/how-to-make-your-first-workout-repeatable</loc>
     <lastmod>2026-06-26</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-start-with-dumbbells-before-barbells.html</loc>
+    <loc>https://rackmath.com/blog/how-to-start-with-dumbbells-before-barbells</loc>
     <lastmod>2026-06-25</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-know-if-you-are-ready-for-barbells.html</loc>
+    <loc>https://rackmath.com/blog/how-to-know-if-you-are-ready-for-barbells</loc>
     <lastmod>2026-06-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/what-does-light-weight-actually-mean.html</loc>
+    <loc>https://rackmath.com/blog/what-does-light-weight-actually-mean</loc>
     <lastmod>2026-06-23</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-choose-your-first-gym-workout.html</loc>
+    <loc>https://rackmath.com/blog/how-to-choose-your-first-gym-workout</loc>
     <lastmod>2026-06-22</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/full-body-workouts-vs-split-routines-for-beginners.html</loc>
+    <loc>https://rackmath.com/blog/full-body-workouts-vs-split-routines-for-beginners</loc>
     <lastmod>2026-06-21</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-long-should-a-beginner-workout-be.html</loc>
+    <loc>https://rackmath.com/blog/how-long-should-a-beginner-workout-be</loc>
     <lastmod>2026-06-20</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-many-sets-should-beginners-do.html</loc>
+    <loc>https://rackmath.com/blog/how-many-sets-should-beginners-do</loc>
     <lastmod>2026-06-19</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-many-reps-should-beginners-do.html</loc>
+    <loc>https://rackmath.com/blog/how-many-reps-should-beginners-do</loc>
     <lastmod>2026-06-18</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/what-sets-and-reps-mean.html</loc>
+    <loc>https://rackmath.com/blog/what-sets-and-reps-mean</loc>
     <lastmod>2026-06-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-read-a-workout-plan-for-the-first-time.html</loc>
+    <loc>https://rackmath.com/blog/how-to-read-a-workout-plan-for-the-first-time</loc>
     <lastmod>2026-06-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-use-machines-without-feeling-lost.html</loc>
+    <loc>https://rackmath.com/blog/how-to-use-machines-without-feeling-lost</loc>
     <lastmod>2026-06-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/free-weights-vs-machines-for-beginners.html</loc>
+    <loc>https://rackmath.com/blog/free-weights-vs-machines-for-beginners</loc>
     <lastmod>2026-06-14</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-pick-exercises-without-overthinking-it.html</loc>
+    <loc>https://rackmath.com/blog/how-to-pick-exercises-without-overthinking-it</loc>
     <lastmod>2026-06-13</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/a-simple-3-day-beginner-lifting-plan.html</loc>
+    <loc>https://rackmath.com/blog/a-simple-3-day-beginner-lifting-plan</loc>
     <lastmod>2026-06-12</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-restart-lifting-after-a-long-break.html</loc>
+    <loc>https://rackmath.com/blog/how-to-restart-lifting-after-a-long-break</loc>
     <lastmod>2026-06-11</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-start-lifting-when-you-are-out-of-shape.html</loc>
+    <loc>https://rackmath.com/blog/how-to-start-lifting-when-you-are-out-of-shape</loc>
     <lastmod>2026-06-10</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/the-first-5-lifts-beginners-should-learn.html</loc>
+    <loc>https://rackmath.com/blog/the-first-5-lifts-beginners-should-learn</loc>
     <lastmod>2026-06-09</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-to-walk-into-the-gym-with-a-plan.html</loc>
+    <loc>https://rackmath.com/blog/how-to-walk-into-the-gym-with-a-plan</loc>
     <lastmod>2026-06-08</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/what-to-bring-to-the-gym-on-your-first-day.html</loc>
+    <loc>https://rackmath.com/blog/what-to-bring-to-the-gym-on-your-first-day</loc>
     <lastmod>2026-06-07</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/how-many-days-a-week-should-beginners-lift.html</loc>
+    <loc>https://rackmath.com/blog/how-many-days-a-week-should-beginners-lift</loc>
     <lastmod>2026-06-05</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/what-weight-should-i-start-with-a-simple-beginner-guide.html</loc>
+    <loc>https://rackmath.com/blog/what-weight-should-i-start-with-a-simple-beginner-guide</loc>
     <lastmod>2026-06-04</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/your-first-week-of-weight-lifting.html</loc>
+    <loc>https://rackmath.com/blog/your-first-week-of-weight-lifting</loc>
     <lastmod>2026-06-02</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/first-day-in-the-gym-no-stress-walkthrough.html</loc>
+    <loc>https://rackmath.com/blog/first-day-in-the-gym-no-stress-walkthrough</loc>
     <lastmod>2026-05-29</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rackmath.com/blog/what-is-a-weight-lifting-calculator.html</loc>
+    <loc>https://rackmath.com/blog/what-is-a-weight-lifting-calculator</loc>
     <lastmod>2026-05-29</lastmod>
     <priority>0.6</priority>
   </url>
