@@ -167,6 +167,11 @@ def schema_urls(value: object) -> list[str]:
     return []
 
 
+def redirect_destination_path(destination: str) -> str:
+    parsed = urlsplit(destination)
+    return parsed.path if parsed.netloc else destination.split("?", 1)[0].split("#", 1)[0]
+
+
 def parse_redirects(errors: list[str]) -> dict[str, tuple[str, str]]:
     if not REDIRECTS_PATH.exists():
         errors.append("missing _redirects")
@@ -181,15 +186,16 @@ def parse_redirects(errors: list[str]) -> dict[str, tuple[str, str]]:
             continue
         source, destination, status = parts[:3]
         if source.startswith("/") and "*" not in source:
+            destination_path = redirect_destination_path(destination)
+            if source != "/" and source.rstrip("/") == destination_path.rstrip("/"):
+                errors.append(
+                    f"_redirects:{line_number}: trailing-slash-equivalent self-redirect "
+                    f"{source} -> {destination_path}"
+                )
             if source in redirects and redirects[source] != (destination, status):
                 errors.append(f"_redirects:{line_number}: conflicting rule for {source}")
             redirects[source] = (destination, status)
     return redirects
-
-
-def redirect_destination_path(destination: str) -> str:
-    parsed = urlsplit(destination)
-    return parsed.path if parsed.netloc else destination.split("?", 1)[0].split("#", 1)[0]
 
 
 def main() -> int:

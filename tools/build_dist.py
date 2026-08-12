@@ -332,8 +332,23 @@ def validate_redirects(path: Path) -> list[str]:
         if not line or line.startswith("#"):
             continue
         rules.append(line)
-        if len(line.split()) < 3:
+        parts = line.split()
+        if len(parts) < 3:
             errors.append(f"_redirects:{line_number} is not a complete redirect rule")
+            continue
+        source, destination = parts[:2]
+        if source.startswith("/") and "*" not in source:
+            parsed_destination = urlsplit(destination)
+            destination_path = (
+                parsed_destination.path
+                if parsed_destination.netloc
+                else destination.split("?", 1)[0].split("#", 1)[0]
+            )
+            if source != "/" and source.rstrip("/") == destination_path.rstrip("/"):
+                errors.append(
+                    f"_redirects:{line_number} creates a trailing-slash-equivalent "
+                    f"self-redirect: {source} -> {destination_path}"
+                )
     if not rules:
         errors.append("_redirects must contain at least one redirect rule")
     return errors
