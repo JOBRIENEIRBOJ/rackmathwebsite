@@ -174,19 +174,6 @@
     update();
   }
 
-  function initPlanPreview(root) {
-    root.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const goal = root.querySelector('[name="goal"]')?.value || 'strength';
-      const days = root.querySelector('[name="days"]')?.value || '3';
-      setOutput(
-        root,
-        `<div class="tool-result-number">${days}-day ${goal} plan</div><p>RackMath can turn this into a saved workout flow with exercises, target weights, warmups, and history.</p>`
-      );
-      trackTool('ai_workout_builder_preview', { goal, days });
-    });
-  }
-
   function initImporterPreview(root) {
     root.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -205,7 +192,6 @@
     rpe: initRpe,
     volume: initVolume,
     attempts: initAttempts,
-    aiBuilder: initPlanPreview,
     importer: initImporterPreview,
   };
 

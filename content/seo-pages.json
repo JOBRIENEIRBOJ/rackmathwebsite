@@ -14,7 +14,7 @@
       "description": "Free RackMath lifting tools for barbell plate math, warmup planning, one rep max estimates, lb to kg conversion, RPE, training volume, and workout planning.",
       "h1": "Free lifting tools that get you from target weight to loaded bar.",
       "eyebrow": "Tools",
-      "summary": "Start with the free barbell plate calculator, then use RackMath to save lifts, run workouts, track PRs, and personalize training.",
+      "summary": "Start with the free barbell calculator, then use RackMath to save lifts, run workouts, track PRs, and personalize training.",
       "primaryKeyword": "free weightlifting tools",
       "searchIntent": "transactional",
       "cluster": "strength-tools",
@@ -34,25 +34,25 @@
       "section": "tools",
       "slug": "/tools/barbell-calculator.html",
       "publicPath": "/tools/barbell-calculator",
-      "title": "Barbell Calculator | Free Plate Calculator & Visualizer",
+      "title": "Barbell Calculator | Free Barbell Calculator & Visualizer",
       "description": "Enter your target weight and instantly see which plates to load on each side. Free calculator for lb, kg, common bars, and standard plate sizes.",
       "h1": "Barbell Calculator",
       "eyebrow": "Free barbell calculator",
       "summary": "Enter your target weight, choose pounds or kilograms, select your bar and available plate sizes, and see what to load on each side.",
       "primaryKeyword": "barbell calculator",
       "secondaryKeywords": [
-        "plate calculator",
+        "barbell calculator",
         "weight lifting calculator",
         "what plates make 225",
-        "barbell plate calculator"
+        "barbell calculator"
       ],
       "searchIntent": "transactional",
       "cluster": "barbell-loading",
       "canonicalOwner": "/tools/barbell-calculator",
       "updated": "2026-08-11",
-      "softwareName": "RackMath Barbell Plate Calculator",
+      "softwareName": "RackMath Barbell Calculator",
       "socialImage": "/assets/rackmath-app-screenshot.png",
-      "socialImageAlt": "RackMath barbell plate calculator app preview",
+      "socialImageAlt": "RackMath barbell calculator app preview",
       "primaryCta": "Save this lift in RackMath",
       "appRoute": "/tools/plate-calculator?source=seo&tool=barbell-plate-calculator&weight=225&unit=lb",
       "schema": [
@@ -267,32 +267,6 @@
       "status": "published",
       "type": "tool",
       "section": "tools",
-      "slug": "/tools/ai-workout-builder.html",
-      "title": "AI Workout Builder | RackMath",
-      "description": "Build a RackMath workout from your goal, schedule, equipment, and lifting experience.",
-      "h1": "AI Workout Builder",
-      "eyebrow": "Workout builder",
-      "summary": "Sketch a workout from your goal, schedule, equipment, and experience, then open RackMath to personalize and save it.",
-      "primaryKeyword": "AI workout builder",
-      "searchIntent": "transactional",
-      "cluster": "workout-planning",
-      "canonicalOwner": "/tools/ai-workout-builder",
-      "primaryCta": "Build my workout",
-      "appRoute": "/ai-workout-builder?source=seo",
-      "schema": [
-        "BreadcrumbList",
-        "SoftwareApplication"
-      ],
-      "related": [
-        "/tools/workout-plan-importer.html",
-        "/tools/training-volume-calculator.html",
-        "/features.html"
-      ]
-    },
-    {
-      "status": "published",
-      "type": "tool",
-      "section": "tools",
       "slug": "/tools/workout-plan-importer.html",
       "title": "Workout Plan Importer | RackMath",
       "description": "Import a workout plan into RackMath from text, screenshots, PDFs, or coach programming.",
@@ -311,7 +285,7 @@
         "SoftwareApplication"
       ],
       "related": [
-        "/tools/ai-workout-builder.html",
+        "/tools/training-volume-calculator.html",
         "/tools/barbell-calculator.html",
         "/features.html"
       ]
@@ -462,7 +436,7 @@
       "related": [
         "/tools/training-volume-calculator.html",
         "/tools/rpe-calculator.html",
-        "/tools/ai-workout-builder.html"
+        "/tools/workout-plan-importer.html"
       ]
     },
     {
@@ -637,7 +611,7 @@
       "related": [
         "/tools/training-volume-calculator.html",
         "/tools/barbell-calculator.html",
-        "/tools/ai-workout-builder.html"
+        "/tools/workout-plan-importer.html"
       ]
     },
     {
@@ -1170,14 +1144,14 @@
       "type": "feature",
       "section": "features",
       "slug": "/features/barbell-plate-calculator.html",
-      "title": "Barbell Plate Calculator Feature | RackMath",
+      "title": "Barbell Calculator Feature | RackMath",
       "description": "RackMath shows exact plates every set, with saved workouts, warmups, history, and custom setup support.",
       "h1": "Exact plates every set",
-      "eyebrow": "Plate calculator",
+      "eyebrow": "Barbell calculator",
       "summary": "Use RackMath to turn target weights into exact plates per side, then carry that loading context into saved workouts, warmups, and training history.",
       "primaryKeyword": "barbell calculator app",
       "secondaryKeywords": [
-        "plate calculator workout tracker",
+        "barbell calculator workout tracker",
         "barbell loading app",
         "plates per side app"
       ],
@@ -1202,15 +1176,15 @@
       "type": "feature",
       "section": "features",
       "slug": "/features/custom-plate-calculator.html",
-      "title": "Custom Plate Calculator | RackMath",
+      "title": "Custom Barbell Calculator | RackMath",
       "description": "Match RackMath to your actual plates, bars, collars, and gym setup.",
-      "h1": "Custom Plate Calculator",
+      "h1": "Custom Barbell Calculator",
       "eyebrow": "Custom setup",
       "summary": "Save the bars, plates, collars, and loading options you actually use so RackMath gives practical answers for your gym instead of generic math.",
       "primaryKeyword": "custom plate inventory calculator",
       "secondaryKeywords": [
         "limited plate inventory calculator",
-        "specialty bar plate calculator",
+        "specialty bar calculator",
         "barbell collar weight calculator"
       ],
       "searchIntent": "commercial",
@@ -1504,7 +1478,7 @@
       "cluster": "coaching",
       "canonicalOwner": "/for/personal-trainers",
       "primaryCta": "Build a workout",
-      "appRoute": "/ai-workout-builder?source=seo&persona=personal-trainers",
+      "appRoute": "/import?source=seo&persona=personal-trainers",
       "schema": [
         "BreadcrumbList",
         "SoftwareApplication"
@@ -1551,7 +1525,7 @@
       "h1": "RackMath for kg Gyms",
       "eyebrow": "kg gyms",
       "summary": "Switch to kilogram loading, account for kg bars and plates, and avoid pound-based assumptions when training or coaching in metric gyms.",
-      "primaryKeyword": "kilogram plate calculator app",
+      "primaryKeyword": "kilogram barbell calculator app",
       "searchIntent": "commercial",
       "cluster": "barbell-loading",
       "canonicalOwner": "/for/kg-gyms",

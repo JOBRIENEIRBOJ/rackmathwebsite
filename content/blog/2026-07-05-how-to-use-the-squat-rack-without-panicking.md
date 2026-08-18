@@ -220,7 +220,7 @@ When you are new, your brain is already full:
 
 Plate math does not need to be one more stress.
 
-RackMath’s barbell plate calculator lets you pick a total weight, see exactly which plates to put on each side, and go. That means:
+RackMath’s barbell calculator lets you pick a total weight, see exactly which plates to put on each side, and go. That means:
 
 - Less time staring at the plate tree.  
 - Less second‑guessing if you loaded the bar right.  

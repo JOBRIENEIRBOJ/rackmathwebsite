@@ -242,7 +242,7 @@ RackMath helps take the plate-math headache out of that.
 
 You can:
 
-- Use a barbell plate calculator to see exactly which plates go on each side.
+- Use a barbell calculator to see exactly which plates go on each side.
 - Save your sets and weights so next time you are not guessing what you lifted.
 - Spend less time standing by the rack counting plates and more time actually lifting.
 

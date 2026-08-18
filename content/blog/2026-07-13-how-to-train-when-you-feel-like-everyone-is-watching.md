@@ -218,7 +218,7 @@ RackMath takes one of those decisions off your plate: **the plate math.**
 
 You can:
 
-- Use the barbell plate calculator to see exactly which plates to load.  
+- Use the barbell calculator to see exactly which plates to load.
 - Save your sets, reps, and weights so next time you walk in with a plan instead of a blank screen in your brain.  
 - Check your last workout quickly so you know whether to repeat the weight or nudge it up a bit.
 

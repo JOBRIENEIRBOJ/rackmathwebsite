@@ -242,7 +242,7 @@ RackMath helps with that part.
 
 You can:
 
-- Use the **barbell plate calculator** to see exactly which plates to load for your target weight.
+- Use the **barbell calculator** to see exactly which plates to load for your target weight.
 - Use the **workout tracker** to log your sets and weights so you are not guessing next time.
 
 That way, your routine stays simple:

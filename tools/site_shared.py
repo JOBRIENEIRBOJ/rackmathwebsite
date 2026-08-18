@@ -14,7 +14,7 @@ APP_URL = "https://www.rackmath.app"
 SITE_NAME = "RackMath"
 BRAND_NAME = "RackMath"
 
-ASSET_VERSION = "20260615"
+ASSET_VERSION = "20260818-1"
 ASSETS = {
     "brand_mark": "assets/rackmathblue-header.png",
     "icon": "assets/RackMath_logo.webp",

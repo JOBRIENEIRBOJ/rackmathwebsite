@@ -243,7 +243,7 @@ RackMath can take some of that mental noise away.
 
 You can:
 
-- Use the **plate calculator** to know exactly what goes on the bar, so you are not doing math under pressure.
+- Use the **barbell calculator** to know exactly what goes on the bar, so you are not doing math under pressure.
 - Use the **workout tracker** to log sets, reps, and weights, so next time you walk in with a plan instead of guessing.
 
 The less you have to think about numbers, the more room you have to think about **breathing, form, and not rushing**.

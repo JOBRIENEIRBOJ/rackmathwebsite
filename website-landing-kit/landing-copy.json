@@ -1,11 +1,11 @@
 {
   "brand": "RackMath",
   "seo": {
-    "title": "RackMath | Barbell Plate Calculator & Workout Tracker",
+    "title": "RackMath | Barbell Calculator & Workout Tracker",
     "description": "RackMath helps lifters calculate barbell plates, follow workouts, import programs, log sets, and track PRs from a fast mobile-first app."
   },
   "hero": {
-    "eyebrow": "Barbell plate calculator and workout tracker",
+    "eyebrow": "Barbell calculator and workout tracker",
     "headline": "Load the right plates. Track every set.",
     "body": "RackMath turns planned lifts into clear plate math, workout sessions, PRs, and progress insights, so you can stay focused under the bar.",
     "primaryCta": "Open RackMath",
@@ -53,7 +53,7 @@
   "faq": [
     {
       "question": "Is RackMath free?",
-      "answer": "Yes. The core plate calculator is designed to be fast and useful before you ever upgrade. RackMath Pro costs $3.97/month or $31/year."
+      "answer": "Yes. The core barbell calculator is designed to be fast and useful before you ever upgrade. RackMath Pro costs $3.97/month or $31/year."
     },
     {
       "question": "How much does RackMath Pro cost?",

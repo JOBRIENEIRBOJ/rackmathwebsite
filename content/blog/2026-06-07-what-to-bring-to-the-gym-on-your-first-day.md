@@ -244,7 +244,7 @@ One thing that can make the gym feel chaotic is trying to remember:
 RackMath can help with two of those headaches:
 
 - You can use it as a simple workout tracker so you know what you did last time instead of guessing.
-- When you start using barbells, the plate calculator shows you exactly which plates to put on each side so you do not have to do math in your head.
+- When you start using barbells, the barbell calculator shows you exactly which plates to put on each side so you do not have to do math in your head.
 
 When you are new, that means less time staring at the rack and more time actually lifting.
 

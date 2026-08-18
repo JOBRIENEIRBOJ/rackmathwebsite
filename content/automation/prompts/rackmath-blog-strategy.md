@@ -54,7 +54,7 @@ The secondary reader may be:
 - A former athlete returning to training
 - A coach helping beginners
 - Someone who wants a simple weight lifting calculator
-- Someone looking for a barbell plate calculator
+- Someone looking for a barbell calculator
 
 ## Main Content Pillars
 
@@ -168,9 +168,9 @@ RackMath should rank for beginner-friendly and tool-related searches.
 Primary keyword themes:
 
 - weight lifting calculator
-- barbell plate calculator
-- plate calculator
-- gym plate calculator
+- barbell calculator
+- barbell calculator
+- gym barbell calculator
 - workout tracker
 - beginner weight lifting
 - how to start lifting weights
@@ -184,7 +184,7 @@ Every article should naturally link to relevant RackMath pages when possible.
 
 Use internal links for:
 
-- Plate calculator
+- Barbell calculator
 - Workout tracker
 - Blog archive
 - Beginner guides

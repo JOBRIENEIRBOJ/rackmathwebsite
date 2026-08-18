@@ -220,7 +220,7 @@ That’s a lot when you’re also trying to remember form and count reps.
 
 RackMath helps by:
 
-- Acting as a **barbell plate calculator**, so you know exactly which plates to put on  
+- Acting as a **barbell calculator**, so you know exactly which plates to put on
 - Letting you **track sets, reps, and weights**, so you’re not guessing what you did last time  
 - Making it easy to plan small, safe jumps in weight
 

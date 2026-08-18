@@ -206,7 +206,7 @@ RackMath helps take some of that load off.
 
 You can:
 
-- Use the plate calculator so you are not doing barbell math in your head
+- Use the barbell calculator so you are not doing barbell math in your head
 - Check what you lifted last time so you do not have to guess
 - Track basic sets and reps so you can see progress even when you *feel* stuck
 

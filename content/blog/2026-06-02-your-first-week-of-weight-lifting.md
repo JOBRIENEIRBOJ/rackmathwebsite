@@ -313,7 +313,7 @@ RackMath can handle that part for you.
 
 You can:
 
-- Use the barbell plate calculator to see exactly which plates to load  
+- Use the barbell calculator to see exactly which plates to load
 - Track your sets, reps, and weights so next week you are not guessing  
 - Quickly check your history before you start your next session
 

@@ -5,7 +5,7 @@
 RackMath should rank for beginner-friendly search terms related to:
 
 - Weight lifting calculators
-- Barbell plate calculators
+- Barbell calculators
 - Plate math
 - Workout tracking
 - Beginner weight lifting
@@ -19,10 +19,10 @@ The blog should answer real beginner questions while naturally connecting back t
 Use these when highly relevant:
 
 - weight lifting calculator
-- barbell plate calculator
-- plate calculator
-- gym plate calculator
-- weight plate calculator
+- barbell calculator
+- barbell calculator
+- gym barbell calculator
+- weight barbell calculator
 - barbell calculator
 - lifting calculator
 - workout tracker
@@ -60,7 +60,7 @@ Use these for RackMath-focused content:
 - 45 pound barbell calculator
 - Olympic barbell calculator
 - pounds to plates calculator
-- kg plate calculator
+- kg barbell calculator
 - warm up set calculator
 - barbell weight calculator
 
@@ -189,7 +189,7 @@ Examples:
 
 Use these internal link ideas naturally:
 
-- RackMath plate calculator
+- RackMath barbell calculator
 - RackMath weight lifting calculator
 - RackMath workout tracker
 - Blog archive
@@ -204,11 +204,11 @@ Do not keyword-stuff.
 
 Good:
 
-> A barbell plate calculator helps you load the right weight without doing gym math in your head.
+> A barbell calculator helps you load the right weight without doing gym math in your head.
 
 Bad:
 
-> This barbell plate calculator is the best barbell plate calculator for people looking for a barbell plate calculator.
+> This barbell calculator is the best barbell calculator for people looking for a barbell calculator.
 
 Use the main keyword naturally in:
 

@@ -205,7 +205,7 @@ Add “trying to do plate math with headphones on” and it’s easy to get flus
 
 RackMath helps take some of that load off:
 
-- You can use the **plate calculator** before your set so you know exactly what plates to grab.
+- You can use the **barbell calculator** before your set so you know exactly what plates to grab.
 - You can **log your sets and reps** so next time you walk in with a plan instead of guessing.
 
 The less brain space you spend on math and remembering, the more you can spend on:

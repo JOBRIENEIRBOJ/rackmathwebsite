@@ -172,7 +172,7 @@ Once you start using planned sets and reps, the next question is usually:
 
 That is where math sneaks in.
 
-Instead of doing plate math in your head every set, you can use RackMath as a **barbell and plate calculator**:
+Instead of doing plate math in your head every set, you can use RackMath as a **barbell calculator**:
 
 - Enter the weight you want for your set (like “3×8 at 75 lb”)
 - RackMath tells you exactly which plates to put on each side

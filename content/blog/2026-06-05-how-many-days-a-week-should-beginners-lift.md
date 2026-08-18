@@ -202,7 +202,7 @@ Plate math and tracking should not be the hardest part.
 RackMath can:
 
 - Act as a **weight lifting tracker**, so you remember what you lifted last week  
-- Work as a **barbell plate calculator**, so you can load the bar without doing math in your head  
+- Work as a **barbell calculator**, so you can load the bar without doing math in your head
 - Help you see your **2–3 days per week** add up over time
 
 The less brainpower you spend on numbers, the more you can spend on practicing your form and just getting your workouts done.

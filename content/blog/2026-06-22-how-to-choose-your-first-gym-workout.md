@@ -192,7 +192,7 @@ When you start using barbells (like squats or bench press with the big bar), pla
 
 RackMath takes that off your plate.
 
-You choose the total weight you want, and the barbell plate calculator tells you exactly which plates to put on each side.
+You choose the total weight you want, and the barbell calculator tells you exactly which plates to put on each side.
 
 You can also log your sets and weights, so next time you are not trying to remember if you used the 15s or the 20s.
 

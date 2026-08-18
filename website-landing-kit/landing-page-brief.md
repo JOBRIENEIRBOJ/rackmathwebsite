@@ -6,7 +6,7 @@ Improve the RackMath website homepage so a new lifter immediately understands
 what the app does and has a clear path into the product.
 
 Positioning:
-RackMath is a barbell plate calculator, workout tracker, and program companion
+RackMath is a barbell calculator, workout tracker, and program companion
 for lifters who want less friction between the plan and the bar.
 
 ## Audience
@@ -42,7 +42,7 @@ See how it works
    - three compact value chips
 
 2. Product Proof
-   - Plate calculator
+   - Barbell calculator
    - Program sessions
    - Progress tracking
 
@@ -78,14 +78,14 @@ See how it works
 ## SEO Targets
 
 Primary title:
-RackMath | Barbell Plate Calculator & Workout Tracker
+RackMath | Barbell Calculator & Workout Tracker
 
 Primary description:
 RackMath helps lifters calculate barbell plates, follow workouts, import
 programs, log sets, and track PRs from a fast mobile-first app.
 
 Keyword themes:
-- barbell plate calculator
+- barbell calculator
 - workout tracker
 - weightlifting app
 - plate math

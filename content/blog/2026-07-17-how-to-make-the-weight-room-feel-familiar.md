@@ -231,7 +231,7 @@ Now you are not only in the weight room, you are also doing plate math in public
 
 RackMath helps take that mental load down.
 
-You can use it as a **barbell plate calculator** to:
+You can use it as a **barbell calculator** to:
 
 - Decide your working weight at home
 - See exactly which plates go on each side

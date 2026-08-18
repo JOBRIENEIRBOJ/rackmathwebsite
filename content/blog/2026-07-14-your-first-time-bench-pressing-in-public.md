@@ -177,7 +177,7 @@ This is where barbell plate math can feel like a quiz in front of an audience.
 You can:
 
 - Do the math in your head (bar + plates on each side × 2).  
-- Or plan your sets ahead of time with a plate calculator so you already know what goes on each side.
+- Or plan your sets ahead of time with a barbell calculator so you already know what goes on each side.
 
 We will talk about that in the RackMath section.
 
@@ -233,7 +233,7 @@ You are trying to remember:
 
 RackMath can quietly take care of some of that:
 
-- Use the **barbell plate calculator** to plan your bench weights before you leave home, so you know exactly what plates to grab.  
+- Use the **barbell calculator** to plan your bench weights before you leave home, so you know exactly what plates to grab.
 - Use the **workout tracker** to log your sets and reps, so next time you are not guessing where to start.
 
 The less you have to think about plate math and tracking, the more you can focus on breathing, bar path, and staying calm on the bench.

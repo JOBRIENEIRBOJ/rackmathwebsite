@@ -211,7 +211,7 @@ You can:
 
 - Choose your target working weight.  
 - Decide how many warm-up sets you want.  
-- Let the plate calculator tell you exactly what to load for each step, so you can focus on the lift instead of the numbers.
+- Let the barbell calculator tell you exactly what to load for each step, so you can focus on the lift instead of the numbers.
 
 The less you wrestle with math, the more brain space you have for form, breathing, and staying calm in the weight room.
 

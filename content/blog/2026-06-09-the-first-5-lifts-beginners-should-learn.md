@@ -232,7 +232,7 @@ Once you are comfortable with these dumbbell versions, you may want to move some
 
 That is when plate math starts to get annoying.
 
-Instead of standing at the rack doing mental gymnastics, you can use RackMath’s plate calculator to figure out exactly which plates to put on the bar.
+Instead of standing at the rack doing mental gymnastics, you can use RackMath’s barbell calculator to figure out exactly which plates to put on the bar.
 
 RackMath can also track which weights, sets, and reps you did for each of these five lifts so that next week you are not guessing where to start.
 

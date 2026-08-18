@@ -189,7 +189,7 @@ When you are new, you are already thinking about:
 
 RackMath helps with the boring math part.
 
-You can use a plate calculator to know exactly what plates to load, and a workout tracker so you remember your sets and reps instead of guessing.
+You can use a barbell calculator to know exactly what plates to load, and a workout tracker so you remember your sets and reps instead of guessing.
 
 Less guessing means fewer long pauses at the rack, fewer wrong loads to fix, and more time using the equipment instead of standing in front of it.
 

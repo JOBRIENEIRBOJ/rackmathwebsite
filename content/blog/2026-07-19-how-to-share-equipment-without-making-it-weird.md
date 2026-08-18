@@ -229,7 +229,7 @@ Sharing racks and benches gets smoother when you can change the weight fast.
 
 If someone says, “I’m at 185,” you do not want to stand there doing math in your head while they wait.
 
-RackMath’s plate calculator lets you quickly see what plates belong on the bar for your set, and what it needs to go back to for theirs.
+RackMath’s barbell calculator lets you quickly see what plates belong on the bar for your set, and what it needs to go back to for theirs.
 
 You can:
 

@@ -271,7 +271,7 @@ RackMath takes that part off your plate (pun required).
 
 You can:
 
-- Use the **barbell plate calculator** to see exactly which plates to load for your target weight.  
+- Use the **barbell calculator** to see exactly which plates to load for your target weight.
 - Use the **workout tracker** to log your sets and reps, so you know what to add next time.  
 
 The less brain power you spend on math, the more you have left for your form, breathing, and actually lifting.

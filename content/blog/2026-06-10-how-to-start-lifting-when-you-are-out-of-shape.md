@@ -221,7 +221,7 @@ If you use barbells, plate math is one more thing trying to live in your head.
 
 “How much is 95 pounds on a 45‑pound bar again?”
 
-RackMath’s barbell plate calculator lets you plug in the total weight you want and shows you exactly which plates to put on each side.
+RackMath’s barbell calculator lets you plug in the total weight you want and shows you exactly which plates to put on each side.
 
 That means:
 

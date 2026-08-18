@@ -28,7 +28,6 @@ from site_shared import (
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_PATH = ROOT / "content" / "seo-pages.json"
 HAND_AUTHORED_PAGES = [
-    ("index.html", "", "homepage"),
     ("features.html", "features", "seo"),
     ("about.html", "about", "seo"),
     ("faq.html", "faq", "seo"),
@@ -108,7 +107,7 @@ def calculator_faq_schema() -> dict:
             },
             {
                 "@type": "Question",
-                "name": "Does this plate calculator work for kilograms?",
+                "name": "Does this barbell calculator work for kilograms?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Yes. Switch the unit control to kg to use common 20 kg and 15 kg bars with kilogram plates.",
@@ -203,7 +202,7 @@ def render_tools_hub(page: dict, registry: dict) -> str:
         <p>{escape(page["summary"])}</p>
         <div class="hero-actions">
           <a class="button primary" href="{app_href(page["appRoute"])}" data-rm-app-link data-rm-event="app_deeplink_clicked">Try RackMath free</a>
-          <a class="button secondary" href="{prefix}tools/barbell-calculator">Try the plate calculator</a>
+          <a class="button secondary" href="{prefix}tools/barbell-calculator">Try the barbell calculator</a>
         </div>
       </section>
 
@@ -531,13 +530,13 @@ def render_calculator_page(page: dict, registry: dict) -> str:
         </div>
       </section>
 
-      <section class="section faq-list" aria-label="Barbell plate calculator FAQ">
+      <section class="section faq-list" aria-label="Barbell calculator FAQ">
         <details>
           <summary>How do I calculate plates for a barbell?</summary>
           <p>Subtract the bar weight from your target weight, divide the remaining weight by two, then load that amount on each side using your available plates.</p>
         </details>
         <details>
-          <summary>Does this plate calculator work for kilograms?</summary>
+          <summary>Does this barbell calculator work for kilograms?</summary>
           <p>Yes. Switch the unit control to kg to use common 20 kg and 15 kg bars with kilogram plates.</p>
         </details>
         <details>
@@ -571,7 +570,7 @@ def render_calculator_page(page: dict, registry: dict) -> str:
     return page_shell(
         page,
         body,
-        extra_script=f'    <script src="{prefix}assets/free-barbell-visualizer.js"></script>',
+        extra_script=f'    <script src="{prefix}assets/free-barbell-visualizer.js?v=20260818-1"></script>',
     )
 
 
@@ -585,7 +584,6 @@ def tool_key(page: dict) -> str:
         "/tools/rpe-calculator.html": "rpe",
         "/tools/training-volume-calculator.html": "volume",
         "/tools/powerlifting-attempt-calculator.html": "attempts",
-        "/tools/ai-workout-builder.html": "aiBuilder",
         "/tools/workout-plan-importer.html": "importer",
     }[slug]
 
@@ -625,11 +623,6 @@ def render_tool_controls(page: dict) -> str:
         return """            <div class="tool-form-grid">
               <label>Recent max or estimated max <input name="max" type="number" min="0" step="5" value="315"></label>
             </div>"""
-    if key == "aiBuilder":
-        return """            <div class="tool-form-grid">
-              <label>Goal <select name="goal"><option value="strength">Strength</option><option value="hypertrophy">Hypertrophy</option><option value="beginner">Beginner</option><option value="powerlifting">Powerlifting</option></select></label>
-              <label>Training days <select name="days"><option>2</option><option selected>3</option><option>4</option><option>5</option></select></label>
-            </div>"""
     if key == "importer":
         return """            <label class="tool-full-field">Paste a plan preview <textarea name="planText" rows="6">Squat 3x5
 Bench Press 3x5
@@ -667,10 +660,6 @@ def render_tool_explainer(page: dict) -> tuple[str, str]:
             "Plan attempts around makes, not hopes.",
             "A good attempt plan starts with a confident opener, builds the total on the second, and leaves room for a third attempt if the day is there.",
         ),
-        "/tools/ai-workout-builder.html": (
-            "Start from intent, then personalize in the app.",
-            "The website can sketch the shape of a workout. RackMath is where the plan becomes saved, editable, trackable, and ready for plate loading.",
-        ),
         "/tools/workout-plan-importer.html": (
             "Turn written programming into something you can run.",
             "Pasted plans are useful only when they become actionable. RackMath turns them into workouts with exercises, sets, reps, weights, and tracking.",
@@ -684,7 +673,7 @@ def render_standard_tool_page(page: dict, registry: dict) -> str:
     key = tool_key(page)
     heading, copy = render_tool_explainer(page)
     related = render_related_links(page, registry, prefix)
-    submit_label = "Preview result" if key in {"aiBuilder", "importer"} else "Calculate"
+    submit_label = "Preview result" if key == "importer" else "Calculate"
     body = f"""    <main>
       <section class="page-hero seo-hero">
         <p class="eyebrow">{escape(page.get("eyebrow", "Free lifting tool"))}</p>
@@ -1004,7 +993,7 @@ def render_workouts_hub(page: dict, registry: dict) -> str:
         <p>{escape(page["summary"])}</p>
         <div class="hero-actions">
           <a class="button primary" href="{app_href(page["appRoute"])}" data-rm-app-link data-rm-event="app_deeplink_clicked">{escape(page["primaryCta"])}</a>
-          <a class="button secondary" href="{prefix}tools/barbell-calculator">Try plate calculator</a>
+          <a class="button secondary" href="{prefix}tools/barbell-calculator">Try barbell calculator</a>
         </div>
       </section>
 
@@ -1457,7 +1446,7 @@ def render_plate_examples(exercise: dict) -> str:
         <div class="section-heading">
           <p class="eyebrow">Plate examples</p>
           <h2 id="plate-example-heading">Common barbell loading examples.</h2>
-          <p>Use these as quick references. For custom plates, collars, kg plates, or specialty bars, use the RackMath plate calculator.</p>
+          <p>Use these as quick references. For custom plates, collars, kg plates, or specialty bars, use the RackMath barbell calculator.</p>
         </div>
         <div class="responsive-table">
           <table>
@@ -1785,7 +1774,7 @@ def persona_library() -> dict[str, dict]:
         "/for/home-gym-lifters.html": {
             "problem": "Home gyms are efficient, but they also force constraints: limited machines, limited plates, one rack, and no coach watching every set.",
             "outcome": "RackMath helps home gym lifters make simple equipment-aware choices and keep training history organized between solo sessions.",
-            "quick": [("Main friction", "Limited equipment"), ("Best first tool", "Custom plate calculator"), ("Good public start", "Barbell-only plan")],
+            "quick": [("Main friction", "Limited equipment"), ("Best first tool", "Custom barbell calculator"), ("Good public start", "Barbell-only plan")],
             "steps": [
                 ("Match the equipment", "Start with workouts that fit a rack, bench, barbell, dumbbells, or the gear you actually have."),
                 ("Calculate loadable targets", "When a program asks for a weight you cannot build, choose a practical nearby load."),
@@ -1796,7 +1785,7 @@ def persona_library() -> dict[str, dict]:
         "/for/kg-gyms.html": {
             "problem": "Metric gyms should not have to work around pound-based assumptions. Bar weights, plate jumps, and program conversions all need to make sense in kilograms.",
             "outcome": "RackMath supports kg-first plate loading and conversion workflows so metric lifters can train without translating every set by hand.",
-            "quick": [("Main friction", "kg loading and conversion"), ("Best first tool", "lb/kg converter"), ("Good public start", "Plate calculator in kg")],
+            "quick": [("Main friction", "kg loading and conversion"), ("Best first tool", "lb/kg converter"), ("Good public start", "Barbell calculator in kg")],
             "steps": [
                 ("Switch units", "Set RackMath to kilograms and choose the bar that matches your gym."),
                 ("Load metric plates", "Use kg plates directly instead of converting every set back from pounds."),
@@ -1826,7 +1815,7 @@ def render_persona_hub(page: dict, registry: dict) -> str:
         <p>{escape(page["summary"])}</p>
         <div class="hero-actions">
           <a class="button primary" href="{app_href(page["appRoute"])}" data-rm-app-link data-rm-event="app_deeplink_clicked">{escape(page["primaryCta"])}</a>
-          <a class="button secondary" href="{prefix}tools/barbell-calculator">Try plate calculator</a>
+          <a class="button secondary" href="{prefix}tools/barbell-calculator">Try barbell calculator</a>
         </div>
       </section>
 

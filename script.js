@@ -55,8 +55,113 @@ if (header && navToggle) {
   navToggle.addEventListener("click", () => {
     const isOpen = header.classList.toggle("is-open");
     navToggle.setAttribute("aria-expanded", String(isOpen));
+    navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    if (document.body.classList.contains("home-page")) {
+      document.body.classList.toggle("rm-nav-open", isOpen);
+    }
+  });
+
+  header.querySelectorAll(".site-nav a, .header-cta").forEach((link) => {
+    link.addEventListener("click", () => {
+      header.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "Open navigation");
+      document.body.classList.remove("rm-nav-open");
+    });
   });
 }
+
+function initRackMathAnchorNavigation() {
+  if (!document.body.classList.contains("home-page")) return;
+
+  document.addEventListener("click", (event) => {
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return;
+    }
+
+    const link = event.target instanceof Element ? event.target.closest("a[href]") : null;
+    if (!link) return;
+
+    const url = new URL(link.href, window.location.href);
+    if (
+      !url.hash ||
+      url.origin !== window.location.origin ||
+      url.pathname !== window.location.pathname ||
+      url.search !== window.location.search
+    ) {
+      return;
+    }
+
+    const target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+    if (!target) return;
+
+    const flowTrigger = window.ScrollTrigger?.getById("rm-flow-pin");
+    if (
+      !flowTrigger ||
+      !Number.isFinite(flowTrigger.start) ||
+      !Number.isFinite(flowTrigger.end)
+    ) {
+      return;
+    }
+
+    const currentY = window.scrollY;
+    const scrollMargin = Number.parseFloat(window.getComputedStyle(target).scrollMarginTop) || 0;
+    const targetY = currentY + target.getBoundingClientRect().top - scrollMargin;
+    const edgeTolerance = 2;
+    const movingPastPin =
+      targetY >= flowTrigger.end - edgeTolerance &&
+      currentY < flowTrigger.end - edgeTolerance;
+    const movingBeforePin =
+      targetY <= flowTrigger.start + edgeTolerance &&
+      currentY > flowTrigger.start + edgeTolerance;
+
+    if (!movingPastPin && !movingBeforePin) return;
+
+    event.preventDefault();
+
+    const root = document.documentElement;
+    const previousScrollBehavior = root.style.scrollBehavior;
+    const targetScrollTop = () =>
+      Math.max(0, window.scrollY + target.getBoundingClientRect().top - scrollMargin);
+    const syncScrollTrigger = () => window.ScrollTrigger?.update(true);
+    const pinBoundary = movingPastPin
+      ? Math.ceil(flowTrigger.end + edgeTolerance)
+      : Math.max(0, Math.floor(flowTrigger.start - edgeTolerance));
+
+    root.style.scrollBehavior = "auto";
+    window.scrollTo({ top: pinBoundary, behavior: "auto" });
+    syncScrollTrigger();
+    window.scrollTo({ top: targetScrollTop(), behavior: "auto" });
+    syncScrollTrigger();
+
+    if (window.location.hash === url.hash) {
+      window.history.replaceState(null, "", url.hash);
+    } else {
+      window.history.pushState(null, "", url.hash);
+    }
+
+    window.requestAnimationFrame(() => {
+      window.scrollTo({ top: targetScrollTop(), behavior: "auto" });
+      syncScrollTrigger();
+      root.style.scrollBehavior = previousScrollBehavior;
+
+      const focusTarget = target.querySelector("h1, h2, h3") || target;
+      if (!focusTarget.hasAttribute("tabindex")) {
+        focusTarget.setAttribute("tabindex", "-1");
+      }
+      focusTarget.focus({ preventScroll: true });
+    });
+  });
+}
+
+initRackMathAnchorNavigation();
 
 document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
   const trigger = dropdown.querySelector(".nav-dropdown-trigger");
@@ -90,6 +195,14 @@ document.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape") return;
   closeRackMathDropdowns(null, true);
+
+  if (header?.classList.contains("is-open") && navToggle) {
+    header.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Open navigation");
+    document.body.classList.remove("rm-nav-open");
+    navToggle.focus();
+  }
 });
 
 function rackMathContentGroup(pathname) {
@@ -339,6 +452,7 @@ function loadRackMathMotionScripts() {
 
 function prepareRackMathHeroMasks() {
   document.querySelectorAll(".hero h1, .page-hero h1").forEach((heading) => {
+    if (heading.hasAttribute("data-rm-kinetic-heading")) return;
     if (heading.dataset.rmTextMasked === "true") return;
 
     const maskFragment = document.createDocumentFragment();
@@ -384,6 +498,108 @@ function prepareRackMathHeroMasks() {
     heading.replaceChildren(maskFragment);
     heading.dataset.rmTextMasked = "true";
   });
+}
+
+function initRackMathKineticTitle(gsap) {
+  const heading = document.querySelector("[data-rm-kinetic-heading]");
+  const word = heading?.querySelector(".rm-kinetic-word");
+  const cursor = heading?.querySelector(".rm-kinetic-cursor");
+  const toggle = document.querySelector("[data-rm-kinetic-toggle]");
+
+  if (
+    !heading ||
+    !word ||
+    !cursor ||
+    !toggle ||
+    heading.dataset.rmKineticActive === "true"
+  ) {
+    return;
+  }
+
+  heading.dataset.rmKineticActive = "true";
+  heading.classList.add("is-rm-typing");
+
+  const state = { characters: word.textContent.length };
+  const timeline = gsap.timeline({ repeat: -1 });
+  const erase = (text) => {
+    timeline.to(state, {
+      characters: 0,
+      duration: Math.max(0.24, text.length * 0.05),
+      ease: "none",
+      onUpdate: () => {
+        word.textContent = text.slice(0, Math.round(state.characters));
+      },
+    });
+  };
+  const type = (text) => {
+    timeline.set(state, { characters: 0 });
+    timeline.to(state, {
+      characters: text.length,
+      duration: Math.max(0.34, text.length * 0.068),
+      ease: "none",
+      onUpdate: () => {
+        word.textContent = text.slice(0, Math.round(state.characters));
+      },
+    });
+  };
+
+  timeline.to({}, { duration: 1.35 });
+  erase("math.");
+  timeline.to({}, { duration: 0.1 });
+  type("confusion.");
+  timeline.to({}, { duration: 1.45 });
+  erase("confusion.");
+  timeline.to({}, { duration: 0.1 });
+  type("time.");
+  timeline.to({}, { duration: 1.45 });
+  erase("time.");
+  timeline.to({}, { duration: 0.1 });
+  type("math.");
+
+  let userPaused = false;
+  const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const setPausedState = (paused) => {
+    timeline.paused(paused);
+    heading.classList.toggle("is-rm-typing", !paused);
+    toggle.setAttribute(
+      "aria-label",
+      paused ? "Resume headline animation" : "Pause headline animation",
+    );
+    toggle.querySelector(".rm-kinetic-toggle-icon").textContent = paused ? "▶" : "Ⅱ";
+    toggle.querySelector(".rm-kinetic-toggle-label").textContent = paused
+      ? "Play motion"
+      : "Pause motion";
+  };
+
+  toggle.addEventListener("click", () => {
+    userPaused = !userPaused;
+    setPausedState(userPaused);
+  });
+
+  const syncAutomaticPause = () => {
+    if (document.hidden || motionPreference.matches) {
+      timeline.pause();
+      heading.classList.remove("is-rm-typing");
+      return;
+    }
+
+    if (!userPaused) {
+      heading.classList.add("is-rm-typing");
+      timeline.resume();
+    }
+  };
+
+  motionPreference.addEventListener("change", (event) => {
+    if (event.matches) {
+      timeline.pause(0);
+      word.textContent = "math.";
+    }
+
+    syncAutomaticPause();
+  });
+  document.addEventListener("visibilitychange", syncAutomaticPause);
+  window.addEventListener("pagehide", () => timeline.pause());
+  window.addEventListener("pageshow", syncAutomaticPause);
 }
 
 function initRackMathDropdownMotion(gsap) {
@@ -446,6 +662,107 @@ function initRackMathDropdownMotion(gsap) {
   });
 }
 
+function initRackMathFlowZoom(gsap) {
+  const section = document.querySelector(".rm-flow-section");
+  const grid = section?.querySelector(".rm-flow-grid");
+  const stage = section?.querySelector(".rm-flow-stage") || grid;
+  const frames = gsap.utils.toArray(".rm-flow-zoom");
+  const zoomTargets = frames
+    .map((frame) => {
+      const image = frame.querySelector("img");
+      const card = frame.closest("li");
+      const scale = Number.parseFloat(frame.dataset.rmZoomScale || "2");
+
+      if (!image || !card) return null;
+
+      gsap.set(image, {
+        scale: 1,
+        transformOrigin: frame.dataset.rmZoomOrigin || "50% 50%",
+        force3D: true,
+      });
+
+      return { card, image, scale };
+    })
+    .filter(Boolean);
+
+  if (!section || !stage || !grid || zoomTargets.length < 2) return;
+
+  const motionMedia = gsap.matchMedia();
+
+  motionMedia.add("(min-width: 961px) and (min-height: 560px)", () => {
+    const [firstStep, secondStep] = zoomTargets;
+    const headerBottom = () => {
+      const headerRect = document.querySelector(".site-header")?.getBoundingClientRect();
+      return Math.ceil((headerRect?.bottom || 78) + 14);
+    };
+
+    if (window.ScrollTrigger.isTouch === 1) return;
+
+    const sequence = gsap.timeline({
+      scrollTrigger: {
+        id: "rm-flow-pin",
+        trigger: stage,
+        start: () => `top top+=${headerBottom()}`,
+        end: () => `+=${Math.max(1450, Math.round(window.innerHeight * 1.9))}`,
+        pin: stage,
+        pinSpacing: true,
+        scrub: 0.65,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        refreshPriority: 1,
+        onToggle: (self) => section.classList.toggle("is-rm-flow-pinned", self.isActive),
+      },
+    });
+
+    sequence
+      .to(firstStep.image, {
+        scale: firstStep.scale,
+        duration: 0.9,
+        ease: "none",
+      })
+      .to({}, { duration: 0.1 })
+      .to(firstStep.image, {
+        scale: 1,
+        duration: 0.3,
+        ease: "none",
+      })
+      .to(secondStep.image, {
+        scale: secondStep.scale,
+        duration: 0.9,
+        ease: "none",
+      })
+      .to({}, { duration: 0.1 })
+      .to(secondStep.image, {
+        scale: 1,
+        duration: 0.3,
+        ease: "none",
+      })
+      .to({}, { duration: 0.1 });
+
+    return () => {
+      section.classList.remove("is-rm-flow-pinned");
+    };
+  });
+
+  motionMedia.add("(max-width: 960px), (max-height: 559px)", () => {
+    zoomTargets.forEach(({ card, image, scale }) => {
+      const mobileAdjustment = window.matchMedia("(max-width: 640px)").matches ? 0.25 : 0;
+
+      gsap.to(image, {
+        scale: Math.max(1.55, scale - mobileAdjustment),
+        ease: "none",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 78%",
+          end: "bottom 28%",
+          scrub: 0.65,
+          invalidateOnRefresh: true,
+        },
+      });
+    });
+  });
+}
+
 function initRackMathMotion() {
   if (!window.gsap || !window.ScrollTrigger || !shouldUseRackMathMotion()) return;
 
@@ -455,21 +772,37 @@ function initRackMathMotion() {
   document.documentElement.classList.add("has-rm-motion");
   prepareRackMathHeroMasks();
   initRackMathDropdownMotion(gsap);
+  initRackMathFlowZoom(gsap);
 
   const heroMaskTargets = gsap.utils.toArray(
     ".hero h1 .rm-text-mask-inner, .page-hero h1 .rm-text-mask-inner",
   );
+  const useOpenHeroReveal = document.body.classList.contains("home-page");
+  const kineticHeading = document.querySelector("[data-rm-kinetic-heading]");
 
-  document.documentElement.classList.remove("has-rm-hero-mask");
   if (heroMaskTargets.length) {
-    gsap.set(heroMaskTargets, { clearProps: "transform" });
-    gsap.set(heroMaskTargets, {
-      yPercent: 112,
-      y: 0,
-      rotate: 1.6,
-      transformOrigin: "left bottom",
-    });
+    gsap.set(heroMaskTargets, { clearProps: "transform,opacity,visibility" });
+    gsap.set(
+      heroMaskTargets,
+      useOpenHeroReveal
+        ? {
+            autoAlpha: 0,
+            yPercent: 0,
+            y: 18,
+            rotate: 0,
+          }
+        : {
+            yPercent: 112,
+            y: 0,
+            rotate: 1.6,
+            transformOrigin: "left bottom",
+          },
+    );
   }
+  if (kineticHeading) {
+    gsap.set(kineticHeading, { autoAlpha: 0, y: 18 });
+  }
+  document.documentElement.classList.remove("has-rm-hero-mask");
 
   let scrollMeter = document.querySelector(".scroll-meter");
 
@@ -551,24 +884,56 @@ function initRackMathMotion() {
   if (heroMaskTargets.length) {
     heroTimeline.to(
       heroMaskTargets,
+      useOpenHeroReveal
+        ? {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.72,
+            ease: "power3.out",
+            stagger: 0.035,
+          }
+        : {
+            yPercent: 0,
+            rotate: 0,
+            duration: 0.92,
+            ease: "power4.out",
+            stagger: 0.035,
+          },
+      "-=0.5",
+    );
+  }
+  if (kineticHeading) {
+    heroTimeline.to(
+      kineticHeading,
       {
-        yPercent: 0,
-        rotate: 0,
-        duration: 0.92,
-        ease: "power4.out",
-        stagger: 0.035,
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.72,
+        ease: "power3.out",
       },
       "-=0.5",
     );
   }
   fromIfAny(
-    ".hero-app-static-link",
+    ".hero-app-frame-shell",
     {
       autoAlpha: 0,
       y: 42,
       rotate: 1.2,
     },
     "-=0.56",
+    heroTimeline,
+  );
+  fromIfAny(
+    ".rm-status-card",
+    {
+      autoAlpha: 0,
+      y: 18,
+      scale: 0.96,
+      stagger: 0.07,
+      duration: 0.56,
+    },
+    "-=0.4",
     heroTimeline,
   );
   fromIfAny(
@@ -593,8 +958,11 @@ function initRackMathMotion() {
     "-=0.36",
     heroTimeline,
   );
+  if (kineticHeading) {
+    heroTimeline.call(() => initRackMathKineticTitle(gsap));
+  }
 
-  toIfAny(".hero-app-static-link", {
+  toIfAny(".hero-app-frame-shell", {
     y: -26,
     ease: "none",
     scrollTrigger: {
@@ -616,6 +984,10 @@ function initRackMathMotion() {
     ".feature-card",
     ".price-card",
     ".faq-list details",
+    ".rm-signal-strip > div",
+    ".rm-calculation-dialogue > *",
+    ".rm-bento-card",
+    ".rm-flow-grid > li",
     ".final-cta > *",
     ".detail-row",
     ".about-card",
@@ -641,16 +1013,20 @@ function initRackMathMotion() {
     ".table-section table",
   ].join(", ");
 
+  const keepRevealContentVisible = document.body.classList.contains("home-page");
+
   gsap.utils.toArray(revealSelector).forEach((element) => {
     gsap.from(element, {
-      autoAlpha: 0,
+      ...(keepRevealContentVisible ? {} : { autoAlpha: 0 }),
       y: 34,
       duration: 0.72,
       ease: "power3.out",
       scrollTrigger: {
         trigger: element,
         start: "top 84%",
-        toggleActions: "play none none reverse",
+        toggleActions: keepRevealContentVisible
+          ? "play none none none"
+          : "play none none reverse",
       },
     });
   });
