@@ -26,9 +26,14 @@ To recheck an existing deploy artifact without rebuilding it, run:
 npm run check:dist
 ```
 
-Remote analytics is optional. When both `RACKMATH_ANALYTICS_URL` (the full
-HTTPS tracking endpoint) and `RACKMATH_ANALYTICS_ANON_KEY` are available at
-build time, the staging step creates `assets/analytics-config.js` inside
+The staging step adds the asynchronous Ahrefs Web Analytics script to the
+`<head>` of every public HTML page. The script and site key are configured in
+`tools/build_dist.py` and included automatically in each production build.
+
+The separate first-party remote analytics integration is optional. When both
+`RACKMATH_ANALYTICS_URL` (the full HTTPS tracking endpoint) and
+`RACKMATH_ANALYTICS_ANON_KEY` are available at build time, the staging step
+creates `assets/analytics-config.js` inside
 `dist/` and loads it before the fingerprinted main script on every page. If
 neither variable is set, no runtime config file or tag is emitted. Supplying
 only one variable fails the build so a partial analytics configuration cannot

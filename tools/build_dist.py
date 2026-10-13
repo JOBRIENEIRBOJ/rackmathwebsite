@@ -94,6 +94,10 @@ FINGERPRINTED_ROOT_ASSET_PATTERN = re.compile(
 ANALYTICS_CONFIG_PATH = Path("assets/analytics-config.js")
 ANALYTICS_ENDPOINT_ENV = "RACKMATH_ANALYTICS_URL"
 ANALYTICS_ANON_KEY_ENV = "RACKMATH_ANALYTICS_ANON_KEY"
+AHREFS_SCRIPT_TAG = (
+    '<script src="https://analytics.ahrefs.com/analytics.js" '
+    'data-key="FiNjUoEMWXe/Cn3xIWvzxA" async></script>'
+)
 MAIN_SCRIPT_PATTERN = re.compile(
     rf'<script\s+src="(?P<prefix>(?:\.\./)*)script(?:\.[0-9a-f]{{{FINGERPRINT_LENGTH}}})?\.js(?:\?[^" ]*)?"></script>'
 )
@@ -133,6 +137,17 @@ def copy_public_file(source: Path, destination: Path) -> None:
         raise DistBuildError(f"Public source must be a regular file: {source.relative_to(ROOT)}")
     destination.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(source, destination)
+
+
+def add_ahrefs_analytics(staging: Path) -> None:
+    """Load Ahrefs in the head of every public page, including generated pages."""
+
+    for html_path in sorted(staging.rglob("*.html")):
+        html = html_path.read_text(encoding="utf-8")
+        if "<head>" not in html:
+            raise DistBuildError(f"Missing head in {html_path.relative_to(staging)}")
+        html = html.replace("<head>", f"<head>\n    {AHREFS_SCRIPT_TAG}", 1)
+        html_path.write_text(html, encoding="utf-8")
 
 
 def add_analytics_runtime_config(staging: Path) -> bool:
@@ -592,6 +607,7 @@ def stage_dist() -> int:
         for source in sorted(sitemap_html_sources()):
             copy_public_file(source, staging / source.relative_to(ROOT))
 
+        add_ahrefs_analytics(staging)
         add_analytics_runtime_config(staging)
         fingerprint_public_assets(staging)
 
