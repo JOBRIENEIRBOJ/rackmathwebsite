@@ -586,7 +586,7 @@
   },
   {
     "title": "How to Go Back After an Embarrassing Workout",
-    "status": "ready",
+    "status": "drafted",
     "publish_date": "2026-07-12",
     "slug": "how-to-go-back-after-an-embarrassing-workout",
     "primary_keyword": "how to go back after an embarrassing workout",
@@ -595,7 +595,9 @@
       "how to feel comfortable in the gym",
       "beginner gym confidence"
     ],
-    "angle": "Help beginners go back after an embarrassing workout by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious."
+    "angle": "Help beginners go back after an embarrassing workout by reducing the social pressure, giving practical steps, and making the next gym visit feel less mysterious.",
+    "drafted_at": "2026-07-18T09:44:35.150Z",
+    "file": "content/blog/2026-07-12-how-to-go-back-after-an-embarrassing-workout.md"
   },
   {
     "title": "How to Train When You Feel Like Everyone Is Watching",
