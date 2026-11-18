@@ -9,6 +9,8 @@ on:
       - "assets/**"
       - "content/**"
       - "tools/**"
+      - "plugins/**"
+      - "tests/**"
       - "*.html"
       - "*.css"
       - "*.js"
@@ -46,6 +48,9 @@ jobs:
 
       - name: Build and validate the public deploy
         run: npm run build
+
+      - name: Test generators and URL submission
+        run: npm test
 
       - name: Recheck the staged allowlist
         run: npm run check:dist

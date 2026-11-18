@@ -2,6 +2,10 @@
   command = "npm run build"
   publish = "dist"
 
+# Notify participating search engines only after the production site is live.
+[[context.production.plugins]]
+  package = "./plugins/indexnow"
+
 [[headers]]
   for = "/*"
   [headers.values]

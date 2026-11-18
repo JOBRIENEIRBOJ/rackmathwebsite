@@ -1,6 +1,7 @@
 {
   "type": "module",
   "scripts": {
+    "test": "python3 -m unittest discover -s tests -v && node --test tests/indexnow.test.js",
     "generate:blog": "node scripts/generate-rackmath-blog.js",
     "build:blog": "python3 tools/build_blog.py",
     "build:site": "python3 tools/build_site.py",

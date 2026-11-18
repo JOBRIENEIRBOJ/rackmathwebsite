@@ -2,6 +2,17 @@
 
 This tracker follows the RackMath SEO + value build plan. Update it whenever an SEO foundation task, generated page, or conversion hook ships.
 
+## Automated URL submission — 2026-11-17
+
+- Status: Implemented and locally verified; production activation in progress
+- Requested outcome: connect automatic URL notifications for the public RackMath website after successful deployments.
+- Provider: IndexNow, Bing's recommended API for this task. Plugin discovery did not return a direct Bing Webmaster connector. Use a separate site-verification key; no Bing account-wide API credential is needed.
+- Planned files: `plugins/indexnow/`, `tools/build_dist.py`, focused Node/Python tests, `netlify.toml`, `package.json`, `.github/workflows/seo-quality.yml`, `README.md`, and this tracker.
+- Scope: production `main` deploys of `rackmath.com` only; notify meaningful new/changed/deleted canonical pages, retain accepted submission state, and skip unchanged/deploy-preview/app URLs. Initial notification is limited to the three pages updated in this session: `/`, `/tools/`, and `/tools/barbell-calculator`.
+- Local verification: all 19 Python and 11 Node tests pass. The real Netlify production-context offline build loads the plugin, validates 133 pages / 133 sitemap URLs / 137 redirects, and skips submission because it is local. Independent review found no artifact/configuration blockers. `git diff --check` passes.
+- Production setup: a separate IndexNow ownership token is configured only for production Builds; its value is not committed or logged. Remaining release checks: clean committed build, live key reachability, initial API receipt, and unchanged follow-up deployment to prove cached state persists. Submission receipt is not proof of indexing or ranking improvement.
+- Existing unrelated local changes remain excluded, as recorded below.
+
 ## Calculator SEO improvement — 2026-11-17
 
 - Status: Deployed and verified on 2026-11-17

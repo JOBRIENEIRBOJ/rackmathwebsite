@@ -94,6 +94,8 @@ FINGERPRINTED_ROOT_ASSET_PATTERN = re.compile(
 ANALYTICS_CONFIG_PATH = Path("assets/analytics-config.js")
 ANALYTICS_ENDPOINT_ENV = "RACKMATH_ANALYTICS_URL"
 ANALYTICS_ANON_KEY_ENV = "RACKMATH_ANALYTICS_ANON_KEY"
+INDEXNOW_KEY_ENV = "INDEXNOW_KEY"
+INDEXNOW_KEY_PATTERN = re.compile(r"^[0-9a-f]{32}$")
 AHREFS_SCRIPT_TAG = (
     '<script src="https://analytics.ahrefs.com/analytics.js" '
     'data-key="FiNjUoEMWXe/Cn3xIWvzxA" async></script>'
@@ -111,6 +113,13 @@ class DistBuildError(RuntimeError):
     """Raised when the deploy artifact is incomplete or unsafe."""
 
 
+def indexnow_key() -> str | None:
+    key = os.environ.get(INDEXNOW_KEY_ENV, "").strip()
+    if key and not INDEXNOW_KEY_PATTERN.fullmatch(key):
+        raise DistBuildError("INDEXNOW_KEY must be a 32-character lowercase hexadecimal site-verification token")
+    return key or None
+
+
 def relative_file_is_allowed(path: Path) -> bool:
     """Return whether a relative path is in the deploy allowlist."""
 
@@ -118,6 +127,9 @@ def relative_file_is_allowed(path: Path) -> bool:
         return False
 
     if len(path.parts) == 1:
+        key = indexnow_key()
+        if key and path.name == f"{key}.txt":
+            return True
         return path.name in ROOT_PUBLIC_FILES or bool(
             FINGERPRINTED_ROOT_ASSET_PATTERN.fullmatch(path.name)
         )
@@ -128,6 +140,46 @@ def relative_file_is_allowed(path: Path) -> bool:
     if top_level in PUBLIC_HTML_DIRECTORIES:
         return path.suffix.lower() == ".html"
     return False
+
+
+def add_indexnow_key(staging: Path) -> None:
+    key = indexnow_key()
+    if key:
+        # This ownership-verification file is intentionally public; the value
+        # is separate from any private Bing Webmaster account credential.
+        (staging / f"{key}.txt").write_text(key, encoding="utf-8")
+
+
+def indexnow_page_digest(html: str) -> str:
+    """Track page content/SEO changes without asset fingerprints or shared chrome."""
+    html = re.sub(r"<!--.*?-->", "", html, flags=re.DOTALL)
+    main = re.search(r"<main\b[^>]*>(.*?)</main>", html, re.IGNORECASE | re.DOTALL)
+    title = re.search(r"<title\b[^>]*>(.*?)</title>", html, re.IGNORECASE | re.DOTALL)
+    if not main or not title:
+        raise DistBuildError("IndexNow page manifest requires a title and main content")
+    main_content = re.sub(r"<(script|style)\b[^>]*>.*?</\1>", "", main.group(1), flags=re.IGNORECASE | re.DOTALL)
+    metadata = re.findall(r'<meta\b[^>]*(?:name=[\"\'](?:description|robots)[\"\']|property=[\"\']og:[^\"\']+[\"\'])[^>]*>', html, re.IGNORECASE)
+    schemas = re.findall(r'<script\b[^>]*type=[\"\']application/ld\+json[\"\'][^>]*>(.*?)</script>', html, re.IGNORECASE | re.DOTALL)
+    content = [title.group(1), main_content, *metadata]
+    content.extend(json.dumps(json.loads(schema), sort_keys=True) for schema in schemas)
+    return hashlib.sha256("\n".join(content).encode("utf-8")).hexdigest()
+
+
+def write_indexnow_manifest(staging: Path) -> None:
+    pages: dict[str, str] = {}
+    root = ET.parse(staging / "sitemap.xml").getroot()
+    for element in root.findall("{*}url/{*}loc"):
+        location = (element.text or "").strip()
+        parsed = urlsplit(location)
+        if parsed.scheme != "https" or parsed.netloc != "rackmath.com" or parsed.query or parsed.fragment:
+            raise DistBuildError("IndexNow manifest only supports canonical rackmath.com URLs")
+        source = next((path for path in route_candidates(staging, unquote(parsed.path)) if path.is_file()), None)
+        if source is None or source.suffix != ".html":
+            raise DistBuildError("IndexNow sitemap entry must resolve to public HTML")
+        pages[location] = indexnow_page_digest(source.read_text(encoding="utf-8"))
+    destination = ROOT / ".netlify" / "indexnow-manifest.json"
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(json.dumps({"version": 1, "host": "rackmath.com", "pages": pages}, sort_keys=True), encoding="utf-8")
 
 
 def copy_public_file(source: Path, destination: Path) -> None:
@@ -513,6 +565,11 @@ def validate_dist(dist: Path = DIST) -> int:
 
     errors: list[str] = []
     relative_files: set[Path] = set()
+    key = indexnow_key()
+    if key:
+        key_file = dist / f"{key}.txt"
+        if not key_file.is_file() or key_file.is_symlink() or key_file.read_text(encoding="utf-8") != key:
+            errors.append("IndexNow ownership file is missing or does not match the configured key")
     for path in dist.rglob("*"):
         relative = path.relative_to(dist)
         if path.is_symlink():
@@ -607,6 +664,8 @@ def stage_dist() -> int:
         for source in sorted(sitemap_html_sources()):
             copy_public_file(source, staging / source.relative_to(ROOT))
 
+        add_indexnow_key(staging)
+        write_indexnow_manifest(staging)
         add_ahrefs_analytics(staging)
         add_analytics_runtime_config(staging)
         fingerprint_public_assets(staging)

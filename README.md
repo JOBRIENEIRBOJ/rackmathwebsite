@@ -43,6 +43,45 @@ public anon/publishable key, never a service-role key or another secret. In
 Netlify, do not mark this public key as a secret value because secret scanning
 correctly rejects secret values found in deploy output.
 
+## Automatic URL submission
+
+Production deploys use a local Netlify IndexNow plugin to notify Bing and other
+participating search engines about new, changed, and removed public pages.
+This does not submit URLs to Google; keep the existing Google sitemap submission.
+
+The plugin runs only after a successful remote production deploy of `main` on
+the `rackmathlp` project. It checks the live ownership file, submits canonical
+`https://rackmath.com/` URLs, and remembers accepted page hashes in Netlify's
+build cache. Unchanged pages, previews, asset-only changes, and `.app` URLs are
+excluded. The first run submits only the homepage, tools hub, and barbell
+calculator changed during the November 17 SEO update, then seeds its baseline.
+
+`INDEXNOW_KEY` is a separate 32-character lowercase hexadecimal ownership token
+configured in Netlify's **production / Builds** environment. The build generates
+`dist/<key>.txt`, whose contents must equal the key. This file is intentionally
+public for ownership verification; it is not a Bing account API credential.
+Do not put a Bing Webmaster account API key in this variable or commit the value
+to source. Configure it as a non-secret build value because the protocol requires
+the generated ownership file to be public. Local and CI builds without the
+variable do not publish an ownership file or submit requests.
+
+Page hashes and submission state stay in ignored `.netlify/` files, outside the
+public deploy allowlist. HTTP 200 means received; HTTP 202 means received with
+ownership validation pending. Neither establishes indexing or ranking changes.
+Submission failures appear in the Netlify deploy summary/log without taking the
+website offline, and leave the previous state available for retry on a later
+successful deploy. Clearing Netlify's build cache resets the baseline; it does
+not trigger a full-site submission.
+
+Run `npm test` for generator, artifact, and mocked API checks. After setup, confirm
+the IndexNow result in the Netlify deploy log and Bing Webmaster Tools' IndexNow
+report. Removing `[[context.production.plugins]]` for `./plugins/indexnow` stops
+automatic notifications. Keep the sitemap available independently.
+
+References: [Bing URL submission](https://www.bing.com/webmasters/help/?topicid=62f2860b),
+[IndexNow protocol](https://www.indexnow.org/documentation),
+[Netlify plugin lifecycle](https://docs.netlify.com/extend/develop-and-share/develop-build-plugins/).
+
 ## Blog workflow
 
 Blog posts live in `content/blog` as Markdown files with front matter. Create a draft with:
