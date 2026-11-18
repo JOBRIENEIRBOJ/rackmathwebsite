@@ -4,7 +4,7 @@ This tracker follows the RackMath SEO + value build plan. Update it whenever an 
 
 ## Barbell plate guide and reference chart — 2026-11-18
 
-- Status: Implemented and verified locally; production release in progress
+- Status: Deployed and verified on 2026-11-18
 - Requested outcome: improve the existing barbell plate guide into a useful resource that coaches and equipment guides can reference.
 - Scope: preserve the existing canonical article URL; add original, accessible loading diagrams, a printable lb/kg reference chart, clearer examples and calculator links, and accurate modification metadata. Keep the existing site design and app behavior.
 - Implementation: expanded the existing article with two original accessible loading diagrams, 24 lb/kg table rows, a one-page printable PDF, and examples for different bars and limited plate sets. Updated the description, visible update date, BlogPosting modification date, blog listing, and sitemap while preserving the canonical URL.
@@ -12,7 +12,9 @@ This tracker follows the RackMath SEO + value build plan. Update it whenever an 
 - Content review: all 24 rows and additional examples independently checked. Explicitly exclude collars from table totals, explain that available sizes do not represent physical inventory counts, and note that an alternative plate combination may reach a target missed by largest-first selection. Removed an unsupported app inventory/collar claim from the draft.
 - Verification: all 40 automated tests pass (29 Python, 11 Node). Renderer comparison confirms unchanged output for all 61 original article bodies. Build validates 133 pages / 133 sitemap URLs / 137 redirects. Desktop 1440px, mobile 390px, and narrow 320px browser checks pass: diagrams, semantic tables, all row arithmetic, metadata, PDF retrieval, calculator navigation, no horizontal overflow or script errors. Screenshots reviewed in `/tmp/rackmath-guide-20261118/`.
 - PDF verification: one US Letter page; 24 correct rows; clickable calculator link; rendered image visually checked; repeat asset generation is byte-identical. QA renders are in `/tmp/rackmath-guide-assets-qa/`.
-- Release check: manifest comparison identifies only `/blog` and this guide for IndexNow notification. Remaining: clean committed build, live article/assets and sitemap, successful Netlify deployment and IndexNow receipt.
+- Release: code commit `3bc16f30532e8eb93395f50d0ede816cdf976775` passed a clean committed build, all 40 tests, staged-artifact validation, and generated-file parity. GitHub SEO build quality and scheduled blog workflows passed. Netlify production deploy `6afdb1c9ad274ac17ad2610b` is ready.
+- Live verification: article returns HTTP 200 with the expected canonical and 2026-11-18 modification date, two figures and two semantic tables. Both SVGs and the PDF return HTTP 200 and exactly match committed assets. The sitemap retains 133 URLs and the correct guide date; the private asset-authoring script returns HTTP 404.
+- IndexNow: manifest comparison identifies only `/blog` and this guide. The matching production plugin run succeeded with 2 URLs submitted, 0 removed, and HTTP 200 received. Receipt does not establish indexing or ranking improvement.
 - Existing unrelated local changes remain excluded: deleted screenshot, six untracked images, Search Console ZIP, and `supabase/`.
 
 ## Automated URL submission — 2026-11-17
