@@ -4,13 +4,16 @@ This tracker follows the RackMath SEO + value build plan. Update it whenever an 
 
 ## Automated URL submission — 2026-11-17
 
-- Status: Implemented and locally verified; production activation in progress
+- Status: Deployed and initial submission verified on 2026-11-17
 - Requested outcome: connect automatic URL notifications for the public RackMath website after successful deployments.
 - Provider: IndexNow, Bing's recommended API for this task. Plugin discovery did not return a direct Bing Webmaster connector. Use a separate site-verification key; no Bing account-wide API credential is needed.
-- Planned files: `plugins/indexnow/`, `tools/build_dist.py`, focused Node/Python tests, `netlify.toml`, `package.json`, `.github/workflows/seo-quality.yml`, `README.md`, and this tracker.
+- Changed files: `plugins/indexnow/`, `tools/build_dist.py`, focused Node/Python tests, `netlify.toml`, `package.json`, `.github/workflows/seo-quality.yml`, `.gitignore`, `README.md`, and this tracker.
 - Scope: production `main` deploys of `rackmath.com` only; notify meaningful new/changed/deleted canonical pages, retain accepted submission state, and skip unchanged/deploy-preview/app URLs. Initial notification is limited to the three pages updated in this session: `/`, `/tools/`, and `/tools/barbell-calculator`.
 - Local verification: all 19 Python and 11 Node tests pass. The real Netlify production-context offline build loads the plugin, validates 133 pages / 133 sitemap URLs / 137 redirects, and skips submission because it is local. Independent review found no artifact/configuration blockers. `git diff --check` passes.
-- Production setup: a separate IndexNow ownership token is configured only for production Builds; its value is not committed or logged. Remaining release checks: clean committed build, live key reachability, initial API receipt, and unchanged follow-up deployment to prove cached state persists. Submission receipt is not proof of indexing or ranking improvement.
+- Clean committed release: build, all 30 tests, dist validation, and generated-file diff passed. GitHub SEO build quality passed for code commit `2555b489cb95ec6bbfce6568f839e2babc4e96d8`.
+- Production setup: a separate IndexNow ownership token is configured only for production Builds; its value is not committed or logged. The live key file returns HTTP 200 and exactly matches the configured token. The private manifest, submission state, and plugin source return HTTP 404.
+- Production evidence: Netlify deploy `6afd0d0bf3bf7ffd6fc030c6` is ready for code commit `2555b489cb95ec6bbfce6568f839e2babc4e96d8`. Its successful `onSuccess` plugin report records 3 URLs submitted, 0 removed, HTTP 202 (ownership validation pending), and the initial baseline saved. Submission receipt is not proof of indexing or ranking improvement.
+- Follow-up check: this documentation-only deployment should report `No page content changes; no URLs submitted.` Verify the report for its exact deploy ID using `netlify api getLatestPluginRuns` with the site ID and package `./plugins/indexnow` to confirm cached state persists.
 - Existing unrelated local changes remain excluded, as recorded below.
 
 ## Calculator SEO improvement — 2026-11-17
