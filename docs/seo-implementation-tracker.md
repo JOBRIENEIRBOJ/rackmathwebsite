@@ -2,6 +2,18 @@
 
 This tracker follows the RackMath SEO + value build plan. Update it whenever an SEO foundation task, generated page, or conversion hook ships.
 
+## Practical progression and PR articles — 2026-11-18
+
+- Status: Written and verified locally; production release in progress
+- Requested outcome: two genuinely useful articles explaining when to increase weight and how personal records work, including expectations and sensible increments. Speak to an intelligent beginner with very simple examples and a reassuring tone.
+- Scope: two new original Markdown posts, their generated HTML, blog listings/archive, sitemap/redirects, and this tracker. Keep site styling and app behavior unchanged.
+- Editorial requirements: performance-based decisions rather than promised weekly gains; distinguish PRs from one-rep max testing, small increments from universal safety guarantees, and example training logs from prescribed schedules. Verify any RackMath-specific PR claims against current code.
+- Implementation: published-source drafts for `/blog/when-to-increase-weight-lifting` and `/blog/how-personal-records-work`, with original workout/comparison tables, cross-links, calculator links, and reader-friendly source notes. Training examples are explicitly illustrative; the PR article includes verified History / Insights guidance and distinguishes general rep progress from RackMath's stored categories.
+- Sources: ACSM 2026 position stand (PubMed 41843416), Chaves et al. 2024 progression trial (PubMed 38286426), and Mitter et al. 2022 reproducibility study (PLOS ONE 10.1371/journal.pone.0268074). Source claims are limited to the findings; no promised weekly gains or universal safe increment.
+- Verification: independent factual/product/arithmetic review passed; all 40 existing automated tests passed. Build validates 135 pages / 135 sitemap URLs / 139 redirects. Desktop 1440px, mobile 390px, and narrow 320px checks passed for tables, dates/canonicals, citations and return links, article cross-links, blog listing, no horizontal overflow or script errors. Screenshots reviewed in `/tmp/rackmath-articles-20261118/`. Source URLs use descriptive labels to fit narrow screens.
+- Release checks remaining: clean committed build, live pages/listings/sitemap, successful deployment and IndexNow receipt. Manifest comparison identifies exactly the two new articles, `/blog`, and `/blog/archive` for notification.
+- Existing unrelated local changes remain excluded.
+
 ## Barbell plate guide and reference chart — 2026-11-18
 
 - Status: Deployed and verified on 2026-11-18
