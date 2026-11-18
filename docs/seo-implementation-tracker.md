@@ -2,6 +2,19 @@
 
 This tracker follows the RackMath SEO + value build plan. Update it whenever an SEO foundation task, generated page, or conversion hook ships.
 
+## Barbell plate guide and reference chart — 2026-11-18
+
+- Status: Implemented and verified locally; production release in progress
+- Requested outcome: improve the existing barbell plate guide into a useful resource that coaches and equipment guides can reference.
+- Scope: preserve the existing canonical article URL; add original, accessible loading diagrams, a printable lb/kg reference chart, clearer examples and calculator links, and accurate modification metadata. Keep the existing site design and app behavior.
+- Implementation: expanded the existing article with two original accessible loading diagrams, 24 lb/kg table rows, a one-page printable PDF, and examples for different bars and limited plate sets. Updated the description, visible update date, BlogPosting modification date, blog listing, and sitemap while preserving the canonical URL.
+- Build support: added safe standalone asset images and semantic tables to the Markdown renderer, scoped figure/table styles, an individually approved public PDF, and download-aware SEO validation. A standalone deterministic authoring script can regenerate the assets; production adds no dependencies.
+- Content review: all 24 rows and additional examples independently checked. Explicitly exclude collars from table totals, explain that available sizes do not represent physical inventory counts, and note that an alternative plate combination may reach a target missed by largest-first selection. Removed an unsupported app inventory/collar claim from the draft.
+- Verification: all 40 automated tests pass (29 Python, 11 Node). Renderer comparison confirms unchanged output for all 61 original article bodies. Build validates 133 pages / 133 sitemap URLs / 137 redirects. Desktop 1440px, mobile 390px, and narrow 320px browser checks pass: diagrams, semantic tables, all row arithmetic, metadata, PDF retrieval, calculator navigation, no horizontal overflow or script errors. Screenshots reviewed in `/tmp/rackmath-guide-20261118/`.
+- PDF verification: one US Letter page; 24 correct rows; clickable calculator link; rendered image visually checked; repeat asset generation is byte-identical. QA renders are in `/tmp/rackmath-guide-assets-qa/`.
+- Release check: manifest comparison identifies only `/blog` and this guide for IndexNow notification. Remaining: clean committed build, live article/assets and sitemap, successful Netlify deployment and IndexNow receipt.
+- Existing unrelated local changes remain excluded: deleted screenshot, six untracked images, Search Console ZIP, and `supabase/`.
+
 ## Automated URL submission — 2026-11-17
 
 - Status: Deployed and initial submission verified on 2026-11-17

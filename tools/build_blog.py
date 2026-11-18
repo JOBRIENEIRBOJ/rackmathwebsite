@@ -220,6 +220,69 @@ INLINE_TOKEN = re.compile(
 )
 FOOTNOTE_DEFINITION = re.compile(r"^ {0,3}\[\^([A-Za-z0-9_-]+)\]:\s*(.*)$")
 ORDERED_LIST_ITEM = re.compile(r"^\d+[.)]\s+(.+)$")
+STANDALONE_IMAGE = re.compile(
+    r'^!\[((?:\\.|[^\]\\])*)\]\(([^()\s]+)(?:[ \t]+"((?:\\.|[^"\\])*)")?\)$'
+)
+LOCAL_IMAGE_PATH = re.compile(
+    r"/assets/(?:[A-Za-z0-9_-][A-Za-z0-9_.-]*/)*"
+    r"[A-Za-z0-9_-][A-Za-z0-9_.-]*\.(?:svg|png|jpe?g|webp|gif|avif)",
+    re.IGNORECASE,
+)
+
+
+def render_image(line: str) -> str | None:
+    """Render standalone images from public assets, with no active URL schemes."""
+    match = STANDALONE_IMAGE.fullmatch(line)
+    if match is None:
+        return None
+    alt, source, caption = match.groups()
+    if LOCAL_IMAGE_PATH.fullmatch(source) is None:
+        return f"<p>{html.escape(line)}</p>"
+
+    def escaped_label(value: str) -> str:
+        return html.escape(re.sub(r"\\([\\\[\]\"'])", r"\1", value), quote=True)
+
+    figure = [
+        '<figure class="blog-figure">',
+        f'  <img src="{html.escape(source, quote=True)}" alt="{escaped_label(alt)}" '
+        'loading="lazy" decoding="async">',
+    ]
+    if caption is not None:
+        figure.append(f"  <figcaption>{escaped_label(caption)}</figcaption>")
+    figure.append("</figure>")
+    return "\n".join(figure)
+
+
+def table_cells(line: str) -> list[str] | None:
+    """Split a pipe row, allowing optional outside pipes and escaped cell pipes."""
+    line = line.strip()
+    cells: list[str] = []
+    cell: list[str] = []
+    index = 0
+    ended_with_separator = False
+    while index < len(line):
+        character = line[index]
+        ended_with_separator = False
+        if character == "\\" and index + 1 < len(line) and line[index + 1] in "\\|":
+            cell.append(line[index + 1])
+            index += 2
+            continue
+        if character == "|":
+            cells.append("".join(cell).strip())
+            cell.clear()
+            ended_with_separator = True
+        else:
+            cell.append(character)
+        index += 1
+
+    if not cells:
+        return None
+    cells.append("".join(cell).strip())
+    if line.startswith("|"):
+        cells.pop(0)
+    if ended_with_separator:
+        cells.pop()
+    return cells or None
 
 
 def render_emphasis(text: str) -> str:
@@ -392,14 +455,20 @@ def render_markdown(markdown: str) -> str:
         flush_list()
         flush_quote()
 
-    for raw_line in lines:
-        line = raw_line.strip()
+    index = 0
+    while index < len(lines):
+        line = lines[index].strip()
+        index += 1
         if not line:
             flush_blocks()
             continue
 
         ordered_item = ORDERED_LIST_ITEM.match(line)
-        if line.startswith("### "):
+        image = render_image(line)
+        if image is not None:
+            flush_blocks()
+            html_lines.append(image)
+        elif line.startswith("### "):
             flush_blocks()
             html_lines.append(f"<h3>{inline(line[4:])}</h3>")
         elif line.startswith("## "):
@@ -427,6 +496,38 @@ def render_markdown(markdown: str) -> str:
             list_tag = "ol"
             list_items.append(ordered_item.group(1))
         else:
+            headers = table_cells(line)
+            separators = table_cells(lines[index]) if index < len(lines) else None
+            if (
+                headers
+                and separators
+                and len(headers) == len(separators)
+                and all(re.fullmatch(r":?-{3,}:?", cell) for cell in separators)
+            ):
+                flush_blocks()
+                index += 1
+                html_lines.extend([
+                    '<div class="blog-table-wrap" role="region" tabindex="0" '
+                    'aria-label="Table scroll region">',
+                    "<table>",
+                    "<thead>",
+                    "<tr>" + "".join(f'<th scope="col">{inline(cell)}</th>' for cell in headers) + "</tr>",
+                    "</thead>",
+                    "<tbody>",
+                ])
+                while index < len(lines):
+                    row = lines[index].strip()
+                    if row.startswith(("# ", "## ", "### ", ">", "- ", "![")) or ORDERED_LIST_ITEM.match(row):
+                        break
+                    cells = table_cells(row)
+                    if cells is None:
+                        break
+                    index += 1
+                    # Markdown tables pad missing cells and ignore extra cells.
+                    cells = (cells + [""] * len(headers))[:len(headers)]
+                    html_lines.append("<tr>" + "".join(f"<td>{inline(cell)}</td>" for cell in cells) + "</tr>")
+                html_lines.extend(["</tbody>", "</table>", "</div>"])
+                continue
             flush_list()
             flush_quote()
             paragraph.append(line)

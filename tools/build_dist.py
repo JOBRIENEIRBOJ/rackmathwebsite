@@ -67,6 +67,10 @@ PUBLIC_ASSET_SUFFIXES = frozenset(
     }
 )
 
+# Downloadable documents are approved individually, rather than exposing every
+# PDF that may be present in the source checkout.
+PUBLIC_DOWNLOAD_FILES = frozenset({Path("assets/guides/barbell-plate-reference.pdf")})
+
 REQUIRED_PUBLIC_FILES = frozenset(
     {
         "_redirects",
@@ -136,7 +140,7 @@ def relative_file_is_allowed(path: Path) -> bool:
 
     top_level = path.parts[0]
     if top_level == "assets":
-        return path.suffix.lower() in PUBLIC_ASSET_SUFFIXES
+        return path.suffix.lower() in PUBLIC_ASSET_SUFFIXES or path in PUBLIC_DOWNLOAD_FILES
     if top_level in PUBLIC_HTML_DIRECTORIES:
         return path.suffix.lower() == ".html"
     return False
@@ -657,7 +661,7 @@ def stage_dist() -> int:
                 raise DistBuildError(
                     f"{ANALYTICS_CONFIG_PATH} is generated at build time and must not exist in source"
                 )
-            if source.suffix.lower() not in PUBLIC_ASSET_SUFFIXES:
+            if not relative_file_is_allowed(relative):
                 raise DistBuildError(f"Asset type is not allowlisted: {relative}")
             copy_public_file(source, staging / relative)
 

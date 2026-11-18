@@ -67,6 +67,149 @@ class MarkdownRendererTests(unittest.TestCase):
         self.assertIn("<em>emphasis</em>", rendered)
         self.assertIn("<strong>also strong</strong>", rendered)
 
+    def test_renders_standalone_asset_images_with_optional_captions(self) -> None:
+        rendered = build_blog.render_markdown(
+            '![Balanced bar](/assets/guides/balanced-bar.svg "Load both sides equally.")\n\n'
+            '![Plate example](/assets/guides/plate-example.webp)'
+        )
+
+        self.assertEqual(2, rendered.count('<figure class="blog-figure">'))
+        self.assertIn(
+            '<img src="/assets/guides/balanced-bar.svg" alt="Balanced bar" '
+            'loading="lazy" decoding="async">', rendered,
+        )
+        self.assertIn('<figcaption>Load both sides equally.</figcaption>', rendered)
+        self.assertEqual(1, rendered.count("<figcaption>"))
+        self.assertNotIn("<p><figure", rendered)
+
+    def test_image_labels_and_captions_are_escaped_text(self) -> None:
+        rendered = build_blog.render_markdown(
+            r'![Bar "left" <left> & \[right\]](/assets/guides/bar.svg '
+            r'"Keep \"left\" & <script> together")'
+        )
+
+        self.assertIn('alt="Bar &quot;left&quot; &lt;left&gt; &amp; [right]"', rendered)
+        self.assertIn(
+            '<figcaption>Keep &quot;left&quot; &amp; &lt;script&gt; together</figcaption>',
+            rendered,
+        )
+        self.assertNotIn("<script>", rendered)
+
+    def test_images_reject_remote_schemes_traversal_and_nonimage_assets(self) -> None:
+        for source in [
+            "https://example.com/bar.svg", "//example.com/bar.svg", "javascript:alert",
+            "data:image/svg+xml;base64,PHN2Zz4=", "assets/guides/bar.svg",
+            "/private/bar.svg", "/assets/../private.svg", "/assets/guides/../../private.svg",
+            "/assets/%2e%2e/private.svg", "/assets/guides%2fbar.svg",
+            "/assets/guides/bar.svg?redirect=elsewhere", "/assets/guides/bar.svg#fragment",
+            r"/assets/guides\bar.svg", "/assets//guides/bar.svg",
+            "/assets/guides/script.js", "/assets/guides/page.html",
+            '/assets/guides/bar.svg"onerror="alert',
+        ]:
+            with self.subTest(source=source):
+                rendered = build_blog.render_markdown(f'![Example]({source})')
+                self.assertNotIn("<img", rendered)
+                self.assertNotIn("<figure", rendered)
+                self.assertNotIn("<script", rendered)
+                self.assertNotIn("<a ", rendered)
+
+    def test_renders_accessible_pipe_tables_and_inline_cell_content(self) -> None:
+        rendered = build_blog.render_markdown(
+            "Total | Bar | Each side\n"
+            ":--- | :---: | ---:\n"
+            "**135 lb** | 45 lb | [45 lb](/tools/barbell-calculator)\n"
+            "185 lb | 45 lb | 70 lb"
+        )
+
+        self.assertIn(
+            '<div class="blog-table-wrap" role="region" tabindex="0" '
+            'aria-label="Table scroll region">', rendered,
+        )
+        self.assertIn(
+            '<thead>\n<tr><th scope="col">Total</th><th scope="col">Bar</th>'
+            '<th scope="col">Each side</th></tr>\n</thead>', rendered,
+        )
+        self.assertIn('<td><strong>135 lb</strong></td>', rendered)
+        self.assertIn('<td><a href="/tools/barbell-calculator">45 lb</a></td>', rendered)
+        self.assertEqual(3, rendered.count('<tr>'))
+        self.assertTrue(rendered.endswith('</tbody>\n</table>\n</div>'))
+
+    def test_table_cells_escape_html_and_allow_escaped_pipes(self) -> None:
+        rendered = build_blog.render_markdown(
+            '| <script> | Notes |\n| --- | --- |\n'
+            r'| Left \| right | <img src=x onerror="alert"> & "quote" |' '\n'
+            '| Safe | [bad](javascript:alert) |'
+        )
+
+        self.assertIn('<th scope="col">&lt;script&gt;</th>', rendered)
+        self.assertIn('<td>Left | right</td>', rendered)
+        self.assertIn('&lt;img src=x onerror=&quot;alert&quot;&gt; &amp; &quot;quote&quot;', rendered)
+        self.assertIn('<td>bad</td>', rendered)
+        self.assertNotIn('<script>', rendered)
+        self.assertNotIn('<img ', rendered)
+        self.assertNotIn('javascript:', rendered)
+
+    def test_table_pads_short_rows_and_ignores_excess_cells(self) -> None:
+        rendered = build_blog.render_markdown(
+            '| A | B | C |\n| --- | --- | --- |\n'
+            '| 1 | 2 |\n| 3 | 4 | 5 | Extra |'
+        )
+        self.assertIn('<tr><td>1</td><td>2</td><td></td></tr>', rendered)
+        self.assertIn('<tr><td>3</td><td>4</td><td>5</td></tr>', rendered)
+        self.assertNotIn('Extra', rendered)
+
+    def test_table_requires_a_valid_matching_separator_row(self) -> None:
+        for markdown in [
+            '| A | B |\n| text | text |',
+            '| A | B |\n| --- |',
+            '| A | B |\n| -- | --- |',
+            'Ordinary prose with a | pipe.',
+        ]:
+            with self.subTest(markdown=markdown):
+                rendered = build_blog.render_markdown(markdown)
+                self.assertNotIn('<table>', rendered)
+                self.assertTrue(rendered.startswith('<p>'))
+
+    def test_images_and_tables_preserve_adjacent_block_boundaries(self) -> None:
+        rendered = build_blog.render_markdown(
+            'Before.\n![Bar](/assets/guides/bar.svg)\n'
+            '> Quoted | text.\n'
+            '| A | B |\n| --- | --- |\n| 1 | 2 |\n'
+            '## Heading | text\n'
+            '- List | item\n'
+            '| C | D |\n| --- | --- |\n| 3 | 4 |\n'
+            '![Plates | both sides](/assets/guides/plates.svg)\n'
+            '1. Finish | safely\nAfter.'
+        )
+
+        self.assertTrue(rendered.startswith('<p>Before.</p>\n<figure'))
+        self.assertIn('</figure>\n<blockquote><p>Quoted | text.</p></blockquote>\n<div', rendered)
+        self.assertIn('</table>\n</div>\n<h2>Heading | text</h2>\n<ul>', rendered)
+        self.assertIn('</ul>\n<div', rendered)
+        self.assertIn('</table>\n</div>\n<figure', rendered)
+        self.assertIn('</figure>\n<ol>\n  <li>Finish | safely</li>\n</ol>\n<p>After.</p>', rendered)
+        self.assertEqual(2, rendered.count('<table>'))
+
+    def test_table_footnotes_keep_reference_links_and_backlinks(self) -> None:
+        rendered = build_blog.render_markdown(
+            '| Weight | Note |\n| --- | --- |\n| 135 lb | Check the bar.[^bar] |\n\n'
+            '[^bar]: Bars vary in weight.'
+        )
+        self.assertIn('<td>Check the bar.<sup id="fnref-bar">', rendered)
+        self.assertIn('class="footnote-backref" href="#fnref-bar"', rendered)
+
+    def test_existing_block_output_is_unchanged_without_images_or_tables(self) -> None:
+        self.assertEqual(
+            '<p>Intro <strong>bold</strong>.</p>\n'
+            '<h2>Steps</h2>\n<ol>\n  <li>One</li>\n  <li>Two</li>\n</ol>\n'
+            '<blockquote><p>Be careful.</p></blockquote>\n'
+            '<p>Next paragraph continued.</p>',
+            build_blog.render_markdown(
+                'Intro **bold**.\n\n## Steps\n1. One\n2. Two\n'
+                '> Be careful.\nNext paragraph\ncontinued.'
+            ),
+        )
+
     def test_renders_footnote_references_definitions_links_and_backrefs(self) -> None:
         rendered = build_blog.render_markdown(
             """A supported claim.[^1]

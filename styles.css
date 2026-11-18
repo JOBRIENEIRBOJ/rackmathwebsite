@@ -1579,6 +1579,80 @@ details p {
   color: #202833;
 }
 
+.blog-post-content .blog-figure {
+  margin: 28px 0;
+}
+
+.blog-post-content .blog-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.blog-post-content .blog-figure figcaption {
+  margin-top: 10px;
+  color: #4a5664;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.blog-post-content .blog-table-wrap {
+  margin: 20px 0 28px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.blog-post-content .blog-table-wrap:focus-visible {
+  outline: 3px solid var(--brand-blue);
+  outline-offset: 3px;
+}
+
+.blog-post-content .blog-table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #28313b;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  font-variant-numeric: tabular-nums;
+}
+
+.blog-post-content .blog-table-wrap th,
+.blog-post-content .blog-table-wrap td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.blog-post-content .blog-table-wrap th {
+  background: #edf7fd;
+  color: #163c56;
+  font-weight: 750;
+  vertical-align: bottom;
+}
+
+.blog-post-content .blog-table-wrap tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.blog-post-content .blog-table-wrap tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+@media (max-width: 480px) {
+  .blog-post-content .blog-table-wrap table {
+    font-size: 0.8rem;
+  }
+
+  .blog-post-content .blog-table-wrap th,
+  .blog-post-content .blog-table-wrap td {
+    padding: 10px 8px;
+  }
+}
+
 .blog-post-content sup {
   margin-left: 2px;
   font-size: 0.72em;

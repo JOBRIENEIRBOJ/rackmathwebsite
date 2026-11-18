@@ -12,6 +12,7 @@ from urllib.parse import parse_qsl, urljoin, urlsplit
 from xml.etree import ElementTree as ET
 
 import build_blog
+from build_dist import PUBLIC_DOWNLOAD_FILES
 from site_shared import SITE_NAME
 
 
@@ -374,6 +375,12 @@ def main() -> int:
         for href in parser.anchors:
             target_path = internal_path(href, canonical_url)
             if target_path is None:
+                continue
+            download_path = Path(target_path.lstrip("/"))
+            if download_path in PUBLIC_DOWNLOAD_FILES:
+                download = ROOT / download_path
+                if not download.is_file() or download.is_symlink():
+                    errors.append(f"{label}: approved download is missing or unsafe: {href}")
                 continue
             if ".html" in target_path:
                 errors.append(f"{label}: internal link uses .html: {href}")
