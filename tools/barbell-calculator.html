@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Barbell Calculator | Free Barbell Calculator &amp; Visualizer</title>
-    <meta name="description" content="Enter your target weight and instantly see which plates to load on each side. Free calculator for lb, kg, common bars, and standard plate sizes.">
+    <title>Barbell Calculator: Plates per Side in lb &amp; kg | RackMath</title>
+    <meta name="description" content="Calculate which plates to load on each side of your barbell in lb or kg. Choose your bar weight and available plate sizes. Free visual calculator, no signup needed.">
     <link rel="canonical" href="https://rackmath.com/tools/barbell-calculator">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="RackMath">
-    <meta property="og:title" content="Barbell Calculator | Free Barbell Calculator &amp; Visualizer">
-    <meta property="og:description" content="Enter your target weight and instantly see which plates to load on each side. Free calculator for lb, kg, common bars, and standard plate sizes.">
+    <meta property="og:title" content="Barbell Calculator: Plates per Side in lb &amp; kg | RackMath">
+    <meta property="og:description" content="Calculate which plates to load on each side of your barbell in lb or kg. Choose your bar weight and available plate sizes. Free visual calculator, no signup needed.">
     <meta property="og:url" content="https://rackmath.com/tools/barbell-calculator">
     <meta property="og:image" content="https://rackmath.com/assets/rackmath-app-screenshot.png">
     <meta property="og:image:alt" content="RackMath barbell calculator app preview">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Barbell Calculator | Free Barbell Calculator &amp; Visualizer">
-    <meta name="twitter:description" content="Enter your target weight and instantly see which plates to load on each side. Free calculator for lb, kg, common bars, and standard plate sizes.">
+    <meta name="twitter:title" content="Barbell Calculator: Plates per Side in lb &amp; kg | RackMath">
+    <meta name="twitter:description" content="Calculate which plates to load on each side of your barbell in lb or kg. Choose your bar weight and available plate sizes. Free visual calculator, no signup needed.">
     <meta name="twitter:image" content="https://rackmath.com/assets/rackmath-app-screenshot.png">
     <meta name="twitter:image:alt" content="RackMath barbell calculator app preview">
     <meta name="theme-color" content="#0a6dff">
@@ -56,7 +56,7 @@
       "applicationCategory": "HealthApplication",
       "operatingSystem": "Web",
       "url": "https://rackmath.com/tools/barbell-calculator",
-      "description": "Enter your target weight and instantly see which plates to load on each side. Free calculator for lb, kg, common bars, and standard plate sizes.",
+      "description": "Calculate which plates to load on each side of your barbell in lb or kg. Choose your bar weight and available plate sizes. Free visual calculator, no signup needed.",
       "offers": {
             "@type": "Offer",
             "price": "0",
@@ -95,10 +95,18 @@
             },
             {
                   "@type": "Question",
+                  "name": "Does the target weight include the bar?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Enter the total weight of the bar plus all plates on both sides. For 225 lb with a 45 lb bar, load 90 lb per side: two 45 lb plates on each side."
+                  }
+            },
+            {
+                  "@type": "Question",
                   "name": "Does the free calculator include collars or specialty bars?",
                   "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "The free web calculator uses only the listed bars and plate sizes and does not add collar weight. Use RackMath's custom equipment setup for collars, specialty bars, or other plate sizes."
+                        "text": "Choose a listed bar or enter a custom bar weight. The free calculator uses the selected plate sizes, assumes enough plates of each size, and does not add collar weight. Use RackMath's custom equipment setup for collars, other plate sizes, or a finite plate inventory."
                   }
             }
       ]
@@ -175,7 +183,7 @@
       <section class="page-hero seo-hero">
         <p class="eyebrow">Free barbell calculator</p>
         <h1>Barbell Calculator</h1>
-        <p>Enter your target weight, choose pounds or kilograms, select your bar and available plate sizes, and see what to load on each side.</p>
+        <p>Use this free barbell plate calculator to see what to load on each side. Enter the total weight including the bar, then choose lb or kg, your bar weight, and available plate sizes. No signup needed.</p>
       </section>
 
       <section class="rm-free-calculator" id="barbell-plate-calculator" data-rm-calculator aria-label="Free RackMath barbell calculator">
@@ -358,8 +366,9 @@
       <section class="section seo-content-grid">
         <article>
           <p class="eyebrow">How it works</p>
-          <h2>Calculate plates without doing gym-floor arithmetic.</h2>
+          <h2>How to calculate barbell weight and plates per side.</h2>
           <p>RackMath subtracts the bar weight from your target weight, divides the remaining load across both sleeves, and builds a largest-to-smallest stack from the plates you selected.</p>
+          <p><strong>Plate weight per side = (total target weight − bar weight) ÷ 2.</strong> For 225 lb on a 45 lb bar: (225 − 45) ÷ 2 = 90 lb per side, or two 45 lb plates on each side. For 100 kg on a 20 kg bar: (100 − 20) ÷ 2 = 40 kg per side, or two 20 kg plates on each side.</p>
           <p>The free calculator loads selected plates from largest to smallest. If that stack leaves a remainder, it shows the lower total produced by that calculation. See <a href="../blog/how-to-calculate-plates-on-a-barbell">how to calculate plates on a barbell</a> for the full formula and worked examples.</p>
         </article>
         <article>
@@ -367,6 +376,7 @@
           <h2>Use the weights that are actually on your bar.</h2>
           <p>The free calculator includes Olympic, standard, training, and common specialty bars, plus a custom bar-weight option and standard plates down to 2.5 lb or 1.25 kg. It assumes each selected plate size is available as needed; it does not count a finite inventory.</p>
           <p>Collars and finite plate counts are not added in this free tool. Check <a href="../blog/what-does-the-bar-weigh">what your bar weighs</a>, then use the <a href="../features/custom-plate-calculator">custom equipment setup</a> when collars, unlisted fractional plates, or available plate counts differ. Follow the <a href="../blog/the-beginners-guide-to-loading-a-barbell">barbell loading and safety guide</a> while changing plates.</p>
+          <p>Need to estimate a max or plan lighter sets first? Browse all <a href="../tools/">weight lifting calculators</a>, including the <a href="../tools/one-rep-max-calculator">one-rep max calculator</a> and <a href="../tools/warmup-set-calculator">warmup set calculator</a>.</p>
         </article>
       </section>
 
@@ -422,8 +432,12 @@
           <p>The calculator loads selected plates from largest to smallest. If that stack leaves a remainder, it shows the lower weight produced by that calculation so you can adjust the set.</p>
         </details>
         <details>
+          <summary>Does the target weight include the bar?</summary>
+          <p>Yes. Enter the total weight of the bar plus all plates on both sides. For 225 lb with a 45 lb bar, load 90 lb per side: two 45 lb plates on each side.</p>
+        </details>
+        <details>
           <summary>Does the free calculator include collars or specialty bars?</summary>
-          <p>The free web calculator uses only the listed bars and plate sizes and does not add collar weight. Use RackMath's <a href="../features/custom-plate-calculator">custom equipment setup</a> for collars, specialty bars, other fractional plates, or a finite plate inventory.</p>
+          <p>Choose a listed bar or enter a custom bar weight. The free calculator uses the selected plate sizes, assumes enough plates of each size, and does not add collar weight. Use RackMath's <a href="../features/custom-plate-calculator">custom equipment setup</a> for collars, other plate sizes, or a finite plate inventory.</p>
         </details>
       </section>
 

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sys
 import tempfile
 import unittest
@@ -205,6 +206,31 @@ slug: "invalid-update"
             with mock.patch.object(build_blog, "CONTENT_DIR", content_dir):
                 with self.assertRaisesRegex(ValueError, "updated date .* before publication date"):
                     build_blog.load_posts(include_future=True)
+
+    def test_sitemap_preserves_hub_dates_without_duplicate_urls(self) -> None:
+        registry = {"pages": [
+            {"status": "published", "type": "hub", "slug": "/tools/", "updated": "2026-11-17"},
+            {"status": "published", "type": "hub", "slug": "/workouts/"},
+        ]}
+        for builder in (build_blog, build_site):
+            with self.subTest(builder=builder.__name__), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                (root / "content").mkdir()
+                (root / "content" / "seo-pages.json").write_text(json.dumps(registry), encoding="utf-8")
+                with mock.patch.object(builder, "ROOT", root):
+                    if builder is build_blog:
+                        builder.write_sitemap([])
+                    else:
+                        builder.write_sitemap([], registry)
+                entries = ET.parse(root / "sitemap.xml").getroot().findall("{*}url")
+                locations = [entry.findtext("{*}loc") for entry in entries]
+                self.assertEqual(len(locations), len(set(locations)))
+                tools = next(entry for entry in entries if entry.findtext("{*}loc") == "https://rackmath.com/tools/")
+                self.assertEqual("2026-11-17", tools.findtext("{*}lastmod"))
+                self.assertEqual("0.9", tools.findtext("{*}priority"))
+                self.assertEqual(["loc", "lastmod", "priority"], [child.tag.rsplit("}", 1)[-1] for child in tools])
+                workouts = next(entry for entry in entries if entry.findtext("{*}loc") == "https://rackmath.com/workouts/")
+                self.assertIsNone(workouts.find("{*}lastmod"))
 
     def test_sitemap_uses_updated_date_for_modified_posts(self) -> None:
         post = build_blog.Post(

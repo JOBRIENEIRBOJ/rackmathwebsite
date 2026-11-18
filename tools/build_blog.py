@@ -607,13 +607,19 @@ def render_post(post: Post) -> str:
 
 def write_sitemap(posts: list[Post]) -> None:
     urlset = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
-    seen: set[str] = set()
+    urls_by_path: dict[str, ET.Element] = {}
 
     def add(path: str, priority: str, lastmod: str | None = None) -> None:
-        if path in seen:
+        if path in urls_by_path:
+            # Base hubs are added first; retain their registry update dates.
+            url = urls_by_path[path]
+            if lastmod and url.find("lastmod") is None:
+                modified = ET.Element("lastmod")
+                modified.text = lastmod
+                url.insert(1, modified)
             return
-        seen.add(path)
         url = ET.SubElement(urlset, "url")
+        urls_by_path[path] = url
         ET.SubElement(url, "loc").text = f"{SITE_URL}{path}"
         if lastmod:
             ET.SubElement(url, "lastmod").text = lastmod

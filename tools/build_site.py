@@ -123,10 +123,18 @@ def calculator_faq_schema() -> dict:
             },
             {
                 "@type": "Question",
+                "name": "Does the target weight include the bar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Enter the total weight of the bar plus all plates on both sides. For 225 lb with a 45 lb bar, load 90 lb per side: two 45 lb plates on each side.",
+                },
+            },
+            {
+                "@type": "Question",
                 "name": "Does the free calculator include collars or specialty bars?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The free web calculator uses only the listed bars and plate sizes and does not add collar weight. Use RackMath's custom equipment setup for collars, specialty bars, or other plate sizes.",
+                    "text": "Choose a listed bar or enter a custom bar weight. The free calculator uses the selected plate sizes, assumes enough plates of each size, and does not add collar weight. Use RackMath's custom equipment setup for collars, other plate sizes, or a finite plate inventory.",
                 },
             },
         ],
@@ -201,13 +209,29 @@ def render_tools_hub(page: dict, registry: dict) -> str:
         <h1>{escape(page["h1"])}</h1>
         <p>{escape(page["summary"])}</p>
         <div class="hero-actions">
-          <a class="button primary" href="{app_href(page["appRoute"])}" data-rm-app-link data-rm-event="app_deeplink_clicked">Try RackMath free</a>
-          <a class="button secondary" href="{prefix}tools/barbell-calculator">Try the barbell calculator</a>
+          <a class="button primary" href="{prefix}tools/barbell-calculator">Calculate barbell plates</a>
+          <a class="button secondary" href="{prefix}tools/one-rep-max-calculator">Estimate my one-rep max</a>
         </div>
       </section>
 
       <section class="section tool-grid" aria-label="RackMath lifting tools">
 {cards}
+      </section>
+
+      <section class="section seo-content-grid" aria-label="Choose a weight lifting calculator">
+        <article>
+          <p class="eyebrow">Choose your calculation</p>
+          <h2>Which weight lifting calculator do I need?</h2>
+          <p>For plates on the bar, use the <a href="{prefix}tools/barbell-calculator">barbell calculator</a>. For an estimated maximum from a set you completed, use the <a href="{prefix}tools/one-rep-max-calculator">one-rep max calculator</a>. These answer different questions: how to load a chosen weight, and what your recent performance might suggest.</p>
+          <p>Once you have a working weight, the <a href="{prefix}tools/warmup-set-calculator">warmup set calculator</a> suggests lighter sets leading up to it. Use the <a href="{prefix}tools/training-volume-calculator">training volume calculator</a> to multiply sets, reps, and weight for a lift.</p>
+        </article>
+        <article>
+          <p class="eyebrow">Inputs matter</p>
+          <h2>Include the bar and keep your units consistent.</h2>
+          <p>Enter total barbell weight, including the bar and plates on both sides. For example, a 45 lb bar with a 45 lb plate on each side weighs 135 lb. Select pounds or kilograms where offered and use the same unit for every weight in the calculation.</p>
+          <p>One-rep max and RPE results are estimates, not guaranteed lifts or strength rankings. Use them as planning references and adjust for your experience and the set you actually performed.</p>
+          <p>To save sets and review your training history, <a href="{app_href(page["appRoute"])}" data-rm-app-link data-rm-event="app_deeplink_clicked">open the RackMath workout tracker</a>.</p>
+        </article>
       </section>
     </main>"""
     return page_shell(page, body)
@@ -490,8 +514,9 @@ def render_calculator_page(page: dict, registry: dict) -> str:
       <section class="section seo-content-grid">
         <article>
           <p class="eyebrow">How it works</p>
-          <h2>Calculate plates without doing gym-floor arithmetic.</h2>
+          <h2>How to calculate barbell weight and plates per side.</h2>
           <p>RackMath subtracts the bar weight from your target weight, divides the remaining load across both sleeves, and builds a largest-to-smallest stack from the plates you selected.</p>
+          <p><strong>Plate weight per side = (total target weight − bar weight) ÷ 2.</strong> For 225 lb on a 45 lb bar: (225 − 45) ÷ 2 = 90 lb per side, or two 45 lb plates on each side. For 100 kg on a 20 kg bar: (100 − 20) ÷ 2 = 40 kg per side, or two 20 kg plates on each side.</p>
           <p>The free calculator loads selected plates from largest to smallest. If that stack leaves a remainder, it shows the lower total produced by that calculation. See <a href="{formula_href}">how to calculate plates on a barbell</a> for the full formula and worked examples.</p>
         </article>
         <article>
@@ -499,6 +524,7 @@ def render_calculator_page(page: dict, registry: dict) -> str:
           <h2>Use the weights that are actually on your bar.</h2>
           <p>The free calculator includes Olympic, standard, training, and common specialty bars, plus a custom bar-weight option and standard plates down to 2.5 lb or 1.25 kg. It assumes each selected plate size is available as needed; it does not count a finite inventory.</p>
           <p>Collars and finite plate counts are not added in this free tool. Check <a href="{bar_weight_href}">what your bar weighs</a>, then use the <a href="{custom_inventory_href}">custom equipment setup</a> when collars, unlisted fractional plates, or available plate counts differ. Follow the <a href="{safety_href}">barbell loading and safety guide</a> while changing plates.</p>
+          <p>Need to estimate a max or plan lighter sets first? Browse all <a href="{prefix}tools/">weight lifting calculators</a>, including the <a href="{prefix}tools/one-rep-max-calculator">one-rep max calculator</a> and <a href="{prefix}tools/warmup-set-calculator">warmup set calculator</a>.</p>
         </article>
       </section>
 
@@ -544,8 +570,12 @@ def render_calculator_page(page: dict, registry: dict) -> str:
           <p>The calculator loads selected plates from largest to smallest. If that stack leaves a remainder, it shows the lower weight produced by that calculation so you can adjust the set.</p>
         </details>
         <details>
+          <summary>Does the target weight include the bar?</summary>
+          <p>Yes. Enter the total weight of the bar plus all plates on both sides. For 225 lb with a 45 lb bar, load 90 lb per side: two 45 lb plates on each side.</p>
+        </details>
+        <details>
           <summary>Does the free calculator include collars or specialty bars?</summary>
-          <p>The free web calculator uses only the listed bars and plate sizes and does not add collar weight. Use RackMath's <a href="{custom_inventory_href}">custom equipment setup</a> for collars, specialty bars, other fractional plates, or a finite plate inventory.</p>
+          <p>Choose a listed bar or enter a custom bar weight. The free calculator uses the selected plate sizes, assumes enough plates of each size, and does not add collar weight. Use RackMath's <a href="{custom_inventory_href}">custom equipment setup</a> for collars, other plate sizes, or a finite plate inventory.</p>
         </details>
       </section>
 
@@ -2157,13 +2187,19 @@ def write_page(page: dict, html_text: str) -> None:
 
 def write_sitemap(posts: list[build_blog.Post], registry: dict) -> None:
     urlset = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
-    seen: set[str] = set()
+    urls_by_path: dict[str, ET.Element] = {}
 
     def add(path: str, priority: str, lastmod: str | None = None) -> None:
-        if path in seen:
+        if path in urls_by_path:
+            # Base hubs are added first; retain their registry update dates.
+            url = urls_by_path[path]
+            if lastmod and url.find("lastmod") is None:
+                modified = ET.Element("lastmod")
+                modified.text = lastmod
+                url.insert(1, modified)
             return
-        seen.add(path)
         url = ET.SubElement(urlset, "url")
+        urls_by_path[path] = url
         ET.SubElement(url, "loc").text = f"{SITE_URL}{path}"
         if lastmod:
             ET.SubElement(url, "lastmod").text = lastmod
