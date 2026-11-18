@@ -4,7 +4,7 @@ This tracker follows the RackMath SEO + value build plan. Update it whenever an 
 
 ## Calculator SEO improvement — 2026-11-17
 
-- Status: Verified locally; production release in progress
+- Status: Deployed and verified on 2026-11-17
 - Scope: improve search targeting for the existing barbell calculator and weight lifting tools hub; preserve canonical URLs, the calculator interaction, and the app's intentional noindex policy.
 - Planned files: `content/seo-pages.json`, `tools/build_site.py`, `index.html`, their generated tool pages and sitemap, and this tracker.
 - Baseline: connected Search Console data for 2026-10-18 through 2026-11-14 (all countries/devices) reports 626 impressions, 3 clicks, 0.48% CTR, and average position 6.54 for `barbell calculator`; `weight lifting calculator` reports 1 impression, 0 clicks, and average position 36. These are period averages, not current rank measurements.
@@ -27,6 +27,8 @@ This tracker follows the RackMath SEO + value build plan. Update it whenever an 
 - Desktop (1440×1000) and mobile (390×844) browser checks: passed titles/headings/canonicals, calculator navigation, 225 lb → 90 lb per side, 100 kg → 40 kg per side, expandable FAQ, no horizontal overflow, and no first-party script errors. Screenshots reviewed; external requests were blocked during local QA. Local harness and screenshots: `/tmp/rackmath-seo-20261117/`.
 - `git diff --check`: passed. Unrelated pre-existing changes remain untouched.
 - Release: publish only the nine intended SEO files through `JOBRIENEIRBOJ/rackmathwebsite` on `main` and Netlify project `rackmathlp` (`rackmath.com`). Verify the build from committed files, wait for Netlify to report ready, and check live titles, canonicals, content, and sitemap dates.
+- Release result: code commit `55c27a0250c886f4f578d5000d8947828f76cc56` pushed to `main`; Netlify production deploy `6afd059e96aa39fa83f762a8` reached `ready`. A clean detached worktree passed all 12 tests, the full build (176 tracked public files), and generated-file parity. GitHub `SEO build quality` and `Publish scheduled blog posts` both passed.
+- Live verification: `/`, `/tools/`, and `/tools/barbell-calculator` returned 200 with expected titles, descriptions, H1s, self-canonicals, and parseable JSON-LD. Both tools show the new content and 2026-11-17 sitemap modification dates; sitemap retains 133 URLs. Legacy tool HTML URLs redirect correctly, source files return 404, and `.app` retains its noindex meta/header. Unrelated local changes were excluded from the commit and deploy.
 - Measurement handoff: after publication, inspect both URLs in Search Console and compare the next complete 28-day period with the recorded baseline, using the same query/country/device filters. Improved rankings or clicks are not established by local validation.
 
 | Status | Phase | Workstream | Current / Next Step |
